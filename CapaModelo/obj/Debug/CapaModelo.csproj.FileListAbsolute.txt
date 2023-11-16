@@ -22,3 +22,9 @@ C:\Users\jaiatu417\source\repos\BPAPP\BPAPP\CapaModelo\obj\Debug\CapaModelo.cspr
 C:\Users\jaiatu417\source\repos\BPAPP\BPAPP\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
 C:\Users\jaiatu417\source\repos\BPAPP\BPAPP\CapaModelo\obj\Debug\CapaModelo.dll
 C:\Users\jaiatu417\source\repos\BPAPP\BPAPP\CapaModelo\obj\Debug\CapaModelo.pdb
+D:\NET\PICHINCHA\solucion-Pichincha\Proyecto\CapaModelo\bin\Debug\CapaModelo.dll
+D:\NET\PICHINCHA\solucion-Pichincha\Proyecto\CapaModelo\bin\Debug\CapaModelo.pdb
+D:\NET\PICHINCHA\solucion-Pichincha\Proyecto\CapaModelo\obj\Debug\CapaModelo.csproj.AssemblyReference.cache
+D:\NET\PICHINCHA\solucion-Pichincha\Proyecto\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
+D:\NET\PICHINCHA\solucion-Pichincha\Proyecto\CapaModelo\obj\Debug\CapaModelo.dll
+D:\NET\PICHINCHA\solucion-Pichincha\Proyecto\CapaModelo\obj\Debug\CapaModelo.pdb

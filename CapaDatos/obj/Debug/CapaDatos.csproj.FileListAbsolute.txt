@@ -34,3 +34,12 @@ C:\Users\jaiatu417\source\repos\BPAPP\BPAPP\CapaDatos\obj\Debug\CapaDatos.csproj
 C:\Users\jaiatu417\source\repos\BPAPP\BPAPP\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
 C:\Users\jaiatu417\source\repos\BPAPP\BPAPP\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\jaiatu417\source\repos\BPAPP\BPAPP\CapaDatos\obj\Debug\CapaDatos.pdb
+D:\NET\PICHINCHA\solucion-Pichincha\Proyecto\CapaDatos\bin\Debug\CapaDatos.dll
+D:\NET\PICHINCHA\solucion-Pichincha\Proyecto\CapaDatos\bin\Debug\CapaDatos.pdb
+D:\NET\PICHINCHA\solucion-Pichincha\Proyecto\CapaDatos\bin\Debug\CapaModelo.dll
+D:\NET\PICHINCHA\solucion-Pichincha\Proyecto\CapaDatos\bin\Debug\CapaModelo.pdb
+D:\NET\PICHINCHA\solucion-Pichincha\Proyecto\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+D:\NET\PICHINCHA\solucion-Pichincha\Proyecto\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+D:\NET\PICHINCHA\solucion-Pichincha\Proyecto\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+D:\NET\PICHINCHA\solucion-Pichincha\Proyecto\CapaDatos\obj\Debug\CapaDatos.dll
+D:\NET\PICHINCHA\solucion-Pichincha\Proyecto\CapaDatos\obj\Debug\CapaDatos.pdb
