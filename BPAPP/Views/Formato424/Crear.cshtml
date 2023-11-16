@@ -20,8 +20,7 @@
                     <div class="col-sm-3">
                         <div class="form-group">
                             <label for="txtEntidad">Tipo de Entidad</label>
-                            <input type="number" maxlength="3" class="form-control" id="txtEntidad">
-                            <asp:DropDownList id="ddlTipoEntidad" runat="server"></asp:DropDownList>
+                            @Html.DropDownList("ddlTipoEntidad", (SelectList)ViewBag.TipoEntidad, "Seleccione..", new { @class = "form-control" })
                         </div>
                     </div>
                     <div class="col-sm-3">

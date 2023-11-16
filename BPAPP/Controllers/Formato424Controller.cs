@@ -13,8 +13,8 @@ namespace ProyectoWeb.Controllers
     {
         public ActionResult Crear()
         {
-            List<Dominio> dominios = CD_Dominios.Obtener(1);
-            
+
+            LlenadoListas();
             return View();
         }
 
@@ -22,6 +22,20 @@ namespace ProyectoWeb.Controllers
         {
             List<Formato424> oListaNivel = CD_Formato424.Listar();
             return Json(new { data = oListaNivel }, JsonRequestBehavior.AllowGet);
+        }
+
+        /// <summary>
+        /// Llena las listas que requiere el controlador
+        /// </summary>
+        private void LlenadoListas()
+        {
+            List<Dominio> dominios = CD_Dominios.Obtener(1);
+
+            if (dominios.Count() == 0)
+            {
+                ModelState.AddModelError("ddlTipoEntidad", "No se encuentra valores para la lista de configuraciones");
+            }
+            ViewBag.TipoEntidad = new SelectList(dominios, "IdDominio", "Nombre");
         }
 
         [HttpPost]
