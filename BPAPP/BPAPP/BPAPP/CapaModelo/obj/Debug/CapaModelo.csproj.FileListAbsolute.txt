@@ -1,0 +1,24 @@
+D:\WorkSpaceAD\YOUTUBE\018_FUNCIONALIDAD SISTEMA COLEGIO WEB\ProyectoWeb\CapaModelo\bin\Debug\CapaModelo.dll
+D:\WorkSpaceAD\YOUTUBE\018_FUNCIONALIDAD SISTEMA COLEGIO WEB\ProyectoWeb\CapaModelo\bin\Debug\CapaModelo.pdb
+D:\WorkSpaceAD\YOUTUBE\018_FUNCIONALIDAD SISTEMA COLEGIO WEB\ProyectoWeb\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
+D:\WorkSpaceAD\YOUTUBE\018_FUNCIONALIDAD SISTEMA COLEGIO WEB\ProyectoWeb\CapaModelo\obj\Debug\CapaModelo.dll
+D:\WorkSpaceAD\YOUTUBE\018_FUNCIONALIDAD SISTEMA COLEGIO WEB\ProyectoWeb\CapaModelo\obj\Debug\CapaModelo.pdb
+D:\WorkSpaceAD\YOUTUBE\018_FUNCIONALIDAD SISTEMA COLEGIO WEB\ProyectoWeb\CapaModelo\obj\Debug\CapaModelo.csprojAssemblyReference.cache
+C:\Users\Dell\source\repos\ProyectoWeb\CapaModelo\bin\Debug\CapaModelo.dll
+C:\Users\Dell\source\repos\ProyectoWeb\CapaModelo\bin\Debug\CapaModelo.pdb
+C:\Users\Dell\source\repos\ProyectoWeb\CapaModelo\obj\Debug\CapaModelo.csproj.AssemblyReference.cache
+C:\Users\Dell\source\repos\ProyectoWeb\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
+C:\Users\Dell\source\repos\ProyectoWeb\CapaModelo\obj\Debug\CapaModelo.dll
+C:\Users\Dell\source\repos\ProyectoWeb\CapaModelo\obj\Debug\CapaModelo.pdb
+C:\Users\Dell\source\repos\Bpapp\BPAPP\CapaModelo\bin\Debug\CapaModelo.dll
+C:\Users\Dell\source\repos\Bpapp\BPAPP\CapaModelo\bin\Debug\CapaModelo.pdb
+C:\Users\Dell\source\repos\Bpapp\BPAPP\CapaModelo\obj\Debug\CapaModelo.csproj.AssemblyReference.cache
+C:\Users\Dell\source\repos\Bpapp\BPAPP\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
+C:\Users\Dell\source\repos\Bpapp\BPAPP\CapaModelo\obj\Debug\CapaModelo.dll
+C:\Users\Dell\source\repos\Bpapp\BPAPP\CapaModelo\obj\Debug\CapaModelo.pdb
+C:\Users\jaiatu417\source\repos\BPAPP\BPAPP\CapaModelo\bin\Debug\CapaModelo.dll
+C:\Users\jaiatu417\source\repos\BPAPP\BPAPP\CapaModelo\bin\Debug\CapaModelo.pdb
+C:\Users\jaiatu417\source\repos\BPAPP\BPAPP\CapaModelo\obj\Debug\CapaModelo.csproj.AssemblyReference.cache
+C:\Users\jaiatu417\source\repos\BPAPP\BPAPP\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
+C:\Users\jaiatu417\source\repos\BPAPP\BPAPP\CapaModelo\obj\Debug\CapaModelo.dll
+C:\Users\jaiatu417\source\repos\BPAPP\BPAPP\CapaModelo\obj\Debug\CapaModelo.pdb

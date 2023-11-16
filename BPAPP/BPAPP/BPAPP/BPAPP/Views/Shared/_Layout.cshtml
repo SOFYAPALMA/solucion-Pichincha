@@ -1,0 +1,84 @@
+﻿@using ProyectoWeb.Helpers
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/PluginsCSS")
+    @RenderSection("estilos", required: false)
+</head>
+<body>
+    <div class="navbar navbar-expand-sm bg-dark navbar-dark">
+      
+
+        @Html.ActionLink("FORMATOS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+        <!-- Links -->
+        <ul class="nav navbar-nav">
+
+            @Html.ActionLinkAllow()
+
+        </ul>
+        <ul class="nav navbar-nav ml-auto">
+            
+            <li class="nav-item">
+                <a href="@Url.Action("Salir", "Home")" class="nav-link">
+                    <i class="fas fa-arrow-alt-circle-right"></i>
+                    <span>
+                        <strong>Salir</strong>
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="container-fluid mt-4">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Content/PluginsJS")
+    <script type="text/javascript">
+
+        $.extend({ MisUrls: { url: {}, urls: function (a) { $.extend($.MisUrls.url, a); } } });
+
+        $.MisUrls.urls({ UrlGetRoles: '@Url.Action("Listar", "Rol")' });
+        $.MisUrls.urls({ UrlGetRol: '@Url.Action("Obtener", "Rol")' });
+        $.MisUrls.urls({ UrlPostRol: '@Url.Action("Guardar", "Rol")' });
+        $.MisUrls.urls({ UrlDeleteRol: '@Url.Action("Eliminar", "Rol")' });
+
+        //ROL PERMISOS
+        $.MisUrls.urls({ UrlGetRolPermisos: '@Url.Action("Obtener", "RolPermiso")' });
+        $.MisUrls.urls({ UrlPostGuardarCambios: '@Url.Action("Guardar", "RolPermiso")' });
+
+        //USUARIO
+        $.MisUrls.urls({ UrlGetUsuarios: '@Url.Action("Listar", "Usuario")' });
+        $.MisUrls.urls({ UrlPostUsuario: '@Url.Action("Guardar", "Usuario")' });
+        $.MisUrls.urls({ UrlGetUsuario: '@Url.Action("Obtener", "Usuario")' });
+        $.MisUrls.urls({ UrlDeleteUsuario: '@Url.Action("Eliminar", "Usuario")' });
+
+        //FORMATO425
+        $.MisUrls.urls({ UrlGetFormato425: '@Url.Action("Listar", "Formato425")' });
+        $.MisUrls.urls({ UrlPostGuardarFormato425: '@Url.Action("Guardar", "Formato425")' });
+        $.MisUrls.urls({ UrlGetEliminarFormato425: '@Url.Action("Eliminar", "Formato425")' });
+        $.MisUrls.urls({ UrlGetConsultaReporteFormato425: '@Url.Action("ConsultaReporte", "Formato425")' });
+
+
+        //FORMATO 426
+        $.MisUrls.urls({ UrlGetFormato426: '@Url.Action("Listar", "Formato426")' });
+        $.MisUrls.urls({ UrlPostGuardarFormato426: '@Url.Action("Guardar", "Formato426")' });
+        $.MisUrls.urls({ UrlGetEliminarFormato426: '@Url.Action("Eliminar", "Formato426")' });
+
+        //Formato424
+        $.MisUrls.urls({ UrlGetFormato424: '@Url.Action("Listar", "Formato424")' });
+        $.MisUrls.urls({ UrlPostFormato424: '@Url.Action("Guardar", "Formato424")' });
+        $.MisUrls.urls({ UrlDeleteFormato424: '@Url.Action("Eliminar", "Formato424")' });
+
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
