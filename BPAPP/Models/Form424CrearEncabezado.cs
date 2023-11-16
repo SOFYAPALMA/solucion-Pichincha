@@ -21,7 +21,7 @@ namespace ProyectoWeb.Models
         public int Codigo { get; set; }
 
         /// <summary>
-        /// 
+        /// Captura de informacion para almacenamiento y visualizacion en el detalle.
         /// </summary>
         [Required(ErrorMessage = "El campo nombre es obligatorio.")]
         [Display(Name = "Nombre")]
