@@ -1,10 +1,10 @@
 ﻿using CapaDatos;
 using CapaModelo;
+using ProyectoWeb.Models;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace ProyectoWeb.Controllers
@@ -13,9 +13,9 @@ namespace ProyectoWeb.Controllers
     {
         public ActionResult Crear()
         {
-
+            Form424CrearEncabezado form424 = new Form424CrearEncabezado();
             LlenadoListas();
-            return View();
+            return View(form424);
         }
 
         public JsonResult Listar()
@@ -33,7 +33,7 @@ namespace ProyectoWeb.Controllers
 
             if (dominios.Count() == 0)
             {
-                ModelState.AddModelError("ddlTipoEntidad", "No se encuentra valores para la lista de configuraciones");
+                ModelState.AddModelError("Tipo", "No se encuentra valores para la lista de tipo de entidades");
             }
             ViewBag.TipoEntidad = new SelectList(dominios, "IdDominio", "Nombre");
         }
