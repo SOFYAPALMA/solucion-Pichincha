@@ -20,6 +20,8 @@ namespace CapaDatos
                 cmd.Parameters.Add("IndicadorTermina", SqlDbType.Bit).Direction = ParameterDirection.Output;
                 cmd.CommandType = CommandType.StoredProcedure;
 
+
+
                 try
                 {
                     oConexion.Open();
@@ -103,6 +105,25 @@ namespace CapaDatos
                 {
                     SqlCommand cmd = new SqlCommand("spInsertaPropiedadesDepositos", oConexion);
                     cmd.Parameters.AddWithValue("Tipo", obj.Tipo);
+                    cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
+                    cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
+                    cmd.Parameters.AddWithValue("NombreComercial", obj.NombreComercial);
+                    cmd.Parameters.AddWithValue("TipodeProductoDeposito", obj.TipodeProductoDeposito);
+                    cmd.Parameters.AddWithValue("AperturaDigital", obj.AperturaDigital);
+                    cmd.Parameters.AddWithValue("NumerodeClientesUnicos", obj.NumerodeClientesUnicos);
+                    cmd.Parameters.AddWithValue("CuotadeManejo", obj.CuotadeManejo);
+                    cmd.Parameters.AddWithValue("ObservacionesCuotadeManejo", obj.ObservacionesCuotadeManejo);
+                    cmd.Parameters.AddWithValue("GrupoPoblacional", obj.GrupoPoblacional);
+                    cmd.Parameters.AddWithValue("CuotadeManejo", obj.CuotadeManejo);
+                    cmd.Parameters.AddWithValue("ServicioGratuitoCuentadeAhorros1", obj.ServicioGratuitoCuentadeAhorros1);
+                    cmd.Parameters.AddWithValue("ServicioGratuitoCuentadeAhorros2", obj.ServicioGratuitoCuentadeAhorros2);
+                    cmd.Parameters.AddWithValue("ServicioGratuitoCuentadeAhorros3", obj.ServicioGratuitoCuentadeAhorros3);
+                    cmd.Parameters.AddWithValue("ServicioGratuitoTarjetaDebito1", obj.ServicioGratuitoTarjetaDebito1);
+                    cmd.Parameters.AddWithValue("ServicioGratuitoTarjetaDebito2", obj.ServicioGratuitoTarjetaDebito2);
+                    cmd.Parameters.AddWithValue("ServicioGratuitoTarjetaDebito3", obj.ServicioGratuitoTarjetaDebito3);
+                    cmd.Parameters.AddWithValue("Ingresos", obj.Ingresos);
+
+
                     /*cmd.Parameters.AddWithValue("DescripcionTurno", obj.DescripcionTurno);
                     cmd.Parameters.AddWithValue("HoraInicio", obj.HoraInicio);
                     cmd.Parameters.AddWithValue("HoraFin", obj.HoraFin);
