@@ -46,6 +46,8 @@
     <Compile Include="Formato426.cs" />
     <Compile Include="Formulario424_Detalle.cs" />
     <Compile Include="Formulario424_Encabezado.cs" />
+    <Compile Include="Formulario425_Detalle.cs" />
+    <Compile Include="Formulario425_Encabezado.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Formato424.cs" />
     <Compile Include="NivelDetalle.cs" />

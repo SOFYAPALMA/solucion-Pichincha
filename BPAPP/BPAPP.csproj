@@ -137,6 +137,7 @@
     <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="Models\Form424CrearDetalle.cs" />
     <Compile Include="Models\Form424CrearEncabezado.cs" />
+    <Compile Include="Models\Form425CrearEncabezado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2033,6 +2034,7 @@
     <Content Include="Views\Formato426\Crear.cshtml" />
     <Content Include="Views\Formato424\Crear.cshtml" />
     <Content Include="Views\Formato424\CrearOLD.cshtml" />
+    <Content Include="Views\Formato425\CrearOLD.cshtml" />
     <None Include="Web.R.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

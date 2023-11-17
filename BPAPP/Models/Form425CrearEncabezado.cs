@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ProyectoWeb.Models
 {
-    public class Form424CrearEncabezado
+    public class Form425CrearEncabezado
     {
         /// <summary>
         /// Referencia a al tipo entidad
@@ -23,14 +23,14 @@ namespace ProyectoWeb.Models
         /// <summary>
         /// Captura de informacion para almacenamiento y visualizacion en el detalle
         /// </summary>
-        [Required(ErrorMessage = "El campo nombre entidad es obligatorio.")]
+        [Required(ErrorMessage = "El campo Nombre o sigla de la entidad es obligatorio.")]
         [Display(Name = "Nombre Entidad")]
         [StringLength(50)]
         [DataType(DataType.Text)]
         public string Nombre { get; set; }
 
         [Required(ErrorMessage = "El campo Fecha y Hora de Reporte es obligatorio.")]
-        [Display(Name = "FechaHora")]
+        [Display(Name = "FechaHoraReporte")]
         [StringLength(13)]
         [DataType(DataType.DateTime)]
         public DateTime FechaHora { get; set; }
@@ -41,11 +41,6 @@ namespace ProyectoWeb.Models
         [DataType(DataType.Text)]
         public string NombreComercial { get; set; }
 
-        [Required(ErrorMessage = "El campo Tipo de Producto Deposito es obligatorio.")]
-        [Display(Name = "Tipo de Producto Deposito")]
-        [StringLength(1)]
-        [DataType(DataType.Text)]
-        public int TipodeProductoDeposito { get; set; }
 
         [Required(ErrorMessage = "El campo Apertura Digital es obligatorio.")]
         [Display(Name = "Apertura Digital")]
@@ -58,6 +53,12 @@ namespace ProyectoWeb.Models
         [StringLength(8)]
         [DataType(DataType.Text)]
         public int NumerodeClientesUnicos { get; set; }
+
+        [Required(ErrorMessage = "El campo Franquicia es obligatorio.")]
+        [Display(Name = "Franquicia")]
+        [StringLength(1)]
+        [DataType(DataType.Text)]
+        public int Franquicia { get; set; }
 
         [Required(ErrorMessage = "El campo Cuota de Manejo es obligatorio.")]
         [Display(Name = "Cuota de Manejo")]
