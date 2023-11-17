@@ -135,8 +135,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Helpers.cs" />
+    <Compile Include="Helpers\Mapper.cs" />
     <Compile Include="Models\Form424CrearDetalle.cs" />
     <Compile Include="Models\Form424CrearEncabezado.cs" />
+    <Compile Include="Models\Form425CrearEncabezado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1831,6 +1833,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Logo-Pichincha.jpg" />
     <Content Include="Resources\Images\imagecollege.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />

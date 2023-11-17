@@ -9,6 +9,7 @@ namespace CapaDatos
 {
     public class CD_Formato424
     {
+        public static string Mensaje { get; private set; }
 
         public static List<Formulario424_Encabezado> Listar()
         {
@@ -93,7 +94,7 @@ namespace CapaDatos
         }
 
 
-        public static bool Registrar(Formulario424_Encabezado obj)
+        public static bool RegistrarEncabezado(Formulario424_Encabezado obj)
         {
             bool respuesta = true;
             using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
@@ -117,6 +118,7 @@ namespace CapaDatos
                     cmd.ExecuteNonQuery();
 
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
+                    Mensaje = cmd.Parameters["MensajeSalida"].Value.ToString();
 
                 }
                 catch (Exception ex)

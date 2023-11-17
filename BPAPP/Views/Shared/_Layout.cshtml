@@ -36,6 +36,17 @@
         </ul>
     </div>
     <div class="container-fluid mt-4">
+        <div class="Mensajes">
+            @Html.ValidationSummary(false, "")
+            @if (TempData["Notificacion"] != null && TempData["Notificacion"].ToString() != "Mensaje")
+            {
+                <p id="NotificacionesGenerales">@TempData["Notificacion"]</p>
+            }
+            else
+            {
+                <p id="NotificacionesGenerales"></p>
+            }
+        </div>
         @RenderBody()
     </div>
 

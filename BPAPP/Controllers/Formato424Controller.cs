@@ -18,6 +18,34 @@ namespace ProyectoWeb.Controllers
             return View(form424);
         }
 
+        [HttpPost]
+        public ActionResult Crear(Form424CrearEncabezado form424)
+        {
+            if (ModelState.IsValid)
+            {
+                Formulario424_Encabezado encabezado = Mapper.getMapper(form424);
+                bool respuesta = CD_Formato424.RegistrarEncabezado(encabezado);
+
+                if(respuesta)
+                {
+                    TempData["Notificacion"] = CD_Formato424.Mensaje;
+
+                    return RedirectToAction("List");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "No se pudo crear el encabezado, por favor valide los datos.");
+                    LlenadoListas();  
+                    return View(form424);
+                }
+            }
+            else
+            {
+                LlenadoListas();
+                return View(form424);
+            }
+        }
+
         public ActionResult Update()
         {
             Form424CrearEncabezado form424 = new Form424CrearEncabezado();
