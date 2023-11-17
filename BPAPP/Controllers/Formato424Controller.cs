@@ -18,6 +18,20 @@ namespace ProyectoWeb.Controllers
             return View(form424);
         }
 
+        public ActionResult Update()
+        {
+            Form424CrearEncabezado form424 = new Form424CrearEncabezado();
+            LlenadoListas();
+            return View(form424);
+        }
+
+        public ActionResult Details()
+        {
+            Form424CrearEncabezado form424 = new Form424CrearEncabezado();
+            LlenadoListas();
+            return View(form424);
+        }
+
         public JsonResult Listar()
         {
             List<Formato424> oListaNivel = CD_Formato424.Listar();
