@@ -43,13 +43,20 @@ namespace ProyectoWeb.Controllers
         /// </summary>
         private void LlenadoListas()
         {
-            List<Dominio> dominios = CD_Dominios.Obtener(1);
+            List<Dominio> tipodeProductoDeposito = CD_Dominios.Obtener(1);
+            List<Dominio> other = CD_Dominios.Obtener(111);
 
-            if (dominios.Count() == 0)
+            if (tipodeProductoDeposito.Count() == 0)
             {
-                ModelState.AddModelError("Tipo", "No se encuentra valores para la lista de tipo de entidades");
+                ModelState.AddModelError("TipodeProductoDeposito", "No se encuentra valores para la lista de tipo de producto deposito");
             }
-            ViewBag.TipoEntidad = new SelectList(dominios, "IdDominio", "Nombre");
+            ViewBag.TipodeProductoDeposito = new SelectList(tipodeProductoDeposito, "IdDominio", "Nombre");
+
+            if (other.Count() == 0)
+            {
+                ModelState.AddModelError("OTRO", "No se encuentra valores para la lista de OTRO");
+            }
+            ViewBag.OTRO = new SelectList(other, "IdDominio", "Nombre");
         }
 
         [HttpPost]

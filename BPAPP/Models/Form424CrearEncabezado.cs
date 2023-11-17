@@ -27,7 +27,7 @@ namespace ProyectoWeb.Models
         [Display(Name = "Nombre Entidad")]
         [StringLength(50)]
         [DataType(DataType.Text)]
-        public string Nombre { get; } = BCOPICHINCH; //Campo fijo por default= BCOPICHINCH
+        public string Nombre { get; } = "BCOPICHINCH"; //Campo fijo por default= BCOPICHINCH
 
         [Required(ErrorMessage = "El campo Fecha y Hora de Reporte es obligatorio.")]
         [Display(Name = "FechaHora")]
