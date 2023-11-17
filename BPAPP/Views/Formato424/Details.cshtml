@@ -1,0 +1,288 @@
+﻿@model ProyectoWeb.Models.Form424CrearEncabezado
+
+@{
+    ViewBag.Title = "Detalles Formulario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+        </div>
+        <h3 style="text-align:center;">TARIFAS DE LOS PRODUCTOS DE DEPÓSITO</h3>
+        <h4 style="text-align:center;">FORMATO 424</h4>
+        <h5 style="text-align:center;">CIRCULAR EXTERNA 006 DE 2023</h5>
+        <div class="card-body">
+            <div class="row">
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.Tipo)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.Tipo)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.Codigo)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.Codigo)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.Nombre)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.Nombre)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.FechaHora)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.FechaHora)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.NombreComercial)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.NombreComercial)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.TipodeProductoDeposito)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.TipodeProductoDeposito)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.AperturaDigital)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.AperturaDigital)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.NumerodeClientesUnicos)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.NumerodeClientesUnicos)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.CuotadeManejo)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.CuotadeManejo)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.ObservacionesCuotadeManejo)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.ObservacionesCuotadeManejo)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.GrupoPoblacional)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.GrupoPoblacional)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.Ingresos)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.Ingresos)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.ServicioGratuitoCuentadeAhorros1)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.ServicioGratuitoCuentadeAhorros1)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.ServicioGratuitoCuentadeAhorros2)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.ServicioGratuitoCuentadeAhorros2)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.ServicioGratuitoCuentadeAhorros3)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.ServicioGratuitoCuentadeAhorros3)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.ServicioGratuitoTarjetaDebito1)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.ServicioGratuitoTarjetaDebito1)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.ServicioGratuitoTarjetaDebito2)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.ServicioGratuitoTarjetaDebito2)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.ServicioGratuitoTarjetaDebito3)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.ServicioGratuitoTarjetaDebito3)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-sm-12 float-right">
+                    <input type="button" onclick="Editar()" value="Editar" class="btn btn-primary btn-sm float-right" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="ModalUpdate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidiven="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Actualizar Encabezado</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidiven="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @Html.Partial("Update")
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="ModalCreateDet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidiven="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Crear Detalle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidiven="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @*@Html.Partial("CrearDetalle")*@
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function Editar() {
+        $("#ModalUpdate").modal();
+    }
+
+    function Crear() {
+        $("#ModalCreateDet").modal();
+    }
+</script>
