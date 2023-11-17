@@ -19,6 +19,8 @@ namespace CapaDatos
                 cmd.Parameters.Add("IndicadorTermina", SqlDbType.Bit).Direction = ParameterDirection.Output;
                 cmd.CommandType = CommandType.StoredProcedure;
 
+
+
                 try
                 {
                     oConexion.Open();
@@ -102,6 +104,25 @@ namespace CapaDatos
                 {
                     SqlCommand cmd = new SqlCommand("spInsertaPropiedadesDepositos", oConexion);
                     cmd.Parameters.AddWithValue("Tipo", obj.Tipo);
+                    cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
+                    cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
+                    cmd.Parameters.AddWithValue("NombreComercial", obj.NombreComercial);
+                    cmd.Parameters.AddWithValue("TipoProductoDeposito", obj.TipoProductoDeposito);
+                    cmd.Parameters.AddWithValue("AperturaDigital", obj.AperturaDigital);
+                    cmd.Parameters.AddWithValue("NumeroClientes", obj.NumeroClientes);
+                    cmd.Parameters.AddWithValue("CuotaManejo", obj.CuotaManejo);
+                    cmd.Parameters.AddWithValue("ObservacionesCuota", obj.ObservacionesCuota);
+                    cmd.Parameters.AddWithValue("GrupoPoblacional", obj.GrupoPoblacional);
+                    cmd.Parameters.AddWithValue("Ingresos", obj.CuotaManejo);
+                    cmd.Parameters.AddWithValue("SerGratuito_CtaAHO", obj.ObservacionesCuota);
+                    cmd.Parameters.AddWithValue("SerGratuito_CtaAHO2", obj.SerGratuito_CtaAHO2);
+                    cmd.Parameters.AddWithValue("SerGratuito_CtaAHO3", obj.SerGratuito_CtaAHO3);
+                    cmd.Parameters.AddWithValue("SerGratuito_TCRDebito", obj.SerGratuito_TCRDebito);
+                    cmd.Parameters.AddWithValue("SerGratuito_TCRDebito2", obj.SerGratuito_TCRDebito2);
+                    cmd.Parameters.AddWithValue("SerGratuito_TCRDebito3", obj.SerGratuito_TCRDebito3);
+                    cmd.Parameters.AddWithValue("Usuario", obj.Usuario);
+
+
                     /*cmd.Parameters.AddWithValue("DescripcionTurno", obj.DescripcionTurno);
                     cmd.Parameters.AddWithValue("HoraInicio", obj.HoraInicio);
                     cmd.Parameters.AddWithValue("HoraFin", obj.HoraFin);
