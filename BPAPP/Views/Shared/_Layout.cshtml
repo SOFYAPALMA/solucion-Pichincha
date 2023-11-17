@@ -15,7 +15,7 @@
     <div class="navbar navbar-expand-sm bg-dark navbar-dark">
       
 
-        @Html.ActionLink("FORMATOS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        @Html.ActionLink("FORMATOS.", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
 
         <!-- Links -->
         <ul class="nav navbar-nav">
@@ -74,7 +74,7 @@
         $.MisUrls.urls({ UrlGetEliminarFormato426: '@Url.Action("Eliminar", "Formato426")' });
 
         //Formato424
-        $.MisUrls.urls({ UrlGetFormato424: '@Url.Action("Listar", "Formato424")' });
+        $.MisUrls.urls({ UrlGetFormato424: '@Url.Action("Details", "Formato424")' });
         $.MisUrls.urls({ UrlPostFormato424: '@Url.Action("Guardar", "Formato424")' });
         $.MisUrls.urls({ UrlDeleteFormato424: '@Url.Action("Eliminar", "Formato424")' });
 

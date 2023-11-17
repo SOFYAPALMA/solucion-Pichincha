@@ -12,13 +12,13 @@ namespace ProyectoWeb.Models
         [Display(Name = "Tipo")]
         [StringLength(3)]
         [DataType(DataType.Text)]
-        public int Tipo { get; set; }
+        public int Tipo { get; } = 001; //Campo fijo por default= 001
 
         [Required(ErrorMessage = "El campo codigo entidad es obligatorio.")]
         [Display(Name = "Codigo")]
         [StringLength(5)]
         [DataType(DataType.Text)]
-        public int Codigo { get; set; }
+        public int Codigo { get; } = 00057; //Campo fijo por default= 00057
 
         /// <summary>
         /// Captura de informacion para almacenamiento y visualizacion en el detalle
@@ -27,7 +27,7 @@ namespace ProyectoWeb.Models
         [Display(Name = "Nombre Entidad")]
         [StringLength(50)]
         [DataType(DataType.Text)]
-        public string Nombre { get; set; }
+        public string Nombre { get; } = BCOPICHINCH; //Campo fijo por default= BCOPICHINCH
 
         [Required(ErrorMessage = "El campo Fecha y Hora de Reporte es obligatorio.")]
         [Display(Name = "FechaHora")]
@@ -57,13 +57,13 @@ namespace ProyectoWeb.Models
         [Display(Name = "Número de clientes únicos")]
         [StringLength(8)]
         [DataType(DataType.Text)]
-        public int NumerodeClientesUnicos { get; set; }
+        public int NumerodeClientesUnicos { get; set; } //Campo numérico de registro manual, de acuerdo al cálculo de Clientes Únicos del MIS 
 
         [Required(ErrorMessage = "El campo Cuota de Manejo es obligatorio.")]
         [Display(Name = "Cuota de Manejo")]
         [StringLength(7)]
         [DataType(DataType.Text)]
-        public int CuotadeManejo { get; set; }
+        public int CuotadeManejo { get; set; } //Campo numérico de registro manual
 
         [Required(ErrorMessage = "El campo Observaciones Cuota de Manejo es obligatorio.")]
         [Display(Name = "Observaciones Cuota de Manejo")]

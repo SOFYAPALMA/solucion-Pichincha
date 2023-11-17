@@ -18,11 +18,25 @@ namespace ProyectoWeb.Controllers
             return View(form424);
         }
 
-        public JsonResult Listar()
+        public ActionResult Update()
+        {
+            Form424CrearEncabezado form424 = new Form424CrearEncabezado();
+            LlenadoListas();
+            return View(form424);
+        }
+
+        public ActionResult Details()
+        {
+            Form424CrearEncabezado form424 = new Form424CrearEncabezado();
+            LlenadoListas();
+            return View(form424);
+        }
+
+        /*public JsonResult Listar()
         {
             List<Formato424> oListaNivel = CD_Formato424.Listar();
             return Json(new { data = oListaNivel }, JsonRequestBehavior.AllowGet);
-        }
+        }*/
 
         /// <summary>
         /// Llena las listas que requiere el controlador
@@ -48,14 +62,14 @@ namespace ProyectoWeb.Controllers
                 oNivel.HoraInicio = Convert.ToDateTime(oNivel.TextoHoraInicio, new CultureInfo("es-ES"));
                 oNivel.HoraFin = Convert.ToDateTime(oNivel.TextoHoraFin, new CultureInfo("es-ES"));
 
-                if (oNivel.IdNivel == 0)
+               /* if (oNivel.IdNivel == 0)
                 {
                     respuesta = CD_Formato424.Registrar(oNivel);
                 }
                 else
                 {
                     respuesta = CD_Formato424.Editar(oNivel);
-                }
+                }*/
 
             }
             catch
