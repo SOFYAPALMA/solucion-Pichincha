@@ -137,7 +137,6 @@
     <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="Models\Form424CrearDetalle.cs" />
     <Compile Include="Models\Form424CrearEncabezado.cs" />
-    <Compile Include="Models\Form425CrearEncabezado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
