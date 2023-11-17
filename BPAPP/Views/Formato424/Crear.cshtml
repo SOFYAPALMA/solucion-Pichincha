@@ -50,7 +50,7 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.AperturaDigital, htmlAttributes: new { @class = "control-label" })
                             <div>
-                                @Html.DropDownList("AperturaDigital", (SelectList)ViewBag.TipodeProductoDeposito, "Seleccione..", new { @class = "form-control" })
+                                @Html.DropDownList("AperturaDigital", (SelectList)ViewBag.AperturaDeposito, "Seleccione..", new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.AperturaDigital, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -59,7 +59,7 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.GrupoPoblacional, htmlAttributes: new { @class = "control-label" })
                             <div>
-                                @Html.DropDownList("GrupoPoblacional", (SelectList)ViewBag.TipodeProductoDeposito, "Seleccione..", new { @class = "form-control" })
+                                @Html.DropDownList("GrupoPoblacional", (SelectList)ViewBag.GrupoPoblacional, "Seleccione..", new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.GrupoPoblacional, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.ObservacionesCuotadeManejo, htmlAttributes: new { @class = "control-label" })
                             <div>
-                                @Html.DropDownList("ObservacionesCuotadeManejo", (SelectList)ViewBag.TipodeProductoDeposito, "Seleccione..", new { @class = "form-control" })
+                                @Html.DropDownList("ObservacionesCuotadeManejo", (SelectList)ViewBag.ObservacionesCuotadeManejo, "Seleccione..", new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.ObservacionesCuotadeManejo, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -77,7 +77,7 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.Ingresos, htmlAttributes: new { @class = "control-label" })
                             <div>
-                                @Html.DropDownList("Ingresos", (SelectList)ViewBag.TipodeProductoDeposito, "Seleccione..", new { @class = "form-control" })
+                                @Html.DropDownList("Ingresos", (SelectList)ViewBag.Ingresos, "Seleccione..", new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.Ingresos, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -86,7 +86,7 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.ServicioGratuitoCuentadeAhorros1, htmlAttributes: new { @class = "control-label" })
                             <div>
-                                @Html.DropDownList("ServicioGratuitoCuentadeAhorros1", (SelectList)ViewBag.TipodeProductoDeposito, "Seleccione..", new { @class = "form-control" })
+                                @Html.DropDownList("ServicioGratuitoCuentadeAhorros1", (SelectList)ViewBag.ServicioGratuitoCuentadeAhorros, "Seleccione..", new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.ServicioGratuitoCuentadeAhorros1, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -95,7 +95,7 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.ServicioGratuitoCuentadeAhorros2, htmlAttributes: new { @class = "control-label" })
                             <div>
-                                @Html.DropDownList("ServicioGratuitoCuentadeAhorros2", (SelectList)ViewBag.TipodeProductoDeposito, "Seleccione..", new { @class = "form-control" })
+                                @Html.DropDownList("ServicioGratuitoCuentadeAhorros2", (SelectList)ViewBag.ServicioGratuitoCuentadeAhorros, "Seleccione..", new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.ServicioGratuitoCuentadeAhorros2, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -104,7 +104,7 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.ServicioGratuitoCuentadeAhorros3, htmlAttributes: new { @class = "control-label" })
                             <div>
-                                @Html.DropDownList("ServicioGratuitoCuentadeAhorros3", (SelectList)ViewBag.TipodeProductoDeposito, "Seleccione..", new { @class = "form-control" })
+                                @Html.DropDownList("ServicioGratuitoCuentadeAhorros3", (SelectList)ViewBag.ServicioGratuitoCuentadeAhorros, "Seleccione..", new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.ServicioGratuitoCuentadeAhorros3, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -113,7 +113,7 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.ServicioGratuitoTarjetaDebito1, htmlAttributes: new { @class = "control-label" })
                             <div>
-                                @Html.DropDownList("ServicioGratuitoTarjetaDebito1", (SelectList)ViewBag.TipodeProductoDeposito, "Seleccione..", new { @class = "form-control" })
+                                @Html.DropDownList("ServicioGratuitoTarjetaDebito1", (SelectList)ViewBag.ServicioGratuitoTarjetaDebito, "Seleccione..", new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.ServicioGratuitoTarjetaDebito1, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -122,7 +122,7 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.ServicioGratuitoTarjetaDebito2, htmlAttributes: new { @class = "control-label" })
                             <div>
-                                @Html.DropDownList("ServicioGratuitoTarjetaDebito2", (SelectList)ViewBag.TipodeProductoDeposito, "Seleccione..", new { @class = "form-control" })
+                                @Html.DropDownList("ServicioGratuitoTarjetaDebito2", (SelectList)ViewBag.ServicioGratuitoTarjetaDebito, "Seleccione..", new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.ServicioGratuitoTarjetaDebito2, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -131,7 +131,7 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.ServicioGratuitoTarjetaDebito3, htmlAttributes: new { @class = "control-label" })
                             <div>
-                                @Html.DropDownList("ServicioGratuitoTarjetaDebito3", (SelectList)ViewBag.TipodeProductoDeposito, "Seleccione..", new { @class = "form-control" })
+                                @Html.DropDownList("ServicioGratuitoTarjetaDebito3", (SelectList)ViewBag.ServicioGratuitoTarjetaDebito, "Seleccione..", new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.ServicioGratuitoTarjetaDebito3, "", new { @class = "text-danger" })
                             </div>
                         </div>

@@ -48,13 +48,8 @@ namespace ProyectoWeb.Controllers
             List<Dominio> grupoPoblacional = CD_Dominios.Obtener(3);
             List<Dominio> ingresos = CD_Dominios.Obtener(4);
             List<Dominio> observacionesCuotadeManejo = CD_Dominios.Obtener(5);
-            List<Dominio> servicioGratuitoCuentadeAhorros1 = CD_Dominios.Obtener(6);
-            List<Dominio> servicioGratuitoCuentadeAhorros2 = CD_Dominios.Obtener(6);
-            List<Dominio> servicioGratuitoCuentadeAhorros3 = CD_Dominios.Obtener(6);
-            List<Dominio> servicioGratuitoTarjetaDebito1 = CD_Dominios.Obtener(9);
-            List<Dominio> servicioGratuitoTarjetaDebito2 = CD_Dominios.Obtener(9);
-            List<Dominio> servicioGratuitoTarjetaDebito3 = CD_Dominios.Obtener(9);
-
+            List<Dominio> servicioGratuitoCuentadeAhorros = CD_Dominios.Obtener(6);
+            List<Dominio> servicioGratuitoTarjetaDebito = CD_Dominios.Obtener(9);
 
             if (tipodeProductoDeposito.Count() == 0)
             {
@@ -86,42 +81,18 @@ namespace ProyectoWeb.Controllers
             }
             ViewBag.ObservacionesCuotadeManejo = new SelectList(observacionesCuotadeManejo, "IdDominio", "Nombre");
 
-            if (servicioGratuitoCuentadeAhorros1.Count() == 0)
+            if (servicioGratuitoCuentadeAhorros.Count() == 0)
             {
-                ModelState.AddModelError("ServicioGratuitoCuentadeAhorros1", "No se encuentra valores para la lista de Servicio Gratuito Cuenta de Ahorros1");
+                ModelState.AddModelError("ServicioGratuitoCuentadeAhorros1", "No se encuentra valores para la lista de Servicio Gratuito Cuenta de Ahorros");
             }
-            ViewBag.ServicioGratuitoCuentadeAhorros1 = new SelectList(servicioGratuitoCuentadeAhorros1, "IdDominio", "Nombre");
+            ViewBag.ServicioGratuitoCuentadeAhorros = new SelectList(servicioGratuitoCuentadeAhorros, "IdDominio", "Nombre");
 
-            if (servicioGratuitoCuentadeAhorros2.Count() == 0)
+
+            if (servicioGratuitoTarjetaDebito.Count() == 0)
             {
-                ModelState.AddModelError("ServicioGratuitoCuentadeAhorros2", "No se encuentra valores para la lista de Servicio Gratuito Cuenta de Ahorros2");
+                ModelState.AddModelError("ServicioGratuitoTarjetaDebito1", "No se encuentra valores para la lista de Servicio Gratuito Tarjeta Debito");
             }
-            ViewBag.ServicioGratuitoCuentadeAhorros2 = new SelectList(servicioGratuitoCuentadeAhorros2, "IdDominio", "Nombre");
-
-            if (servicioGratuitoCuentadeAhorros3.Count() == 0)
-            {
-                ModelState.AddModelError("ServicioGratuitoCuentadeAhorros3", "No se encuentra valores para la lista de Servicio Gratuito Cuenta de Ahorros1");
-            }
-            ViewBag.ServicioGratuitoCuentadeAhorros3 = new SelectList(servicioGratuitoCuentadeAhorros3, "IdDominio", "Nombre");
-
-            if (servicioGratuitoTarjetaDebito1.Count() == 0)
-            {
-                ModelState.AddModelError("ServicioGratuitoTarjetaDebito1", "No se encuentra valores para la lista de Servicio Gratuito Tarjeta Debito1");
-            }
-            ViewBag.ServicioGratuitoTarjetaDebito1 = new SelectList(servicioGratuitoTarjetaDebito1, "IdDominio", "Nombre");
-
-            if (servicioGratuitoTarjetaDebito2.Count() == 0)
-            {
-                ModelState.AddModelError("ServicioGratuitoTarjetaDebito2", "No se encuentra valores para la lista de Servicio Gratuito Tarjeta Debito2");
-            }
-            ViewBag.ServicioGratuitoTarjetaDebito2 = new SelectList(servicioGratuitoTarjetaDebito2, "IdDominio", "Nombre");
-
-            if (servicioGratuitoTarjetaDebito3.Count() == 0)
-            {
-                ModelState.AddModelError("ServicioGratuitoTarjetaDebito3", "No se encuentra valores para la lista de Servicio Gratuito Tarjeta Debito3");
-            }
-            ViewBag.ServicioGratuitoTarjetaDebito3 = new SelectList(servicioGratuitoTarjetaDebito3, "IdDominio", "Nombre");
-
+            ViewBag.ServicioGratuitoTarjetaDebito = new SelectList(servicioGratuitoTarjetaDebito, "IdDominio", "Nombre");
         }
 
         [HttpPost]
