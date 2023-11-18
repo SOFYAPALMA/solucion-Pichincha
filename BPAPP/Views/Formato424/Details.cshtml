@@ -232,13 +232,18 @@
                     </div>
                 </div>
             </div>
-        </div>    
+        </div>
         <div class="card-footer">
             <div class="row">
                 <div class="col-sm-12 float-right">
                     <input type="button" onclick="Editar()" value="Editar" class="btn btn-primary btn-sm float-right" />
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 float-right">
+            @Html.ActionLink("Nuevo Detalle", "CrearDetalle/" + Model.idPropiedadesFormato)
         </div>
     </div>
 </div>

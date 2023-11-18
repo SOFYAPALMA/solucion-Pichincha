@@ -11,11 +11,21 @@ using System.Web.Mvc;
 namespace ProyectoWeb.Controllers
 {
     public class Formato424Controller : Controller
-    {
+    {        
+        
         public ActionResult Crear()
         {
             Form424CrearEncabezado form424 = new Form424CrearEncabezado();
-            LlenadoListas();
+            LlenadoListasEncabezado();
+            return View(form424);
+        }
+
+        public ActionResult CrearDetalle(int id)
+        {
+            Form424CrearDetalle form424 = new Form424CrearDetalle();
+            form424.idPropiedadesFormato = id;
+            LlenadoListasDetalle();
+
             return View(form424);
         }
 
@@ -36,13 +46,13 @@ namespace ProyectoWeb.Controllers
                 else
                 {
                     ModelState.AddModelError("", "No se pudo crear el encabezado, por favor valide los datos.");
-                    LlenadoListas();  
+                    LlenadoListasEncabezado();  
                     return View(form424);
                 }
             }
             else
             {
-                LlenadoListas();
+                LlenadoListasEncabezado();
                 return View(form424);
             }
         }
@@ -50,7 +60,7 @@ namespace ProyectoWeb.Controllers
         public ActionResult Update()
         {
             Form424CrearEncabezado form424 = new Form424CrearEncabezado();
-            LlenadoListas();
+            LlenadoListasEncabezado();
             return View(form424);
         }
 
@@ -58,7 +68,7 @@ namespace ProyectoWeb.Controllers
         {
             Formulario424_EncabezadoConsulta encabezado = DatosFormato424.Detalles(id);
             Form424ConsultaEncabezado form424 = Mapper.getMapper(encabezado);
-            LlenadoListas();
+            LlenadoListasEncabezado();
             return View(form424);
         }
 
@@ -73,7 +83,7 @@ namespace ProyectoWeb.Controllers
         /// <summary>
         /// Llena las listas que requiere el controlador
         /// </summary>
-        private void LlenadoListas()
+        private void LlenadoListasEncabezado()
         {
             List<Dominio> tipodeProductoDeposito = CD_Dominios.Obtener(1);
             List<Dominio> aperturaDeposito = CD_Dominios.Obtener(2);
@@ -127,42 +137,12 @@ namespace ProyectoWeb.Controllers
             ViewBag.ServicioGratuitoTarjetaDebito = new SelectList(servicioGratuitoTarjetaDebito, "IdDominio", "Nombre");
         }
 
-        [HttpPost]
-        public JsonResult Guardar(Formato424 oNivel)
+        /// <summary>
+        /// Llena las listas que requiere el controlador
+        /// </summary>
+        private void LlenadoListasDetalle()
         {
-            bool respuesta = true;
 
-            try
-            {
-                oNivel.HoraInicio = Convert.ToDateTime(oNivel.TextoHoraInicio, new CultureInfo("es-ES"));
-                oNivel.HoraFin = Convert.ToDateTime(oNivel.TextoHoraFin, new CultureInfo("es-ES"));
-
-               /* if (oNivel.IdNivel == 0)
-                {
-                    respuesta = CD_Formato424.Registrar(oNivel);
-                }
-                else
-                {
-                    respuesta = CD_Formato424.Editar(oNivel);
-                }*/
-
-            }
-            catch
-            {
-
-                respuesta = false;
-            }
-
-
-            return Json(new { resultado = respuesta }, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpGet]
-        public JsonResult Eliminar(int idnivel = 0)
-        {
-            bool respuesta = CD_Formato424.Eliminar(idnivel);
-
-            return Json(new { resultado = respuesta }, JsonRequestBehavior.AllowGet);
         }
 
     }
