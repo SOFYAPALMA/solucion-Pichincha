@@ -20,8 +20,6 @@ namespace CapaDatos
                 cmd.Parameters.Add("IndicadorTermina", SqlDbType.Bit).Direction = ParameterDirection.Output;
                 cmd.CommandType = CommandType.StoredProcedure;
 
-
-
                 try
                 {
                     oConexion.Open();
@@ -95,20 +93,19 @@ namespace CapaDatos
             }
         }
 
-
-        public static bool RegistrarEncabezado(Formulario424_Encabezado obj)
+        public static bool RegistrarEncabezado2(Formulario424_Encabezado obj)
         {
             bool respuesta = true;
             using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("spInsertaPropiedadesDepositos", oConexion);
+                    SqlCommand cmd = new SqlCommand("bpapp.spInsertaPropiedadesDepositos", oConexion);
+                    cmd.Parameters.AddWithValue("@TipodeProductoDeposito", obj.TipodeProductoDeposito);
                     cmd.Parameters.AddWithValue("Tipo", obj.Tipo);
                     cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
                     cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
-                    cmd.Parameters.AddWithValue("NombreComercial", obj.NombreComercial);
-                    cmd.Parameters.AddWithValue("TipodeProductoDeposito", obj.TipodeProductoDeposito);
+                    cmd.Parameters.AddWithValue("NombreComercial", obj.NombreComercial);                    
                     cmd.Parameters.AddWithValue("AperturaDigital", obj.AperturaDigital);
                     cmd.Parameters.AddWithValue("NumerodeClientesUnicos", obj.NumerodeClientesUnicos);
                     cmd.Parameters.AddWithValue("CuotadeManejo", obj.CuotadeManejo);
@@ -122,12 +119,6 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("ServicioGratuitoTarjetaDebito2", obj.ServicioGratuitoTarjetaDebito2);
                     cmd.Parameters.AddWithValue("ServicioGratuitoTarjetaDebito3", obj.ServicioGratuitoTarjetaDebito3);
                     cmd.Parameters.AddWithValue("Ingresos", obj.Ingresos);
-
-
-                    /*cmd.Parameters.AddWithValue("DescripcionTurno", obj.DescripcionTurno);
-                    cmd.Parameters.AddWithValue("HoraInicio", obj.HoraInicio);
-                    cmd.Parameters.AddWithValue("HoraFin", obj.HoraFin);
-                    */
 
                     cmd.Parameters.Add("IndicadorTermina", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("IdPropiedadesFomato", SqlDbType.Bit).Direction = ParameterDirection.Output;
@@ -144,9 +135,59 @@ namespace CapaDatos
                 }
                 catch (Exception ex)
                 {
-                    respuesta = false;
+                    throw new Exception("Error en RegistrarEncabezado", ex);
                 }
+            }
 
+            return respuesta;
+
+        }
+
+        public static bool RegistrarEncabezado(Formulario424_Encabezado obj)
+        {
+            bool respuesta = true;
+            using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("bpapp.spInsertaPropiedadesDepositos", oConexion);
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("Tipo", obj.Tipo);
+                    cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
+                    cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
+                    cmd.Parameters.AddWithValue("NombreComercial", obj.NombreComercial);
+                    cmd.Parameters.AddWithValue("TipoProductoDeposito", obj.TipodeProductoDeposito);
+                    cmd.Parameters.AddWithValue("AperturaDigital", obj.AperturaDigital);
+                    cmd.Parameters.AddWithValue("NumeroClientes", obj.NumerodeClientesUnicos);
+                    cmd.Parameters.AddWithValue("CuotaManejo", obj.CuotadeManejo);
+                    cmd.Parameters.AddWithValue("ObservacionesCuota", obj.ObservacionesCuotadeManejo);
+                    cmd.Parameters.AddWithValue("GrupoPoblacional", obj.GrupoPoblacional);
+                    cmd.Parameters.AddWithValue("Ingresos", obj.Ingresos);
+                    cmd.Parameters.AddWithValue("SerGratuito_CtaAHO", obj.ServicioGratuitoCuentadeAhorros1);
+                    cmd.Parameters.AddWithValue("SerGratuito_CtaAHO2", obj.ServicioGratuitoCuentadeAhorros2);
+                    cmd.Parameters.AddWithValue("SerGratuito_CtaAHO3", obj.ServicioGratuitoCuentadeAhorros3);
+                    cmd.Parameters.AddWithValue("SerGratuito_TCRDebito", obj.ServicioGratuitoTarjetaDebito1);
+                    cmd.Parameters.AddWithValue("SerGratuito_TCRDebito2", obj.ServicioGratuitoTarjetaDebito2);
+                    cmd.Parameters.AddWithValue("SerGratuito_TCRDebito3", obj.ServicioGratuitoTarjetaDebito3);
+                    cmd.Parameters.AddWithValue("Usuario", obj.Usuario ?? "1");
+
+                    cmd.Parameters.Add("IndicadorTermina", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("IdPropiedadesFomato", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("MensajeSalida", SqlDbType.VarChar, 256).Direction = ParameterDirection.Output;
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    oConexion.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    respuesta = Convert.ToBoolean(cmd.Parameters["IndicadorTermina"].Value);
+                    Mensaje = cmd.Parameters["MensajeSalida"].Value.ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error en RegistrarEncabezado", ex);
+                }
             }
 
             return respuesta;

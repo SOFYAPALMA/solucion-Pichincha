@@ -2057,6 +2057,10 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BP.Repositorio\BP.Repositorio.csproj">
+      <Project>{F04E7ED7-AA2C-4B14-9D6C-4F34D5B537D7}</Project>
+      <Name>BP.Repositorio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
       <Project>{148bb708-761c-4c4f-9efb-652a9cbe8268}</Project>
       <Name>CapaDatos</Name>

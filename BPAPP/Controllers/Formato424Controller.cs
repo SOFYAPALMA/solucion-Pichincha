@@ -1,4 +1,5 @@
-﻿using CapaDatos;
+﻿using BP.Repositorio;
+using CapaDatos;
 using CapaModelo;
 using ProyectoWeb.Models;
 using System;
@@ -24,7 +25,7 @@ namespace ProyectoWeb.Controllers
             if (ModelState.IsValid)
             {
                 Formulario424_Encabezado encabezado = Mapper.getMapper(form424);
-                bool respuesta = CD_Formato424.RegistrarEncabezado(encabezado);
+                bool respuesta = DatosFormato424.RegistrarEncabezado(encabezado);
 
                 if(respuesta)
                 {

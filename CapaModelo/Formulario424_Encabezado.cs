@@ -6,9 +6,12 @@ namespace CapaModelo
     {
         public int Tipo { get; set; }
         public int Codigo { get; set; }
-        public String Nombre { get; set; }
+        public string Nombre { get; set; }
+
+        public string Usuario { get; set; }
+
         public DateTime FechaHora { get; set; }
-        public String NombreComercial { get; set; }
+        public string NombreComercial { get; set; }
         public int TipodeProductoDeposito { get; set; }
         public int AperturaDigital { get; set; }
         public int NumerodeClientesUnicos { get; set; }
