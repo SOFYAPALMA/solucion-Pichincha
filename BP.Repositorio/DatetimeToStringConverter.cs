@@ -2,7 +2,7 @@
 using System;
 using System.Globalization;
 
-namespace CapaDatos
+namespace BP.Repositorio
 {
     public class DatetimeToStringConverter : JsonConverter
     {

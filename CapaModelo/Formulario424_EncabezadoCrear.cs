@@ -2,7 +2,7 @@
 
 namespace CapaModelo
 {
-    public class Formulario424_Encabezado
+    public class Formulario424_EncabezadoCrear
     {
         public int Tipo { get; set; }
         public int Codigo { get; set; }

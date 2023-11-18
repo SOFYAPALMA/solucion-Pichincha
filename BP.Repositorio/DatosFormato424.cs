@@ -1,5 +1,7 @@
 ﻿using CapaModelo;
+using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace BP.Repositorio
@@ -26,7 +28,7 @@ namespace BP.Repositorio
         #endregion
         public static string Mensaje { get; private set; }
 
-        public static bool RegistrarEncabezado(Formulario424_Encabezado obj)
+        public static bool RegistrarEncabezado(Formulario424_EncabezadoCrear obj)
         {
             Instanciar();
             bool respuesta = false;
@@ -68,6 +70,76 @@ namespace BP.Repositorio
             }
 
             return respuesta;
+        }
+
+        public static Formulario424_EncabezadoConsulta Detalles(int FormatoId)
+        {
+            try
+            {
+                Formulario424_EncabezadoConsulta rpt = new Formulario424_EncabezadoConsulta();
+                limpiarParametros();
+                AdicionarParametros("idPropiedadesFormato", FormatoId);
+                AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
+
+                DataTable dt = ejecutarStoreProcedure("bpapp.spConsultaPropiedadesDepositos").Tables[0];
+
+                if (dt.Rows.Count > 0)
+                {
+                    var dictionary = new Dictionary<string, object>();
+                    foreach (DataColumn column in dt.Columns)
+                    {
+                        dictionary[column.ColumnName] = dt.Rows[0][column];
+                    }
+
+                    string serializedObject = JsonConvert.SerializeObject(dictionary, new DatetimeToStringConverter());
+
+                    rpt = JsonConvert.DeserializeObject<Formulario424_EncabezadoConsulta>(serializedObject);
+                }
+
+                return rpt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en Detalles", ex);
+            }
+        }
+
+        public static List<Formulario424_EncabezadoConsulta> Lista()
+        {
+            try
+            {
+                List<Formulario424_EncabezadoConsulta> rpt = new List<Formulario424_EncabezadoConsulta>();
+                limpiarParametros();
+                AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
+
+                DataTable dt = ejecutarStoreProcedure("bpapp.spConsultaPropiedadesDepositos").Tables[0];
+
+                if (dt.Rows.Count > 0)
+                {
+                    List<Dictionary<string, object>> list = new List<Dictionary<string, object>>();
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        var dictionary = new Dictionary<string, object>();
+                        foreach (DataColumn column in dt.Columns)
+                        {
+                            dictionary[column.ColumnName] = row[column];
+                        }
+
+                        list.Add(dictionary);
+                    }
+
+                    string serializedObject = JsonConvert.SerializeObject(list, new DatetimeToStringConverter());
+
+                    rpt = JsonConvert.DeserializeObject<List<Formulario424_EncabezadoConsulta>>(serializedObject);
+                }
+
+                return rpt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en Detalles", ex);
+            }
         }
     }
 }

@@ -11,9 +11,9 @@ namespace CapaDatos
     {
         public static string Mensaje { get; private set; }
 
-        public static List<Formulario424_Encabezado> Listar()
+        public static List<Formulario424_EncabezadoCrear> Listar()
         {
-            List<Formulario424_Encabezado> rptLista = new List<Formulario424_Encabezado>();
+            List<Formulario424_EncabezadoCrear> rptLista = new List<Formulario424_EncabezadoCrear>();
             using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
             {
                 SqlCommand cmd = new SqlCommand("spConsultaPropiedadesDepositos", oConexion);
@@ -26,7 +26,7 @@ namespace CapaDatos
                     SqlDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
-                        rptLista.Add(new Formulario424_Encabezado()
+                        rptLista.Add(new Formulario424_EncabezadoCrear()
                         {
                             /*
                             IdNivel = Convert.ToInt32(dr["IdNivel"].ToString()),
@@ -52,98 +52,7 @@ namespace CapaDatos
             }
         }
 
-        public static Formulario424_Encabezado Detalles(int FormatoId)
-        {
-            Formulario424_Encabezado rpt = new Formulario424_Encabezado();
-            using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
-            {
-                SqlCommand cmd = new SqlCommand("spConsultaPropiedadesDepositos", oConexion);
-                cmd.Parameters.AddWithValue("idPropiedadesFormato", FormatoId);
-                cmd.Parameters.Add("IndicadorTermina", SqlDbType.Bit).Direction = ParameterDirection.Output;
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                try
-                {
-                    oConexion.Open();
-                    SqlDataReader dr = cmd.ExecuteReader();
-
-                    while (dr.Read())
-                    {
-                        var dictionary = new Dictionary<string, object>();
-                        foreach (DataRow column in dr.GetSchemaTable().Rows)
-                        {
-                            string colName = column.Field<string>("ColumnName");
-                            dictionary[colName] = dr[colName];
-                        }
-
-                        string serializedObject = JsonConvert.SerializeObject(dictionary, new DatetimeToStringConverter());
-
-                        Formulario424_Encabezado cliente = JsonConvert.DeserializeObject<Formulario424_Encabezado>(serializedObject);
-                    }
-                    dr.Close();
-
-                    return rpt;
-
-                }
-                catch (Exception ex)
-                {
-                    rpt = null;
-                    return rpt;
-                }
-            }
-        }
-
-        public static bool RegistrarEncabezado2(Formulario424_Encabezado obj)
-        {
-            bool respuesta = true;
-            using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
-            {
-                try
-                {
-                    SqlCommand cmd = new SqlCommand("bpapp.spInsertaPropiedadesDepositos", oConexion);
-                    cmd.Parameters.AddWithValue("@TipodeProductoDeposito", obj.TipodeProductoDeposito);
-                    cmd.Parameters.AddWithValue("Tipo", obj.Tipo);
-                    cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
-                    cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
-                    cmd.Parameters.AddWithValue("NombreComercial", obj.NombreComercial);                    
-                    cmd.Parameters.AddWithValue("AperturaDigital", obj.AperturaDigital);
-                    cmd.Parameters.AddWithValue("NumerodeClientesUnicos", obj.NumerodeClientesUnicos);
-                    cmd.Parameters.AddWithValue("CuotadeManejo", obj.CuotadeManejo);
-                    cmd.Parameters.AddWithValue("ObservacionesCuotadeManejo", obj.ObservacionesCuotadeManejo);
-                    cmd.Parameters.AddWithValue("GrupoPoblacional", obj.GrupoPoblacional);
-                    cmd.Parameters.AddWithValue("CuotadeManejo", obj.CuotadeManejo);
-                    cmd.Parameters.AddWithValue("ServicioGratuitoCuentadeAhorros1", obj.ServicioGratuitoCuentadeAhorros1);
-                    cmd.Parameters.AddWithValue("ServicioGratuitoCuentadeAhorros2", obj.ServicioGratuitoCuentadeAhorros2);
-                    cmd.Parameters.AddWithValue("ServicioGratuitoCuentadeAhorros3", obj.ServicioGratuitoCuentadeAhorros3);
-                    cmd.Parameters.AddWithValue("ServicioGratuitoTarjetaDebito1", obj.ServicioGratuitoTarjetaDebito1);
-                    cmd.Parameters.AddWithValue("ServicioGratuitoTarjetaDebito2", obj.ServicioGratuitoTarjetaDebito2);
-                    cmd.Parameters.AddWithValue("ServicioGratuitoTarjetaDebito3", obj.ServicioGratuitoTarjetaDebito3);
-                    cmd.Parameters.AddWithValue("Ingresos", obj.Ingresos);
-
-                    cmd.Parameters.Add("IndicadorTermina", SqlDbType.Bit).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("IdPropiedadesFomato", SqlDbType.Bit).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("MensajeSalida", SqlDbType.Bit).Direction = ParameterDirection.Output;
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    oConexion.Open();
-
-                    cmd.ExecuteNonQuery();
-
-                    respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
-                    Mensaje = cmd.Parameters["MensajeSalida"].Value.ToString();
-
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Error en RegistrarEncabezado", ex);
-                }
-            }
-
-            return respuesta;
-
-        }
-
-        public static bool RegistrarEncabezado(Formulario424_Encabezado obj)
+        public static bool RegistrarEncabezado(Formulario424_EncabezadoCrear obj)
         {
             bool respuesta = true;
             using (SqlConnection oConexion = new SqlConnection(Conexion.CN))

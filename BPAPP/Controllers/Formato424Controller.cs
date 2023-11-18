@@ -24,7 +24,7 @@ namespace ProyectoWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                Formulario424_Encabezado encabezado = Mapper.getMapper(form424);
+                Formulario424_EncabezadoCrear encabezado = Mapper.getMapper(form424);
                 bool respuesta = DatosFormato424.RegistrarEncabezado(encabezado);
 
                 if(respuesta)
@@ -54,18 +54,21 @@ namespace ProyectoWeb.Controllers
             return View(form424);
         }
 
-        public ActionResult Details()
+        public ActionResult Details(int id)
         {
-            Form424CrearEncabezado form424 = new Form424CrearEncabezado();
+            Formulario424_EncabezadoConsulta encabezado = DatosFormato424.Detalles(id);
+            Form424ConsultaEncabezado form424 = Mapper.getMapper(encabezado);
             LlenadoListas();
             return View(form424);
         }
 
-        /*public JsonResult Listar()
+        public ActionResult List()
         {
-            List<Formato424> oListaNivel = CD_Formato424.Listar();
-            return Json(new { data = oListaNivel }, JsonRequestBehavior.AllowGet);
-        }*/
+            List<Formulario424_EncabezadoConsulta> encabezados = DatosFormato424.Lista();
+            List<Form424ConsultaEncabezado> form424 = Mapper.getMapper(encabezados);
+
+            return View(form424);
+        }
 
         /// <summary>
         /// Llena las listas que requiere el controlador

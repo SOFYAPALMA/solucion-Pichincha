@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ProyectoWeb.Models.Form424ConsultaEncabezado>
+
+@{
+    ViewBag.Title = "Lista de formulario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>
+    @Html.ActionLink("Nueva", "Crear")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idPropiedadesFormato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha_horaActualizacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreComercial)
+        </th>        
+        <th>
+            @Html.DisplayNameFor(model => model.Usuario)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idPropiedadesFormato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha_horaActualizacion)
+        </td>   
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreComercial)
+        </td>       
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuario)
+        </td>
+        <td>
+            @Html.ActionLink("Detalles", "Details", new {  id=item.idPropiedadesFormato }) 
+        </td>
+    </tr>
+}
+
+</table>

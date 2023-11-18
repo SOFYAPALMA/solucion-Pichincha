@@ -1,4 +1,4 @@
-﻿@model ProyectoWeb.Models.Form424CrearEncabezado
+﻿@model ProyectoWeb.Models.Form424ConsultaEncabezado
 
 @{
     ViewBag.Title = "Detalles Formulario";
@@ -79,11 +79,11 @@
                 <div class="col-sm-4">
                     <div class="form-group">
                         <div>
-                            @Html.DisplayNameFor(model => model.TipodeProductoDeposito)
+                            @Html.DisplayNameFor(model => model.TipoProductoDeposito)
                         </div>
 
                         <div>
-                            @Html.DisplayFor(model => model.TipodeProductoDeposito)
+                            @Html.DisplayFor(model => model.TipoProductoDeposito)
                         </div>
                     </div>
                 </div>
@@ -103,23 +103,11 @@
                 <div class="col-sm-4">
                     <div class="form-group">
                         <div>
-                            @Html.DisplayNameFor(model => model.NumerodeClientesUnicos)
+                            @Html.DisplayNameFor(model => model.NumeroClientes)
                         </div>
 
                         <div>
-                            @Html.DisplayFor(model => model.NumerodeClientesUnicos)
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        <div>
-                            @Html.DisplayNameFor(model => model.CuotadeManejo)
-                        </div>
-
-                        <div>
-                            @Html.DisplayFor(model => model.CuotadeManejo)
+                            @Html.DisplayFor(model => model.NumeroClientes)
                         </div>
                     </div>
                 </div>
@@ -127,11 +115,23 @@
                 <div class="col-sm-4">
                     <div class="form-group">
                         <div>
-                            @Html.DisplayNameFor(model => model.ObservacionesCuotadeManejo)
+                            @Html.DisplayNameFor(model => model.CuotaManejo)
                         </div>
 
                         <div>
-                            @Html.DisplayFor(model => model.ObservacionesCuotadeManejo)
+                            @Html.DisplayFor(model => model.CuotaManejo)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.ObservacionesCuota)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.ObservacionesCuota)
                         </div>
                     </div>
                 </div>
@@ -163,23 +163,11 @@
                 <div class="col-sm-4">
                     <div class="form-group">
                         <div>
-                            @Html.DisplayNameFor(model => model.ServicioGratuitoCuentadeAhorros1)
+                            @Html.DisplayNameFor(model => model.SerGratuito_CtaAH1)
                         </div>
 
                         <div>
-                            @Html.DisplayFor(model => model.ServicioGratuitoCuentadeAhorros1)
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        <div>
-                            @Html.DisplayNameFor(model => model.ServicioGratuitoCuentadeAhorros2)
-                        </div>
-
-                        <div>
-                            @Html.DisplayFor(model => model.ServicioGratuitoCuentadeAhorros2)
+                            @Html.DisplayFor(model => model.SerGratuito_CtaAH1)
                         </div>
                     </div>
                 </div>
@@ -187,23 +175,11 @@
                 <div class="col-sm-4">
                     <div class="form-group">
                         <div>
-                            @Html.DisplayNameFor(model => model.ServicioGratuitoCuentadeAhorros3)
+                            @Html.DisplayNameFor(model => model.SerGratuito_CtaAH2)
                         </div>
 
                         <div>
-                            @Html.DisplayFor(model => model.ServicioGratuitoCuentadeAhorros3)
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        <div>
-                            @Html.DisplayNameFor(model => model.ServicioGratuitoTarjetaDebito1)
-                        </div>
-
-                        <div>
-                            @Html.DisplayFor(model => model.ServicioGratuitoTarjetaDebito1)
+                            @Html.DisplayFor(model => model.SerGratuito_CtaAH2)
                         </div>
                     </div>
                 </div>
@@ -211,11 +187,11 @@
                 <div class="col-sm-4">
                     <div class="form-group">
                         <div>
-                            @Html.DisplayNameFor(model => model.ServicioGratuitoTarjetaDebito2)
+                            @Html.DisplayNameFor(model => model.SerGratuito_CtaAH3)
                         </div>
 
                         <div>
-                            @Html.DisplayFor(model => model.ServicioGratuitoTarjetaDebito2)
+                            @Html.DisplayFor(model => model.SerGratuito_CtaAH3)
                         </div>
                     </div>
                 </div>
@@ -223,11 +199,35 @@
                 <div class="col-sm-4">
                     <div class="form-group">
                         <div>
-                            @Html.DisplayNameFor(model => model.ServicioGratuitoTarjetaDebito3)
+                            @Html.DisplayNameFor(model => model.SerGratuito_TCRDebito1)
                         </div>
 
                         <div>
-                            @Html.DisplayFor(model => model.ServicioGratuitoTarjetaDebito3)
+                            @Html.DisplayFor(model => model.SerGratuito_TCRDebito1)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.SerGratuito_TCRDebito2)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.SerGratuito_TCRDebito2)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.SerGratuito_TCRDebito3)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.SerGratuito_TCRDebito3)
                         </div>
                     </div>
                 </div>
