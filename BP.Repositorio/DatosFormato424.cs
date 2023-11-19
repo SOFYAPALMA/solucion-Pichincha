@@ -72,6 +72,41 @@ namespace BP.Repositorio
             return respuesta;
         }
 
+        public static bool RegistrarEncabezadoDetalle(Formulario424_Detalle obj)
+        {
+            Instanciar();
+            bool respuesta = false;
+
+            try
+            {
+                limpiarParametros();
+                AdicionarParametros("@idPropiedadesFormato", obj.idPropiedadesFormato);
+                AdicionarParametros("@subCuenta", obj.Subcuentas);
+                AdicionarParametros("@idOperacionServicio", obj.OperacionoServicio);
+                AdicionarParametros("@idCanal", obj.Canal);
+                AdicionarParametros("@NumOperServiciosCuotamanejo", obj.NumerodeOperacionoServiciosIncluidosenCuotadeManejo);
+                AdicionarParametros("@CostoFijo", obj.CostoFijo);
+                AdicionarParametros("@CostoProporcionOperacionServicio", obj.CostoProporcionalalaOperacionoServicio);
+                AdicionarParametros("@idObservaciones", obj.Observaciones);
+                AdicionarParametros("@UnidadCaptura", obj.UnidadCaptura);
+
+                AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
+                AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
+
+                ejecutarScalar("bpapp.spInsertaDetalleDeposito");
+
+                respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
+                Mensaje = RecuperarParametrosOut("MensajeSalida");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en RegistrarEncabezadoDetalle", ex);
+            }
+
+            return respuesta;
+        }
+
+
         public static bool ActualizarEncabezado(Formulario424_EncabezadoActualizar obj)
         {
             Instanciar();
@@ -110,7 +145,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
-                throw new Exception("Error en RegistrarEncabezado", ex);
+                throw new Exception("Error en ActualizarEncabezado", ex);
             }
 
             return respuesta;

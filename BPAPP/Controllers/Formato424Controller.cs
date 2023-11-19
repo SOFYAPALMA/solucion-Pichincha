@@ -63,6 +63,35 @@ namespace ProyectoWeb.Controllers
             }
         }
 
+        [HttpPost]
+        public ActionResult CrearDetalle(Form424CrearDetalle form424)
+        {
+            if (ModelState.IsValid)
+            {
+                Formulario424_Detalle encabezado = Mapper.getMapper(form424);
+
+                bool respuesta = DatosFormato424.RegistrarEncabezadoDetalle(encabezado);
+
+                if (respuesta)
+                {
+                    TempData["Notificacion"] = CD_Formato424.Mensaje;
+
+                    return RedirectToAction("Details/" + form424.idPropiedadesFormato);
+                }
+                else
+                {
+                    ModelState.AddModelError("", "No se pudo crear el detalle, por favor valide los datos.");
+                    LlenadoListasDetalle();
+                    return View(form424);
+                }
+            }
+            else
+            {
+                LlenadoListasDetalle();
+                return View(form424);
+            }
+        }
+
         public ActionResult Update(int id)
         {
             Formulario424_EncabezadoConsulta encabezado = DatosFormato424.Detalles(id);
@@ -198,7 +227,7 @@ namespace ProyectoWeb.Controllers
             {
                 ModelState.AddModelError("Canal", "No se encuentra valores para la lista de tipo de Canal");
             }
-            ViewBag.Canal = new SelectList(idCanal, "canal", "Nombre");
+            ViewBag.Canal = new SelectList(idCanal, "IdDominio", "Nombre");
 
             if (CostoProporcionOperacionServicio.Count() == 0)
             {
@@ -210,7 +239,7 @@ namespace ProyectoWeb.Controllers
             {
                 ModelState.AddModelError("ID Observaciones", "No se encuentra valores para la lista de ID Observaciones");
             }
-            ViewBag.IDObservaciones = new SelectList(idObservaciones, "idObservaciones", "Nombre");
+            ViewBag.IDObservaciones = new SelectList(idObservaciones, "IdDominio", "Nombre");
 
         }
 
