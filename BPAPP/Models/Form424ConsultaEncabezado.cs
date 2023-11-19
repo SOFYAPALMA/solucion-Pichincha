@@ -12,7 +12,7 @@ namespace ProyectoWeb.Models
         public string AperturaDigital { get; set; }
 
         [Display(Name = "Codigo")]
-        public string Codigo { get; set; }
+        public int Codigo { get; set; }
         public string CodigoRegistro { get; set; }
 
         [Display(Name = "Cuota Manejo")]
@@ -72,11 +72,11 @@ namespace ProyectoWeb.Models
         public string SerGratuito_TCRDebito3 { get; set; }
 
         [Display(Name = "Tipo Entidad")]
-        public string Tipo { get; set; }
+        public int Tipo { get; set; }
 
         [Display(Name = "Tipo de Producto Deposito")]
         public string TipoProductoDeposito { get; set; }
-        public string Usuario { get; set; }
+        public int Usuario { get; set; }
 
     }
 }

@@ -236,7 +236,7 @@
         <div class="card-footer">
             <div class="row">
                 <div class="col-sm-12 float-right">
-                    <input type="button" onclick="Editar()" value="Editar" class="btn btn-primary btn-sm float-right" />
+                    @Html.ActionLink("Editar", "Update/" +  Model.idPropiedadesFormato, Model.idPropiedadesFormato, new { @class = "btn btn-primary btn-sm float-right" })
                 </div>
             </div>
         </div>
