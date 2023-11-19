@@ -124,5 +124,56 @@ namespace ProyectoWeb
             };
             return result;
         }
+
+        public static List<Form424ConsultaDetalle> getMapper(List<Formulario424_DetalleConsulta> obj)
+        {
+            List<Form424ConsultaDetalle> result = new List<Form424ConsultaDetalle>();
+
+            foreach (Formulario424_DetalleConsulta consulta in obj)
+            {
+                Form424ConsultaDetalle encabezado = getMapper(consulta);
+                result.Add(encabezado);
+            }
+
+            return result;
+        }
+
+        public static Form424ConsultaDetalle getMapper(Formulario424_DetalleConsulta obj)
+        {
+            var result = new Form424ConsultaDetalle()
+            {
+                idDetalle = obj.idDetalle,
+                idPropiedadesFormato = obj.idPropiedadesFormato,
+                Subcuenta = obj.Subcuenta,
+                idCanal = obj.idCanal,
+                Canal = obj.Canal,
+                NumOperServiciosCuotamanejo = obj.NumOperServiciosCuotamanejo,
+                CostoFijo = obj.CostoFijo,
+                CostoProporcionOperacionServicio = obj.CostoProporcionOperacionServicio,
+                idObservaciones = obj.idObservaciones,
+                Observaciones = obj.Observaciones,
+                UnidadCaptura = obj.UnidadCaptura,
+                idOperacionServicio = obj.idOperacionoServicio,
+                OperacionServicio = obj.OperacionServicio
+            };
+            return result;
+        }
+
+        public static Formulario424_Detalle getMapper(Form424CrearDetalle dto)
+        {
+            var result = new Formulario424_Detalle()
+            {
+                Subcuentas = dto.Subcuentas,
+                idCanal = dto.idCanal,
+                idOperacionoServicio = dto.idOperacionServicio,
+                NumOperServiciosCuotamanejo = dto.NumOperServiciosCuotamanejo,
+                CostoFijo = dto.CostoFijo,
+                CostoProporcionOperacionServicio = dto.CostoProporcionOperacionServicio,
+                idObservaciones = dto.idObservaciones,
+                idPropiedadesFormato = dto.idPropiedadesFormato,
+                UnidadCaptura = dto.UnidadCaptura
+            };
+            return result;
+        }
     }
 }

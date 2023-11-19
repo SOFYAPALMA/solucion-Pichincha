@@ -41,9 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Canal.cs" />
     <Compile Include="Dominio.cs" />
     <Compile Include="Formato425.cs" />
     <Compile Include="Formato426.cs" />
+    <Compile Include="Formulario424_DetalleConsulta.cs" />
     <Compile Include="Formulario424_Detalle.cs" />
     <Compile Include="Formulario424_EncabezadoConsulta.cs" />
     <Compile Include="Formulario424_EncabezadoActualizar.cs" />

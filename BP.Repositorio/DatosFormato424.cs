@@ -82,12 +82,12 @@ namespace BP.Repositorio
                 limpiarParametros();
                 AdicionarParametros("@idPropiedadesFormato", obj.idPropiedadesFormato);
                 AdicionarParametros("@subCuenta", obj.Subcuentas);
-                AdicionarParametros("@idOperacionServicio", obj.OperacionoServicio);
-                AdicionarParametros("@idCanal", obj.Canal);
-                AdicionarParametros("@NumOperServiciosCuotamanejo", obj.NumerodeOperacionoServiciosIncluidosenCuotadeManejo);
+                AdicionarParametros("@idOperacionServicio", obj.idOperacionoServicio);
+                AdicionarParametros("@idCanal", obj.idCanal);
+                AdicionarParametros("@NumOperServiciosCuotamanejo", obj.NumOperServiciosCuotamanejo);
                 AdicionarParametros("@CostoFijo", obj.CostoFijo);
-                AdicionarParametros("@CostoProporcionOperacionServicio", obj.CostoProporcionalalaOperacionoServicio);
-                AdicionarParametros("@idObservaciones", obj.Observaciones);
+                AdicionarParametros("@CostoProporcionOperacionServicio", obj.CostoProporcionOperacionServicio);
+                AdicionarParametros("@idObservaciones", obj.idObservaciones);
                 AdicionarParametros("@UnidadCaptura", obj.UnidadCaptura);
 
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
@@ -218,6 +218,45 @@ namespace BP.Repositorio
             catch (Exception ex)
             {
                 throw new Exception("Error en Detalles", ex);
+            }
+        }
+
+        public static List<Formulario424_DetalleConsulta> ListaDetalles(int FormatoId)
+        {
+            try
+            {
+                List<Formulario424_DetalleConsulta> rpt = new List<Formulario424_DetalleConsulta>();
+                limpiarParametros();
+                AdicionarParametros("idPropiedadesFormato", FormatoId);
+                AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
+
+                DataTable dt = ejecutarStoreProcedure("bpapp.spConsultaDetalleDeposito").Tables[0];
+
+                if (dt.Rows.Count > 0)
+                {
+                    List<Dictionary<string, object>> list = new List<Dictionary<string, object>>();
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        var dictionary = new Dictionary<string, object>();
+                        foreach (DataColumn column in dt.Columns)
+                        {
+                            dictionary[column.ColumnName] = row[column];
+                        }
+
+                        list.Add(dictionary);
+                    }
+
+                    string serializedObject = JsonConvert.SerializeObject(list, new DatetimeToStringConverter());
+
+                    rpt = JsonConvert.DeserializeObject<List<Formulario424_DetalleConsulta>>(serializedObject);
+                }
+
+                return rpt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en ListaDetalles", ex);
             }
         }
     }

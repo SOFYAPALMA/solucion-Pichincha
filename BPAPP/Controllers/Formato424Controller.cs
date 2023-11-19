@@ -2,9 +2,7 @@
 using CapaDatos;
 using CapaModelo;
 using ProyectoWeb.Models;
-using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -138,6 +136,11 @@ namespace ProyectoWeb.Controllers
         {
             Formulario424_EncabezadoConsulta encabezado = DatosFormato424.Detalles(id);
             Form424ConsultaEncabezado form424 = Mapper.getMapper(encabezado);
+
+            List<Formulario424_DetalleConsulta> encabezados = DatosFormato424.ListaDetalles(id);
+            List<Form424ConsultaDetalle> form424Detalles = Mapper.getMapper(encabezados);
+
+            ViewBag.ListaDetalles = form424Detalles;
             LlenadoListasEncabezado();
             return View(form424);
         }
@@ -146,6 +149,14 @@ namespace ProyectoWeb.Controllers
         {
             List<Formulario424_EncabezadoConsulta> encabezados = DatosFormato424.Lista();
             List<Form424ConsultaEncabezado> form424 = Mapper.getMapper(encabezados);
+
+            return View(form424);
+        }
+
+        public ActionResult ListDetalles(int id)
+        {
+            List<Formulario424_DetalleConsulta> encabezados = DatosFormato424.ListaDetalles(id);
+            List<Form424ConsultaDetalle> form424 = Mapper.getMapper(encabezados);
 
             return View(form424);
         }
@@ -213,7 +224,7 @@ namespace ProyectoWeb.Controllers
         private void LlenadoListasDetalle()
         {
             List<Dominio> idOperacionServicio = CD_Dominios.Obtener(10);
-            List<Dominio> idCanal = CD_Dominios.Obtener(10);
+            List<Canal> idCanal = DatosCanal.Lista();
             List<Dominio> CostoProporcionOperacionServicio = CD_Dominios.Obtener(10);
             List<Dominio> idObservaciones = CD_Dominios.Obtener(11);
 
@@ -227,7 +238,7 @@ namespace ProyectoWeb.Controllers
             {
                 ModelState.AddModelError("Canal", "No se encuentra valores para la lista de tipo de Canal");
             }
-            ViewBag.Canal = new SelectList(idCanal, "IdDominio", "Nombre");
+            ViewBag.Canal = new SelectList(idCanal, "idCodigo", "Descripcion");
 
             if (CostoProporcionOperacionServicio.Count() == 0)
             {

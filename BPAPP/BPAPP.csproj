@@ -136,6 +136,7 @@
     </Compile>
     <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="Helpers\Mapper.cs" />
+    <Compile Include="Models\Form424ConsultaDetalle.cs" />
     <Compile Include="Models\Form424CrearDetalle.cs" />
     <Compile Include="Models\Form424ConsultaEncabezado.cs" />
     <Compile Include="Models\Form424CrearEncabezado.cs" />
@@ -2040,6 +2041,7 @@
     <Content Include="Views\Formato424\Details.cshtml" />
     <Content Include="Views\Formato424\List.cshtml" />
     <Content Include="Views\Formato424\CrearDetalle.cshtml" />
+    <Content Include="Views\Formato424\ListDetalles.cshtml" />
     <None Include="Web.R.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
+<div class="">
     <div class="card">
         <div class="card-header">
             SUPERINTENDENCIA FINANCIERA DE COLOMBIA
@@ -244,6 +244,14 @@
     <div class="row">
         <div class="col-sm-12 float-right">
             @Html.ActionLink("Nuevo Detalle", "CrearDetalle/" + Model.idPropiedadesFormato)
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            Detalles
+        </div>
+        <div class="card-body">
+            @Html.Partial("ListDetalles", (List<ProyectoWeb.Models.Form424ConsultaDetalle>)@ViewBag.ListaDetalles)
         </div>
     </div>
 </div>
