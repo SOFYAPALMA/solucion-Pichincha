@@ -18,7 +18,5 @@ namespace CapaModelo
         public int idPropiedadesFormato { get; set; }
         public int UnidadCaptura { get; set; }
 
-
-
     }
 }
