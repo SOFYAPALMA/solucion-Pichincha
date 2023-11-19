@@ -11,8 +11,8 @@ using System.Web.Mvc;
 namespace ProyectoWeb.Controllers
 {
     public class Formato424Controller : Controller
-    {        
-        
+    {
+
         public ActionResult Crear()
         {
             Form424CrearEncabezado form424 = new Form424CrearEncabezado();
@@ -34,10 +34,16 @@ namespace ProyectoWeb.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (Session["IdUsuario"] == null)
+                    return RedirectToAction("Login");
+
+                int idusuario = int.Parse(Session["IdUsuario"].ToString());
+
                 Formulario424_EncabezadoCrear encabezado = Mapper.getMapper(form424);
+                encabezado.Usuario = idusuario;
                 bool respuesta = DatosFormato424.RegistrarEncabezado(encabezado);
 
-                if(respuesta)
+                if (respuesta)
                 {
                     TempData["Notificacion"] = CD_Formato424.Mensaje;
 
@@ -46,7 +52,7 @@ namespace ProyectoWeb.Controllers
                 else
                 {
                     ModelState.AddModelError("", "No se pudo crear el encabezado, por favor valide los datos.");
-                    LlenadoListasEncabezado();  
+                    LlenadoListasEncabezado();
                     return View(form424);
                 }
             }
@@ -57,11 +63,46 @@ namespace ProyectoWeb.Controllers
             }
         }
 
-        public ActionResult Update()
+        public ActionResult Update(int id)
         {
-            Form424CrearEncabezado form424 = new Form424CrearEncabezado();
+            Formulario424_EncabezadoConsulta encabezado = DatosFormato424.Detalles(id);
+            Form424ConsultaEncabezado form424 = Mapper.getMapper(encabezado);
             LlenadoListasEncabezado();
             return View(form424);
+        }
+
+        [HttpPost]
+        public ActionResult Update(Form424ConsultaEncabezado encabezado)
+        {
+            if (ModelState.IsValid)
+            {
+                if (Session["IdUsuario"] == null)
+                    return RedirectToAction("Login");
+
+                int idusuario = int.Parse(Session["IdUsuario"].ToString());
+
+                Formulario424_EncabezadoActualizar upd = Mapper.getMapper(encabezado);
+                upd.Usuario = idusuario;
+                bool respuesta = DatosFormato424.ActualizarEncabezado(upd);
+
+                if (respuesta)
+                {
+                    TempData["Notificacion"] = CD_Formato424.Mensaje;
+
+                    return RedirectToAction("List");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "No se pudo actualizar el encabezado, por favor valide los datos.");
+                    LlenadoListasEncabezado();
+                    return View(encabezado);
+                }
+            }
+            else
+            {
+                LlenadoListasEncabezado();
+                return View(encabezado);
+            }
         }
 
         public ActionResult Details(int id)

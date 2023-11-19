@@ -53,13 +53,57 @@ namespace BP.Repositorio
                 AdicionarParametros("SerGratuito_TCRDebito", obj.ServicioGratuitoTarjetaDebito1);
                 AdicionarParametros("SerGratuito_TCRDebito2", obj.ServicioGratuitoTarjetaDebito2);
                 AdicionarParametros("SerGratuito_TCRDebito3", obj.ServicioGratuitoTarjetaDebito3);
-                AdicionarParametros("Usuario", obj.Usuario ?? "1");
+                AdicionarParametros("Usuario", obj.Usuario);
 
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
                 AdicionarParametrosOut("IdPropiedadesFomato", SqlDbType.Int);
                 AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
 
                 ejecutarScalar("bpapp.spInsertaPropiedadesDepositos");
+
+                respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
+                Mensaje = RecuperarParametrosOut("MensajeSalida");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en RegistrarEncabezado", ex);
+            }
+
+            return respuesta;
+        }
+
+        public static bool ActualizarEncabezado(Formulario424_EncabezadoActualizar obj)
+        {
+            Instanciar();
+            bool respuesta = false;
+
+            try
+            {
+                limpiarParametros();
+                AdicionarParametros("@idPropiedadesFormato", obj.idPropiedadesFormato);
+                AdicionarParametros("Tipo", obj.Tipo);
+                AdicionarParametros("Codigo", obj.Codigo);
+                AdicionarParametros("Nombre", obj.Nombre);
+                AdicionarParametros("NombreComercial", obj.NombreComercial);
+                AdicionarParametros("idTipoProductoDeposito", obj.idTipoProductoDeposito);
+                AdicionarParametros("idAperturaDigital", obj.idAperturaDigital);
+                AdicionarParametros("NumeroClientes", obj.NumeroClientes);
+                AdicionarParametros("CuotaManejo", obj.CuotaManejo);
+                AdicionarParametros("idObservacionesCuota", obj.idObservacionesCuota);
+                AdicionarParametros("idGrupoPoblacional", obj.idGrupoPoblacional);
+                AdicionarParametros("idIngresos", obj.idIngresos);
+                AdicionarParametros("idSerGratuito_CtaAHO", obj.idSerGratuito_CtaAHO);
+                AdicionarParametros("idSerGratuito_CtaAHO2", obj.idSerGratuito_CtaAHO2);
+                AdicionarParametros("idSerGratuito_CtaAHO3", obj.idSerGratuito_CtaAHO3);
+                AdicionarParametros("idSerGratuito_TCRDebito", obj.idSerGratuito_TCRDebito);
+                AdicionarParametros("idSerGratuito_TCRDebito2", obj.idSerGratuito_TCRDebito2);
+                AdicionarParametros("idSerGratuito_TCRDebito3", obj.idSerGratuito_TCRDebito3);
+                AdicionarParametros("Usuario", obj.Usuario);
+
+                AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
+                AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
+
+                ejecutarScalar("bpapp.spActualizaPropiedadesDepositos");
 
                 respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
                 Mensaje = RecuperarParametrosOut("MensajeSalida");

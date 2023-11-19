@@ -78,7 +78,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("SerGratuito_TCRDebito", obj.ServicioGratuitoTarjetaDebito1);
                     cmd.Parameters.AddWithValue("SerGratuito_TCRDebito2", obj.ServicioGratuitoTarjetaDebito2);
                     cmd.Parameters.AddWithValue("SerGratuito_TCRDebito3", obj.ServicioGratuitoTarjetaDebito3);
-                    cmd.Parameters.AddWithValue("Usuario", obj.Usuario ?? "1");
+                    cmd.Parameters.AddWithValue("Usuario", obj.Usuario);
 
                     cmd.Parameters.Add("IndicadorTermina", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("IdPropiedadesFomato", SqlDbType.Int).Direction = ParameterDirection.Output;

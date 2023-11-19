@@ -90,5 +90,39 @@ namespace ProyectoWeb
             };
             return result;
         }
+
+        public static Formulario424_EncabezadoActualizar getMapper(Form424ConsultaEncabezado dto)
+        {
+            var result = new Formulario424_EncabezadoActualizar()
+            {
+                idPropiedadesFormato = dto.idPropiedadesFormato,
+                Tipo = dto.Tipo,
+                Codigo = dto.Codigo,
+                Nombre = dto.Nombre,
+                Usuario = dto.Usuario,
+                FechaHora = dto.FechaHora,
+                NombreComercial = dto.NombreComercial,
+                CodigoRegistro = dto.CodigoRegistro,
+                CuotaManejo = dto.CuotaManejo,
+                Estado = dto.Estado,
+                Fecha_horaActualizacion = dto.Fecha_horaActualizacion,
+                Fechacorte = dto.Fechacorte,
+                FechaEstado = dto.FechaEstado,
+                idAperturaDigital = dto.idAperturaDigital,
+                idGrupoPoblacional = dto.idGrupoPoblacional,
+                idIngresos = dto.idIngresos,
+                idObservacionesCuota = dto.idObservacionesCuota,
+                idPropiedadesFormatoAnterior = dto.idPropiedadesFormatoAnterior,
+                idSerGratuito_CtaAHO = dto.idSerGratuito_CtaAHO,
+                idSerGratuito_CtaAHO2 = dto.idSerGratuito_CtaAHO2,
+                idSerGratuito_CtaAHO3 = dto.idSerGratuito_CtaAHO3,
+                idSerGratuito_TCRDebito = dto.idSerGratuito_TCRDebito,
+                idSerGratuito_TCRDebito2 = dto.idSerGratuito_TCRDebito2,
+                idSerGratuito_TCRDebito3 = dto.idSerGratuito_TCRDebito3,
+                idTipoProductoDeposito = dto.idTipoProductoDeposito,
+                NumeroClientes = dto.NumeroClientes
+            };
+            return result;
+        }
     }
 }
