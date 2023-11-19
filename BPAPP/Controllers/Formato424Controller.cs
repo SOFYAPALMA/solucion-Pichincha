@@ -142,6 +142,13 @@ namespace ProyectoWeb.Controllers
         /// </summary>
         private void LlenadoListasDetalle()
         {
+            List<Dominio> tipodeProductoDeposito = CD_Dominios.Obtener(1);
+
+            if (tipodeProductoDeposito.Count() == 0)
+            {
+                ModelState.AddModelError("TipodeProductoDeposito", "No se encuentra valores para la lista de tipo de producto deposito");
+            }
+            ViewBag.TipodeProductoDeposito = new SelectList(tipodeProductoDeposito, "IdDominio", "Nombre");
 
         }
 
