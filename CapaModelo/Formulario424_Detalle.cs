@@ -9,12 +9,16 @@ namespace CapaModelo
     public class Formulario424_Detalle
     {
         public int Subcuentas { get; set; }
-        public int OperacionoServicio { get; set; }
-        public int Canal { get; set; }
-        public int NumerodeOperacionoServiciosIncluidosenCuotadeManejo { get; set; }
+        public int idOperacionoServicio { get; set; }
+        public int idCanal { get; set; }
+        public int NumOperServiciosCuotamanejo { get; set; }
         public int CostoFijo { get; set; }
-        public int CostoProporcionalalaOperacionoServicio { get; set; }
-        public int Observaciones { get; set; }
+        public int CostoProporcionOperacionServicio { get; set; }
+        public int idObservaciones { get; set; }
+        public int idPropiedadesFormato { get; set; }
+        public int UnidadCaptura { get; set; }
+
+
 
     }
 }
