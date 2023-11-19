@@ -142,13 +142,34 @@ namespace ProyectoWeb.Controllers
         /// </summary>
         private void LlenadoListasDetalle()
         {
-            List<Dominio> tipodeProductoDeposito = CD_Dominios.Obtener(1);
+            List<Dominio> idOperacionServicio = CD_Dominios.Obtener(10);
+            List<Dominio> idCanal = CD_Dominios.Obtener(10);
+            List<Dominio> CostoProporcionOperacionServicio = CD_Dominios.Obtener(10);
+            List<Dominio> idObservaciones = CD_Dominios.Obtener(11);
 
-            if (tipodeProductoDeposito.Count() == 0)
+            if (idOperacionServicio.Count() == 0)
             {
-                ModelState.AddModelError("TipodeProductoDeposito", "No se encuentra valores para la lista de tipo de producto deposito");
+                ModelState.AddModelError("Descripcion Operacion Servicio", "No se encuentra valores para la lista de tipo de Descripcion operacion servicio");
             }
-            ViewBag.TipodeProductoDeposito = new SelectList(tipodeProductoDeposito, "IdDominio", "Nombre");
+            ViewBag.DescripcionOperacionServicio = new SelectList(idOperacionServicio, "IdDominio", "Nombre");
+
+            if (idCanal.Count() == 0)
+            {
+                ModelState.AddModelError("Canal", "No se encuentra valores para la lista de tipo de Canal");
+            }
+            ViewBag.Canal = new SelectList(idCanal, "canal", "Nombre");
+
+            if (CostoProporcionOperacionServicio.Count() == 0)
+            {
+                ModelState.AddModelError("costoProporcionOperacionServicio", "No se encuentra valores para la lista de Costo proporcion operacion servicio");
+            }
+            ViewBag.costoProporcionOperacionServicio = new SelectList(CostoProporcionOperacionServicio, "IdDominio", "Nombre");
+
+            if (idObservaciones.Count() == 0)
+            {
+                ModelState.AddModelError("ID Observaciones", "No se encuentra valores para la lista de ID Observaciones");
+            }
+            ViewBag.IDObservaciones = new SelectList(idObservaciones, "idObservaciones", "Nombre");
 
         }
 
