@@ -136,11 +136,15 @@
     </Compile>
     <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="Helpers\Mapper.cs" />
-    <Compile Include="Models\Form424ConsultaDetalle.cs" />
-    <Compile Include="Models\Form424CrearDetalle.cs" />
-    <Compile Include="Models\Form424ConsultaEncabezado.cs" />
-    <Compile Include="Models\Form424CrearEncabezado.cs" />
-    <Compile Include="Models\Form425CrearEncabezado.cs" />
+    <Compile Include="Models\Form424\Form424ConsultaDetalle.cs" />
+    <Compile Include="Models\Form424\Form424CrearDetalle.cs" />
+    <Compile Include="Models\Form424\Form424ConsultaEncabezado.cs" />
+    <Compile Include="Models\Form424\Form424CrearEncabezado.cs" />
+    <Compile Include="Models\Form425\Form425ConsultaDetalle.cs" />
+    <Compile Include="Models\Form425\Form425ConsultaEncabezado.cs" />
+    <Compile Include="Models\Form425\Form425CrearDetalle.cs" />
+    <Compile Include="Models\Form425\Form425CrearEncabezado.cs" />
+    <Compile Include="Models\Form425\Form425CrearEncabezadoOld.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

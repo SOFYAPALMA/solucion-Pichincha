@@ -45,13 +45,12 @@
     <Compile Include="Dominio.cs" />
     <Compile Include="Formato425.cs" />
     <Compile Include="Formato426.cs" />
-    <Compile Include="Formulario 425_Detalle.cs" />
+    <Compile Include="Formulario425_Detalle.cs" />
     <Compile Include="Formulario424_DetalleConsulta.cs" />
     <Compile Include="Formulario424_Detalle.cs" />
     <Compile Include="Formulario424_EncabezadoConsulta.cs" />
     <Compile Include="Formulario424_EncabezadoActualizar.cs" />
     <Compile Include="Formulario424_EncabezadoCrear.cs" />
-    <Compile Include="Formulario425_Detalle.cs" />
     <Compile Include="Formulario425_Encabezado.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Formato424.cs" />

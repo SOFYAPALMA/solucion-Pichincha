@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ProyectoWeb.Models
 {
-    public class Form425CrearEncabezado
+    public class Form425CrearEncabezadoOld
     {
         /// <summary>
         /// Referencia a al tipo entidad
