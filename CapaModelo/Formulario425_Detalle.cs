@@ -1,4 +1,6 @@
-﻿namespace CapaModelo
+﻿using System;
+
+namespace CapaModelo
 {
     public class Formulario425_Detalle
     {
@@ -17,13 +19,13 @@
         public int idTipoAseguradora { get; set; }
         public string TipoAseguradora { get; set; }
         public int idCodigoAseguradora { get; set; }
-        public string CodigoAseguradora { get; set; }
+        public int CodigoAseguradora { get; set; }
         public int idObservaciones { get; set; } 
         public string Observaciones { get; set; }
         public int UnidadCaptura { get; set; }
         public int Estado { get; set; }
-        public int FechaProceso { get; set; }
-        public int FechaEstado { get; set; }
+        public DateTime FechaProceso { get; set; }
+        public DateTime FechaEstado { get; set; }
 
     }
 }

@@ -52,6 +52,8 @@
     <Compile Include="Formulario424_EncabezadoActualizar.cs" />
     <Compile Include="Formulario424_EncabezadoCrear.cs" />
     <Compile Include="Formulario425_Encabezado.cs" />
+    <Compile Include="Formulario426_Detalle.cs" />
+    <Compile Include="Formulario426_Encabezado.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Formato424.cs" />
     <Compile Include="NivelDetalle.cs" />
