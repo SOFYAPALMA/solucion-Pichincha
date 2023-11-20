@@ -145,6 +145,8 @@
     <Compile Include="Models\Form425\Form425CrearDetalle.cs" />
     <Compile Include="Models\Form425\Form425CrearEncabezado.cs" />
     <Compile Include="Models\Form425\Form425CrearEncabezadoOld.cs" />
+    <Compile Include="Models\Form426\Form426CrearDetalle.cs" />
+    <Compile Include="Models\Form426\Form426CrearEncabezado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

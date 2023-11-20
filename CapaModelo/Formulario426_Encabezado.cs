@@ -8,7 +8,6 @@ namespace CapaModelo
 {
     public class Formulario426_Encabezado
     {
-        public string PropiedadesFormato { get; set; }
         public int idPropiedadesFormato { get; set; }
         public int Tipo { get; set; }
         public int Codigo { get; set; }
@@ -24,6 +23,5 @@ namespace CapaModelo
         public DateTime FechaEstado { get; set; }
         public int CodigoRegistro { get; set; }
         public int idPropiedadesFormatoAnterior { get; set; }
-        public string PropiedadesFormatoAnterior { get; set; }
     }
 }

@@ -172,7 +172,7 @@ namespace ProyectoWeb.Controllers
             List<Dominio> ingresos = CD_Dominios.Obtener(4);
             List<Dominio> observacionesCuotadeManejo = CD_Dominios.Obtener(5);
             List<Dominio> servicioGratuitoCuentadeAhorros = CD_Dominios.Obtener(6);
-            List<Dominio> servicioGratuitoTarjetaDebito = CD_Dominios.Obtener(9);
+            List<Dominio> servicioGratuitoTarjetaDebito = CD_Dominios.Obtener(6);
 
             if (tipodeProductoDeposito.Count() == 0)
             {
