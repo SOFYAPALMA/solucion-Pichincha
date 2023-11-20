@@ -8,22 +8,39 @@ namespace CapaModelo
 {
     public class Formulario425_Encabezado
     {
+        public string PropiedadesFormato { get; set; }
+        public int idPropiedadesFormato { get; set; }
         public int Tipo { get; set; }
         public int Codigo { get; set; }
         public String Nombre { get; set; }
-        public DateTime FechaHora { get; set; }
         public String NombreComercial { get; set; }
-        public int AperturaDigital { get; set; }
-        public int NumerodeClientesUnicos { get; set; }
-        public int Franquicia { get; set; }
-        public int CuotadeManejo { get; set; }
-        public int ObservacionesCuotadeManejo { get; set; }
-        public int CuotadeManejoMaxima { get; set; }
-        public int GrupoPoblacional { get; set; }
-        public int Cupo { get; set; }
-        public int ServicioGratuito1 { get; set; }
-        public int ServicioGratuito2 { get; set; }
-        public int ServicioGratuito3 { get; set; }
+        public string AperturaDigital { get; set; }
+        public int idAperturaDigital { get; set; }
+        public int NumeroClientes { get; set; }
+        public string Franquicia { get; set; }
+        public int idFranquicia { get; set; }
+        public int CuotaManejo { get; set; }
+        public string ObservacionesCuota { get; set; }
+        public int idObservacionesCuota { get; set; }
+        public int CuotaManejoMaxima { get; set; }
+        public string GrupoPoblacional { get; set; }
+        public int idGrupoPoblacional { get; set; }
+        public string Cupo { get; set; }
+        public int idCupo { get; set; }
+        public string ServicioGratuito_1 { get; set; }
+        public int idServicioGratuito_1 { get; set; }
+        public string ServicioGratuito_2 { get; set; }
+        public int idServicioGratuito_2 { get; set; }
+        public string ServicioGratuito_3 { get; set; }
+        public int idServicioGratuito_3 { get; set; }
+        public DateTime Fecha_horaActualizacion { get; set; }
+        public int Usuario { get; set; }
+        public int Estado { get; set; }
+        public DateTime Fechacorte { get; set; }
+        public DateTime FechaEstado { get; set; }
+        public int CodigoRegistro { get; set; }
+
+
 
     }
 }
