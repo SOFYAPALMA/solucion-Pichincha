@@ -51,18 +51,13 @@ namespace BP.Repositorio
                 AdicionarParametros("idServicioGratuito_1", obj.idServicioGratuito_1);
                 AdicionarParametros("idServicioGratuito_2", obj.idServicioGratuito_2);
                 AdicionarParametros("idServicioGratuito_3", obj.idServicioGratuito_3);
-                AdicionarParametros("Fecha_horaActualizacion", obj.Fecha_horaActualizacion);
                 AdicionarParametros("Usuario", obj.Usuario);
-                AdicionarParametros("Estado", obj.Estado);
-                AdicionarParametros("Fechacorte", obj.Fechacorte);
-                AdicionarParametros("FechaEstado", obj.FechaEstado);
-                AdicionarParametros("CodigoRegistro", obj.CodigoRegistro);
 
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
                 AdicionarParametrosOut("IdPropiedadesFomato", SqlDbType.Int);
                 AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
 
-                ejecutarScalar("bpapp.spInsertaPropiedadesDepositos");
+                ejecutarScalar("bpapp.spInsertaPropiedadesTarjetaCredito");
 
                 respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
                 Mensaje = RecuperarParametrosOut("MensajeSalida");
@@ -97,14 +92,11 @@ namespace BP.Repositorio
                 AdicionarParametros("@idCodigoAseguradora", obj.idCodigoAseguradora);
                 AdicionarParametros("@idObservaciones", obj.idObservaciones);
                 AdicionarParametros("@UnidadCaptura", obj.UnidadCaptura);
-                AdicionarParametros("@Estado", obj.Estado);
-                AdicionarParametros("@[FechaProceso", obj.FechaProceso);
-                AdicionarParametros("@FechaEstado", obj.FechaEstado); AdicionarParametros("@UnidadCaptura", obj.UnidadCaptura);
 
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
                 AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
 
-                ejecutarScalar("bpapp.spInsertaDetalleDeposito");
+                ejecutarScalar("bpapp.spInsertaDetalleTarjetaCredito");
 
                 respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
                 Mensaje = RecuperarParametrosOut("MensajeSalida");
@@ -118,7 +110,7 @@ namespace BP.Repositorio
         }
 
 
-        public static bool ActualizarEncabezado(Formulario425_Encabezado obj)
+        public static bool ActualizarEncabezado(Formulario425_Encabezado obj) // no cuenta con StoreProcedure en DB
         {
             Instanciar();
             bool respuesta = false;
