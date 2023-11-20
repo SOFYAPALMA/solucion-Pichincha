@@ -1,11 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace ProyectoWeb.Models
 {
     public class Form425CrearEncabezado
     {
+        public int idPropiedadesFormato { get; set; }
+        public int Tipo { get; set; }
+        public int Codigo { get; set; }
+        public string Nombre { get; set; }
+        public string NombreComercial { get; set; }
+        public int idAperturaDigital { get; set; }
+        public int NumeroClientes { get; set; }
+        public int idFranquicia { get; set; }
+        public int CuotaManejo { get; set; }
+        public int idObservacionesCuota { get; set; }
+        public int CuotaManejoMaxima { get; set; }
+        public int idGrupoPoblacional { get; set; }
+        public int idCupo { get; set; }
+        public int idServicioGratuito_1 { get; set; }
+        public int idServicioGratuito_2 { get; set; }
+        public int idServicioGratuito_3 { get; set; }
+        public DateTime Fecha_horaActualizacion { get; set; }
+        public int Usuario { get; set; }
+        public int Estado { get; set; }
+        public DateTime Fechacorte { get; set; }
+        public DateTime FechaEstado { get; set; }
+        public int CodigoRegistro { get; set; }
     }
 }

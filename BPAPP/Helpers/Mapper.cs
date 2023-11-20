@@ -182,7 +182,32 @@ namespace ProyectoWeb
         #region Formulario 425
         public static Formulario425_Encabezado getMapper(Form425CrearEncabezado dto)
         {
-
+            var result = new Formulario425_Encabezado()
+            {
+                idPropiedadesFormato = dto.idPropiedadesFormato,
+                Tipo = dto.Tipo,
+                Codigo = dto.Codigo,
+                Nombre = dto.Nombre,
+                NombreComercial = dto.NombreComercial,
+                idAperturaDigital = dto.idAperturaDigital,
+                NumeroClientes = dto.NumeroClientes,
+                idFranquicia = dto.idFranquicia,
+                CuotaManejo = dto.CuotaManejo,
+                idObservacionesCuota = dto.idObservacionesCuota,
+                CuotaManejoMaxima = dto.CuotaManejoMaxima,
+                idGrupoPoblacional = dto.idGrupoPoblacional,
+                idCupo = dto.idCupo,
+                idServicioGratuito_1 = dto.idServicioGratuito_1,
+                idServicioGratuito_2 = dto.idServicioGratuito_2,
+                idServicioGratuito_3 = dto.idServicioGratuito_3,
+                Fecha_horaActualizacion = dto.Fecha_horaActualizacion,
+                Usuario = dto.Usuario,
+                Estado = dto.Estado,
+                Fechacorte = dto.Fechacorte,
+                FechaEstado = dto.FechaEstado,
+                CodigoRegistro = dto.CodigoRegistro
+            };
+            return result;
         }
 
         public static List<Form425ConsultaEncabezado> getMapper(List<Formulario425_Encabezado> obj)
@@ -200,12 +225,78 @@ namespace ProyectoWeb
 
         public static Form425ConsultaEncabezado getMapper(Formulario425_Encabezado obj)
         {
-
+            var result = new Form425ConsultaEncabezado()
+            {
+                idPropiedadesFormato = obj.idPropiedadesFormato,
+                Tipo = obj.Tipo,
+                Codigo = obj.Codigo,
+                Nombre = obj.Nombre,
+                NombreComercial = obj.NombreComercial,
+                AperturaDigital = obj.AperturaDigital,
+                idAperturaDigital = obj.idAperturaDigital,
+                NumeroClientes = obj.NumeroClientes,
+                Franquicia = obj.Franquicia,
+                idFranquicia = obj.idFranquicia,
+                CuotaManejo = obj.CuotaManejo,
+                ObservacionesCuota = obj.ObservacionesCuota,
+                idObservacionesCuota = obj.idObservacionesCuota,
+                CuotaManejoMaxima = obj.CuotaManejoMaxima,
+                GrupoPoblacional = obj.GrupoPoblacional,
+                idGrupoPoblacional = obj.idGrupoPoblacional,
+                Cupo = obj.Cupo,
+                idCupo = obj.idCupo,
+                ServicioGratuito_1 = obj.ServicioGratuito_1,
+                idServicioGratuito_1 = obj.idServicioGratuito_1,
+                ServicioGratuito_2 = obj.ServicioGratuito_2,
+                idServicioGratuito_2 = obj.idServicioGratuito_2,
+                ServicioGratuito_3 = obj.ServicioGratuito_3,
+                idServicioGratuito_3 = obj.idServicioGratuito_3,
+                Fecha_horaActualizacion = obj.Fecha_horaActualizacion,
+                Usuario = obj.Usuario,
+                Estado = obj.Estado,
+                Fechacorte = obj.Fechacorte,
+                FechaEstado = obj.FechaEstado,
+                CodigoRegistro = obj.CodigoRegistro
+            };
+            return result;
         }
 
         public static Formulario425_Encabezado getMapper(Form425ConsultaEncabezado dto)
         {
-
+            var result = new Formulario425_Encabezado()
+            {
+                idPropiedadesFormato = dto.idPropiedadesFormato,
+                Tipo = dto.Tipo,
+                Codigo = dto.Codigo,
+                Nombre = dto.Nombre,
+                NombreComercial = dto.NombreComercial,
+                AperturaDigital = dto.AperturaDigital,
+                idAperturaDigital = dto.idAperturaDigital,
+                NumeroClientes = dto.NumeroClientes,
+                Franquicia = dto.Franquicia,
+                idFranquicia = dto.idFranquicia,
+                CuotaManejo = dto.CuotaManejo,
+                ObservacionesCuota = dto.ObservacionesCuota,
+                idObservacionesCuota = dto.idObservacionesCuota,
+                CuotaManejoMaxima = dto.CuotaManejoMaxima,
+                GrupoPoblacional = dto.GrupoPoblacional,
+                idGrupoPoblacional = dto.idGrupoPoblacional,
+                Cupo = dto.Cupo,
+                idCupo = dto.idCupo,
+                ServicioGratuito_1 = dto.ServicioGratuito_1,
+                idServicioGratuito_1 = dto.idServicioGratuito_1,
+                ServicioGratuito_2 = dto.ServicioGratuito_2,
+                idServicioGratuito_2 = dto.idServicioGratuito_2,
+                ServicioGratuito_3 = dto.ServicioGratuito_3,
+                idServicioGratuito_3 = dto.idServicioGratuito_3,
+                Fecha_horaActualizacion = dto.Fecha_horaActualizacion,
+                Usuario = dto.Usuario,
+                Estado = dto.Estado,
+                Fechacorte = dto.Fechacorte,
+                FechaEstado = dto.FechaEstado,
+                CodigoRegistro = dto.CodigoRegistro
+            };
+            return result;
         }
 
         public static List<Form425ConsultaDetalle> getMapper(List<Formulario425_Detalle> obj)
