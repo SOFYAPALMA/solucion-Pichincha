@@ -1,19 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaModelo
 {
     public class Formulario425_Encabezado
     {
-        public string PropiedadesFormato { get; set; }
         public int idPropiedadesFormato { get; set; }
         public int Tipo { get; set; }
         public int Codigo { get; set; }
-        public String Nombre { get; set; }
-        public String NombreComercial { get; set; }
+        public string Nombre { get; set; }
+        public string NombreComercial { get; set; }
         public string AperturaDigital { get; set; }
         public int idAperturaDigital { get; set; }
         public int NumeroClientes { get; set; }
@@ -39,8 +34,5 @@ namespace CapaModelo
         public DateTime Fechacorte { get; set; }
         public DateTime FechaEstado { get; set; }
         public int CodigoRegistro { get; set; }
-
-
-
     }
 }

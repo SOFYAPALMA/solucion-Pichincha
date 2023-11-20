@@ -38,7 +38,7 @@ namespace ProyectoWeb.Controllers
                 int idusuario = int.Parse(Session["IdUsuario"].ToString());
 
                 Formulario425_Encabezado encabezado = Mapper.getMapper(form425);
-                //encabezado.Usuario = idusuario;
+                encabezado.Usuario = idusuario;
                 bool respuesta = DatosFormato425.RegistrarEncabezado(encabezado);
 
                 if (respuesta)
@@ -109,7 +109,7 @@ namespace ProyectoWeb.Controllers
                 int idusuario = int.Parse(Session["IdUsuario"].ToString());
 
                 Formulario425_Encabezado upd = Mapper.getMapper(encabezado);
-                //upd.Usuario = idusuario;
+                upd.Usuario = idusuario;
                 bool respuesta = DatosFormato425.ActualizarEncabezado(upd);
 
                 if (respuesta)

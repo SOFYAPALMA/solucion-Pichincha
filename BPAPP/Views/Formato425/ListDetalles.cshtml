@@ -1,0 +1,153 @@
+﻿@model IEnumerable<ProyectoWeb.Models.Form425ConsultaDetalle>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idDetalle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idPropiedadesFormato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subcuenta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idOperacionoServicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OperacionoServicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Canal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostoFijo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostoFijoMaximo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostoProporcionOperacionServicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostoProporcionMaxOperacionServicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tasa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TasaMaxima)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idTipoAseguradora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoAseguradora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idCodigoAseguradora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoAseguradora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idObservaciones)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Observaciones)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnidadCaptura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaProceso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaEstado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idDetalle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idPropiedadesFormato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subcuenta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idOperacionoServicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OperacionoServicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Canal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CostoFijo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CostoFijoMaximo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CostoProporcionOperacionServicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CostoProporcionMaxOperacionServicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tasa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TasaMaxima)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idTipoAseguradora)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoAseguradora)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idCodigoAseguradora)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoAseguradora)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idObservaciones)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Observaciones)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnidadCaptura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaProceso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaEstado)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
