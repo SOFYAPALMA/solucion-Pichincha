@@ -5,6 +5,10 @@ namespace ProyectoWeb.Models
 {
     public class Form425CrearDetalle
     {
+        public int idPropiedadesFormato { get; set; }
+
+        public int idDetalle { get; set; }
+
         [Required(ErrorMessage = "El campo subcuenta es obligatorio.")]
         [Display(Name = "Subcuenta")]
         public int Subcuenta { get; set; }
@@ -55,5 +59,6 @@ namespace ProyectoWeb.Models
         public int Estado { get; set; }
         public DateTime FechaProceso { get; set; }
         public DateTime FechaEstado { get; set; }
+        public int idCodigoAseguradora { get; set; }
     }
 }
