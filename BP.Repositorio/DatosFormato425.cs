@@ -90,6 +90,7 @@ namespace BP.Repositorio
                 AdicionarParametros("@TasaMaxima", obj.TasaMaxima);
                 AdicionarParametros("@idTipoAseguradora", obj.idTipoAseguradora);
                 AdicionarParametros("@idCodigoAseguradora", obj.idCodigoAseguradora);
+                AdicionarParametros("@idCodigoAseguradora", obj.idCodigoAseguradora);
                 AdicionarParametros("@idObservaciones", obj.idObservaciones);
                 AdicionarParametros("@UnidadCaptura", obj.UnidadCaptura);
 
@@ -110,7 +111,7 @@ namespace BP.Repositorio
         }
 
 
-        public static bool ActualizarEncabezado(Formulario425_Encabezado obj) // no cuenta con StoreProcedure en DB
+        public static bool ActualizarEncabezado(Formulario425_Encabezado obj)
         {
             Instanciar();
             bool respuesta = false;
@@ -118,10 +119,11 @@ namespace BP.Repositorio
             try
             {
                 limpiarParametros();
+                AdicionarParametros("IdPropiedadesFormato", obj.idPropiedadesFormato);
                 AdicionarParametros("Tipo", obj.Tipo);
                 AdicionarParametros("Codigo", obj.Codigo);
                 AdicionarParametros("Nombre", obj.Nombre);
-                AdicionarParametros("NombreComercial", obj.NombreComercial);
+                AdicionarParametros("idNombreComercial", obj.idNombreComercial);
                 AdicionarParametros("idAperturaDigital", obj.idAperturaDigital);
                 AdicionarParametros("NumeroClientes", obj.NumeroClientes);
                 AdicionarParametros("idFranquicia", obj.idFranquicia);
@@ -133,17 +135,13 @@ namespace BP.Repositorio
                 AdicionarParametros("idServicioGratuito_1", obj.idServicioGratuito_1);
                 AdicionarParametros("idServicioGratuito_2", obj.idServicioGratuito_2);
                 AdicionarParametros("idServicioGratuito_3", obj.idServicioGratuito_3);
-                AdicionarParametros("Fecha_horaActualizacion", obj.Fecha_horaActualizacion);
                 AdicionarParametros("Usuario", obj.Usuario);
-                AdicionarParametros("Estado", obj.Estado);
-                AdicionarParametros("Fechacorte", obj.Fechacorte);
-                AdicionarParametros("FechaEstado", obj.FechaEstado);
-                AdicionarParametros("CodigoRegistro", obj.CodigoRegistro);
+             
 
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
                 AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
 
-                ejecutarScalar("bpapp.spActualizaPropiedadesDepositos");
+                ejecutarScalar("bpapp.spActualizaPropiedadesTarjetaCredito");
 
                 respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
                 Mensaje = RecuperarParametrosOut("MensajeSalida");
@@ -165,7 +163,7 @@ namespace BP.Repositorio
                 AdicionarParametros("idPropiedadesFormato", FormatoId);
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
 
-                DataTable dt = ejecutarStoreProcedure("bpapp.spConsultaPropiedadesDepositos").Tables[0];
+                DataTable dt = ejecutarStoreProcedure("bpapp.spConsultaPropiedadesTarjetaCredito").Tables[0];
 
                 if (dt.Rows.Count > 0)
                 {
@@ -196,7 +194,7 @@ namespace BP.Repositorio
                 limpiarParametros();
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
 
-                DataTable dt = ejecutarStoreProcedure("bpapp.spConsultaPropiedadesDepositos").Tables[0];
+                DataTable dt = ejecutarStoreProcedure("bpapp.spConsultaPropiedadesTarjetaCredito").Tables[0];
 
                 if (dt.Rows.Count > 0)
                 {

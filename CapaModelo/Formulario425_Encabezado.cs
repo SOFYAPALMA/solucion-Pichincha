@@ -9,6 +9,7 @@ namespace CapaModelo
         public int Codigo { get; set; }
         public string Nombre { get; set; }
         public string NombreComercial { get; set; }
+        public int idNombreComercial { get; set; }
         public string AperturaDigital { get; set; }
         public int idAperturaDigital { get; set; }
         public int NumeroClientes { get; set; }
