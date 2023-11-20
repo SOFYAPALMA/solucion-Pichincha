@@ -48,6 +48,7 @@
     <Compile Include="ConexionMS.cs" />
     <Compile Include="DatetimeToStringConverter.cs" />
     <Compile Include="DatosCanal.cs" />
+    <Compile Include="DatosFormato425.cs" />
     <Compile Include="DatosFormato424.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
