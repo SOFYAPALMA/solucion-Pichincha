@@ -43,7 +43,7 @@ namespace ProyectoWeb.Controllers
 
                 if (respuesta)
                 {
-                    TempData["Notificacion"] = CD_Formato424.Mensaje;
+                    TempData["Notificacion"] = DatosFormato424.Mensaje;
 
                     return RedirectToAction("List");
                 }
@@ -72,7 +72,7 @@ namespace ProyectoWeb.Controllers
 
                 if (respuesta)
                 {
-                    TempData["Notificacion"] = CD_Formato424.Mensaje;
+                    TempData["Notificacion"] = DatosFormato424.Mensaje;
 
                     return RedirectToAction("Details/" + form424.idPropiedadesFormato);
                 }
@@ -114,7 +114,7 @@ namespace ProyectoWeb.Controllers
 
                 if (respuesta)
                 {
-                    TempData["Notificacion"] = CD_Formato424.Mensaje;
+                    TempData["Notificacion"] = DatosFormato424.Mensaje;
 
                     return RedirectToAction("List");
                 }

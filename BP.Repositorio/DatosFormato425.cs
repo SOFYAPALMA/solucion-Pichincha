@@ -221,11 +221,11 @@ namespace BP.Repositorio
             }
         }
 
-        public static List<Formulario425_Encabezado> ListaDetalles(int FormatoId)
+        public static List<Formulario425_Detalle> ListaDetalles(int FormatoId)
         {
             try
             {
-                List<Formulario425_Encabezado> rpt = new List<Formulario425_Encabezado>();
+                List<Formulario425_Detalle> rpt = new List<Formulario425_Detalle>();
                 limpiarParametros();
                 AdicionarParametros("idPropiedadesFormato", FormatoId);
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
@@ -249,7 +249,7 @@ namespace BP.Repositorio
 
                     string serializedObject = JsonConvert.SerializeObject(list, new DatetimeToStringConverter());
 
-                    rpt = JsonConvert.DeserializeObject<List<Formulario425_Encabezado>>(serializedObject);
+                    rpt = JsonConvert.DeserializeObject<List<Formulario425_Detalle>>(serializedObject);
                 }
 
                 return rpt;

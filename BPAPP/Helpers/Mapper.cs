@@ -6,6 +6,7 @@ namespace ProyectoWeb
 {
     public class Mapper
     {
+        #region Formulario 424
         public static Formulario424_EncabezadoCrear getMapper(Form424CrearEncabezado dto)
         {
             var result = new Formulario424_EncabezadoCrear()
@@ -175,5 +176,107 @@ namespace ProyectoWeb
             };
             return result;
         }
+
+        #endregion
+
+        #region Formulario 425
+        public static Formulario425_Encabezado getMapper(Form425CrearEncabezado dto)
+        {
+
+        }
+
+        public static List<Form425ConsultaEncabezado> getMapper(List<Formulario425_Encabezado> obj)
+        {
+            List<Form425ConsultaEncabezado> result = new List<Form425ConsultaEncabezado>();
+
+            foreach (Formulario425_Encabezado consulta in obj)
+            {
+                Form425ConsultaEncabezado encabezado = getMapper(consulta);
+                result.Add(encabezado);
+            }
+
+            return result;
+        }
+
+        public static Form425ConsultaEncabezado getMapper(Formulario425_Encabezado obj)
+        {
+
+        }
+
+        public static Formulario425_Encabezado getMapper(Form425ConsultaEncabezado dto)
+        {
+
+        }
+
+        public static List<Form425ConsultaDetalle> getMapper(List<Formulario425_Detalle> obj)
+        {
+            List<Form425ConsultaDetalle> result = new List<Form425ConsultaDetalle>();
+
+            foreach (Formulario425_Detalle consulta in obj)
+            {
+                Form425ConsultaDetalle encabezado = getMapper(consulta);
+                result.Add(encabezado);
+            }
+
+            return result;
+        }
+
+        public static Form425ConsultaDetalle getMapper(Formulario425_Detalle obj)
+        {
+            var result = new Form425ConsultaDetalle()
+            {
+                idDetalle = obj.idDetalle,
+                idPropiedadesFormato = obj.idPropiedadesFormato,
+                Subcuenta = obj.Subcuenta,
+                idOperacionoServicio = obj.idOperacionoServicio,
+                OperacionoServicio = obj.OperacionoServicio,
+                Canal = obj.Canal,
+                CostoFijo = obj.CostoFijo,
+                CostoFijoMaximo = obj.CostoFijoMaximo,
+                CostoProporcionOperacionServicio = obj.CostoProporcionOperacionServicio,
+                CostoProporcionMaxOperacionServicio = obj.CostoProporcionMaxOperacionServicio,
+                Tasa = obj.Tasa,
+                TasaMaxima = obj.TasaMaxima,
+                idTipoAseguradora = obj.idTipoAseguradora,
+                TipoAseguradora = obj.TipoAseguradora,
+                idCodigoAseguradora = obj.idCodigoAseguradora,
+                CodigoAseguradora = obj.CodigoAseguradora,
+                idObservaciones = obj.idObservaciones,
+                Observaciones = obj.Observaciones,
+                UnidadCaptura = obj.UnidadCaptura,
+                Estado = obj.Estado,
+                FechaProceso = obj.FechaProceso,
+                FechaEstado = obj.FechaEstado
+            };
+            return result;
+        }
+
+        public static Formulario425_Detalle getMapper(Form425CrearDetalle dto)
+        {
+            var result = new Formulario425_Detalle()
+            {
+                idDetalle = dto.idDetalle,
+                idPropiedadesFormato = dto.idPropiedadesFormato,
+                Subcuenta = dto.Subcuenta,
+                idOperacionoServicio = dto.idOperacionoServicio,
+                Canal = dto.Canal,
+                CostoFijo = dto.CostoFijo,
+                CostoFijoMaximo = dto.CostoFijoMaximo,
+                CostoProporcionOperacionServicio = dto.CostoProporcionOperacionServicio,
+                CostoProporcionMaxOperacionServicio = dto.CostoProporcionMaxOperacionServicio,
+                Tasa = dto.Tasa,
+                TasaMaxima = dto.TasaMaxima,
+                idTipoAseguradora = dto.idTipoAseguradora,
+                idCodigoAseguradora = dto.idCodigoAseguradora,
+                idObservaciones = dto.idObservaciones,
+                UnidadCaptura = dto.UnidadCaptura,
+                Estado = dto.Estado,
+                FechaProceso = dto.FechaProceso,
+                FechaEstado = dto.FechaEstado
+            };
+            return result;
+        }
+
+        #endregion
     }
 }
