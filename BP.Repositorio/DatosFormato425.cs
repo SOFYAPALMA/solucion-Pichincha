@@ -233,7 +233,7 @@ namespace BP.Repositorio
                 AdicionarParametros("idPropiedadesFormato", FormatoId);
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
 
-                DataTable dt = ejecutarStoreProcedure("bpapp.spConsultaDetalleDeposito").Tables[0];
+                DataTable dt = ejecutarStoreProcedure("bpapp.spConsultaDetalleTarjetaCredito").Tables[0];
 
                 if (dt.Rows.Count > 0)
                 {

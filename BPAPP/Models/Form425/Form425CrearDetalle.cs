@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProyectoWeb.Models
 {
@@ -52,7 +53,7 @@ namespace ProyectoWeb.Models
         [Display(Name = "Tasa Maxima")]
         public int UnidadCaptura { get; set; }
         public int Estado { get; set; }
-        public int FechaProceso { get; set; }
-        public int FechaEstado { get; set; }
+        public DateTime FechaProceso { get; set; }
+        public DateTime FechaEstado { get; set; }
     }
 }

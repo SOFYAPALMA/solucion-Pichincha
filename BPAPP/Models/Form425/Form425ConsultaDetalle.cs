@@ -1,4 +1,6 @@
-﻿namespace ProyectoWeb.Models
+﻿using System;
+
+namespace ProyectoWeb.Models
 {
     public class Form425ConsultaDetalle
     {
@@ -22,7 +24,7 @@
         public string Observaciones { get; set; }
         public int UnidadCaptura { get; set; }
         public int Estado { get; set; }
-        public int FechaProceso { get; set; }
-        public int FechaEstado { get; set; }
+        public DateTime FechaProceso { get; set; }
+        public DateTime FechaEstado { get; set; }
     }
 }
