@@ -1,259 +1,223 @@
 ﻿@model ProyectoWeb.Models.Form425ConsultaEncabezado
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detailles Formulario";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>Form425ConsultaEncabezado</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.idPropiedadesFormato)
-        </dt>
+<div class="">
+    <div class="card">
+        <div class="card-header">
+            SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+        </div>
+        <h3 style="text-align:center;">TARIFAS DE LOS PRODUCTOS DE DEPÓSITO</h3>
+        <h4 style="text-align:center;">FORMATO 425</h4>
+        <h5 style="text-align:center;">CIRCULAR EXTERNA 006 DE 2023</h5>
+        <div class="card-body">
+            <div class="row">
 
-        <dd>
-            @Html.DisplayFor(model => model.idPropiedadesFormato)
-        </dd>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.Tipo)
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Tipo)
-        </dt>
+                        <div>
+                            @Html.DisplayFor(model => model.Tipo)
+                        </div>
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Tipo)
-        </dd>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.Codigo)
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Codigo)
-        </dt>
+                        <div>
+                            @Html.DisplayFor(model => model.Codigo)
+                        </div>
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Codigo)
-        </dd>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.Nombre)
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
+                        <div>
+                            @Html.DisplayFor(model => model.Nombre)
+                        </div>
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.NombreComercial)
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NombreComercial)
-        </dt>
+                        <div>
+                            @Html.DisplayFor(model => model.NombreComercial)
+                        </div>
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.NombreComercial)
-        </dd>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.idAperturaDigital)
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AperturaDigital)
-        </dt>
+                        <div>
+                            @Html.DisplayFor(model => model.AperturaDigital)
+                        </div>
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.AperturaDigital)
-        </dd>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.NumeroClientes)
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.idAperturaDigital)
-        </dt>
+                        <div>
+                            @Html.DisplayFor(model => model.NumeroClientes)
+                        </div>
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.idAperturaDigital)
-        </dd>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.idFranquicia)
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NumeroClientes)
-        </dt>
+                        <div>
+                            @Html.DisplayFor(model => model.Franquicia)
+                        </div>
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.NumeroClientes)
-        </dd>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.CuotaManejo)
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Franquicia)
-        </dt>
+                        <div>
+                            @Html.DisplayFor(model => model.CuotaManejo)
+                        </div>
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Franquicia)
-        </dd>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.idObservacionesCuota)
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.idFranquicia)
-        </dt>
+                        <div>
+                            @Html.DisplayFor(model => model.ObservacionesCuota)
+                        </div>
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.idFranquicia)
-        </dd>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.CuotaManejoMaxima)
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CuotaManejo)
-        </dt>
+                        <div>
+                            @Html.DisplayFor(model => model.CuotaManejoMaxima)
+                        </div>
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.CuotaManejo)
-        </dd>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.idGrupoPoblacional)
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ObservacionesCuota)
-        </dt>
+                        <div>
+                            @Html.DisplayFor(model => model.GrupoPoblacional)
+                        </div>
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.ObservacionesCuota)
-        </dd>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.idCupo)
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.idObservacionesCuota)
-        </dt>
+                        <div>
+                            @Html.DisplayFor(model => model.Cupo)
+                        </div>
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.idObservacionesCuota)
-        </dd>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.idServicioGratuito_1)
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CuotaManejoMaxima)
-        </dt>
+                        <div>
+                            @Html.DisplayFor(model => model.ServicioGratuito_1)
+                        </div>
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.CuotaManejoMaxima)
-        </dd>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.idServicioGratuito_2)
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.GrupoPoblacional)
-        </dt>
+                        <div>
+                            @Html.DisplayFor(model => model.ServicioGratuito_2)
+                        </div>
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.GrupoPoblacional)
-        </dd>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.idServicioGratuito_3)
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.idGrupoPoblacional)
-        </dt>
+                        <div>
+                            @Html.DisplayFor(model => model.ServicioGratuito_3)
+                        </div>
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.idGrupoPoblacional)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Cupo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cupo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.idCupo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.idCupo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ServicioGratuito_1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ServicioGratuito_1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.idServicioGratuito_1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.idServicioGratuito_1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ServicioGratuito_2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ServicioGratuito_2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.idServicioGratuito_2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.idServicioGratuito_2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ServicioGratuito_3)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ServicioGratuito_3)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.idServicioGratuito_3)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.idServicioGratuito_3)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Fecha_horaActualizacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Fecha_horaActualizacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Usuario)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Usuario)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Estado)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Estado)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Fechacorte)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Fechacorte)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FechaEstado)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FechaEstado)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CodigoRegistro)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CodigoRegistro)
-        </dd>
-
-    </dl>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-sm-12 float-right">
+                    @Html.ActionLink("Editar", "Update/" + Model.idPropiedadesFormato, Model.idPropiedadesFormato, new { @class = "btn btn-primary btn-sm float-right" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 float-right">
+            @Html.ActionLink("Nuevo Detalle", "CrearDetalle/" + Model.idPropiedadesFormato)
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            Detalles
+        </div>
+        <div class="card-body">
+            @Html.Partial("ListDetalles", (List<ProyectoWeb.Models.Form425ConsultaDetalle>)@ViewBag.ListaDetalles)
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

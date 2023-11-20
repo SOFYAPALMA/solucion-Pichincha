@@ -1,20 +1,15 @@
 ﻿@model IEnumerable<ProyectoWeb.Models.Form425ConsultaEncabezado>
 
 @{
-    ViewBag.Title = "List";
+    ViewBag.Title = "Lista de formulario";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>List</h2>
-
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nuevo", "Crear")
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.idPropiedadesFormato)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.Tipo)
         </th>
@@ -28,16 +23,10 @@
             @Html.DisplayNameFor(model => model.NombreComercial)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AperturaDigital)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.idAperturaDigital)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.NumeroClientes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Franquicia)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.idFranquicia)
@@ -46,58 +35,28 @@
             @Html.DisplayNameFor(model => model.CuotaManejo)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ObservacionesCuota)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.idObservacionesCuota)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CuotaManejoMaxima)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GrupoPoblacional)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.idGrupoPoblacional)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cupo)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.idCupo)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ServicioGratuito_1)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.idServicioGratuito_1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ServicioGratuito_2)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.idServicioGratuito_2)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ServicioGratuito_3)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.idServicioGratuito_3)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Fecha_horaActualizacion)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Usuario)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Estado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Fechacorte)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaEstado)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CodigoRegistro)
@@ -107,9 +66,6 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.idPropiedadesFormato)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Tipo)
         </td>
@@ -126,16 +82,10 @@
             @Html.DisplayFor(modelItem => item.AperturaDigital)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.idAperturaDigital)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.NumeroClientes)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Franquicia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.idFranquicia)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CuotaManejo)
@@ -144,63 +94,31 @@
             @Html.DisplayFor(modelItem => item.ObservacionesCuota)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.idObservacionesCuota)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.CuotaManejoMaxima)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.GrupoPoblacional)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.idGrupoPoblacional)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Cupo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.idCupo)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ServicioGratuito_1)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.idServicioGratuito_1)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.ServicioGratuito_2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.idServicioGratuito_2)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ServicioGratuito_3)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.idServicioGratuito_3)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fecha_horaActualizacion)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Usuario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Estado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fechacorte)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaEstado)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CodigoRegistro)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Ver", "Details", new {  id=item.idPropiedadesFormato  }) 
         </td>
     </tr>
 }

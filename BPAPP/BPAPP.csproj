@@ -2038,7 +2038,6 @@
     <Content Include="Views\Usuario\Crear.cshtml" />
     <Content Include="Views\Rol\Crear.cshtml" />
     <Content Include="Views\RolPermiso\Crear.cshtml" />
-    <Content Include="Views\Formato425\Crear.cshtml" />
     <Content Include="Views\Formato426\Crear.cshtml" />
     <Content Include="Views\Formato424\Crear.cshtml" />
     <Content Include="Views\Formato424\Update.cshtml" />
@@ -2051,6 +2050,7 @@
     <Content Include="Views\Formato425\Details.cshtml" />
     <Content Include="Views\Formato425\List.cshtml" />
     <Content Include="Views\Formato425\ListDetalles.cshtml" />
+    <Content Include="Views\Formato425\Crear.cshtml" />
     <None Include="Web.R.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
