@@ -78,6 +78,7 @@ namespace BP.Repositorio
             try
             {
                 limpiarParametros();
+                AdicionarParametros("@idNombreComercial", obj.idPropiedadesFormato);
                 AdicionarParametros("@idPropiedadesFormato", obj.idPropiedadesFormato);
                 AdicionarParametros("@Subcuenta", obj.Subcuenta);
                 AdicionarParametros("@idOperacionServicio", obj.idOperacionoServicio);

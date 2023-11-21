@@ -179,7 +179,7 @@ namespace ProyectoWeb.Controllers
             {
                 ModelState.AddModelError("Tipo Producto Tarjeta credito", "No se encuentra valores para la lista de tipo de producto tarjeta de credito");
             }
-            ViewBag.TipodeProductoDeposito = new SelectList(tipodeProductoDeposito, "IdDominio", "Nombre");
+            ViewBag.TipodeProductoTarjetaCredito = new SelectList(tipodeProductoTarjetaCredito, "IdDominio", "Nombre");
 
             if (idAperturaDigital.Count() == 0)
             {
