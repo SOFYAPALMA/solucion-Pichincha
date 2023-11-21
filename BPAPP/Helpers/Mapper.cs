@@ -371,7 +371,7 @@ namespace ProyectoWeb
 
         #endregion
 
-        #region Formulario 424
+        #region Formulario 426
         public static Formulario426_Encabezado getMapper(Form426CrearEncabezado dto)
         {
             var result = new Formulario426_Encabezado()
