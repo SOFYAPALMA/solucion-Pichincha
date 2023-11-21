@@ -8,6 +8,15 @@ namespace CapaModelo
         [Required(ErrorMessage = "El campo ID Propiedades Formato es obligatorio.")]
         [Display(Name = "ID Propiedades")]
         public int idPropiedadesFormato { get; set; }
+        public int idDetalle { get; set; }
+        public int Subcuenta { get; set; }
+        public int idCaracteristicaCredito { get; set; }
+        public int Costo { get; set; }
+        public int Tasa { get; set; }
+        public string idTipoAseguradora { get; set; }
+        public string idCodigoAseguradora { get; set; }
+        public string idObservaciones { get; set; }
+        public int UnidadCaptura { get; set; }
         public int Tipo { get; set; }
         public int Codigo { get; set; }
         public string Nombre { get; set; }
