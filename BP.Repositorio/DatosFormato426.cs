@@ -68,19 +68,20 @@ namespace BP.Repositorio
             try
             {
                 limpiarParametros();
-                //AdicionarParametros("@Tipo", obj.Tipo);
-                //AdicionarParametros("@Codigo", obj.Codigo);
-                //AdicionarParametros("@Nombre", obj.Nombre);
-                //AdicionarParametros("@Fecha_horaActualizacion", obj.Fecha_horaActualizacion);
-                //AdicionarParametros("@idCodigoCredito", obj.idCodigoCredito);
-                //AdicionarParametros("@idAperturaDigital", obj.idAperturaDigital);
-                //AdicionarParametros("@Usuario", obj.Usuario);
-                //AdicionarParametros("@IdPropiedadesFormato", obj.IdPropiedadesFormato);
+                AdicionarParametros("@idPropiedadesFormato", obj.idPropiedadesFormato);
+                AdicionarParametros("@Subcuenta", obj.Subcuenta);
+                AdicionarParametros("@idCaracteristicaCredito", obj.idCaracteristicaCredito);
+                AdicionarParametros("@Costo", obj.Costo);
+                AdicionarParametros("@Tasa", obj.Tasa);
+                AdicionarParametros("@idTipoAseguradora", obj.idTipoAseguradora);
+                AdicionarParametros("@idCodigoAseguradora", obj.idCodigoAseguradora);
+                AdicionarParametros("@idObservaciones", obj.idObservaciones);
+                AdicionarParametros("@UnidadCaptura", obj.UnidadCaptura);
 
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
                 AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
 
-                ejecutarScalar("bpapp.spInsertaPropiedadesCreditos");
+                ejecutarScalar("bpapp.spInsertaDetalleCreditos");
 
                 respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
                 Mensaje = RecuperarParametrosOut("MensajeSalida");
@@ -102,27 +103,16 @@ namespace BP.Repositorio
             try
             {
                 limpiarParametros();
-                AdicionarParametros("Tipo", obj.Tipo);
-                AdicionarParametros("Codigo", obj.Codigo);
-                AdicionarParametros("Nombre", obj.Nombre);
-                //AdicionarParametros("NombreComercial", obj.NombreComercial);
-                //AdicionarParametros("idAperturaDigital", obj.idAperturaDigital);
-                //AdicionarParametros("NumeroClientes", obj.NumeroClientes);
-                //AdicionarParametros("idFranquicia", obj.idFranquicia);
-                //AdicionarParametros("CuotaManejo", obj.CuotaManejo);
-                //AdicionarParametros("idObservacionesCuota", obj.idObservacionesCuota);
-                //AdicionarParametros("CuotaManejoMaxima", obj.CuotaManejoMaxima);
-                //AdicionarParametros("idGrupoPoblacional", obj.idGrupoPoblacional);
-                //AdicionarParametros("idCupo", obj.idCupo);
-                //AdicionarParametros("idServicioGratuito_1", obj.idServicioGratuito_1);
-                //AdicionarParametros("idServicioGratuito_2", obj.idServicioGratuito_2);
-                //AdicionarParametros("idServicioGratuito_3", obj.idServicioGratuito_3);
-                //AdicionarParametros("Fecha_horaActualizacion", obj.Fecha_horaActualizacion);
-                //AdicionarParametros("Usuario", obj.Usuario);
-                //AdicionarParametros("Estado", obj.Estado);
-                //AdicionarParametros("Fechacorte", obj.Fechacorte);
-                //AdicionarParametros("FechaEstado", obj.FechaEstado);
-                //AdicionarParametros("CodigoRegistro", obj.CodigoRegistro);
+                AdicionarParametros("@idDetalle", obj.idDetalle);
+                AdicionarParametros("@Subcuenta", obj.Subcuenta);
+                AdicionarParametros("idCaracteristicaCredito", obj.idCaracteristicaCredito);
+                AdicionarParametros("@Costo", obj.Costo);
+                AdicionarParametros("@Tasa", obj.Tasa);
+                AdicionarParametros("@idTipoAseguradora", obj.idTipoAseguradora);
+                AdicionarParametros("@idCodigoAseguradora", obj.idCodigoAseguradora);
+                AdicionarParametros("@idObservaciones", obj.idObservaciones);
+                AdicionarParametros("@UnidadCaptura", obj.UnidadCaptura);
+
 
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
                 AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
@@ -219,7 +209,7 @@ namespace BP.Repositorio
                 AdicionarParametros("idPropiedadesFormato", FormatoId);
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
 
-                DataTable dt = ejecutarStoreProcedure("bpapp.spConsultaDetalleDeposito").Tables[0];
+                DataTable dt = ejecutarStoreProcedure("bpapp.spConsultaDetalleCredito").Tables[0];
 
                 if (dt.Rows.Count > 0)
                 {
