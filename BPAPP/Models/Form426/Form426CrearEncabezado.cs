@@ -6,6 +6,9 @@ namespace ProyectoWeb.Models
     public class Form426CrearEncabezado
     {
         public int idPropiedadesFormato { get; set; }
+
+        [Required(ErrorMessage = "El campo tipo entidad es obligatorio.")]
+        [Display(Name = "Tipo")]
         public int Tipo { get; set; }
         public int Codigo { get; set; }
         public string Nombre { get; set; }

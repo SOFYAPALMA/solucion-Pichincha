@@ -190,7 +190,7 @@ namespace ProyectoWeb
                 Codigo = dto.Codigo,
                 Nombre = dto.Nombre,
                 NombreComercial = dto.NombreComercial,
-                idAperturaDigital = dto.idAperturaDigital,
+                AperturaDigital = dto.AperturaDigital,
                 NumeroClientes = dto.NumeroClientes,
                 idFranquicia = dto.idFranquicia,
                 CuotaManejo = dto.CuotaManejo,
