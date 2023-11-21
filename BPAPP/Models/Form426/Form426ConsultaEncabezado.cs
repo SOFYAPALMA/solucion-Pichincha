@@ -4,6 +4,7 @@ namespace ProyectoWeb.Models
 {
     public class Form426ConsultaEncabezado
     {
+        public string PropiedadesFormato { get; set; }
         public int idPropiedadesFormato { get; set; }
         public int Tipo { get; set; }
         public int Codigo { get; set; }
@@ -18,6 +19,7 @@ namespace ProyectoWeb.Models
         public DateTime Fechacorte { get; set; }
         public DateTime FechaEstado { get; set; }
         public int CodigoRegistro { get; set; }
+        public string PropiedadesFormatoAnterior { get; set; }
         public int idPropiedadesFormatoAnterior { get; set; }
     }
 }

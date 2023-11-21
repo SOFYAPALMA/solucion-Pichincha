@@ -225,9 +225,9 @@ namespace ProyectoWeb.Controllers
         private void LlenadoListasDetalle()
         {
             List<Dominio> idOperacionServicio = CD_Dominios.Obtener(10);
-            List<Dominio> idCanal = CD_Dominios.Obtener(21);
-            List<Dominio> idTipoAseguradora = CD_Dominios.Obtener(-1);
-            List<Dominio> idCodigoAseguradora = CD_Dominios.Obtener(-1);
+            /*List<Canal> idCanal = DatosCanal.Lista(21);
+            List<Dominio> idTipoAseguradora = CD_Dominios.Obtener();
+            List<Dominio> idCodigoAseguradora = CD_Dominios.Obtener();*/
             List<Dominio> idObservaciones = CD_Dominios.Obtener(13);
 
             if (idOperacionServicio.Count() == 0)
@@ -236,11 +236,11 @@ namespace ProyectoWeb.Controllers
             }
             ViewBag.DescripcionOperacionServicio = new SelectList(idOperacionServicio, "IdDominio", "Nombre");
 
-            if (idCanal.Count() == 0)
+           /* if (idCanal.Count() == 0)
             {
                 ModelState.AddModelError("Canal", "No se encuentra valores para la lista de tipo de Canal");
             }
-            ViewBag.Canal = new SelectList(idCanal, "IdDominio", "Nombre");
+            ViewBag.Canal = new SelectList(idCanal, "Canal", "Descripcion");
 
             if (idTipoAseguradora.Count() == 0)
             {
@@ -258,7 +258,7 @@ namespace ProyectoWeb.Controllers
             {
                 ModelState.AddModelError("ID Observaciones", "No se encuentra valores para la lista de ID Observaciones");
             }
-            ViewBag.IDObservaciones = new SelectList(idObservaciones, "IdDominio", "Nombre");
+            ViewBag.IDObservaciones = new SelectList(idObservaciones, "IdDominio", "Nombre");*/
 
         }
 
