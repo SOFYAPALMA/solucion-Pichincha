@@ -370,5 +370,156 @@ namespace ProyectoWeb
         }
 
         #endregion
+
+        #region Formulario 424
+        public static Formulario426_Encabezado getMapper(Form426CrearEncabezado dto)
+        {
+            var result = new Formulario426_Encabezado()
+            {
+                idPropiedadesFormato = dto.idPropiedadesFormato,
+                Tipo = dto.Tipo,
+                Codigo = dto.Codigo,
+                Nombre = dto.Nombre,
+                CodigoCredito = dto.CodigoCredito,
+                idCodigoCredito = dto.idCodigoCredito,
+                AperturaDigital = dto.AperturaDigital,
+                idAperturaDigital = dto.idAperturaDigital,
+                Fecha_horaActualizacion = dto.Fecha_horaActualizacion,
+                Usuario = dto.Usuario,
+                Estado = dto.Estado,
+                Fechacorte = dto.Fechacorte,
+                FechaEstado = dto.FechaEstado,
+                CodigoRegistro = dto.CodigoRegistro,
+                idPropiedadesFormatoAnterior = dto.idPropiedadesFormatoAnterior
+            };
+            return result;
+        }
+
+        public static List<Form426ConsultaEncabezado> getMapper(List<Formulario426_Encabezado> obj)
+        {
+            List<Form426ConsultaEncabezado> result = new List<Form426ConsultaEncabezado>();
+
+            foreach (Formulario426_Encabezado consulta in obj)
+            {
+                Form426ConsultaEncabezado encabezado = getMapper(consulta);
+                result.Add(encabezado);
+            }
+
+            return result;
+        }
+
+        public static Form426ConsultaEncabezado getMapper(Formulario426_Encabezado obj)
+        {
+            var result = new Form426ConsultaEncabezado()
+            {
+                idPropiedadesFormato = obj.idPropiedadesFormato,
+                Tipo = obj.Tipo,
+                Codigo = obj.Codigo,
+                Nombre = obj.Nombre,
+                CodigoCredito = obj.CodigoCredito,
+                idCodigoCredito = obj.idCodigoCredito,
+                AperturaDigital = obj.AperturaDigital,
+                idAperturaDigital = obj.idAperturaDigital,
+                Fecha_horaActualizacion = obj.Fecha_horaActualizacion,
+                Usuario = obj.Usuario,
+                Estado = obj.Estado,
+                Fechacorte = obj.Fechacorte,
+                FechaEstado = obj.FechaEstado,
+                CodigoRegistro = obj.CodigoRegistro,
+                idPropiedadesFormatoAnterior = obj.idPropiedadesFormatoAnterior
+            };
+            return result;
+        }
+
+        public static Formulario426_Encabezado getMapper(Form426ConsultaEncabezado dto)
+        {
+            var result = new Formulario426_Encabezado()
+            {
+                idPropiedadesFormato = dto.idPropiedadesFormato,
+                Tipo = dto.Tipo,
+                Codigo = dto.Codigo,
+                Nombre = dto.Nombre,
+                CodigoCredito = dto.CodigoCredito,
+                idCodigoCredito = dto.idCodigoCredito,
+                AperturaDigital = dto.AperturaDigital,
+                idAperturaDigital = dto.idAperturaDigital,
+                Fecha_horaActualizacion = dto.Fecha_horaActualizacion,
+                Usuario = dto.Usuario,
+                Estado = dto.Estado,
+                Fechacorte = dto.Fechacorte,
+                FechaEstado = dto.FechaEstado,
+                CodigoRegistro = dto.CodigoRegistro,
+                idPropiedadesFormatoAnterior = dto.idPropiedadesFormatoAnterior
+            };
+            return result;
+        }
+
+        public static List<Form426ConsultaDetalle> getMapper(List<Formulario426_Detalle> obj)
+        {
+            List<Form426ConsultaDetalle> result = new List<Form426ConsultaDetalle>();
+
+            foreach (Formulario426_Detalle consulta in obj)
+            {
+                Form426ConsultaDetalle encabezado = getMapper(consulta);
+                result.Add(encabezado);
+            }
+
+            return result;
+        }
+
+        public static Form426ConsultaDetalle getMapper(Formulario426_Detalle obj)
+        {
+            var result = new Form426ConsultaDetalle()
+            {
+                Detalle = obj.Detalle,
+                idDetalle = obj.idDetalle,
+                PropiedadesFormato = obj.PropiedadesFormato,
+                idPropiedadesFormato = obj.idPropiedadesFormato,
+                Subcuenta = obj.Subcuenta,
+                CaracteristicaCredito = obj.CaracteristicaCredito,
+                idCaracteristicaCredito = obj.idCaracteristicaCredito,
+                Costo = obj.Costo,
+                Tasa = obj.Tasa,
+                TipoAseguradora = obj.TipoAseguradora,
+                idTipoAseguradora = obj.idTipoAseguradora,
+                CodigoAseguradora = obj.CodigoAseguradora,
+                idCodigoAseguradora = obj.idCodigoAseguradora,
+                Observaciones = obj.Observaciones,
+                idObservaciones = obj.idObservaciones,
+                UnidadCaptura = obj.UnidadCaptura,
+                Estado = obj.Estado,
+                FechaProceso = obj.FechaProceso,
+                FechaEstado = obj.FechaEstado,
+                CodigoRegistro = obj.CodigoRegistro,
+                DetalleAnterior = obj.DetalleAnterior,
+                idDetalleAnterior = obj.idDetalleAnterior
+            };
+            return result;
+        }
+
+        public static Formulario426_Detalle getMapper(Form426CrearDetalle dto)
+        {
+            var result = new Formulario426_Detalle()
+            {
+                idDetalle = dto.idDetalle,
+                idPropiedadesFormato = dto.idPropiedadesFormato,
+                Subcuenta = dto.Subcuenta,
+                idCaracteristicaCredito = dto.idCaracteristicaCredito,
+                Costo = dto.Costo,
+                Tasa = dto.Tasa,
+                idTipoAseguradora = dto.idTipoAseguradora,
+                idCodigoAseguradora = dto.idCodigoAseguradora,
+                idObservaciones = dto.idObservaciones,
+                UnidadCaptura = dto.UnidadCaptura,
+                Estado = dto.Estado,
+                FechaProceso = dto.FechaProceso,
+                FechaEstado = dto.FechaEstado,
+                CodigoRegistro = dto.CodigoRegistro,
+                idDetalleAnterior = dto.idDetalleAnterior
+            };
+            return result;
+        }
+
+        #endregion
     }
 }

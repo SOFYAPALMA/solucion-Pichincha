@@ -74,15 +74,15 @@ namespace BP.Repositorio
             try
             {
                 limpiarParametros();
-                AdicionarParametros("@Tipo", obj.Tipo);
-                AdicionarParametros("@Codigo", obj.Codigo);
-                AdicionarParametros("@Nombre", obj.Nombre);
-                AdicionarParametros("@Fecha_horaActualizacion", obj.Fecha_horaActualizacion);
-                AdicionarParametros("@idCodigoCredito", obj.idCodigoCredito);
-                AdicionarParametros("@idAperturaDigital", obj.idAperturaDigital);
-                AdicionarParametros("@Usuario", obj.Usuario);
-                AdicionarParametros("@IdPropiedadesFormato", obj.IdPropiedadesFormato);
- 
+                //AdicionarParametros("@Tipo", obj.Tipo);
+                //AdicionarParametros("@Codigo", obj.Codigo);
+                //AdicionarParametros("@Nombre", obj.Nombre);
+                //AdicionarParametros("@Fecha_horaActualizacion", obj.Fecha_horaActualizacion);
+                //AdicionarParametros("@idCodigoCredito", obj.idCodigoCredito);
+                //AdicionarParametros("@idAperturaDigital", obj.idAperturaDigital);
+                //AdicionarParametros("@Usuario", obj.Usuario);
+                //AdicionarParametros("@IdPropiedadesFormato", obj.IdPropiedadesFormato);
+
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
                 AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
 
@@ -111,24 +111,24 @@ namespace BP.Repositorio
                 AdicionarParametros("Tipo", obj.Tipo);
                 AdicionarParametros("Codigo", obj.Codigo);
                 AdicionarParametros("Nombre", obj.Nombre);
-                AdicionarParametros("NombreComercial", obj.NombreComercial);
-                AdicionarParametros("idAperturaDigital", obj.idAperturaDigital);
-                AdicionarParametros("NumeroClientes", obj.NumeroClientes);
-                AdicionarParametros("idFranquicia", obj.idFranquicia);
-                AdicionarParametros("CuotaManejo", obj.CuotaManejo);
-                AdicionarParametros("idObservacionesCuota", obj.idObservacionesCuota);
-                AdicionarParametros("CuotaManejoMaxima", obj.CuotaManejoMaxima);
-                AdicionarParametros("idGrupoPoblacional", obj.idGrupoPoblacional);
-                AdicionarParametros("idCupo", obj.idCupo);
-                AdicionarParametros("idServicioGratuito_1", obj.idServicioGratuito_1);
-                AdicionarParametros("idServicioGratuito_2", obj.idServicioGratuito_2);
-                AdicionarParametros("idServicioGratuito_3", obj.idServicioGratuito_3);
-                AdicionarParametros("Fecha_horaActualizacion", obj.Fecha_horaActualizacion);
-                AdicionarParametros("Usuario", obj.Usuario);
-                AdicionarParametros("Estado", obj.Estado);
-                AdicionarParametros("Fechacorte", obj.Fechacorte);
-                AdicionarParametros("FechaEstado", obj.FechaEstado);
-                AdicionarParametros("CodigoRegistro", obj.CodigoRegistro);
+                //AdicionarParametros("NombreComercial", obj.NombreComercial);
+                //AdicionarParametros("idAperturaDigital", obj.idAperturaDigital);
+                //AdicionarParametros("NumeroClientes", obj.NumeroClientes);
+                //AdicionarParametros("idFranquicia", obj.idFranquicia);
+                //AdicionarParametros("CuotaManejo", obj.CuotaManejo);
+                //AdicionarParametros("idObservacionesCuota", obj.idObservacionesCuota);
+                //AdicionarParametros("CuotaManejoMaxima", obj.CuotaManejoMaxima);
+                //AdicionarParametros("idGrupoPoblacional", obj.idGrupoPoblacional);
+                //AdicionarParametros("idCupo", obj.idCupo);
+                //AdicionarParametros("idServicioGratuito_1", obj.idServicioGratuito_1);
+                //AdicionarParametros("idServicioGratuito_2", obj.idServicioGratuito_2);
+                //AdicionarParametros("idServicioGratuito_3", obj.idServicioGratuito_3);
+                //AdicionarParametros("Fecha_horaActualizacion", obj.Fecha_horaActualizacion);
+                //AdicionarParametros("Usuario", obj.Usuario);
+                //AdicionarParametros("Estado", obj.Estado);
+                //AdicionarParametros("Fechacorte", obj.Fechacorte);
+                //AdicionarParametros("FechaEstado", obj.FechaEstado);
+                //AdicionarParametros("CodigoRegistro", obj.CodigoRegistro);
 
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
                 AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
@@ -178,11 +178,11 @@ namespace BP.Repositorio
             }
         }
 
-        public static List<Formulario425_Encabezado> Lista()
+        public static List<Formulario426_Encabezado> Lista()
         {
             try
             {
-                List<Formulario425_Encabezado> rpt = new List<Formulario426_Encabezado>();
+                List<Formulario426_Encabezado> rpt = new List<Formulario426_Encabezado>();
                 limpiarParametros();
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
 
@@ -216,11 +216,11 @@ namespace BP.Repositorio
             }
         }
 
-        public static List<Formulario425_Detalle> ListaDetalles(int FormatoId)
+        public static List<Formulario426_Detalle> ListaDetalles(int FormatoId)
         {
             try
             {
-                List<Formulario425_Detalle> rpt = new List<Formulario425_Detalle>();
+                List<Formulario426_Detalle> rpt = new List<Formulario426_Detalle>();
                 limpiarParametros();
                 AdicionarParametros("idPropiedadesFormato", FormatoId);
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
@@ -244,7 +244,7 @@ namespace BP.Repositorio
 
                     string serializedObject = JsonConvert.SerializeObject(list, new DatetimeToStringConverter());
 
-                    rpt = JsonConvert.DeserializeObject<List<Formulario425_Detalle>>(serializedObject);
+                    rpt = JsonConvert.DeserializeObject<List<Formulario426_Detalle>>(serializedObject);
                 }
 
                 return rpt;
@@ -255,4 +255,5 @@ namespace BP.Repositorio
             }
         }
     }
+}
 

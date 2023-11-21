@@ -50,6 +50,7 @@
     <Compile Include="DatosCanal.cs" />
     <Compile Include="DatosFormato425.cs" />
     <Compile Include="DatosFormato424.cs" />
+    <Compile Include="DatosFormato426.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
