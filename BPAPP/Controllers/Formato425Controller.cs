@@ -176,15 +176,21 @@ namespace ProyectoWeb.Controllers
 
             if (tipodeProductoDeposito.Count() == 0)
             {
-                ModelState.AddModelError("TipodeProductoDeposito", "No se encuentra valores para la lista de tipo de producto deposito");
+                ModelState.AddModelError("Tipo Producto Deposito", "No se encuentra valores para la lista de tipo de producto deposito");
             }
             ViewBag.TipodeProductoDeposito = new SelectList(tipodeProductoDeposito, "IdDominio", "Nombre");
 
             if (idAperturaDigital.Count() == 0)
             {
-                ModelState.AddModelError("Apertura digital", "No se encuentra valores para la lista de Apertura Deposito");
+                ModelState.AddModelError("Apertura digital", "No se encuentra valores para la lista de Apertura digital");
             }
-            ViewBag.AperturaDeposito = new SelectList(idAperturaDigital, "IdDominio", "Nombre");
+            ViewBag.idAperturaDigital = new SelectList(idAperturaDigital, "IdDominio", "Nombre");
+
+            if (idFranquicia.Count() == 0)
+            {
+                ModelState.AddModelError("idFranquicia", "No se encuentra valores para la lista de franquicia");
+            }
+            ViewBag.idFranquicia = new SelectList(idFranquicia, "IdDominio", "Nombre");
 
             if (grupoPoblacional.Count() == 0)
             {
