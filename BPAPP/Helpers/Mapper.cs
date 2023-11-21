@@ -420,11 +420,11 @@ namespace ProyectoWeb
                 idCodigoCredito = obj.idCodigoCredito,
                 AperturaDigital = obj.AperturaDigital,
                 idAperturaDigital = obj.idAperturaDigital,
-                Fecha_horaActualizacion = obj.Fecha_horaActualizacion.ToString(),
+                Fecha_horaActualizacion = obj.Fecha_horaActualizacion,
                 Usuario = obj.Usuario,
                 Estado = obj.Estado,
-                Fechacorte = obj.Fechacorte.ToString(),
-                FechaEstado = obj.FechaEstado.ToString(),
+                Fechacorte = obj.Fechacorte,
+                FechaEstado = obj.FechaEstado,
                 CodigoRegistro = obj.CodigoRegistro,
                 idPropiedadesFormatoAnterior = obj.idPropiedadesFormatoAnterior
             };

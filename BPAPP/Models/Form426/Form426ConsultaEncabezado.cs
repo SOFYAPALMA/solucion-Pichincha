@@ -5,8 +5,6 @@ namespace ProyectoWeb.Models
     public class Form426ConsultaEncabezado
     {
         public string PropiedadesFormato { get; set; }
-
-        [Display(Name = "Registro")]
         public int idPropiedadesFormato { get; set; }
         public int Tipo { get; set; }
         public int Codigo { get; set; }

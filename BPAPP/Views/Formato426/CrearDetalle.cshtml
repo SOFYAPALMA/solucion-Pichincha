@@ -30,7 +30,7 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.idCaracteristicaCredito, htmlAttributes: new { @class = "control-label" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.idCaracteristicaCredito, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.DropDownList("idCaracteristicaCredito", (SelectList)ViewBag.TipodeProductoDeposito, "Seleccione..", new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.idCaracteristicaCredito, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.idTipoAseguradora, htmlAttributes: new { @class = "control-label" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.idTipoAseguradora, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.DropDownList("idTipoAseguradora", (SelectList)ViewBag.TipodeProductoDeposito, "Seleccione..", new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.idTipoAseguradora, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.idCodigoAseguradora, htmlAttributes: new { @class = "control-label" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.idCodigoAseguradora, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.DropDownList("idCodigoAseguradora", (SelectList)ViewBag.TipodeProductoDeposito, "Seleccione..", new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.idCodigoAseguradora, "", new { @class = "text-danger" })
                         </div>
                     </div>

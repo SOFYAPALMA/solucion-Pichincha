@@ -15,7 +15,7 @@
                 </div>
                 <br>
                 <h3 style="text-align:center;">TARIFAS DE LOS PRODUCTOS DE DEPÓSITO</h3>
-                <h4 style="text-align:center;">FORMATO 424</h4>
+                <h4 style="text-align:center;">FORMATO 426</h4>
                 <h5 style="text-align:center;">CIRCULAR EXTERNA 006 DE 2023</h5>
 
                 <div class="card-body">
@@ -31,7 +31,7 @@
                             <div class="form-group">
                                 @Html.LabelFor(model => model.idCodigoCredito, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
-                                    @Html.EditorFor(model => model.idCodigoCredito, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.DropDownList("idCodigoCredito", (SelectList)ViewBag.TipodeProductoDeposito, "Seleccione..", new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.idCodigoCredito, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -40,7 +40,7 @@
                             <div class="form-group">
                                 @Html.LabelFor(model => model.idAperturaDigital, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
-                                    @Html.EditorFor(model => model.idAperturaDigital, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.DropDownList("idAperturaDigital", (SelectList)ViewBag.TipodeProductoDeposito, "Seleccione..", new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.idAperturaDigital, "", new { @class = "text-danger" })
                                 </div>
                             </div>

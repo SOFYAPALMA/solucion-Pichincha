@@ -27,7 +27,7 @@
                             <div class="form-group">
                                 @Html.LabelFor(model => model.idCodigoCredito, htmlAttributes: new { @class = "control-label" })
                                 <div class="col-md-10">
-                                    @Html.EditorFor(model => model.idCodigoCredito, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.DropDownList("idCodigoCredito", (SelectList)ViewBag.TipodeProductoDeposito, "Seleccione..", new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.idCodigoCredito, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -36,7 +36,7 @@
                             <div class="form-group">
                                 @Html.LabelFor(model => model.idAperturaDigital, htmlAttributes: new { @class = "control-label" })
                                 <div class="col-md-10">
-                                    @Html.EditorFor(model => model.idAperturaDigital, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.DropDownList("idAperturaDigital", (SelectList)ViewBag.TipodeProductoDeposito, "Seleccione..", new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.idAperturaDigital, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                             <div class="form-group">
                                 @Html.LabelFor(model => model.CodigoRegistro, htmlAttributes: new { @class = "control-label" })
                                 <div class="col-md-10">
-                                    @Html.EditorFor(model => model.CodigoRegistro, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.DropDownList("CodigoRegistro", (SelectList)ViewBag.TipodeProductoDeposito, "Seleccione..", new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.CodigoRegistro, "", new { @class = "text-danger" })
                                 </div>
                             </div>

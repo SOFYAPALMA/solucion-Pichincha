@@ -60,6 +60,9 @@ namespace ProyectoWeb.Models
         public string CodigoAseguradora { get; set; }
         public int idCodigoAseguradora { get; set; }
         public string Observaciones { get; set; }
+
+        [Required(ErrorMessage = "El campo ID Observaciones es obligatorio.")]
+        [Display(Name = "ID Observaciones")]
         public int idObservaciones { get; set; }
         public int UnidadCaptura { get; set; }
         public int Estado { get; set; }
