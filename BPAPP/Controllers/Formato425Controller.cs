@@ -114,7 +114,7 @@ namespace ProyectoWeb.Controllers
 
                 if (respuesta)
                 {
-                    TempData["Notificacion"] = DatosFormato424.Mensaje;
+                    TempData["Notificacion"] = DatosFormato425.Mensaje;
 
                     return RedirectToAction("List");
                 }
@@ -167,7 +167,7 @@ namespace ProyectoWeb.Controllers
         private void LlenadoListasEncabezado()
         {
             List<Dominio> tipodeProductoDeposito = CD_Dominios.Obtener(1);
-            List<Dominio> aperturaDeposito = CD_Dominios.Obtener(2);
+            List<Dominio> idAperturaDigital = CD_Dominios.Obtener(2);
             List<Dominio> grupoPoblacional = CD_Dominios.Obtener(3);
             List<Dominio> ingresos = CD_Dominios.Obtener(4);
             List<Dominio> observacionesCuotadeManejo = CD_Dominios.Obtener(5);
@@ -180,11 +180,11 @@ namespace ProyectoWeb.Controllers
             }
             ViewBag.TipodeProductoDeposito = new SelectList(tipodeProductoDeposito, "IdDominio", "Nombre");
 
-            if (aperturaDeposito.Count() == 0)
+            if (idAperturaDigital.Count() == 0)
             {
-                ModelState.AddModelError("AperturaDeposito", "No se encuentra valores para la lista de Apertura Deposito");
+                ModelState.AddModelError("Apertura digital", "No se encuentra valores para la lista de Apertura Deposito");
             }
-            ViewBag.AperturaDeposito = new SelectList(aperturaDeposito, "IdDominio", "Nombre");
+            ViewBag.AperturaDeposito = new SelectList(idAperturaDigital, "IdDominio", "Nombre");
 
             if (grupoPoblacional.Count() == 0)
             {

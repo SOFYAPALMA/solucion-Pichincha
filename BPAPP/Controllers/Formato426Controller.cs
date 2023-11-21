@@ -48,7 +48,7 @@ namespace ProyectoWeb.Controllers
 
             DataTable dt = new DataTable();
 
-            dt = CD_Formato425.Reporte(nombres, apellidos, codigo, documentoidentidad);
+            dt = CD_Formato426.Reporte(nombres, apellidos, codigo, documentoidentidad);
 
             return Json(new { data = DataTableToJSONWithJavaScriptSerializer(dt) }, JsonRequestBehavior.AllowGet);
 
