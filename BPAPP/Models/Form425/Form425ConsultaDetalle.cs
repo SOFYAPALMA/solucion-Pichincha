@@ -7,6 +7,7 @@ namespace ProyectoWeb.Models
     {
         public int idDetalle { get; set; }
 
+        [Required(ErrorMessage = "El campo Registro es obligatorio.")]
         [Display(Name = "Registro")]
         public int idPropiedadesFormato { get; set; }
 
@@ -19,24 +20,24 @@ namespace ProyectoWeb.Models
         public int idOperacionoServicio { get; set; }
         public string OperacionoServicio { get; set; }
 
-        [Required(ErrorMessage = "El campo Costo fijo es obligatorio.")]
-        [Display(Name = "Costo fijo")]
-        public int Canal { get; set; }
-
         [Required(ErrorMessage = "El campo Canal es obligatorio.")]
         [Display(Name = "Canal")]
+        public int Canal { get; set; }
+
+        [Required(ErrorMessage = "El campo Costo Fijo es obligatorio.")]
+        [Display(Name = "Costo Fijo")]
         public int CostoFijo { get; set; }
 
         [Required(ErrorMessage = "El campo Costo fijo máximo es obligatorio.")]
         [Display(Name = "Costo fijo máximo")]
         public int CostoFijoMaximo { get; set; }
 
-        [Required(ErrorMessage = "El campo Costo proporcional a operación o servicio es obligatorio.")]
-        [Display(Name = "Costo proporcional a operación o servicio")]
+        [Required(ErrorMessage = "El campo Costo proporcion a operación o servicio es obligatorio.")]
+        [Display(Name = "Costo proporcion a operación o servicio")]
         public int CostoProporcionOperacionServicio { get; set; }
 
-        [Required(ErrorMessage = "El campo Costo proporcional máximo a operación o servicio es obligatorio.")]
-        [Display(Name = "Costo proporcional máximo a operación o servicio")]
+        [Required(ErrorMessage = "El campo Costo max proporcional a operación o servicio es obligatorio.")]
+        [Display(Name = "Costo proporcional max a operación o servicio")]
         public int CostoProporcionMaxOperacionServicio { get; set; }
 
         [Required(ErrorMessage = "El campo Tasa es obligatorio.")]
