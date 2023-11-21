@@ -11,15 +11,6 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Tipo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Codigo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.NombreComercial)
         </th>
         <th>
@@ -56,9 +47,6 @@
             @Html.DisplayNameFor(model => model.idServicioGratuito_3)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Usuario)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.CodigoRegistro)
         </th>
         <th></th>
@@ -66,15 +54,6 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tipo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Codigo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.NombreComercial)
         </td>
@@ -110,9 +89,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ServicioGratuito_3)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Usuario)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CodigoRegistro)

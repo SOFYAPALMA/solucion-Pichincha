@@ -28,6 +28,8 @@ namespace ProyectoWeb.Models
         public int idGrupoPoblacional { get; set; }
         public int idIngresos { get; set; }
         public int idObservacionesCuota { get; set; }
+
+        [Display(Name = "Registro")]
         public int idPropiedadesFormato { get; set; }
         public int? idPropiedadesFormatoAnterior { get; set; }
         public int idSerGratuito_CtaAHO { get; set; }

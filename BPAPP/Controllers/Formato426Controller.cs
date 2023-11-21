@@ -34,7 +34,7 @@ namespace ProyectoWeb.Controllers
                 if (Session["IdUsuario"] == null)
                     return RedirectToAction("Login");
 
-                int idusuario = int.Parse(Session["IdUsuario"].ToString());
+                string idusuario = Session["IdUsuario"].ToString();
 
                 Formulario426_Encabezado encabezado = Mapper.getMapper(form426);
                 encabezado.Usuario = idusuario;
@@ -105,7 +105,7 @@ namespace ProyectoWeb.Controllers
                 if (Session["IdUsuario"] == null)
                     return RedirectToAction("Login");
 
-                int idusuario = int.Parse(Session["IdUsuario"].ToString());
+                string idusuario = Session["IdUsuario"].ToString();
 
                 Formulario426_Encabezado upd = Mapper.getMapper(encabezado);
                 upd.Usuario = idusuario;

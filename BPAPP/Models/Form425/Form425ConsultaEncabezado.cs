@@ -5,6 +5,7 @@ namespace ProyectoWeb.Models
 {
     public class Form425ConsultaEncabezado
     {
+        [Display(Name = "Registro")]
         public int idPropiedadesFormato { get; set; }
 
         [Display(Name = "Tipo Entidad")]

@@ -8,6 +8,7 @@ namespace ProyectoWeb.Models
         /// <summary>
         /// Referencia a al tipo entidad
         /// </summary>
+        [Display(Name = "Registro")]
         public int idPropiedadesFormato { get; set; }
 
         [Required(ErrorMessage = "El campo tipo entidad es obligatorio.")]
@@ -53,7 +54,7 @@ namespace ProyectoWeb.Models
 
         [Required(ErrorMessage = "El Usuario es obligatorio.")]
         [Display(Name = "Usuario")]
-        public int Usuario { get; set; }
+        public string Usuario { get; set; }
 
         [Required(ErrorMessage = "El campo Estado es obligatorio.")]
         [Display(Name = "Estado")]
@@ -70,7 +71,7 @@ namespace ProyectoWeb.Models
         [Required(ErrorMessage = "El campo Codigo Registro es obligatorio.")]
         [Display(Name = "Codigo Registro")]
         public int CodigoRegistro { get; set; }
-        public int idPropiedadesFormatoAnterior { get; set; }
+        public int? idPropiedadesFormatoAnterior { get; set; }
 
     }
 }
