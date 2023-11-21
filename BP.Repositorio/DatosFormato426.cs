@@ -41,16 +41,10 @@ namespace BP.Repositorio
                 AdicionarParametros("Nombre", obj.Nombre);
                 AdicionarParametros("idCodigoCredito", obj.idCodigoCredito);
                 AdicionarParametros("idAperturaDigital", obj.idAperturaDigital);
-                AdicionarParametros("Fecha_horaActualizacion", obj.Fecha_horaActualizacion);
                 AdicionarParametros("Usuario", obj.Usuario);
-                AdicionarParametros("Estado", obj.Estado);
-                AdicionarParametros("Fechacorte", obj.Fechacorte);
-                AdicionarParametros("FechaEstado", obj.FechaEstado);
-                AdicionarParametros("CodigoRegistro", obj.CodigoRegistro);
-                AdicionarParametros("idPropiedadesFormatoAnterior", obj.idPropiedadesFormatoAnterior);
 
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
-                AdicionarParametrosOut("IdPropiedadesFomato", SqlDbType.Int);
+                AdicionarParametrosOut("@IdPropiedadesFormato", SqlDbType.Int);
                 AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
 
                 ejecutarScalar("bpapp.spInsertaPropiedadesCreditos");
@@ -155,7 +149,7 @@ namespace BP.Repositorio
                 AdicionarParametros("idPropiedadesFormato", FormatoId);
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
 
-                DataTable dt = ejecutarStoreProcedure("bpapp.spConsultaPropiedadesDepositos").Tables[0];
+                DataTable dt = ejecutarStoreProcedure("bpapp.spConsultaPropiedadesCredito").Tables[0];
 
                 if (dt.Rows.Count > 0)
                 {

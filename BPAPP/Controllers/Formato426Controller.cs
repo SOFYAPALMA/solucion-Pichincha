@@ -180,45 +180,44 @@ namespace ProyectoWeb.Controllers
                 ModelState.AddModelError("AperturaDeposito", "No se encuentra valores para la lista de Apertura Deposito");
             }
             ViewBag.AperturaDigital = new SelectList(idAperturaDigital, "IdDominio", "Nombre");
+        }
+
+        /// <summary>
+        /// Llena las listas que requiere el controlador
+        /// </summary>
+        /// 
+        private void LlenadoListasDetalle()
+        {
+            List<Dominio> idCaracteristicaCredito = CD_Dominios.Obtener(1);
+            List<Dominio> idTipoAseguradora = CD_Dominios.Obtener(17);
+            List<Dominio> idCodigoAseguradora = CD_Dominios.Obtener(17);
+            List<Dominio> idObservaciones = CD_Dominios.Obtener(14);
 
 
-            /// <summary>
-            /// Llena las listas que requiere el controlador
-            /// </summary>
-            /// 
-            private void LlenadoListasDetalle()
+            if (idCaracteristicaCredito.Count() == 0)
             {
-                List<Dominio> idCaracteristicaCredito = CD_Dominios.Obtener(1);
-                List<Dominio> idTipoAseguradora = CD_Dominios.Obtener(17);
-                List<Dominio> idCodigoAseguradora = CD_Dominios.Obtener(17);
-                List<Dominio> idObservaciones = CD_Dominios.Obtener(14);
-               
-
-                if (idCaracteristicaCredito.Count() == 0)
-                {
-                    ModelState.AddModelError("Caracteristica Credito", "No se encuentra valores para la lista de tipo de Caracteristica Credito");
-                }
-                ViewBag.idCaracteristicaCredito = new SelectList(idCaracteristicaCredito, "IdDominio", "Nombre");
-
-                if (idTipoAseguradora.Count() == 0)
-                {
-                    ModelState.AddModelError("Tipo Aseguradora", "No se encuentra valores para la lista de tipo de Tipo Aseguradora");
-                }
-                ViewBag.idTipoAseguradora = new SelectList(idTipoAseguradora, "IdDominio", "Nombre");
-
-                if (idCodigoAseguradora.Count() == 0)
-                {
-                    ModelState.AddModelError("Codigo Aseguradora", "No se encuentra valores para la lista de Codigo Aseguradora");
-                }
-                ViewBag.costoProporcionOperacionServicio = new SelectList(idCodigoAseguradora, "IdDominio", "Nombre");
-
-                if (idObservaciones.Count() == 0)
-                {
-                    ModelState.AddModelError("ID Observaciones", "No se encuentra valores para la lista de ID Observaciones");
-                }
-                ViewBag.IDObservaciones = new SelectList(idObservaciones, "IdDominio", "Nombre");
-
+                ModelState.AddModelError("Caracteristica Credito", "No se encuentra valores para la lista de tipo de Caracteristica Credito");
             }
+            ViewBag.idCaracteristicaCredito = new SelectList(idCaracteristicaCredito, "IdDominio", "Nombre");
+
+            if (idTipoAseguradora.Count() == 0)
+            {
+                ModelState.AddModelError("Tipo Aseguradora", "No se encuentra valores para la lista de tipo de Tipo Aseguradora");
+            }
+            ViewBag.idTipoAseguradora = new SelectList(idTipoAseguradora, "IdDominio", "Nombre");
+
+            if (idCodigoAseguradora.Count() == 0)
+            {
+                ModelState.AddModelError("Codigo Aseguradora", "No se encuentra valores para la lista de Codigo Aseguradora");
+            }
+            ViewBag.costoProporcionOperacionServicio = new SelectList(idCodigoAseguradora, "IdDominio", "Nombre");
+
+            if (idObservaciones.Count() == 0)
+            {
+                ModelState.AddModelError("ID Observaciones", "No se encuentra valores para la lista de ID Observaciones");
+            }
+            ViewBag.IDObservaciones = new SelectList(idObservaciones, "IdDominio", "Nombre");
+
         }
     }
 

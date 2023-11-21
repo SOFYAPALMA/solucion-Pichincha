@@ -7,8 +7,7 @@ namespace ProyectoWeb.Models
     {
         public string PropiedadesFormato { get; set; }
 
-        [Required(ErrorMessage = "El campo ID Propiedades Formato es obligatorio.")]
-        [Display(Name = "ID Propiedades Formato")]
+        [Display(Name = "Número Registro")]
         public int idPropiedadesFormato { get; set; }
 
         [Required(ErrorMessage = "El campo Tipo es obligatorio.")]
@@ -19,8 +18,7 @@ namespace ProyectoWeb.Models
         [Display(Name = "Codigo")]
         public int Codigo { get; set; }
 
-        [Required(ErrorMessage = "El campo  Propiedades Formato es obligatorio.")]
-        [Display(Name = "Propiedades Formato")]
+        [Display(Name = "Nombre Entidad")]
         [StringLength(50)]
         [DataType(DataType.Text)]
         public string Nombre { get; set; }
@@ -28,18 +26,22 @@ namespace ProyectoWeb.Models
         [Required(ErrorMessage = "El campo Codigo Credito es obligatorio.")]
         [Display(Name = "Codigo Credito")]
         public string CodigoCredito { get; set; }
+        
+        [Display(Name = "Codigo Credito")]
         public int idCodigoCredito { get; set; }
 
         [Required(ErrorMessage = "El campo AperturaDigital es obligatorio.")]
         [Display(Name = "Apertura Digital")]
         public string AperturaDigital { get; set; }
+        
+        [Display(Name = "Apertura Digital")]
         public int idAperturaDigital { get; set; }
         public string Fecha_horaActualizacion { get; set; }
         public string Usuario { get; set; }
         public string Estado { get; set; }
         public string Fechacorte { get; set; }
         public string FechaEstado { get; set; }
-        public int CodigoRegistro { get; set; }
+        public int? CodigoRegistro { get; set; }
         public string PropiedadesFormatoAnterior { get; set; }
         public int? idPropiedadesFormatoAnterior { get; set; }
     }
