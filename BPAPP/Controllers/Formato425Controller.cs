@@ -225,9 +225,9 @@ namespace ProyectoWeb.Controllers
         private void LlenadoListasDetalle()
         {
             List<Dominio> idOperacionServicio = CD_Dominios.Obtener(10);
-            List<Canal> idCanal = DatosCanal.Lista(21);
-            List<Dominio> idTipoAseguradora = CD_Dominios.Obtener();
-            List<Dominio> idCodigoAseguradora = CD_Dominios.Obtener();
+            List<Dominio> idCanal = CD_Dominios.Obtener(21);
+            List<Dominio> idTipoAseguradora = CD_Dominios.Obtener(-1);
+            List<Dominio> idCodigoAseguradora = CD_Dominios.Obtener(-1);
             List<Dominio> idObservaciones = CD_Dominios.Obtener(13);
 
             if (idOperacionServicio.Count() == 0)
@@ -240,7 +240,7 @@ namespace ProyectoWeb.Controllers
             {
                 ModelState.AddModelError("Canal", "No se encuentra valores para la lista de tipo de Canal");
             }
-            ViewBag.Canal = new SelectList(idCanal, "Canal", "Descripcion");
+            ViewBag.Canal = new SelectList(idCanal, "IdDominio", "Nombre");
 
             if (idTipoAseguradora.Count() == 0)
             {
