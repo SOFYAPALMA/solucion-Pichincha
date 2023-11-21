@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaModelo
 {
@@ -17,7 +13,7 @@ namespace CapaModelo
         public string AperturaDigital { get; set; }
         public int idAperturaDigital { get; set; }
         public DateTime Fecha_horaActualizacion { get; set; }
-        public string Usuario { get; set; }
+        public int Usuario { get; set; }
         public string Estado { get; set; }
         public DateTime Fechacorte { get; set; }
         public DateTime FechaEstado { get; set; }

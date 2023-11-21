@@ -1,0 +1,118 @@
+﻿@model IEnumerable<ProyectoWeb.Models.Form426ConsultaEncabezado>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idPropiedadesFormato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoCredito)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idCodigoCredito)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AperturaDigital)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idAperturaDigital)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha_horaActualizacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fechacorte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaEstado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoRegistro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idPropiedadesFormatoAnterior)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idPropiedadesFormato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoCredito)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idCodigoCredito)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AperturaDigital)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idAperturaDigital)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha_horaActualizacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fechacorte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaEstado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoRegistro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idPropiedadesFormatoAnterior)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaModelo
 {
@@ -15,7 +11,7 @@ namespace CapaModelo
         public int Subcuenta { get; set; }
         public string CaracteristicaCredito { get; set; }
         public int idCaracteristicaCredito { get; set; }
-        public string Costo { get; set; }
+        public int Costo { get; set; }
         public int Tasa { get; set; }
         public string TipoAseguradora { get; set; }
         public int idTipoAseguradora { get; set; }
