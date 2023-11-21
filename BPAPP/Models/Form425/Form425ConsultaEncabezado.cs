@@ -67,5 +67,6 @@ namespace ProyectoWeb.Models
         public DateTime Fechacorte { get; set; }
         public DateTime FechaEstado { get; set; }
         public int CodigoRegistro { get; set; }
+
     }
 }

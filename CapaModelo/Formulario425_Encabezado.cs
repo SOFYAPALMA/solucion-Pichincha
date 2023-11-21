@@ -10,7 +10,7 @@ namespace CapaModelo
         public string Nombre { get; set; }
         public string NombreComercial { get; set; }
         public int idNombreComercial { get; set; }
-        public int AperturaDigital { get; set; }
+        public string AperturaDigital { get; set; }
         public int idAperturaDigital { get; set; }
         public int NumeroClientes { get; set; }
         public string Franquicia { get; set; }

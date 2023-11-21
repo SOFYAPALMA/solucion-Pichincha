@@ -9,7 +9,6 @@ namespace ProyectoWeb.Models
        /// </summary>
         [Required(ErrorMessage = "El campo tipo entidad es obligatorio.")]
         [Display(Name = "Tipo")]
-
         public int Tipo { get; } = 001; //Campo fijo por default= 001
 
         [Required(ErrorMessage = "El campo codigo entidad es obligatorio.")]
@@ -27,7 +26,7 @@ namespace ProyectoWeb.Models
 
         [Required(ErrorMessage = "El campo Apertura Digital es obligatorio.")]
         [Display(Name = "Apertura Digital")]
-        public int AperturaDigital { get; set; }
+        public string AperturaDigital { get; set; }
 
         [Required(ErrorMessage = "El campo Número de clientes únicos es obligatorio.")]
         [Display(Name = "Número de clientes únicos")]
@@ -96,6 +95,7 @@ namespace ProyectoWeb.Models
         [Required(ErrorMessage = "El campo Fecha hora actualizacion registro es obligatorio.")]
         [Display(Name = "Fecha hora actualizacion")]
         public DateTime Fecha_horaActualizacion { get; set; }
-
+        public int idPropiedadesFormato { get; internal set; }
+        public string NombreComercial { get; internal set; }
     }
 }
