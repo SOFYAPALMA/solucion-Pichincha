@@ -5,135 +5,99 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<div class="">
+    <div class="card">
+        <div class="card-header">
+            SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+        </div>
+        <h3 style="text-align:center;">TARIFAS DE LOS PRODUCTOS DE DEPÓSITO</h3>
+        <h4 style="text-align:center;">FORMATO 424</h4>
+        <h5 style="text-align:center;">CIRCULAR EXTERNA 006 DE 2023</h5>
+        <div class="card-body">
+            <div class="row">
 
-<div>
-    <h4>Form426ConsultaEncabezado</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.idPropiedadesFormato)
-        </dt>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.Tipo)
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.idPropiedadesFormato)
-        </dd>
+                        <div>
+                            @Html.DisplayFor(model => model.Tipo)
+                        </div>
+                    </div>
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Tipo)
-        </dt>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.Codigo)
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Tipo)
-        </dd>
+                        <div>
+                            @Html.DisplayFor(model => model.Codigo)
+                        </div>
+                    </div>
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Codigo)
-        </dt>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.Nombre)
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Codigo)
-        </dd>
+                        <div>
+                            @Html.DisplayFor(model => model.Nombre)
+                        </div>
+                    </div>
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.CodigoCredito)
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
+                        <div>
+                            @Html.DisplayFor(model => model.CodigoCredito)
+                        </div>
+                    </div>
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CodigoCredito)
-        </dt>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.AperturaDigital)
+                        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.CodigoCredito)
-        </dd>
+                        <div>
+                            @Html.DisplayFor(model => model.AperturaDigital)
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.idCodigoCredito)
-        </dt>
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.idCodigoCredito)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AperturaDigital)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AperturaDigital)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.idAperturaDigital)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.idAperturaDigital)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Fecha_horaActualizacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Fecha_horaActualizacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Usuario)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Usuario)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Estado)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Estado)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Fechacorte)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Fechacorte)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FechaEstado)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FechaEstado)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CodigoRegistro)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CodigoRegistro)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.idPropiedadesFormatoAnterior)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.idPropiedadesFormatoAnterior)
-        </dd>
-
-    </dl>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-sm-12 float-right">
+                    @Html.ActionLink("Editar", "Update/" + Model.idPropiedadesFormato, Model.idPropiedadesFormato, new { @class = "btn btn-primary btn-sm float-right" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 float-right">
+            @Html.ActionLink("Nuevo Detalle", "CrearDetalle/" + Model.idPropiedadesFormato)
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            Detalles
+        </div>
+        <div class="card-body">
+            @Html.Partial("ListDetalles", (List<ProyectoWeb.Models.Form424ConsultaDetalle>)@ViewBag.ListaDetalles)
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

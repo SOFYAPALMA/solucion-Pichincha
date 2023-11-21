@@ -471,9 +471,7 @@ namespace ProyectoWeb
         {
             var result = new Form426ConsultaDetalle()
             {
-                Detalle = obj.Detalle,
                 idDetalle = obj.idDetalle,
-                PropiedadesFormato = obj.PropiedadesFormato,
                 idPropiedadesFormato = obj.idPropiedadesFormato,
                 Subcuenta = obj.Subcuenta,
                 CaracteristicaCredito = obj.CaracteristicaCredito,
@@ -491,7 +489,6 @@ namespace ProyectoWeb
                 FechaProceso = obj.FechaProceso,
                 FechaEstado = obj.FechaEstado,
                 CodigoRegistro = obj.CodigoRegistro,
-                DetalleAnterior = obj.DetalleAnterior,
                 idDetalleAnterior = obj.idDetalleAnterior
             };
             return result;
