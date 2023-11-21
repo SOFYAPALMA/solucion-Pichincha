@@ -15,7 +15,7 @@
                 </div>
                 <br>
                 <h3 style="text-align:center;">TARIFAS DE LOS PRODUCTOS DE DEPÓSITO</h3>
-                <h4 style="text-align:center;">FORMATO 424</h4>
+                <h4 style="text-align:center;">FORMATO 426</h4>
                 <h5 style="text-align:center;">CIRCULAR EXTERNA 006 DE 2023</h5>
                 <br>
                 <div class="card-body">
@@ -38,15 +38,6 @@
                                 <div class="col-md-10">
                                     @Html.DropDownList("idAperturaDigital", (SelectList)ViewBag.TipodeProductoDeposito, "Seleccione..", new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.idAperturaDigital, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.CodigoRegistro, htmlAttributes: new { @class = "control-label" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.CodigoRegistro, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.CodigoRegistro, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </div>
