@@ -188,28 +188,29 @@ namespace ProyectoWeb.Controllers
             /// 
             private void LlenadoListasDetalle()
             {
-                List<Dominio> idOperacionServicio = CD_Dominios.Obtener(10);
-                List<Dominio> idCanal = CD_Dominios.Obtener(20);
-                List<Dominio> CostoProporcionOperacionServicio = CD_Dominios.Obtener(10);
-                List<Dominio> idObservaciones = CD_Dominios.Obtener(11);
+                List<Dominio> idCaracteristicaCredito = CD_Dominios.Obtener(1);
+                List<Dominio> idTipoAseguradora = CD_Dominios.Obtener(17);
+                List<Dominio> idCodigoAseguradora = CD_Dominios.Obtener(17);
+                List<Dominio> idObservaciones = CD_Dominios.Obtener(14);
+               
 
-                if (idOperacionServicio.Count() == 0)
+                if (idCaracteristicaCredito.Count() == 0)
                 {
-                    ModelState.AddModelError("Descripcion Operacion Servicio", "No se encuentra valores para la lista de tipo de Descripcion operacion servicio");
+                    ModelState.AddModelError("Caracteristica Credito", "No se encuentra valores para la lista de tipo de Caracteristica Credito");
                 }
-                ViewBag.DescripcionOperacionServicio = new SelectList(idOperacionServicio, "IdDominio", "Nombre");
+                ViewBag.idCaracteristicaCredito = new SelectList(idCaracteristicaCredito, "IdDominio", "Nombre");
 
-                if (idCanal.Count() == 0)
+                if (idTipoAseguradora.Count() == 0)
                 {
-                    ModelState.AddModelError("Canal", "No se encuentra valores para la lista de tipo de Canal");
+                    ModelState.AddModelError("Tipo Aseguradora", "No se encuentra valores para la lista de tipo de Tipo Aseguradora");
                 }
-                ViewBag.Canal = new SelectList(idCanal, "IdDominio", "Nombre");
+                ViewBag.idTipoAseguradora = new SelectList(idTipoAseguradora, "IdDominio", "Nombre");
 
-                if (CostoProporcionOperacionServicio.Count() == 0)
+                if (idCodigoAseguradora.Count() == 0)
                 {
-                    ModelState.AddModelError("costoProporcionOperacionServicio", "No se encuentra valores para la lista de Costo proporcion operacion servicio");
+                    ModelState.AddModelError("Codigo Aseguradora", "No se encuentra valores para la lista de Codigo Aseguradora");
                 }
-                ViewBag.costoProporcionOperacionServicio = new SelectList(CostoProporcionOperacionServicio, "IdDominio", "Nombre");
+                ViewBag.costoProporcionOperacionServicio = new SelectList(idCodigoAseguradora, "IdDominio", "Nombre");
 
                 if (idObservaciones.Count() == 0)
                 {
