@@ -17,8 +17,6 @@ namespace ProyectoWeb.Models
         [Display(Name = "Codigo")]
         public string Nombre { get; set; }
 
-        [Display(Name = "Nombre Comercial")]
-        public string NombreComercial { get; set; }
         public string AperturaDigital { get; set; }
 
         [Display(Name = "Apertura Digital")]
@@ -68,6 +66,10 @@ namespace ProyectoWeb.Models
         public DateTime Fechacorte { get; set; }
         public DateTime FechaEstado { get; set; }
         public int CodigoRegistro { get; set; }
+
+        [Required(ErrorMessage = "El campo Nombre Comercial es obligatorio.")]
+        [Display(Name = "Nombre Comercial")]
+        public int idNombreComercial { get; set; }
 
     }
 }

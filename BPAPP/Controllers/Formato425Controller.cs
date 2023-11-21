@@ -168,6 +168,7 @@ namespace ProyectoWeb.Controllers
         {
 
             List<Dominio> tipodeProductoDeposito = CD_Dominios.Obtener(1);
+            List<Dominio> NombreComercial = CD_Dominios.Obtener(1);
             List<Dominio> idAperturaDigital = CD_Dominios.Obtener(2);
             List<Dominio> idFranquicia = CD_Dominios.Obtener(7);
             List<Dominio> observacionesCuotadeManejo = CD_Dominios.Obtener(5);
@@ -179,7 +180,13 @@ namespace ProyectoWeb.Controllers
             {
                 ModelState.AddModelError("Tipo Producto Tarjeta credito", "No se encuentra valores para la lista de tipo de producto tarjeta de credito");
             }
-            ViewBag.TipodeProductoTarjetaCredito = new SelectList(tipodeProductoTarjetaCredito, "IdDominio", "Nombre");
+            ViewBag.tipodeProductoDeposito = new SelectList(tipodeProductoDeposito, "IdDominio", "Nombre");
+
+            if (NombreComercial.Count() == 0)
+            {
+                ModelState.AddModelError("Tipo Producto Nombre Comercial", "No se encuentra valores para la lista de tipo de producto tarjeta de credito");
+            }
+            ViewBag.NombreComercial = new SelectList(NombreComercial, "IdDominio", "Nombre");
 
             if (idAperturaDigital.Count() == 0)
             {

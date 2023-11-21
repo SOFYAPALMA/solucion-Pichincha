@@ -53,7 +53,7 @@ namespace ProyectoWeb.Models
         public int Ingresos { get; set; }
 
         [Required(ErrorMessage = "El campo Cuota manejo maxima es obligatorio.")]
-        [Display(Name = "CuotaManejoMaxima")]
+        [Display(Name = "Cuota Manejo Maxima")]
         public int CuotaManejoMaxima { get; set; }
 
         [Required(ErrorMessage = "El campo Cupo es obligatorio.")]
@@ -96,6 +96,9 @@ namespace ProyectoWeb.Models
         [Display(Name = "Fecha hora actualizacion")]
         public DateTime Fecha_horaActualizacion { get; set; }
         public int idPropiedadesFormato { get;  set; }
-        public string NombreComercial { get;  set; }
+
+        [Required(ErrorMessage = "El campo Nombre Comercial es obligatorio.")]
+        [Display(Name = "Nombre Comercial")]
+        public int idNombreComercial { get;  set; }
     }
 }

@@ -11,6 +11,10 @@ namespace ProyectoWeb.Models
         [Display(Name = "Registro")]
         public int idPropiedadesFormato { get; set; }
 
+        [Required(ErrorMessage = "El campo Nombre Comercial es obligatorio.")]
+        [Display(Name = "Nombre Comercial")]
+        public int idNombreComercial { get; set; }
+
         [Required(ErrorMessage = "El campo Subcuentas es obligatorio.")]
         [Display(Name = "Subcuentas")]
         public int Subcuenta { get; set; }
