@@ -18,7 +18,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("usp_LoginUsuario", oConexion);
+                    SqlCommand cmd = new SqlCommand("bpapp.spLoginUsuario", oConexion);
                     cmd.Parameters.AddWithValue("Usuario", Usuario);
                     cmd.Parameters.AddWithValue("Clave", Clave);
                     cmd.Parameters.Add("IdUsuario", SqlDbType.Int).Direction = ParameterDirection.Output;
@@ -192,7 +192,7 @@ namespace CapaDatos
             Usuario rptUsuario = new Usuario();
             using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
             {
-                SqlCommand cmd = new SqlCommand("usp_ObtenerDetalleUsuario", oConexion);
+                SqlCommand cmd = new SqlCommand("bpapp.spObtenerDetalleUsuario", oConexion);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@IdUsuario", IdUsuario);
 
