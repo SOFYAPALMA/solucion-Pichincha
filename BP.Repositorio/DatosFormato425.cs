@@ -54,7 +54,7 @@ namespace BP.Repositorio
                 AdicionarParametros("Usuario", obj.Usuario);
 
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
-                AdicionarParametrosOut("IdPropiedadesFomato", SqlDbType.Int);
+                AdicionarParametrosOut("IdPropiedadesFormato", SqlDbType.Int);
                 AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
 
                 ejecutarScalar("bpapp.spInsertaPropiedadesTarjetaCredito");
@@ -70,7 +70,7 @@ namespace BP.Repositorio
             return respuesta;
         }
 
-        public static bool RegistrarEncabezadoDetalle(Formulario425_Detalle obj)
+        public static bool RegistrarDetalle(Formulario425_Detalle obj)
         {
             Instanciar();
             bool respuesta = false;
@@ -80,7 +80,7 @@ namespace BP.Repositorio
                 limpiarParametros();
                 AdicionarParametros("@idPropiedadesFormato", obj.idPropiedadesFormato);
                 AdicionarParametros("@Subcuenta", obj.Subcuenta);
-                AdicionarParametros("@idOperacionServicio", obj.idOperacionoServicio);
+                AdicionarParametros("@idOperacionServicio", obj.idOperacionServicio);
                 AdicionarParametros("@Canal", obj.Canal);
                 AdicionarParametros("@CostoFijo", obj.CostoFijo);
                 AdicionarParametros("@CostoFijoMaximo", obj.CostoFijoMaximo);
@@ -104,7 +104,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
-                throw new Exception("Error en RegistrarEncabezadoDetalle", ex);
+                throw new Exception("Error en RegistrarDetalle", ex);
             }
 
             return respuesta;
@@ -136,7 +136,7 @@ namespace BP.Repositorio
                 AdicionarParametros("idServicioGratuito_2", obj.idServicioGratuito_2);
                 AdicionarParametros("idServicioGratuito_3", obj.idServicioGratuito_3);
                 AdicionarParametros("Usuario", obj.Usuario);
-             
+
 
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
                 AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
