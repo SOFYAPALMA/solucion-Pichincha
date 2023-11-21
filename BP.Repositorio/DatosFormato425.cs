@@ -39,8 +39,8 @@ namespace BP.Repositorio
                 AdicionarParametros("Tipo", obj.Tipo);
                 AdicionarParametros("Codigo", obj.Codigo);
                 AdicionarParametros("Nombre", obj.Nombre);
-                AdicionarParametros("NombreComercial", obj.NombreComercial);
-                AdicionarParametros("idAperturaDigital", obj.idAperturaDigital);
+                AdicionarParametros("idNombreComercial", obj.idNombreComercial);
+                AdicionarParametros("@idAperturaDigital", obj.idAperturaDigital);
                 AdicionarParametros("NumeroClientes", obj.NumeroClientes);
                 AdicionarParametros("idFranquicia", obj.idFranquicia);
                 AdicionarParametros("CuotaManejo", obj.CuotaManejo);
@@ -78,7 +78,6 @@ namespace BP.Repositorio
             try
             {
                 limpiarParametros();
-                AdicionarParametros("@idNombreComercial", obj.idPropiedadesFormato);
                 AdicionarParametros("@idPropiedadesFormato", obj.idPropiedadesFormato);
                 AdicionarParametros("@Subcuenta", obj.Subcuenta);
                 AdicionarParametros("@idOperacionServicio", obj.idOperacionoServicio);

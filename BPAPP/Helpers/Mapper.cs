@@ -232,7 +232,7 @@ namespace ProyectoWeb
                 Tipo = obj.Tipo,
                 Codigo = obj.Codigo,
                 Nombre = obj.Nombre,
-                idNombreComercial = obj.NombreComercial,
+                idNombreComercial = obj.idNombreComercial,
                 AperturaDigital = obj.AperturaDigital,
                 idAperturaDigital = obj.idAperturaDigital,
                 NumeroClientes = obj.NumeroClientes,

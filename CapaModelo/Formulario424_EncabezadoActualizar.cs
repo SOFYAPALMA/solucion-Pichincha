@@ -16,7 +16,7 @@ namespace CapaModelo
 
         public DateTime FechaHora { get; set; }
 
-        public string NombreComercial { get; set; }
+        public int idNombreComercial { get; set; }
 
         public string CodigoRegistro { get; set; }
 

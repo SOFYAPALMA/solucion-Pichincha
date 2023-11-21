@@ -172,7 +172,7 @@ namespace ProyectoWeb.Controllers
             List<Dominio> ingresos = CD_Dominios.Obtener(4);
             List<Dominio> observacionesCuotadeManejo = CD_Dominios.Obtener(5);
             List<Dominio> servicioGratuitoCuentadeAhorros = CD_Dominios.Obtener(6);
-            List<Dominio> servicioGratuitoTarjetaDebito = CD_Dominios.Obtener(6);
+            List<Dominio> NombreComercial = CD_Dominios.Obtener(21);
 
             if (tipodeProductoDeposito.Count() == 0)
             {
@@ -211,11 +211,17 @@ namespace ProyectoWeb.Controllers
             ViewBag.ServicioGratuitoCuentadeAhorros = new SelectList(servicioGratuitoCuentadeAhorros, "IdDominio", "Nombre");
 
 
-            if (servicioGratuitoTarjetaDebito.Count() == 0)
+            if (servicioGratuitoCuentadeAhorros.Count() == 0)
             {
                 ModelState.AddModelError("ServicioGratuitoTarjetaDebito1", "No se encuentra valores para la lista de Servicio Gratuito Tarjeta Debito");
             }
-            ViewBag.ServicioGratuitoTarjetaDebito = new SelectList(servicioGratuitoTarjetaDebito, "IdDominio", "Nombre");
+            ViewBag.ServicioGratuitoTarjetaDebito = new SelectList(servicioGratuitoCuentadeAhorros, "IdDominio", "Nombre");
+
+            if (NombreComercial.Count() == 0)
+            {
+                ModelState.AddModelError("idNombreComercial", "No se encuentra valores para la lista de nombres comeraciales");
+            }
+            ViewBag.NombreComercial = new SelectList(NombreComercial, "IdDominio", "Nombre");
         }
 
         /// <summary>
@@ -224,7 +230,7 @@ namespace ProyectoWeb.Controllers
         private void LlenadoListasDetalle()
         {
             List<Dominio> idOperacionServicio = CD_Dominios.Obtener(10);
-            List<Canal> idCanal = DatosCanal.Lista();
+            List<Dominio> idCanal = CD_Dominios.Obtener(20);
             List<Dominio> CostoProporcionOperacionServicio = CD_Dominios.Obtener(10);
             List<Dominio> idObservaciones = CD_Dominios.Obtener(11);
 
@@ -238,7 +244,7 @@ namespace ProyectoWeb.Controllers
             {
                 ModelState.AddModelError("Canal", "No se encuentra valores para la lista de tipo de Canal");
             }
-            ViewBag.Canal = new SelectList(idCanal, "idCodigo", "Descripcion");
+            ViewBag.Canal = new SelectList(idCanal, "IdDominio", "Nombre");
 
             if (CostoProporcionOperacionServicio.Count() == 0)
             {

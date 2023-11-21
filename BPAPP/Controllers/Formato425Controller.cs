@@ -168,7 +168,7 @@ namespace ProyectoWeb.Controllers
         {
 
             List<Dominio> tipodeProductoDeposito = CD_Dominios.Obtener(1);
-            List<Dominio> NombreComercial = CD_Dominios.Obtener(1);
+            List<Dominio> NombreComercial = CD_Dominios.Obtener(21);
             List<Dominio> idAperturaDigital = CD_Dominios.Obtener(2);
             List<Dominio> idFranquicia = CD_Dominios.Obtener(7);
             List<Dominio> observacionesCuotadeManejo = CD_Dominios.Obtener(5);

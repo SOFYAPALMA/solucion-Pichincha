@@ -82,11 +82,11 @@ namespace ProyectoWeb.Models
 
         [Required(ErrorMessage = "El campo Fecha corte es obligatorio.")]
         [Display(Name = "Fecha corte")]
-        public DateTime Fechacorte { get; set; }
+        public string Fechacorte { get; set; }
 
         [Required(ErrorMessage = "El campo Fecha Estado es obligatorio.")]
         [Display(Name = "Fecha Estado")]
-        public DateTime FechaEstado { get; set; }
+        public string FechaEstado { get; set; }
 
         [Required(ErrorMessage = "El campo Codigo registro es obligatorio.")]
         [Display(Name = "Codigo Registro")]
@@ -94,7 +94,7 @@ namespace ProyectoWeb.Models
 
         [Required(ErrorMessage = "El campo Fecha hora actualizacion registro es obligatorio.")]
         [Display(Name = "Fecha hora actualizacion")]
-        public DateTime Fecha_horaActualizacion { get; set; }
+        public string Fecha_horaActualizacion { get; set; }
         public int idPropiedadesFormato { get;  set; }
 
         [Required(ErrorMessage = "El campo Nombre Comercial es obligatorio.")]

@@ -29,11 +29,11 @@ namespace CapaModelo
         public int idServicioGratuito_2 { get; set; }
         public string ServicioGratuito_3 { get; set; }
         public int idServicioGratuito_3 { get; set; }
-        public DateTime Fecha_horaActualizacion { get; set; }
+        public string Fecha_horaActualizacion { get; set; }
         public int Usuario { get; set; }
         public int Estado { get; set; }
-        public DateTime Fechacorte { get; set; }
-        public DateTime FechaEstado { get; set; }
-        public int CodigoRegistro { get; set; }
+        public string Fechacorte { get; set; }
+        public string FechaEstado { get; set; }
+        public int? CodigoRegistro { get; set; }
     }
 }

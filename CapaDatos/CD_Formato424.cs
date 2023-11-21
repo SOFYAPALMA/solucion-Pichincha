@@ -64,7 +64,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("Tipo", obj.Tipo);
                     cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
                     cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
-                    cmd.Parameters.AddWithValue("NombreComercial", obj.NombreComercial);
+                    cmd.Parameters.AddWithValue("idNombreComercial", obj.idNombreComercial);
                     cmd.Parameters.AddWithValue("TipoProductoDeposito", obj.TipodeProductoDeposito);
                     cmd.Parameters.AddWithValue("AperturaDigital", obj.AperturaDigital);
                     cmd.Parameters.AddWithValue("NumeroClientes", obj.NumerodeClientesUnicos);

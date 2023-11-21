@@ -103,16 +103,13 @@ namespace BP.Repositorio
             try
             {
                 limpiarParametros();
-                AdicionarParametros("@idDetalle", obj.idDetalle);
-                AdicionarParametros("@Subcuenta", obj.Subcuenta);
-                AdicionarParametros("idCaracteristicaCredito", obj.idCaracteristicaCredito);
-                AdicionarParametros("@Costo", obj.Costo);
-                AdicionarParametros("@Tasa", obj.Tasa);
-                AdicionarParametros("@idTipoAseguradora", obj.idTipoAseguradora);
-                AdicionarParametros("@idCodigoAseguradora", obj.idCodigoAseguradora);
-                AdicionarParametros("@idObservaciones", obj.idObservaciones);
-                AdicionarParametros("@UnidadCaptura", obj.UnidadCaptura);
-
+                AdicionarParametros("@idPropiedadesFormato", obj.idPropiedadesFormato);
+                AdicionarParametros("@Tipo", obj.Tipo);
+                AdicionarParametros("@Codigo", obj.Codigo);
+                AdicionarParametros("@Nombre", obj.Nombre);
+                AdicionarParametros("@idCodigoCredito", obj.idCodigoCredito);
+                AdicionarParametros("@idAperturaDigital", obj.idAperturaDigital);
+                AdicionarParametros("@Usuario", obj.Usuario);
 
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
                 AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
