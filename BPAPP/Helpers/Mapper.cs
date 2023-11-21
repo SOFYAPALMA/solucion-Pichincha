@@ -190,7 +190,7 @@ namespace ProyectoWeb
                 Codigo = dto.Codigo,
                 Nombre = dto.Nombre,
                 NombreComercial = dto.NombreComercial,
-                AperturaDigital = dto.AperturaDigital,
+                idAperturaDigital = dto.idAperturaDigital,
                 NumeroClientes = dto.NumeroClientes,
                 idFranquicia = dto.idFranquicia,
                 CuotaManejo = dto.CuotaManejo,
@@ -384,11 +384,11 @@ namespace ProyectoWeb
                 idCodigoCredito = dto.idCodigoCredito,
                 AperturaDigital = dto.AperturaDigital,
                 idAperturaDigital = dto.idAperturaDigital,
-                Fecha_horaActualizacion = dto.Fecha_horaActualizacion,
+                Fecha_horaActualizacion = dto.Fecha_horaActualizacion.ToString(),
                 Usuario = dto.Usuario,
                 Estado = dto.Estado,
-                Fechacorte = dto.Fechacorte,
-                FechaEstado = dto.FechaEstado,
+                Fechacorte = dto.Fechacorte.ToString(),
+                FechaEstado = dto.FechaEstado.ToString(),
                 CodigoRegistro = dto.CodigoRegistro,
                 idPropiedadesFormatoAnterior = dto.idPropiedadesFormatoAnterior
             };
@@ -420,11 +420,11 @@ namespace ProyectoWeb
                 idCodigoCredito = obj.idCodigoCredito,
                 AperturaDigital = obj.AperturaDigital,
                 idAperturaDigital = obj.idAperturaDigital,
-                Fecha_horaActualizacion = obj.Fecha_horaActualizacion,
+                Fecha_horaActualizacion = obj.Fecha_horaActualizacion.ToString(),
                 Usuario = obj.Usuario,
                 Estado = obj.Estado,
-                Fechacorte = obj.Fechacorte,
-                FechaEstado = obj.FechaEstado,
+                Fechacorte = obj.Fechacorte.ToString(),
+                FechaEstado = obj.FechaEstado.ToString(),
                 CodigoRegistro = obj.CodigoRegistro,
                 idPropiedadesFormatoAnterior = obj.idPropiedadesFormatoAnterior
             };

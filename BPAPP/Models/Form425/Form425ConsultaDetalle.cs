@@ -6,6 +6,8 @@ namespace ProyectoWeb.Models
     public class Form425ConsultaDetalle
     {
         public int idDetalle { get; set; }
+
+        [Display(Name = "Registro")]
         public int idPropiedadesFormato { get; set; }
 
         [Required(ErrorMessage = "El campo Subcuentas es obligatorio.")]
