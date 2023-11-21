@@ -31,9 +31,7 @@ namespace ProyectoWeb.Models
 
         [Required(ErrorMessage = "El campo Nombre Comercial es obligatorio.")]
         [Display(Name = "Nombre Comercial")]
-        [StringLength(50)]
-        [DataType(DataType.Text)]
-        public string NombreComercial { get; set; }
+        public int idNombreComercial { get; set; }
 
         [Required(ErrorMessage = "El campo Tipo de Producto Deposito es obligatorio.")]
         [Display(Name = "Tipo de Producto Deposito")]

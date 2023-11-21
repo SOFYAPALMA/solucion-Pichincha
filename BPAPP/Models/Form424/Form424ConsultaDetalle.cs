@@ -5,7 +5,11 @@ namespace ProyectoWeb.Models
     public class Form424ConsultaDetalle
     {
         public int idDetalle { get; set; }
-        
+
+        [Required(ErrorMessage = "El campo Nombre Comercial es obligatorio.")]
+        [Display(Name = "Nombre Comercial")]
+        public int idNombreComercial { get; set; }
+
         [Display(Name = "Registro")]
         public int idPropiedadesFormato { get; set; }
 

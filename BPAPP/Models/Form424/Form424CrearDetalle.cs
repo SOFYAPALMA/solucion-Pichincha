@@ -37,5 +37,9 @@ namespace ProyectoWeb.Models
         [Required(ErrorMessage = "El campo Unidad Captura es obligatorio.")]
         [Display(Name = "Unidad Captura")]
         public int UnidadCaptura { get; set; }
+
+        [Required(ErrorMessage = "El campo Nombre Comercial es obligatorio.")]
+        [Display(Name = "Nombre Comercial")]
+        public int idNombreComercial { get; set; }
     }
 }

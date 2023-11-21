@@ -53,9 +53,13 @@ namespace ProyectoWeb.Models
         [Display(Name = "Observaciones")]
         public int idObservaciones { get; set; }
 
-        [Required(ErrorMessage = "El campo Tasa máxima es obligatorio.")]
-        [Display(Name = "Tasa Maxima")]
+        [Required(ErrorMessage = "El campo Unidad Captura es obligatorio.")]
+        [Display(Name = "Unidad Captura")]
         public int UnidadCaptura { get; set; }
+
+        [Required(ErrorMessage = "El campo Nombre Comercial es obligatorio.")]
+        [Display(Name = "Nombre Comercial")]
+        public int idNombreComercial { get; set; }
         public int Estado { get; set; }
         public DateTime FechaProceso { get; set; }
         public DateTime FechaEstado { get; set; }

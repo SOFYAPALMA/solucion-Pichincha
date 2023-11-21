@@ -24,5 +24,6 @@ namespace ProyectoWeb.Models
         public DateTime FechaEstado { get; set; }
         public int CodigoRegistro { get; set; }
         public int idDetalleAnterior { get; set; }
+
     }
 }
