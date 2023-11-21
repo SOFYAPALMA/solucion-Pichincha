@@ -177,7 +177,7 @@ namespace ProyectoWeb.Controllers
 
             if (idAperturaDigital.Count() == 0)
             {
-                ModelState.AddModelError("AperturaDeposito", "No se encuentra valores para la lista de Apertura Deposito");
+                ModelState.AddModelError("idAperturaDigital", "No se encuentra valores para la lista de Apertura Deposito");
             }
             ViewBag.AperturaDigital = new SelectList(idAperturaDigital, "IdDominio", "Nombre");
         }

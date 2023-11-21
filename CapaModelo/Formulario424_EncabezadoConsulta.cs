@@ -29,7 +29,7 @@ namespace CapaModelo
         public int idTipoProductoDeposito { get; set; }
         public string Ingresos { get; set; }
         public string Nombre { get; set; }
-        public string NombreComercial { get; set; }
+        public int idNombreComercial { get; set; }
         public int NumeroClientes { get; set; }
         public string ObservacionesCuota { get; set; }
         public string SerGratuito_CtaAH1 { get; set; }

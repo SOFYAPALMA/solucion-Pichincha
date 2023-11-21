@@ -60,16 +60,18 @@ namespace ProyectoWeb.Models
         public int idServicioGratuito_3 { get; set; }
 
         [Display(Name = "Fecha Hora")]
-        public DateTime Fecha_horaActualizacion { get; set; }
+        public string Fecha_horaActualizacion { get; set; }
         public int Usuario { get; set; }
         public int Estado { get; set; }
-        public DateTime Fechacorte { get; set; }
-        public DateTime FechaEstado { get; set; }
-        public int CodigoRegistro { get; set; }
+        public string Fechacorte { get; set; }
+        public string FechaEstado { get; set; }
+        public int? CodigoRegistro { get; set; }
 
-        [Required(ErrorMessage = "El campo Nombre Comercial es obligatorio.")]
         [Display(Name = "Nombre Comercial")]
-        public int idNombreComercial { get; set; }
+        public int idNombreComercial { get; set; }    
+        
+        [Display(Name = "Nombre Comercial")]
+        public string NombreComercial { get; set; }
 
     }
 }

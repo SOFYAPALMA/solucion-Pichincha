@@ -23,14 +23,12 @@ namespace ProyectoWeb.Models
         [DataType(DataType.Text)]
         public string Nombre { get; set; }
 
-        [Required(ErrorMessage = "El campo Codigo Credito es obligatorio.")]
         [Display(Name = "Codigo Credito")]
         public string CodigoCredito { get; set; }
         
         [Display(Name = "Codigo Credito")]
         public int idCodigoCredito { get; set; }
 
-        [Required(ErrorMessage = "El campo AperturaDigital es obligatorio.")]
         [Display(Name = "Apertura Digital")]
         public string AperturaDigital { get; set; }
         

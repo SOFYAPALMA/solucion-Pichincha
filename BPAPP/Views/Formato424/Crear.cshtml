@@ -27,10 +27,10 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="form-group">
-                                @Html.LabelFor(model => model.NombreComercial, htmlAttributes: new { @class = "control-label" })
+                                @Html.LabelFor(model => model.idNombreComercial, htmlAttributes: new { @class = "control-label" })
                                 <div>
-                                    @Html.EditorFor(model => model.NombreComercial, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.NombreComercial, "", new { @class = "text-danger" })
+                                    @Html.DropDownList("idNombreComercial", (SelectList)ViewBag.NombreComercial, "Seleccione..", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.idNombreComercial, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </div>

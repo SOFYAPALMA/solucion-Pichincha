@@ -39,7 +39,7 @@ namespace BP.Repositorio
                 AdicionarParametros("Tipo", obj.Tipo);
                 AdicionarParametros("Codigo", obj.Codigo);
                 AdicionarParametros("Nombre", obj.Nombre);
-                AdicionarParametros("NombreComercial", obj.NombreComercial);
+                AdicionarParametros("idNombreComercial", obj.idNombreComercial);
                 AdicionarParametros("TipoProductoDeposito", obj.TipodeProductoDeposito);
                 AdicionarParametros("AperturaDigital", obj.AperturaDigital);
                 AdicionarParametros("NumeroClientes", obj.NumerodeClientesUnicos);
@@ -119,7 +119,7 @@ namespace BP.Repositorio
                 AdicionarParametros("Tipo", obj.Tipo);
                 AdicionarParametros("Codigo", obj.Codigo);
                 AdicionarParametros("Nombre", obj.Nombre);
-                AdicionarParametros("NombreComercial", obj.NombreComercial);
+                AdicionarParametros("idNombreComercial", obj.idNombreComercial);
                 AdicionarParametros("idTipoProductoDeposito", obj.idTipoProductoDeposito);
                 AdicionarParametros("idAperturaDigital", obj.idAperturaDigital);
                 AdicionarParametros("NumeroClientes", obj.NumeroClientes);

@@ -46,9 +46,11 @@ namespace ProyectoWeb.Models
         [Display(Name = "Nombre Entidad")]
         public string Nombre { get; set; }
 
-        [Required(ErrorMessage = "El campo Nombre Comercial es obligatorio.")]
         [Display(Name = "Nombre Comercial")]
-        public int idNombreComercial { get; set; }
+        public int idNombreComercial { get; set; }    
+        
+        [Display(Name = "Nombre Comercial")]
+        public string NombreComercial { get; set; }
 
         [Display(Name = "Numero clientes")]
         public int NumeroClientes { get; set; }
