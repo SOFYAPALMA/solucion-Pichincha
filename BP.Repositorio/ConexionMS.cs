@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Comun;
+using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -215,7 +216,7 @@ namespace BP.Repositorio
         /// <param name="valor">Valor que se va a pasar</param>
         public static void AdicionarParametros(string nombre, object valor)
         {
-            //Logs.EscribirLog(nombre + "='" + valor + "'", Logs.Tipo.Log);
+            Logs.EscribirLog(nombre + "='" + valor + "'", Logs.Tipo.Log);
             if (valor.GetType().Name == "String")
             {
                 if (valor == "null")
