@@ -295,7 +295,7 @@ namespace ProyectoWeb.Controllers
 
             if (idObservaciones.Count() == 0)
             {
-                ModelState.AddModelError("ID Observaciones", "No se encuentra valores para la lista de ID Observaciones");
+                ModelState.AddModelError("idObservaciones", "No se encuentra valores para la lista de Observaciones");
             }
             ViewBag.IDObservaciones = new SelectList(idObservaciones, "IdDominio", "Nombre");
 

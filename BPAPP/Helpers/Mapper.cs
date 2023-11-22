@@ -78,6 +78,7 @@ namespace ProyectoWeb
                 Ingresos = obj.Ingresos,
                 Nombre = obj.Nombre,
                 idNombreComercial = obj.idNombreComercial,
+                NombreComercial = obj.NombreComercial,
                 NumeroClientes = obj.NumeroClientes,
                 ObservacionesCuota = obj.ObservacionesCuota,
                 SerGratuito_CtaAH1 = obj.SerGratuito_CtaAH1,
