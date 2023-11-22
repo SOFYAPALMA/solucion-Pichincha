@@ -246,7 +246,7 @@ namespace ProyectoWeb.Controllers
             {
                 ModelState.AddModelError("Canal", "No se encuentra valores para la lista de tipo de Canal");
             }
-            ViewBag.Canal = new SelectList(idCanal, "Canal", "Descripcion");
+            ViewBag.Canal = new SelectList(idCanal, "IdDominio", "Nombre");
 
             if (idTipoAseguradora.Count() == 0)
             {
@@ -262,7 +262,7 @@ namespace ProyectoWeb.Controllers
 
             if (idObservaciones.Count() == 0)
             {
-                ModelState.AddModelError("ID Observaciones", "No se encuentra valores para la lista de ID Observaciones");
+                ModelState.AddModelError("IDObservaciones", "No se encuentra valores para la lista de ID Observaciones");
             }
             ViewBag.IDObservaciones = new SelectList(idObservaciones, "IdDominio", "Nombre");
 

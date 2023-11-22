@@ -21,7 +21,7 @@ namespace ProyectoWeb.Models
         [Display(Name = "Propiedades Formato")]
         public int idPropiedadesFormato { get; set; }
 
-        [Required(ErrorMessage = "El campo Subcuenta es obligatorio.")]
+        
         [Display(Name = "Subcuenta")]
         public int Subcuenta { get; set; }
 

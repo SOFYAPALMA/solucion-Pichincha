@@ -179,7 +179,7 @@ namespace ProyectoWeb.Controllers
             {
                 ModelState.AddModelError("idAperturaDigital", "No se encuentra valores para la lista de Apertura Deposito");
             }
-            ViewBag.AperturaDigital = new SelectList(idAperturaDigital, "IdDominio", "Nombre");
+            ViewBag.idAperturaDigital = new SelectList(idAperturaDigital, "IdDominio", "Nombre");
         }
 
         /// <summary>
@@ -196,7 +196,7 @@ namespace ProyectoWeb.Controllers
 
             if (idCaracteristicaCredito.Count() == 0)
             {
-                ModelState.AddModelError("Caracteristica Credito", "No se encuentra valores para la lista de tipo de Caracteristica Credito");
+                ModelState.AddModelError("CaracteristicaCredito", "No se encuentra valores para la lista de tipo de Caracteristica Credito");
             }
             ViewBag.idCaracteristicaCredito = new SelectList(idCaracteristicaCredito, "IdDominio", "Nombre");
 
@@ -210,13 +210,13 @@ namespace ProyectoWeb.Controllers
             {
                 ModelState.AddModelError("Codigo Aseguradora", "No se encuentra valores para la lista de Codigo Aseguradora");
             }
-            ViewBag.costoProporcionOperacionServicio = new SelectList(idCodigoAseguradora, "IdDominio", "Nombre");
+            ViewBag.idCodigoAseguradora = new SelectList(idCodigoAseguradora, "IdDominio", "Nombre");
 
             if (idObservaciones.Count() == 0)
             {
                 ModelState.AddModelError("ID Observaciones", "No se encuentra valores para la lista de ID Observaciones");
             }
-            ViewBag.IDObservaciones = new SelectList(idObservaciones, "IdDominio", "Nombre");
+            ViewBag.idObservaciones = new SelectList(idObservaciones, "IdDominio", "Nombre");
 
         }
     }
