@@ -66,8 +66,8 @@ namespace ProyectoWeb.Models
         public int idObservaciones { get; set; }
         public int UnidadCaptura { get; set; }
         public int Estado { get; set; }
-        public DateTime FechaProceso { get; set; }
-        public DateTime FechaEstado { get; set; }
+        public string FechaProceso { get; set; }
+        public string FechaEstado { get; set; }
         public int CodigoRegistro { get; set; }
         public string dDetalleAnterior { get; set; }
         public int idDetalleAnterior { get; set; }

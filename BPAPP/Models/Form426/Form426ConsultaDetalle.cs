@@ -11,7 +11,7 @@ namespace ProyectoWeb.Models
         public string CaracteristicaCredito { get; set; }
         public int idCaracteristicaCredito { get; set; }
         public int Costo { get; set; }
-        public int Tasa { get; set; }
+        public decimal Tasa { get; set; }
         public string TipoAseguradora { get; set; }
         public int idTipoAseguradora { get; set; }
         public string CodigoAseguradora { get; set; }
@@ -20,10 +20,10 @@ namespace ProyectoWeb.Models
         public int idObservaciones { get; set; }
         public int UnidadCaptura { get; set; }
         public int Estado { get; set; }
-        public DateTime FechaProceso { get; set; }
-        public DateTime FechaEstado { get; set; }
-        public int CodigoRegistro { get; set; }
-        public int idDetalleAnterior { get; set; }
+        public string FechaProceso { get; set; }
+        public string FechaEstado { get; set; }
+        public int? CodigoRegistro { get; set; }
+        public int? idDetalleAnterior { get; set; }
 
     }
 }

@@ -8,7 +8,7 @@ namespace ProyectoWeb.Models
 
         [Required(ErrorMessage = "El campo Subcuentas es obligatorio.")]
         [Display(Name = "Sub cuentas")]
-        public int Subcuentas { get; set; }
+        public string Subcuentas { get; set; }
 
         [Required(ErrorMessage = "El campo Operacion o Servicio es obligatorio.")]
         [Display(Name = "Operacion o Servicio")]
@@ -36,7 +36,7 @@ namespace ProyectoWeb.Models
 
         [Required(ErrorMessage = "El campo Unidad Captura es obligatorio.")]
         [Display(Name = "Unidad Captura")]
-        public int UnidadCaptura { get; set; }
+        public string UnidadCaptura { get; set; }
 
         [Required(ErrorMessage = "El campo Nombre Comercial es obligatorio.")]
         [Display(Name = "Nombre Comercial")]

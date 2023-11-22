@@ -68,7 +68,7 @@ namespace ProyectoWeb.Controllers
             {
                 Formulario424_Detalle encabezado = Mapper.getMapper(form424);
 
-                bool respuesta = DatosFormato424.RegistrarEncabezadoDetalle(encabezado);
+                bool respuesta = DatosFormato424.RegistrarDetalle(encabezado);
 
                 if (respuesta)
                 {
@@ -92,10 +92,51 @@ namespace ProyectoWeb.Controllers
 
         public ActionResult Update(int id)
         {
-            Formulario424_EncabezadoConsulta encabezado = DatosFormato424.Detalles(id);
+            Formulario424_EncabezadoConsulta encabezado = DatosFormato424.DetalleEncabezado(id);
             Form424ConsultaEncabezado form424 = Mapper.getMapper(encabezado);
             LlenadoListasEncabezado();
             return View(form424);
+        }
+
+        public ActionResult UpdateDetalle(int id)
+        {
+            Formulario424_DetalleConsulta detalle = DatosFormato424.DetallesDetalles(id);
+            Form424ConsultaDetalle form424 = Mapper.getMapper(detalle);
+            LlenadoListasDetalle();
+            return View(form424);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateDetalle(Form424ConsultaDetalle detalle)
+        {
+            if (ModelState.IsValid)
+            {
+                if (Session["IdUsuario"] == null)
+                    return RedirectToAction("Login");
+
+                int idusuario = int.Parse(Session["IdUsuario"].ToString());
+
+                Formulario424_Detalle upd = Mapper.getMapper(detalle);
+                bool respuesta = DatosFormato424.ActualizarDetalle(upd);
+
+                if (respuesta)
+                {
+                    TempData["Notificacion"] = DatosFormato424.Mensaje;
+
+                    return RedirectToAction("List");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "No se pudo actualizar el detalle, por favor valide los datos.");
+                    LlenadoListasDetalle();
+                    return View(detalle);
+                }
+            }
+            else
+            {
+                LlenadoListasDetalle();
+                return View(detalle);
+            }
         }
 
         [HttpPost]
@@ -134,7 +175,7 @@ namespace ProyectoWeb.Controllers
 
         public ActionResult Details(int id)
         {
-            Formulario424_EncabezadoConsulta encabezado = DatosFormato424.Detalles(id);
+            Formulario424_EncabezadoConsulta encabezado = DatosFormato424.DetalleEncabezado(id);
             Form424ConsultaEncabezado form424 = Mapper.getMapper(encabezado);
 
             List<Formulario424_DetalleConsulta> encabezados = DatosFormato424.ListaDetalles(id);
@@ -236,7 +277,7 @@ namespace ProyectoWeb.Controllers
 
             if (idOperacionServicio.Count() == 0)
             {
-                ModelState.AddModelError("Descripcion Operacion Servicio", "No se encuentra valores para la lista de tipo de Descripcion operacion servicio");
+                ModelState.AddModelError("idOperacionServicio", "No se encuentra valores para la lista de tipo de Descripcion operacion servicio");
             }
             ViewBag.DescripcionOperacionServicio = new SelectList(idOperacionServicio, "IdDominio", "Nombre");
 
