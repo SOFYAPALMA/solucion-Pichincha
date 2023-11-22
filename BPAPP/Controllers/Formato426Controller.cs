@@ -196,25 +196,25 @@ namespace ProyectoWeb.Controllers
 
             if (idCaracteristicaCredito.Count() == 0)
             {
-                ModelState.AddModelError("CaracteristicaCredito", "No se encuentra valores para la lista de tipo de Caracteristica Credito");
+                ModelState.AddModelError("idCaracteristicaCredito", "No se encuentra valores para la lista de tipo de Caracteristica Credito");
             }
             ViewBag.idCaracteristicaCredito = new SelectList(idCaracteristicaCredito, "IdDominio", "Nombre");
 
             if (idTipoAseguradora.Count() == 0)
             {
-                ModelState.AddModelError("Tipo Aseguradora", "No se encuentra valores para la lista de tipo de Tipo Aseguradora");
+                ModelState.AddModelError("idTipoAseguradora", "No se encuentra valores para la lista de tipo de Tipo Aseguradora");
             }
             ViewBag.idTipoAseguradora = new SelectList(idTipoAseguradora, "IdDominio", "Nombre");
 
             if (idCodigoAseguradora.Count() == 0)
             {
-                ModelState.AddModelError("Codigo Aseguradora", "No se encuentra valores para la lista de Codigo Aseguradora");
+                ModelState.AddModelError("idCodigoAseguradora", "No se encuentra valores para la lista de Codigo Aseguradora");
             }
             ViewBag.idCodigoAseguradora = new SelectList(idCodigoAseguradora, "IdDominio", "Nombre");
 
             if (idObservaciones.Count() == 0)
             {
-                ModelState.AddModelError("ID Observaciones", "No se encuentra valores para la lista de ID Observaciones");
+                ModelState.AddModelError("idObservaciones", "No se encuentra valores para la lista de ID Observaciones");
             }
             ViewBag.idObservaciones = new SelectList(idObservaciones, "IdDominio", "Nombre");
 
