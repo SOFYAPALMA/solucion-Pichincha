@@ -58,6 +58,10 @@
       <Project>{1D419D2F-85DF-4007-87E3-1E096682E487}</Project>
       <Name>CapaModelo</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Comun\Comun.csproj">
+      <Project>{5323A7DC-A728-48BC-AB15-5DD0EE99342B}</Project>
+      <Name>Comun</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

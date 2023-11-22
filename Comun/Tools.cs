@@ -57,6 +57,7 @@ namespace Comun
         /// <param name="key">Parametro a traer</param>
         /// <returns>El valor de la key</returns>
         public static string TraerConfiguracion(string key)
+        
         {
             //TODO Revisar el error de appsetting
             return "";// ConfigurationManager.AppSettings[key];
