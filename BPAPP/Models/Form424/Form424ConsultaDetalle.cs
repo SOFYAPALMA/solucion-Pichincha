@@ -46,6 +46,6 @@ namespace ProyectoWeb.Models
 
         [Required(ErrorMessage = "El campo Unidad Captura es obligatorio.")]
         [Display(Name = "Unidad Captura")]
-        public int UnidadCaptura { get; set; }
+        public string UnidadCaptura { get; set; }
     }
 }

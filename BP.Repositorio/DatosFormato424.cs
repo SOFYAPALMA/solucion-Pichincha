@@ -72,7 +72,7 @@ namespace BP.Repositorio
             return respuesta;
         }
 
-        public static bool RegistrarEncabezadoDetalle(Formulario424_Detalle obj)
+        public static bool RegistrarDetalle(Formulario424_Detalle obj)
         {
             Instanciar();
             bool respuesta = false;
@@ -151,7 +151,41 @@ namespace BP.Repositorio
             return respuesta;
         }
 
-        public static Formulario424_EncabezadoConsulta Detalles(int FormatoId)
+        public static bool ActualizarDetalle(Formulario424_Detalle obj)
+        {
+            Instanciar();
+            bool respuesta = false;
+
+            try
+            {
+                limpiarParametros();
+                AdicionarParametros("@idDetalle", obj.idDetalle);
+                AdicionarParametros("@subCuenta", obj.Subcuentas);
+                AdicionarParametros("@idOperacionServicio", obj.idOperacionoServicio);
+                AdicionarParametros("@idCanal", obj.idCanal);
+                AdicionarParametros("@NumOperServiciosCuotamanejo", obj.NumOperServiciosCuotamanejo);
+                AdicionarParametros("@CostoFijo", obj.CostoFijo);
+                AdicionarParametros("@CostoProporcionOperacionServicio", obj.CostoProporcionOperacionServicio);
+                AdicionarParametros("@idObservaciones", obj.idObservaciones);
+                AdicionarParametros("@UnidadCaptura", obj.UnidadCaptura);
+
+                AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
+                AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
+
+                ejecutarScalar("bpapp.spActualizaDetalleDeposito");
+
+                respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
+                Mensaje = RecuperarParametrosOut("MensajeSalida");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en ActualizarDetalle", ex);
+            }
+
+            return respuesta;
+        }
+
+        public static Formulario424_EncabezadoConsulta DetalleEncabezado(int FormatoId)
         {
             try
             {
@@ -230,7 +264,7 @@ namespace BP.Repositorio
                 AdicionarParametros("idPropiedadesFormato", FormatoId);
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
 
-                DataTable dt = ejecutarStoreProcedure("bpapp.spConsultaDetalleDeposito").Tables[0];
+                DataTable dt = ejecutarStoreProcedure("bpapp.spConsultaDetallesDeposito").Tables[0];
 
                 if (dt.Rows.Count > 0)
                 {
@@ -250,6 +284,38 @@ namespace BP.Repositorio
                     string serializedObject = JsonConvert.SerializeObject(list, new DatetimeToStringConverter());
 
                     rpt = JsonConvert.DeserializeObject<List<Formulario424_DetalleConsulta>>(serializedObject);
+                }
+
+                return rpt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en ListaDetalles", ex);
+            }
+        }
+
+        public static Formulario424_DetalleConsulta DetallesDetalles(int FormatoId)
+        {
+            try
+            {
+                Formulario424_DetalleConsulta rpt = new Formulario424_DetalleConsulta();
+                limpiarParametros();
+                AdicionarParametros("idDetalle", FormatoId);
+                AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
+
+                DataTable dt = ejecutarStoreProcedure("bpapp.spConsultaDetalleDeposito").Tables[0];
+
+                if (dt.Rows.Count > 0)
+                {
+                    var dictionary = new Dictionary<string, object>();
+                    foreach (DataColumn column in dt.Columns)
+                    {
+                        dictionary[column.ColumnName] = dt.Rows[0][column];
+                    }
+
+                    string serializedObject = JsonConvert.SerializeObject(dictionary, new DatetimeToStringConverter());
+
+                    rpt = JsonConvert.DeserializeObject<Formulario424_DetalleConsulta>(serializedObject);
                 }
 
                 return rpt;

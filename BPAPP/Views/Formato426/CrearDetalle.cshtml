@@ -66,7 +66,7 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.idCodigoAseguradora, htmlAttributes: new { @class = "control-label" })
                         <div class="col-md-10">
-                            @Html.DropDownList("idCodigoAseguradora", (SelectList)ViewBag.TipodeProductoDeposito, "Seleccione..", new { @class = "form-control" })
+                            @Html.DropDownList("idCodigoAseguradora", (SelectList)ViewBag.costoProporcionOperacionServicio, "Seleccione..", new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.idCodigoAseguradora, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -92,3 +92,6 @@
     </div>
 }
 
+<div>
+    @Html.ActionLink("Volver", "List")
+</div>

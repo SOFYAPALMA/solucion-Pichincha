@@ -146,7 +146,7 @@ namespace ProyectoWeb
             {
                 idDetalle = obj.idDetalle,
                 idPropiedadesFormato = obj.idPropiedadesFormato,
-                Subcuenta = obj.Subcuenta,
+                Subcuenta = obj.subCuenta,
                 idCanal = obj.idCanal,
                 Canal = obj.Canal,
                 NumOperServiciosCuotamanejo = obj.NumOperServiciosCuotamanejo,
@@ -155,7 +155,7 @@ namespace ProyectoWeb
                 idObservaciones = obj.idObservaciones,
                 Observaciones = obj.Observaciones,
                 UnidadCaptura = obj.UnidadCaptura,
-                idOperacionServicio = obj.idOperacionoServicio,
+                idOperacionServicio = obj.idOperacionServicio,
                 OperacionServicio = obj.OperacionServicio
             };
             return result;
@@ -166,6 +166,23 @@ namespace ProyectoWeb
             var result = new Formulario424_Detalle()
             {
                 Subcuentas = dto.Subcuentas,
+                idCanal = dto.idCanal,
+                idOperacionoServicio = dto.idOperacionServicio,
+                NumOperServiciosCuotamanejo = dto.NumOperServiciosCuotamanejo,
+                CostoFijo = dto.CostoFijo,
+                CostoProporcionOperacionServicio = dto.CostoProporcionOperacionServicio,
+                idObservaciones = dto.idObservaciones,
+                idPropiedadesFormato = dto.idPropiedadesFormato,
+                UnidadCaptura = dto.UnidadCaptura
+            };
+            return result;
+        }
+        public static Formulario424_Detalle getMapper(Form424ConsultaDetalle dto)
+        {
+            var result = new Formulario424_Detalle()
+            {
+                idDetalle = dto.idDetalle,
+                Subcuentas = dto.Subcuenta,
                 idCanal = dto.idCanal,
                 idOperacionoServicio = dto.idOperacionServicio,
                 NumOperServiciosCuotamanejo = dto.NumOperServiciosCuotamanejo,
