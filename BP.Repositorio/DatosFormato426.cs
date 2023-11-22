@@ -232,8 +232,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
-                +
-                    throw new Exception("Error en ListaDetalles", ex);
+                throw new Exception("Error en ListaDetalles", ex);
             }
         }
     }
