@@ -95,7 +95,7 @@ namespace BP.Repositorio
         }
 
 
-        public static bool ActualizarEncabezado(Formulario426_Encabezado obj) // no cuenta con StoreProcedure en DB
+        public static bool ActualizarEncabezado(Formulario426_Encabezado obj) 
         {
             Instanciar();
             bool respuesta = false;

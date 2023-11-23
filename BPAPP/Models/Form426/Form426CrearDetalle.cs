@@ -11,21 +11,20 @@ namespace ProyectoWeb.Models
         [Display(Name = "ID Detalle")]
         public int idDetalle { get; set; }
 
-        [Required(ErrorMessage = "El campo  Propiedades Formato es obligatorio.")]
+        
         [Display(Name = "Propiedades Formato")]
         [StringLength(50)]
         [DataType(DataType.Text)]
         public string PropiedadesFormato { get; set; }
 
-        [Required(ErrorMessage = "El campo  Propiedades Formato es obligatorio.")]
         [Display(Name = "Propiedades Formato")]
         public int idPropiedadesFormato { get; set; }
 
-        
+        [Required(ErrorMessage = "El campo  Subcuenta es obligatorio.")]
         [Display(Name = "Subcuenta")]
         public int Subcuenta { get; set; }
 
-        [Required(ErrorMessage = "El campo Caracteristica Credito es obligatorio.")]
+        
         [Display(Name = "Caracteristica Credito")]
         [StringLength(50)]
         [DataType(DataType.Text)]
@@ -35,15 +34,14 @@ namespace ProyectoWeb.Models
         [Display(Name = "Caracteristica Credito")]
         public int idCaracteristicaCredito { get; set; }
 
-        [Required(ErrorMessage = "El campo Costo es obligatorio.")]
+        [Required(ErrorMessage = "Costo.")]
         [Display(Name = "Costo")]
         public int Costo { get; set; }
 
-        [Required(ErrorMessage = "El campo Tasa es obligatorio.")]
+        [Required(ErrorMessage = "Tasa es obligatorio.")]
         [Display(Name = "Tasa")]
         public int Tasa { get; set; }
 
-        [Required(ErrorMessage = "El campo Tipo Aseguradora es obligatorio.")]
         [Display(Name = "Tipo Aseguradora")]
         [StringLength(50)]
         [DataType(DataType.Text)]
@@ -53,11 +51,14 @@ namespace ProyectoWeb.Models
         [Display(Name = "Tipo Aseguradora")]
         public int idTipoAseguradora { get; set; }
 
-        [Required(ErrorMessage = "El campo Codigo Aseguradora es obligatorio.")]
+        
         [Display(Name = "Codigo Aseguradora")]
         [StringLength(50)]
         [DataType(DataType.Text)]
         public string CodigoAseguradora { get; set; }
+
+        [Required(ErrorMessage = "El campo Codigo Aseguradora es obligatorio.")]
+        [Display(Name = "Codigo Aseguradora")]
         public int idCodigoAseguradora { get; set; }
         public string Observaciones { get; set; }
 
@@ -69,7 +70,7 @@ namespace ProyectoWeb.Models
         public string FechaProceso { get; set; }
         public string FechaEstado { get; set; }
         public int CodigoRegistro { get; set; }
-        public string dDetalleAnterior { get; set; }
+        public string DetalleAnterior { get; set; }
         public int idDetalleAnterior { get; set; }
     }
 }

@@ -23,27 +23,27 @@ namespace ProyectoWeb.Models
 
         [Required(ErrorMessage = "El Costo fijo es obligatorio.")]
         [Display(Name = "Costo Fijo")]
-        public int idCostoFijo { get; set; }
+        public int CostoFijo { get; set; }
 
         [Required(ErrorMessage = "El campo costo fijo maximo es obligatorio.")]
         [Display(Name = "Costo Fijo Maximo")]
-        public int idCostoFijoMaximo { get; set; }
+        public int CostoFijoMaximo { get; set; }
 
         [Required(ErrorMessage = "El campo costo proporcional a operación o servicio es obligatorio.")]
         [Display(Name = "Costo proporcional a op o servicio")]
-        public int idCostoProporcionOperacionServicio { get; set; }
+        public int CostoProporcionOperacionServicio { get; set; }
 
         [Required(ErrorMessage = "El campo costo proporcional máximo a operación o servicio es obligatorio.")]
         [Display(Name = "Costo maximo op servicio")]
-        public int idCostoProporcionMaxOperacionServicio { get; set; }
+        public int CostoProporcionMaxOperacionServicio { get; set; }
 
         [Required(ErrorMessage = "El campo tasa es obligatorio.")]
         [Display(Name = "Tasa")]
-        public int idTasa { get; set; }
+        public int Tasa { get; set; }
 
         [Required(ErrorMessage = "El campo Tasa máxima es obligatorio.")]
         [Display(Name = "Tasa Maxima")]
-        public int idTasaMaxima { get; set; }
+        public int TasaMaxima { get; set; }
 
         [Required(ErrorMessage = "El campo Tipo de aseguradoraipo de aseguradora es obligatorio.")]
         [Display(Name = "Tipo de aseguradora")]
