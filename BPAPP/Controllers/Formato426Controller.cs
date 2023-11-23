@@ -166,8 +166,8 @@ namespace ProyectoWeb.Controllers
         /// </summary>
         private void LlenadoListasEncabezado()
         {
-            List<Dominio> idCodigoCredito = CD_Dominios.Obtener(1);
-            List<Dominio> idAperturaDigital = CD_Dominios.Obtener(2);
+            List<Dominio> idCodigoCredito = DatosDominio.Obtener(1);
+            List<Dominio> idAperturaDigital = DatosDominio.Obtener(2);
 
 
             if (idCodigoCredito.Count() == 0)
@@ -189,10 +189,10 @@ namespace ProyectoWeb.Controllers
         /// 
         private void LlenadoListasDetalle()
         {
-            List<Dominio> idCaracteristicaCredito = CD_Dominios.Obtener(1);
-            List<Dominio> idTipoAseguradora = CD_Dominios.Obtener(17);
-            List<Dominio> idCodigoAseguradora = CD_Dominios.Obtener(17);
-            List<Dominio> idObservaciones = CD_Dominios.Obtener(14);
+            List<Dominio> idCaracteristicaCredito = DatosDominio.Obtener(1);
+            List<Dominio> idTipoAseguradora = DatosDominio.Obtener(17);
+            List<Dominio> idCodigoAseguradora = DatosDominio.Obtener(17);
+            List<Dominio> idObservaciones = DatosDominio.Obtener(14);
 
 
             if (idCaracteristicaCredito.Count() == 0)

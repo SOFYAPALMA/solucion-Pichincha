@@ -48,10 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CD_Dominios.cs" />
-    <Compile Include="CD_Formato425.cs" />
-    <Compile Include="CD_Formato426.cs" />
-    <Compile Include="CD_Formato424.cs" />
     <Compile Include="CD_NivelDetalle.cs" />
     <Compile Include="CD_Permisos.cs" />
     <Compile Include="CD_Rol.cs" />

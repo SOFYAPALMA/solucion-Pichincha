@@ -207,13 +207,13 @@ namespace ProyectoWeb.Controllers
         /// </summary>
         private void LlenadoListasEncabezado()
         {
-            List<Dominio> tipodeProductoDeposito = CD_Dominios.Obtener(1);
-            List<Dominio> aperturaDeposito = CD_Dominios.Obtener(2);
-            List<Dominio> grupoPoblacional = CD_Dominios.Obtener(3);
-            List<Dominio> ingresos = CD_Dominios.Obtener(4);
-            List<Dominio> observacionesCuotadeManejo = CD_Dominios.Obtener(5);
-            List<Dominio> servicioGratuitoCuentadeAhorros = CD_Dominios.Obtener(6);
-            List<Dominio> NombreComercial = CD_Dominios.Obtener(21);
+            List<Dominio> tipodeProductoDeposito = DatosDominio.Obtener(1);
+            List<Dominio> aperturaDeposito = DatosDominio.Obtener(2);
+            List<Dominio> grupoPoblacional = DatosDominio.Obtener(3);
+            List<Dominio> ingresos = DatosDominio.Obtener(4);
+            List<Dominio> observacionesCuotadeManejo = DatosDominio.Obtener(5);
+            List<Dominio> servicioGratuitoCuentadeAhorros = DatosDominio.Obtener(6);
+            List<Dominio> NombreComercial = DatosDominio.Obtener(21);
 
             if (tipodeProductoDeposito.Count() == 0)
             {
@@ -270,10 +270,10 @@ namespace ProyectoWeb.Controllers
         /// </summary>
         private void LlenadoListasDetalle()
         {
-            List<Dominio> idOperacionServicio = CD_Dominios.Obtener(10);
-            List<Dominio> idCanal = CD_Dominios.Obtener(20);
-            List<Dominio> CostoProporcionOperacionServicio = CD_Dominios.Obtener(10);
-            List<Dominio> idObservaciones = CD_Dominios.Obtener(11);
+            List<Dominio> idOperacionServicio = DatosDominio.Obtener(10);
+            List<Dominio> idCanal = DatosDominio.Obtener(20);
+            List<Dominio> CostoProporcionOperacionServicio = DatosDominio.Obtener(10);
+            List<Dominio> idObservaciones = DatosDominio.Obtener(11);
 
             if (idOperacionServicio.Count() == 0)
             {

@@ -182,14 +182,14 @@ namespace ProyectoWeb.Controllers
         private void LlenadoListasEncabezado()
         {
 
-            List<Dominio> tipodeProductoDeposito = CD_Dominios.Obtener(1);
-            List<Dominio> NombreComercial = CD_Dominios.Obtener(21);
-            List<Dominio> idAperturaDigital = CD_Dominios.Obtener(2);
-            List<Dominio> idFranquicia = CD_Dominios.Obtener(7);
-            List<Dominio> observacionesCuotadeManejo = CD_Dominios.Obtener(5);
-            List<Dominio> grupoPoblacional = CD_Dominios.Obtener(3);
-            List<Dominio> idCupo = CD_Dominios.Obtener(8);
-            List<Dominio> idServicioGratuito = CD_Dominios.Obtener(9);
+            List<Dominio> tipodeProductoDeposito = DatosDominio.Obtener(1);
+            List<Dominio> NombreComercial = DatosDominio.Obtener(21);
+            List<Dominio> idAperturaDigital = DatosDominio.Obtener(2);
+            List<Dominio> idFranquicia = DatosDominio.Obtener(7);
+            List<Dominio> observacionesCuotadeManejo = DatosDominio.Obtener(5);
+            List<Dominio> grupoPoblacional = DatosDominio.Obtener(3);
+            List<Dominio> idCupo = DatosDominio.Obtener(8);
+            List<Dominio> idServicioGratuito = DatosDominio.Obtener(9);
 
             if (tipodeProductoDeposito.Count() == 0)
             {
@@ -247,11 +247,11 @@ namespace ProyectoWeb.Controllers
         /// </summary>
         private void LlenadoListasDetalle()
         {
-            List<Dominio> idOperacionServicio = CD_Dominios.Obtener(10);
-            List<Dominio> idCanal = CD_Dominios.Obtener(20);
-            List<Dominio> idTipoAseguradora = CD_Dominios.Obtener(17);
-            List<Dominio> idCodigoAseguradora = CD_Dominios.Obtener(17);
-            List<Dominio> idObservaciones = CD_Dominios.Obtener(13);
+            List<Dominio> idOperacionServicio = DatosDominio.Obtener(10);
+            List<Dominio> idCanal = DatosDominio.Obtener(20);
+            List<Dominio> idTipoAseguradora = DatosDominio.Obtener(17);
+            List<Dominio> idCodigoAseguradora = DatosDominio.Obtener(17);
+            List<Dominio> idObservaciones = DatosDominio.Obtener(13);
 
             if (idOperacionServicio.Count() == 0)
             {

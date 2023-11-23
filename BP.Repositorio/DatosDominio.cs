@@ -1,4 +1,5 @@
 ﻿using CapaModelo;
+using Comun;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -6,37 +7,35 @@ using System.Data;
 
 namespace BP.Repositorio
 {
-    public class DatosCanal : ConexionMS
+    public class DatosDominio : ConexionMS
     {
         #region Comun
-        private static DatosCanal instance = null;
+        private static DatosDominio instance = null;
 
-        public static DatosCanal Instanciar()
+        public static DatosDominio Instanciar()
         {
             if (instance == null)
             {
-                instance = new DatosCanal();
+                instance = new DatosDominio();
             }
 
             return instance;
         }
 
-        static DatosCanal()
+        static DatosDominio()
         {
 
         }
         #endregion
         public static string Mensaje { get; private set; }
 
-        public static List<Canal> Lista()
+        public static List<Dominio> Obtener(int TipoDominio)
         {
             try
             {
-                List<Canal> rpt = new List<Canal>();
-                limpiarParametros();
-                AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
+                List<Dominio> rpt = new List<Dominio>();
 
-                DataTable dt = ejecutarStoreProcedure("bpapp.spConsultaCanal").Tables[0];
+                DataTable dt = EjecutarSql("SELECT * FROM BPAPP.fntraevaloresdominio(" + TipoDominio + ")", "tbl").Tables[0];
 
                 if (dt.Rows.Count > 0)
                 {
@@ -54,15 +53,17 @@ namespace BP.Repositorio
                     }
 
                     string serializedObject = JsonConvert.SerializeObject(list, new DatetimeToStringConverter());
+                    Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), serializedObject, Logs.Tipo.Log);
 
-                    rpt = JsonConvert.DeserializeObject<List<Canal>>(serializedObject);
+                    rpt = JsonConvert.DeserializeObject<List<Dominio>>(serializedObject);
                 }
 
                 return rpt;
             }
             catch (Exception ex)
             {
-                throw new Exception("Error en Lista", ex);
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
+                throw new Exception("Error en Obtener", ex);
             }
         }
     }
