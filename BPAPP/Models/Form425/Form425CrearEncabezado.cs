@@ -24,59 +24,59 @@ namespace ProyectoWeb.Models
         [DataType(DataType.Text)]
         public string Nombre { get; } = "BCOPICHINCH"; //Campo fijo por default= BCOPICHINCH
 
-        [Required(ErrorMessage = "El campo Apertura Digital es obligatorio.")]
+        [Required(ErrorMessage = "El campo apertura digital es obligatorio.")]
         [Display(Name = "Apertura Digital")]
         public int idAperturaDigital { get; set; }
 
-        [Required(ErrorMessage = "El campo Número de clientes únicos es obligatorio.")]
+        [Required(ErrorMessage = "El campo número de clientes únicos es obligatorio.")]
         [Display(Name = "Número de clientes únicos")]
         public int NumeroClientes { get; set; }
 
-        [Required(ErrorMessage = "El campo Franquicia es obligatorio.")]
+        [Required(ErrorMessage = "El campo franquicia es obligatorio.")]
         [Display(Name = "Franquicia")]
         public int idFranquicia { get; set; }
 
-        [Required(ErrorMessage = "El campo Cuota de Manejo es obligatorio.")]
+        [Required(ErrorMessage = "El campo cuota de manejo es obligatorio.")]
         [Display(Name = "Cuota de Manejo")]
         public int CuotaManejo { get; set; }
 
-        [Required(ErrorMessage = "El campo Observaciones Cuota de Manejo es obligatorio.")]
+        [Required(ErrorMessage = "El campo observaciones cuota de manejo es obligatorio.")]
         [Display(Name = "Observaciones Cuota de Manejo")]
         public int idObservacionesCuota { get; set; }
 
-        [Required(ErrorMessage = "El campo Grupo Poblacional es obligatorio.")]
+        [Required(ErrorMessage = "El campo grupo poblacional es obligatorio.")]
         [Display(Name = "Grupo Poblacional")]
         public int idGrupoPoblacional { get; set; }
 
-        [Required(ErrorMessage = "El campo Ingresos es obligatorio.")]
+        [Required(ErrorMessage = "El campo ingresos es obligatorio.")]
         [Display(Name = "Ingresos")]
         public int Ingresos { get; set; }
 
-        [Required(ErrorMessage = "El campo Cuota manejo maxima es obligatorio.")]
+        [Required(ErrorMessage = "El campo cuota manejo máxima es obligatorio.")]
         [Display(Name = "Cuota Manejo Maxima")]
         public int CuotaManejoMaxima { get; set; }
 
-        [Required(ErrorMessage = "El campo Cupo es obligatorio.")]
+        [Required(ErrorMessage = "El campo cupo es obligatorio.")]
         [Display(Name = "Cupo")]
         public int idCupo { get; set; }
 
-        [Required(ErrorMessage = "El campo  Servicio Gratuito 1 es obligatorio.")]
+        [Required(ErrorMessage = "El campo servicio gratuito 1 es obligatorio.")]
         [Display(Name = "Servicio Gratuito 1")]
         public int idServicioGratuito_1 { get; set; }
 
-        [Required(ErrorMessage = "El campo  Servicio Gratuito 2 es obligatorio.")]
+        [Required(ErrorMessage = "El campo servicio gratuito 2 es obligatorio.")]
         [Display(Name = "Servicio Gratuito 2")]
         public int idServicioGratuito_2 { get; set; }
 
-        [Required(ErrorMessage = "El campo Servicio Gratuito 3 es obligatorio.")]
+        [Required(ErrorMessage = "El campo servicio gratuito 3 es obligatorio.")]
         [Display(Name = "Servicio Gratuito 3")]
         public int idServicioGratuito_3 { get; set; }
 
-        [Required(ErrorMessage = "El campo Usuario es obligatorio.")]
+        [Required(ErrorMessage = "El campo usuario es obligatorio.")]
         [Display(Name = "Usuario")]
         public int Usuario { get; set; }
 
-        [Required(ErrorMessage = "El campo Estado es obligatorio.")]
+        [Required(ErrorMessage = "El campo estado es obligatorio.")]
         [Display(Name = "Estado")]
         public int Estado { get; set; }
 
@@ -86,7 +86,7 @@ namespace ProyectoWeb.Models
         [Display(Name = "Fecha Estado")]
         public string FechaEstado { get; set; }
 
-        [Required(ErrorMessage = "El campo Codigo registro es obligatorio.")]
+        [Required(ErrorMessage = "El campo código registro es obligatorio.")]
         [Display(Name = "Codigo Registro")]
         public int CodigoRegistro { get; set; }
 
@@ -94,7 +94,7 @@ namespace ProyectoWeb.Models
         public string Fecha_horaActualizacion { get; set; }
         public int idPropiedadesFormato { get; set; }
 
-        [Required(ErrorMessage = "El campo Nombre Comercial es obligatorio.")]
+        [Required(ErrorMessage = "El campo nombre comercial es obligatorio.")]
         [Display(Name = "Nombre Comercial")]
         public int idNombreComercial { get; set; }
     }

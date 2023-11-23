@@ -25,7 +25,7 @@ namespace ProyectoWeb.Models
         [Display(Name = "Costo Fijo")]
         public int CostoFijo { get; set; }
 
-        [Required(ErrorMessage = "El campo costo fijo maximo es obligatorio.")]
+        [Required(ErrorMessage = "El campo costo fijo máximo es obligatorio.")]
         [Display(Name = "Costo Fijo Maximo")]
         public int CostoFijoMaximo { get; set; }
 
@@ -63,6 +63,9 @@ namespace ProyectoWeb.Models
         public int Estado { get; set; }
         public DateTime FechaProceso { get; set; }
         public DateTime FechaEstado { get; set; }
+
+        [Required(ErrorMessage = "El campo id código aseguradora es obligatorio.")]
+        [Display(Name = "Código Aseguradora")]
         public int idCodigoAseguradora { get; set; }
     }
 }
