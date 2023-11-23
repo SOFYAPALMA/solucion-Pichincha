@@ -193,13 +193,13 @@ namespace ProyectoWeb.Controllers
 
             if (tipodeProductoDeposito.Count() == 0)
             {
-                ModelState.AddModelError("Tipo Producto Tarjeta credito", "No se encuentra valores para la lista de tipo de producto tarjeta de credito");
+                ModelState.AddModelError("Tipo Producto tarjeta credito", "No se encuentra valores para la lista de tipo de producto tarjeta de credito");
             }
             ViewBag.tipodeProductoDeposito = new SelectList(tipodeProductoDeposito, "Dominio", "Descripcion");
 
             if (NombreComercial.Count() == 0)
             {
-                ModelState.AddModelError("Tipo Producto Nombre Comercial", "No se encuentra valores para la lista de tipo de producto tarjeta de credito");
+                ModelState.AddModelError("tipo producto nombre comercial", "No se encuentra valores para la lista de tipo de producto nombre comercial");
             }
             ViewBag.NombreComercial = new SelectList(NombreComercial, "Dominio", "Descripcion");
 
@@ -211,32 +211,32 @@ namespace ProyectoWeb.Controllers
 
             if (idFranquicia.Count() == 0)
             {
-                ModelState.AddModelError("idFranquicia", "No se encuentra valores para la lista de Franquicia");
+                ModelState.AddModelError("idFranquicia", "No se encuentra valores para la lista de franquicia");
             }
             ViewBag.idFranquicia = new SelectList(idFranquicia, "Dominio", "Descripcion");
 
             if (observacionesCuotadeManejo.Count() == 0)
             {
-                ModelState.AddModelError("ObservacionesCuotadeManejo", "No se encuentra valores para la lista de Observaciones Cuota de Manejo");
+                ModelState.AddModelError("ObservacionesCuotadeManejo", "No se encuentra valores para la lista de observaciones cuota de manejo");
             }
             ViewBag.ObservacionesCuotadeManejo = new SelectList(observacionesCuotadeManejo, "Dominio", "Descripcion");
 
             if (grupoPoblacional.Count() == 0)
             {
-                ModelState.AddModelError("GrupoPoblacional", "No se encuentra valores para la lista de Grupo Poblacional");
+                ModelState.AddModelError("GrupoPoblacional", "No se encuentra valores para la lista de grupo poblacional");
             }
             ViewBag.GrupoPoblacional = new SelectList(grupoPoblacional, "Dominio", "Descripcion");
 
             if (idCupo.Count() == 0)
             {
-                ModelState.AddModelError("idCupo", "No se encuentra valores para la lista de Cupo");
+                ModelState.AddModelError("idCupo", "No se encuentra valores para la lista de cupo");
             }
             ViewBag.Cupo = new SelectList(idCupo, "Dominio", "Descripcion");
 
 
             if (idServicioGratuito.Count() == 0)
             {
-                ModelState.AddModelError("idServicioGratuito", "No se encuentra valores para la lista de Servicio Gratuito");
+                ModelState.AddModelError("idServicioGratuito", "No se encuentra valores para la lista de servicio gratuito");
             }
             ViewBag.ServicioGratuito = new SelectList(idServicioGratuito, "Dominio", "Descripcion");
 
@@ -259,7 +259,7 @@ namespace ProyectoWeb.Controllers
             }
             ViewBag.DescripcionOperacionServicio = new SelectList(idOperacionServicio, "Dominio", "Descripcion"); if (idCanal.Count() == 0)
             {
-                ModelState.AddModelError("Canal", "No se encuentra valores para la lista de tipo de Canal");
+                ModelState.AddModelError("Canal", "No se encuentra valores para la lista de tipo de canal");
             }
             ViewBag.Canal = new SelectList(idCanal, "Dominio", "Descripcion");
 
@@ -271,7 +271,7 @@ namespace ProyectoWeb.Controllers
 
             if (idCodigoAseguradora.Count() == 0)
             {
-                ModelState.AddModelError("idCodigoAseguradora", "No se encuentra valores para la lista de Codigo Aseguradora");
+                ModelState.AddModelError("idCodigoAseguradora", "No se encuentra valores para la lista de codigo aseguradora");
             }
             ViewBag.idCodigoAseguradora = new SelectList(idCodigoAseguradora, "Dominio", "Descripcion");
 
