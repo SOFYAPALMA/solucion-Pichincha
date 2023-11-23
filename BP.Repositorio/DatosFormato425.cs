@@ -93,7 +93,6 @@ namespace BP.Repositorio
                 AdicionarParametros("@TasaMaxima", obj.TasaMaxima);
                 AdicionarParametros("@idTipoAseguradora", obj.idTipoAseguradora);
                 AdicionarParametros("@idCodigoAseguradora", obj.idCodigoAseguradora);
-                AdicionarParametros("@idCodigoAseguradora", obj.idCodigoAseguradora);
                 AdicionarParametros("@idObservaciones", obj.idObservaciones);
                 AdicionarParametros("@UnidadCaptura", obj.UnidadCaptura);
 

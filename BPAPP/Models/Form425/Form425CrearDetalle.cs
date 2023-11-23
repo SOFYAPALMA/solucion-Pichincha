@@ -14,14 +14,14 @@ namespace ProyectoWeb.Models
         public int Subcuenta { get; set; }
 
         [Required(ErrorMessage = "El campo operacion o servicio es obligatorio.")]
-        [Display(Name = "OperacionoServicio")]
+        [Display(Name = "Operacion o Servicio")]
         public int idOperacionoServicio { get; set; }
 
         [Required(ErrorMessage = "El campo canal es obligatorio.")]
         [Display(Name = "Canal")]
         public int Canal { get; set; }
 
-        [Required(ErrorMessage = "El campo costo fijo es obligatorio.")]
+        [Required(ErrorMessage = "El Costo fijo es obligatorio.")]
         [Display(Name = "Costo Fijo")]
         public int CostoFijo { get; set; }
 
@@ -30,13 +30,13 @@ namespace ProyectoWeb.Models
         public int CostoFijoMaximo { get; set; }
 
         [Required(ErrorMessage = "El campo costo proporcional a operación o servicio es obligatorio.")]
-        [Display(Name = "Costo Fijo Maximo")]
+        [Display(Name = "Costo proporcional a op o servicio")]
         public int CostoProporcionOperacionServicio { get; set; }
 
         [Required(ErrorMessage = "El campo costo proporcional máximo a operación o servicio es obligatorio.")]
         [Display(Name = "Costo maximo op servicio")]
         public int CostoProporcionMaxOperacionServicio { get; set; }
-        
+
         [Required(ErrorMessage = "El campo tasa es obligatorio.")]
         [Display(Name = "Tasa")]
         public int Tasa { get; set; }
