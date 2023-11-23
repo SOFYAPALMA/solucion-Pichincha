@@ -37,6 +37,7 @@ namespace ProyectoWeb.Controllers
                 string idusuario = Session["IdUsuario"].ToString();
 
                 Formulario426_Encabezado encabezado = Mapper.getMapper(form426);
+
                 encabezado.Usuario = idusuario;
                 bool respuesta = DatosFormato426.RegistrarEncabezado(encabezado);
 

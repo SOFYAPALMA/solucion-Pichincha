@@ -37,6 +37,21 @@ namespace ProyectoWeb.Controllers
 
                 int idusuario = int.Parse(Session["IdUsuario"].ToString());
 
+                //Validaciones
+                if (form425.CuotaManejoMaxima == 0)
+                {
+                    ModelState.AddModelError("CuotaManejoMaxima", "Agregue un valor diferente de cero.");
+                    LlenadoListasEncabezado();
+                    return View(form425);
+                }
+
+                if (form425.CuotaManejo == 0)
+                {
+                    ModelState.AddModelError("CuotaManejo", "Agregue un valor diferente de cero.");
+                    LlenadoListasEncabezado();
+                    return View(form425);
+                }
+
                 Formulario425_Encabezado encabezado = Mapper.getMapper(form425);
                 encabezado.Usuario = idusuario;
                 bool respuesta = DatosFormato425.RegistrarEncabezado(encabezado);
@@ -242,7 +257,7 @@ namespace ProyectoWeb.Controllers
             {
                 ModelState.AddModelError("Descripcion Operacion Servicio", "No se encuentra valores para la lista de tipo de Descripcion operacion servicio");
             }
-            ViewBag.DescripcionOperacionServicio = new SelectList(idOperacionServicio, "IdDominio", "Nombre");if (idCanal.Count() == 0)
+            ViewBag.DescripcionOperacionServicio = new SelectList(idOperacionServicio, "IdDominio", "Nombre"); if (idCanal.Count() == 0)
             {
                 ModelState.AddModelError("Canal", "No se encuentra valores para la lista de tipo de Canal");
             }
