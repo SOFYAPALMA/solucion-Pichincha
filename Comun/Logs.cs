@@ -63,6 +63,24 @@ namespace Comun
         /// Metodo que escribe un txt con un mensaje
         /// </summary>
         /// <param name="Mensaje">Mensaje a escribir</param>
+        public static void EscribirLog(MethodBase Nombre, Exception pEx)
+        {
+            try
+            {
+                string sExcep = CrearMensajeError(pEx);
+
+                EscribirLog(Nombre, sExcep ?? "", Tipo.Error);
+            }
+            catch (Exception e)
+            {
+                EscribirLog(Nombre, "Ocurrio un error en la escritura de log. " + e.Message + " " + pEx.Message ?? "", Tipo.Error);
+            }
+        }
+
+        /// <summary>
+        /// Metodo que escribe un txt con un mensaje
+        /// </summary>
+        /// <param name="Mensaje">Mensaje a escribir</param>
         public static void EscribirLog(string Nombre, string pMensaje, Exception pEx)
         {
             try
@@ -180,7 +198,7 @@ namespace Comun
 
                 if (EscribeLog == 1)
                 {
-                    EscribirDD(Nombre, "", pTipo);
+                    EscribirDD("",Nombre,  pTipo);
                 }
             }
             catch (Exception e)
@@ -204,7 +222,7 @@ namespace Comun
             {
                 if (string.IsNullOrEmpty(NombreLog))
                 {
-                    NombreLog = Tools.TraerConfiguracion("NombLog");
+                    NombreLog = Tools.TraerConfiguracion("LogNombre");
                 }
 
                 string DirLog = Tools.traerUbicacionLogs();

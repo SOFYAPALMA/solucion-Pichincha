@@ -1,4 +1,5 @@
 ﻿using CapaModelo;
+using Comun;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -63,9 +64,11 @@ namespace BP.Repositorio
 
                 respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
                 Mensaje = RecuperarParametrosOut("MensajeSalida");
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), Mensaje, Logs.Tipo.Log);
             }
             catch (Exception ex)
             {
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en RegistrarEncabezado", ex);
             }
 
@@ -97,9 +100,11 @@ namespace BP.Repositorio
 
                 respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
                 Mensaje = RecuperarParametrosOut("MensajeSalida");
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), Mensaje, Logs.Tipo.Log);
             }
             catch (Exception ex)
             {
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en RegistrarEncabezadoDetalle", ex);
             }
 
@@ -142,9 +147,11 @@ namespace BP.Repositorio
 
                 respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
                 Mensaje = RecuperarParametrosOut("MensajeSalida");
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), Mensaje, Logs.Tipo.Log);
             }
             catch (Exception ex)
             {
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en ActualizarEncabezado", ex);
             }
 
@@ -176,9 +183,11 @@ namespace BP.Repositorio
 
                 respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
                 Mensaje = RecuperarParametrosOut("MensajeSalida");
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), Mensaje, Logs.Tipo.Log);
             }
             catch (Exception ex)
             {
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en ActualizarDetalle", ex);
             }
 
@@ -205,6 +214,7 @@ namespace BP.Repositorio
                     }
 
                     string serializedObject = JsonConvert.SerializeObject(dictionary, new DatetimeToStringConverter());
+                    Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), serializedObject, Logs.Tipo.Log);
 
                     rpt = JsonConvert.DeserializeObject<Formulario424_EncabezadoConsulta>(serializedObject);
                 }
@@ -213,6 +223,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en Detalles", ex);
             }
         }
@@ -243,6 +254,7 @@ namespace BP.Repositorio
                     }
 
                     string serializedObject = JsonConvert.SerializeObject(list, new DatetimeToStringConverter());
+                    Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), serializedObject, Logs.Tipo.Log);
 
                     rpt = JsonConvert.DeserializeObject<List<Formulario424_EncabezadoConsulta>>(serializedObject);
                 }
@@ -251,6 +263,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en Detalles", ex);
             }
         }
@@ -282,6 +295,7 @@ namespace BP.Repositorio
                     }
 
                     string serializedObject = JsonConvert.SerializeObject(list, new DatetimeToStringConverter());
+                    Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), serializedObject, Logs.Tipo.Log);
 
                     rpt = JsonConvert.DeserializeObject<List<Formulario424_DetalleConsulta>>(serializedObject);
                 }
@@ -290,6 +304,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en ListaDetalles", ex);
             }
         }
@@ -314,6 +329,7 @@ namespace BP.Repositorio
                     }
 
                     string serializedObject = JsonConvert.SerializeObject(dictionary, new DatetimeToStringConverter());
+                    Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), serializedObject, Logs.Tipo.Log);
 
                     rpt = JsonConvert.DeserializeObject<Formulario424_DetalleConsulta>(serializedObject);
                 }
@@ -322,6 +338,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en ListaDetalles", ex);
             }
         }

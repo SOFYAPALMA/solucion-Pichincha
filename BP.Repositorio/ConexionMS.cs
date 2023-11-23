@@ -103,7 +103,7 @@ namespace BP.Repositorio
             try
             {
                 conectar();
-                //Logs.EscribirLog(procedimiento, Logs.Tipo.Log);
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), procedimiento, Logs.Tipo.Log);
 
                 Adaptador = new SqlDataAdapter();
                 dsData = new DataSet();
@@ -132,7 +132,7 @@ namespace BP.Repositorio
             try
             {
                 conectar();
-                //Logs.EscribirLog(procedimiento, Logs.Tipo.Log);
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), procedimiento, Logs.Tipo.Log);
                 SqlTransaction Transac;
                 Transac = connection.BeginTransaction();
                 Adaptador = new SqlDataAdapter();
@@ -165,7 +165,7 @@ namespace BP.Repositorio
             try
             {
                 conectar();
-                //Logs.EscribirLog(Sql, Logs.Tipo.Log);
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), Sql, Logs.Tipo.Log);
                 SqlTransaction Transac;
                 Transac = connection.BeginTransaction();
                 Adaptador = new SqlDataAdapter();
@@ -195,7 +195,7 @@ namespace BP.Repositorio
             try
             {
                 conectar();
-                //Logs.EscribirLog(procedimiento, Logs.Tipo.Log);
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), procedimiento, Logs.Tipo.Log);
                 comando.CommandText = procedimiento;
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Connection = connection;
@@ -216,7 +216,7 @@ namespace BP.Repositorio
         /// <param name="valor">Valor que se va a pasar</param>
         public static void AdicionarParametros(string nombre, object valor)
         {
-            Logs.EscribirLog(nombre + "='" + valor + "'", Logs.Tipo.Log);
+            Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), nombre + "='" + valor + "'", Logs.Tipo.Log);
             if (valor.GetType().Name == "String")
             {
                 if (valor == "null")
@@ -238,7 +238,7 @@ namespace BP.Repositorio
         /// <param name="valor">Valor que se va a pasar</param>
         public static void AdicionarParametrosOut(string nombre, SqlDbType tipo, int tamano = 0)
         {
-            //Logs.EscribirLog(nombre, Logs.Tipo.Log);
+            Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), nombre, Logs.Tipo.Log);
             if (nombre.IndexOf("@") == -1)
                 nombre = "@" + nombre;
 
@@ -254,7 +254,7 @@ namespace BP.Repositorio
         {
             try
             {
-                //Logs.EscribirLog(nombre, Logs.Tipo.Log);
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), nombre, Logs.Tipo.Log);
                 if (nombre.IndexOf("@") == -1)
                     nombre = "@" + nombre;
 

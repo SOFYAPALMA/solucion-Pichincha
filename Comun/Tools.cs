@@ -56,11 +56,9 @@ namespace Comun
         /// </summary>
         /// <param name="key">Parametro a traer</param>
         /// <returns>El valor de la key</returns>
-        public static string TraerConfiguracion(string key)
-        
+        public static string TraerConfiguracion(string key)        
         {
-            //TODO Revisar el error de appsetting
-            return "";// ConfigurationManager.AppSettings[key];
+            return ConfigurationManager.AppSettings[key] ?? "";
         }
 
         #endregion
@@ -298,7 +296,7 @@ namespace Comun
             }
             catch (Exception ex)
             {
-                Logs.EscribirLog("Error en [ValidarObligatorio]. Detalle: ", ex);
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(),"Error en [ValidarObligatorio]. Detalle: ", ex);
                 return true;
             }
         }
@@ -350,7 +348,7 @@ namespace Comun
             }
             catch (Exception ex)
             {
-                Logs.EscribirLog("Error en [List<T> ConVertirJson<T>]. Detalle: ", ex);
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(),"Error en [List<T> ConVertirJson<T>]. Detalle: ", ex);
                 return Collection;
             }
         }
@@ -373,7 +371,7 @@ namespace Comun
             }
             catch (Exception ex)
             {
-                Logs.EscribirLog("Error en DateJsonToString. Detalle: ", ex);
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(),"Error en DateJsonToString. Detalle: ", ex);
                 return null;
             }
         }
@@ -392,7 +390,7 @@ namespace Comun
             }
             catch (Exception ex)
             {
-                Logs.EscribirLog("Error en [ConVertirJson]. Detalle: ", ex);
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(),"Error en [ConVertirJson]. Detalle: ", ex);
             }
 
             return StrJSON;
@@ -412,7 +410,7 @@ namespace Comun
             }
             catch (Exception ex)
             {
-                Logs.EscribirLog("Error en [ConVertirJson]. Detalle: ", ex);
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(),"Error en [ConVertirJson]. Detalle: ", ex);
             }
 
             return StrJSON;
@@ -433,7 +431,7 @@ namespace Comun
             }
             catch (Exception ex)
             {
-                Logs.EscribirLog("Error en [ParceoTexto]. Detalle: ", ex);
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(),"Error en [ParceoTexto]. Detalle: ", ex);
                 return -1;
             }
         }
@@ -463,7 +461,7 @@ namespace Comun
             }
             catch (Exception ex)
             {
-                Logs.EscribirLog("Error en [ParceoTextoANull]. Detalle: ", ex);
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(),"Error en [ParceoTextoANull]. Detalle: ", ex);
                 return -1;
             }
         }
@@ -483,7 +481,7 @@ namespace Comun
             }
             catch (Exception ex)
             {
-                Logs.EscribirLog("Error en [ParseoTextoAFloat]. Detalle: ", ex);
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(),"Error en [ParseoTextoAFloat]. Detalle: ", ex);
                 return -1;
             }
         }
@@ -727,7 +725,7 @@ namespace Comun
                 }
                 else
                 {
-                    Logs.EscribirLog("ReadStringIni", "No existe el archivo Ini de configuracion, revise la ubicacion en el web.config", Logs.Tipo.Error);
+                    Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), "No existe el archivo Ini de configuracion, revise la ubicacion en el web.config", Logs.Tipo.Error);
                     return opcional;
                 }
             }
