@@ -165,21 +165,21 @@ namespace ProyectoWeb.Controllers
         /// </summary>
         private void LlenadoListasEncabezado()
         {
-            List<Dominio> idCodigoCredito = DatosDominio.Obtener(1);
-            List<Dominio> idAperturaDigital = DatosDominio.Obtener(2);
+            List<DominioModel> idCodigoCredito = DatosDominio.Obtener(1);
+            List<DominioModel> idAperturaDigital = DatosDominio.Obtener(2);
 
 
             if (idCodigoCredito.Count() == 0)
             {
                 ModelState.AddModelError("idCodigoCredito", "No se encuentra valores para la lista de tipo de producto credito");
             }
-            ViewBag.idCodigoCredito = new SelectList(idCodigoCredito, "IdDominio", "Nombre");
+            ViewBag.idCodigoCredito = new SelectList(idCodigoCredito, "Dominio", "Descripcion");
 
             if (idAperturaDigital.Count() == 0)
             {
                 ModelState.AddModelError("idAperturaDigital", "No se encuentra valores para la lista de Apertura Deposito");
             }
-            ViewBag.idAperturaDigital = new SelectList(idAperturaDigital, "IdDominio", "Nombre");
+            ViewBag.idAperturaDigital = new SelectList(idAperturaDigital, "Dominio", "Descripcion");
         }
 
         /// <summary>
@@ -188,35 +188,35 @@ namespace ProyectoWeb.Controllers
         /// 
         private void LlenadoListasDetalle()
         {
-            List<Dominio> idCaracteristicaCredito = DatosDominio.Obtener(1);
-            List<Dominio> idTipoAseguradora = DatosDominio.Obtener(17);
-            List<Dominio> idCodigoAseguradora = DatosDominio.Obtener(17);
-            List<Dominio> idObservaciones = DatosDominio.Obtener(14);
+            List<DominioModel> idCaracteristicaCredito = DatosDominio.Obtener(1);
+            List<DominioModel> idTipoAseguradora = DatosDominio.Obtener(17);
+            List<DominioModel> idCodigoAseguradora = DatosDominio.Obtener(17);
+            List<DominioModel> idObservaciones = DatosDominio.Obtener(14);
 
 
             if (idCaracteristicaCredito.Count() == 0)
             {
                 ModelState.AddModelError("idCaracteristicaCredito", "No se encuentra valores para la lista de tipo de Caracteristica Credito");
             }
-            ViewBag.idCaracteristicaCredito = new SelectList(idCaracteristicaCredito, "IdDominio", "Nombre");
+            ViewBag.idCaracteristicaCredito = new SelectList(idCaracteristicaCredito, "Dominio", "Descripcion");
 
             if (idTipoAseguradora.Count() == 0)
             {
                 ModelState.AddModelError("idTipoAseguradora", "No se encuentra valores para la lista de tipo de Tipo Aseguradora");
             }
-            ViewBag.idTipoAseguradora = new SelectList(idTipoAseguradora, "IdDominio", "Nombre");
+            ViewBag.idTipoAseguradora = new SelectList(idTipoAseguradora, "Dominio", "Descripcion");
 
             if (idCodigoAseguradora.Count() == 0)
             {
                 ModelState.AddModelError("idCodigoAseguradora", "No se encuentra valores para la lista de Codigo Aseguradora");
             }
-            ViewBag.idCodigoAseguradora = new SelectList(idCodigoAseguradora, "IdDominio", "Nombre");
+            ViewBag.idCodigoAseguradora = new SelectList(idCodigoAseguradora, "Dominio", "Descripcion");
 
             if (idObservaciones.Count() == 0)
             {
                 ModelState.AddModelError("idObservaciones", "No se encuentra valores para la lista de ID Observaciones");
             }
-            ViewBag.idObservaciones = new SelectList(idObservaciones, "IdDominio", "Nombre");
+            ViewBag.idObservaciones = new SelectList(idObservaciones, "Dominio", "Descripcion");
 
         }
     }

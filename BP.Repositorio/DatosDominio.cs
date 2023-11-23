@@ -29,11 +29,11 @@ namespace BP.Repositorio
         #endregion
         public static string Mensaje { get; private set; }
 
-        public static List<Dominio> Obtener(int TipoDominio)
+        public static List<DominioModel> Obtener(int TipoDominio)
         {
             try
             {
-                List<Dominio> rpt = new List<Dominio>();
+                List<DominioModel> rpt = new List<DominioModel>();
 
                 DataTable dt = EjecutarSql("SELECT * FROM BPAPP.fntraevaloresdominio(" + TipoDominio + ")", "tbl").Tables[0];
 
@@ -55,7 +55,7 @@ namespace BP.Repositorio
                     string serializedObject = JsonConvert.SerializeObject(list, new DatetimeToStringConverter());
                     Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), serializedObject, Logs.Tipo.Log);
 
-                    rpt = JsonConvert.DeserializeObject<List<Dominio>>(serializedObject);
+                    rpt = JsonConvert.DeserializeObject<List<DominioModel>>(serializedObject);
                 }
 
                 return rpt;
