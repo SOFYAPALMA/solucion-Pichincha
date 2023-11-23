@@ -4,6 +4,7 @@ namespace ProyectoWeb.Models
 {
     public class Form426ConsultaDetalle
     {
+
         public int idDetalle { get; set; }
         public string PropiedadesFormato { get; set; }
         public int idPropiedadesFormato { get; set; }

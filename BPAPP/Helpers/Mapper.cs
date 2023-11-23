@@ -275,7 +275,8 @@ namespace ProyectoWeb
                 Estado = obj.Estado,
                 Fechacorte = obj.Fechacorte,
                 FechaEstado = obj.FechaEstado,
-                CodigoRegistro = obj.CodigoRegistro
+                CodigoRegistro = obj.CodigoRegistro,
+                NombreComercial = obj.NombreComercial,
             };
             return result;
         }

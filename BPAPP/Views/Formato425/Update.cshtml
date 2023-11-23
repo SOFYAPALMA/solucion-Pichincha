@@ -38,10 +38,10 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
-                                @Html.LabelFor(model => model.AperturaDigital, htmlAttributes: new { @class = "control-label" })
+                                @Html.LabelFor(model => model.idAperturaDigital, htmlAttributes: new { @class = "control-label" })
                                 <div class="col-md-10">
-                                    @Html.DropDownList("idAperturaDigital", (SelectList)ViewBag.idAperturaDigital, "Seleccione..", new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.AperturaDigital, "", new { @class = "text-danger" })
+                                    @Html.DropDownList("idAperturaDigital", (SelectList)ViewBag.AperturaDigital, "Seleccione..", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.idAperturaDigital, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </div>
@@ -56,10 +56,10 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
-                                @Html.LabelFor(model => model.Franquicia, htmlAttributes: new { @class = "control-label" })
+                                @Html.LabelFor(model => model.idFranquicia, htmlAttributes: new { @class = "control-label" })
                                 <div class="col-md-10">
-                                    @Html.DropDownList("idFranquicia", (SelectList)ViewBag.idFranquicia, "Seleccione..", new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.Franquicia, "", new { @class = "text-danger" })
+                                    @Html.DropDownList("idFranquicia", (SelectList)ViewBag.Franquicia, "Seleccione..", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.idFranquicia, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </div>

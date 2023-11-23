@@ -36,11 +36,11 @@ namespace ProyectoWeb.Models
         [Display(Name = "Observaciones cuota de manejo")]
         public int idObservacionesCuota { get; set; }
 
-        [Display(Name = "Observaciones cuota de manejo maxima")]
+        [Display(Name = "Cuota de manejo maxima")]
         public int CuotaManejoMaxima { get; set; }
         public string GrupoPoblacional { get; set; }
 
-        [Display(Name = "Observaciones grupo poblacional")]
+        [Display(Name = "Grupo poblacional")]
         public int idGrupoPoblacional { get; set; }
         public string Cupo { get; set; }
 

@@ -184,8 +184,8 @@ namespace ProyectoWeb.Controllers
 
             List<DominioModel> tipodeProductoDeposito = DatosDominio.Obtener(1);
             List<DominioModel> NombreComercial = DatosDominio.Obtener(21);
-            List<DominioModel> idAperturaDigital = DatosDominio.Obtener(2);
-            List<DominioModel> idFranquicia = DatosDominio.Obtener(7);
+            List<DominioModel> AperturaDigital = DatosDominio.Obtener(2);
+            List<DominioModel> Franquicia = DatosDominio.Obtener(7);
             List<DominioModel> observacionesCuotadeManejo = DatosDominio.Obtener(5);
             List<DominioModel> grupoPoblacional = DatosDominio.Obtener(3);
             List<DominioModel> idCupo = DatosDominio.Obtener(8);
@@ -203,17 +203,17 @@ namespace ProyectoWeb.Controllers
             }
             ViewBag.NombreComercial = new SelectList(NombreComercial, "Dominio", "Descripcion");
 
-            if (idAperturaDigital.Count() == 0)
+            if (AperturaDigital.Count() == 0)
             {
-                ModelState.AddModelError("Apertura digital", "No se encuentra valores para la lista de Apertura digital");
+                ModelState.AddModelError("idAperturaDigital", "No se encuentra valores para la lista de apertura digital");
             }
-            ViewBag.idAperturaDigital = new SelectList(idAperturaDigital, "Dominio", "Descripcion");
+            ViewBag.AperturaDigital = new SelectList(AperturaDigital, "Dominio", "Descripcion");
 
-            if (idFranquicia.Count() == 0)
+            if (Franquicia.Count() == 0)
             {
                 ModelState.AddModelError("idFranquicia", "No se encuentra valores para la lista de franquicia");
             }
-            ViewBag.idFranquicia = new SelectList(idFranquicia, "Dominio", "Descripcion");
+            ViewBag.Franquicia = new SelectList(Franquicia, "Dominio", "Descripcion");
 
             if (observacionesCuotadeManejo.Count() == 0)
             {
