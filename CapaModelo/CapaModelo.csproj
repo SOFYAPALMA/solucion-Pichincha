@@ -43,7 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Canal.cs" />
-    <Compile Include="Dominio.cs" />
+    <Compile Include="DominioModel.cs" />
     <Compile Include="Formato425.cs" />
     <Compile Include="Formato426.cs" />
     <Compile Include="Formulario425_Detalle.cs" />
