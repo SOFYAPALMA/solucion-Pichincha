@@ -160,6 +160,11 @@ namespace BP.Repositorio
             return respuesta;
         }
 
+        public static Formulario425_Detalle DetallesDetalles(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public static Formulario425_Encabezado Detalles(int FormatoId)
         {
             try

@@ -143,6 +143,47 @@ namespace ProyectoWeb.Controllers
             return View(form425);
         }
 
+        public ActionResult UpdateDetalle(int id)
+        {
+            Formulario425_Detalle detalle = DatosFormato425.DetallesDetalles(id);
+            Form425ConsultaDetalle form425 = Mapper.getMapper(detalle);
+            LlenadoListasDetalle();
+            return View(form425);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateDetalle(Form424ConsultaDetalle detalle)
+        {
+            if (ModelState.IsValid)
+            {
+                if (Session["IdUsuario"] == null)
+                    return RedirectToAction("Login");
+
+                int idusuario = int.Parse(Session["IdUsuario"].ToString());
+
+                Formulario424_Detalle upd = Mapper.getMapper(detalle);
+                bool respuesta = DatosFormato424.ActualizarDetalle(upd);
+
+                if (respuesta)
+                {
+                    TempData["Notificacion"] = DatosFormato424.Mensaje;
+
+                    return RedirectToAction("List");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "No se pudo actualizar el detalle, por favor valide los datos.");
+                    LlenadoListasDetalle();
+                    return View(detalle);
+                }
+            }
+            else
+            {
+                LlenadoListasDetalle();
+                return View(detalle);
+            }
+        }
+
         [HttpPost]
         public ActionResult Update(Form425ConsultaEncabezado encabezado)
         {
@@ -175,6 +216,8 @@ namespace ProyectoWeb.Controllers
                 LlenadoListasEncabezado();
                 return View(encabezado);
             }
+
+
         }
 
         public ActionResult Details(int id)
@@ -288,7 +331,7 @@ namespace ProyectoWeb.Controllers
                 ModelState.AddModelError("idOperacionoServicio", "No se encuentra valores para la lista de tipo de descripcion operacion servicio");
             }
             ViewBag.DescripcionOperacionServicio = new SelectList(idOperacionServicio, "Dominio", "Descripcion");
-            
+
             if (idCanal.Count() == 0)
             {
                 ModelState.AddModelError("Canal", "No se encuentra valores para la lista de tipo de canal");
