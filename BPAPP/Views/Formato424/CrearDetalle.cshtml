@@ -103,3 +103,48 @@
 <div>
     @Html.ActionLink("Volver", "List")
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $('#idObservaciones').change(function () {
+            var value = $("#idObservaciones option:selected").text();
+
+            if (value == '90 - Desactivación') {
+                $('#idOperacionServicio').val("");
+                $('#idOperacionServicio').prop("disabled", true);
+
+                $('#idCanal').val("");
+                $('#idCanal').prop("disabled", true);
+
+                $("#NumOperServiciosCuotamanejo").val('0')
+                $('#NumOperServiciosCuotamanejo').prop("disabled", true);
+                $('#CostoFijo').prop("disabled", false);
+                $('#CostoProporcionOperacionServicio').prop("disabled", false);
+            }
+            else {
+                $('#idOperacionServicio').prop("disabled", false);
+                $('#idCanal').prop("disabled", false);
+                $('#NumOperServiciosCuotamanejo').prop("disabled", false);
+            }
+        });
+
+        $('#NumOperServiciosCuotamanejo').change(function () {
+            var value = $("#NumOperServiciosCuotamanejo").val();
+            //console.log(value);
+            //console.log($("#NumOperServiciosCuotamanejo"));
+            if (value == '-1') {
+                //console.log(value);
+                $('#CostoFijo').val("0");
+                $('#CostoFijo').prop("disabled", true);
+
+                $('#CostoProporcionOperacionServicio').val("0");
+                $('#CostoProporcionOperacionServicio').prop("disabled", true);
+            }
+            else {
+                $('#CostoFijo').prop("disabled", false);
+                $('#CostoProporcionOperacionServicio').prop("disabled", false);
+            }
+        });
+    </script>
+}
