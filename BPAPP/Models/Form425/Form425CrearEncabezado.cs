@@ -11,14 +11,14 @@ namespace ProyectoWeb.Models
         [Display(Name = "Tipo")]
         public int Tipo { get; } = 001; //Campo fijo por default= 001
 
-        [Required(ErrorMessage = "El campo codigo entidad es obligatorio.")]
+        [Required(ErrorMessage = "El campo código entidad es obligatorio.")]
         [Display(Name = "Codigo")]
         public int Codigo { get; } = 00057; //Campo fijo por default= 00057
 
         /// <summary>
         /// Captura de informacion para almacenamiento y visualizacion en el detalle
         /// </summary>
-        [Required(ErrorMessage = "El campo Nombre o sigla de la entidad es obligatorio.")]
+        [Required(ErrorMessage = "El campo nombre o sigla de la entidad es obligatorio.")]
         [Display(Name = "Nombre Entidad")]
         [StringLength(50)]
         [DataType(DataType.Text)]

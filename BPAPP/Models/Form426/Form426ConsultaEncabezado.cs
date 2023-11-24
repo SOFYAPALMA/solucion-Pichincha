@@ -10,12 +10,12 @@ namespace ProyectoWeb.Models
         [Display(Name = "Número Registro")]
         public int idPropiedadesFormato { get; set; }
 
-        [Required(ErrorMessage = "El campo Tipo es obligatorio.")]
+        [Required(ErrorMessage = "El campo tipo es obligatorio.")]
         [Display(Name = "Tipo")]
         public int Tipo { get; set; }
 
-        [Required(ErrorMessage = "El campo Codigo es obligatorio.")]
-        [Display(Name = "Codigo")]
+        [Required(ErrorMessage = "El campo código es obligatorio.")]
+        [Display(Name = "Código")]
         public int Codigo { get; set; }
 
         [Display(Name = "Nombre Entidad")]
@@ -23,10 +23,10 @@ namespace ProyectoWeb.Models
         [DataType(DataType.Text)]
         public string Nombre { get; set; }
 
-        [Display(Name = "Codigo Credito")]
+        [Display(Name = "Código Crédito")]
         public string CodigoCredito { get; set; }
         
-        [Display(Name = "Codigo Credito")]
+        [Display(Name = "Código Crédito")]
         public int idCodigoCredito { get; set; }
 
         [Display(Name = "Apertura Digital")]

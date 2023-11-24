@@ -13,7 +13,7 @@
 
     <div class="card">
         <div class="card-header">
-            <h2>Crear Detalle</h2>
+            <h2>Actualizar Detalle</h2>
         </div>
         <div class="card-body">
             <div class="row">
@@ -75,7 +75,7 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.idObservaciones, htmlAttributes: new { @class = "control-label" })
                         <div class="col-md-10">
-                            @Html.DropDownList("idObservaciones", (SelectList)ViewBag.IDObservaciones, "Seleccione..", new { @class = "form-control" })
+                            @Html.DropDownList("idObservaciones", (SelectList)ViewBag.Observaciones, "Seleccione..", new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.idObservaciones, "", new { @class = "text-danger" })
                         </div>
                     </div>
