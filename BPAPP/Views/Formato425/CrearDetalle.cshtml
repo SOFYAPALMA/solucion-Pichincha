@@ -37,10 +37,10 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="form-group">
-                        @Html.LabelFor(model => model.Canal, htmlAttributes: new { @class = "control-label" })
+                        @Html.LabelFor(model => model.idCanal, htmlAttributes: new { @class = "control-label" })
                         <div class="col-md-10">
-                            @Html.DropDownList("Canal", (SelectList)ViewBag.Canal, "Seleccione..", new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.Canal, "", new { @class = "text-danger" })
+                            @Html.DropDownList("idCanal", (SelectList)ViewBag.Canal, "Seleccione..", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.idCanal, "", new { @class = "text-danger" })
                         </div>
                     </div>
                 </div>

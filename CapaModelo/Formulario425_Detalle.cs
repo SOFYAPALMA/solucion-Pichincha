@@ -9,8 +9,8 @@ namespace CapaModelo
         public string PropiedadesFormato { get; set; }
         public int idPropiedadesFormato { get; set; }
         public int Subcuenta { get; set; }
-        public string OperacionoServicio { get; set; }
-        public int idOperacionoServicio { get; set; }
+        public string OperacionServicio { get; set; }
+        public int idOperacionServicio { get; set; }
         public string Canal { get; set; }
         public int idCanal { get; set; }
         public decimal CostoFijo { get; set; }

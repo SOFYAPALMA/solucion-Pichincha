@@ -83,8 +83,8 @@ namespace BP.Repositorio
                 limpiarParametros();
                 AdicionarParametros("@idPropiedadesFormato", obj.idPropiedadesFormato);
                 AdicionarParametros("@Subcuenta", obj.Subcuenta);
-                AdicionarParametros("@idOperacionServicio", obj.idOperacionoServicio);
-                AdicionarParametros("@Canal", obj.Canal);
+                AdicionarParametros("@idOperacionServicio", obj.idOperacionServicio);
+                AdicionarParametros("@Canal", obj.idCanal);
                 AdicionarParametros("@CostoFijo", obj.CostoFijo);
                 AdicionarParametros("@CostoFijoMaximo", obj.CostoFijoMaximo);
                 AdicionarParametros("@CostoProporcionOperacionServicio", obj.CostoProporcionOperacionServicio);
