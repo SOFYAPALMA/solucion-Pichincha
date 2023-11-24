@@ -11,13 +11,14 @@ namespace CapaModelo
         public int Subcuenta { get; set; }
         public string OperacionoServicio { get; set; }
         public int idOperacionoServicio { get; set; }
-        public int Canal { get; set; }
-        public int CostoFijo { get; set; }
-        public int CostoFijoMaximo { get; set; }
-        public int CostoProporcionOperacionServicio { get; set; }
-        public int CostoProporcionMaxOperacionServicio { get; set; }
-        public int Tasa { get; set; }
-        public int TasaMaxima { get; set; }
+        public string Canal { get; set; }
+        public int idCanal { get; set; }
+        public decimal CostoFijo { get; set; }
+        public decimal CostoFijoMaximo { get; set; }
+        public decimal CostoProporcionOperacionServicio { get; set; }
+        public decimal CostoProporcionMaxOperacionServicio { get; set; }
+        public decimal Tasa { get; set; }
+        public decimal TasaMaxima { get; set; }
         public string TipoAseguradora { get; set; }
         public int idTipoAseguradora { get; set; }
         public string CodigoAseguradora { get; set; }
@@ -26,8 +27,8 @@ namespace CapaModelo
         public int idObservaciones { get; set; }
         public int UnidadCaptura { get; set; }
         public int Estado { get; set; }
-        public DateTime FechaProceso { get; set; }
-        public DateTime FechaEstado { get; set; }
+        public string FechaProceso { get; set; }
+        public string FechaEstado { get; set; }
 
     }
 }

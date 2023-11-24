@@ -26,31 +26,34 @@ namespace ProyectoWeb.Models
 
         [Required(ErrorMessage = "El campo canal es obligatorio.")]
         [Display(Name = "Canal")]
-        public int Canal { get; set; }
+        public int idCanal { get; set; }   
+        
+        [Display(Name = "Canal")]
+        public string Canal { get; set; }
 
         [Required(ErrorMessage = "El campo costo fijo es obligatorio.")]
         [Display(Name = "Costo Fijo")]
-        public int CostoFijo { get; set; }
+        public decimal CostoFijo { get; set; }
 
         [Required(ErrorMessage = "El campo costo fijo máximo es obligatorio.")]
         [Display(Name = "Costo fijo máximo")]
-        public int CostoFijoMaximo { get; set; }
+        public decimal CostoFijoMaximo { get; set; }
 
         [Required(ErrorMessage = "El campo costo proporción a operación o servicio es obligatorio.")]
         [Display(Name = "Costo proporcion a operación o servicio")]
-        public int CostoProporcionOperacionServicio { get; set; }
+        public decimal CostoProporcionOperacionServicio { get; set; }
 
         [Required(ErrorMessage = "El campo costo max proporcional a operación o servicio es obligatorio.")]
         [Display(Name = "Costo proporcional max a operación o servicio")]
-        public int CostoProporcionMaxOperacionServicio { get; set; }
+        public decimal CostoProporcionMaxOperacionServicio { get; set; }
 
         [Required(ErrorMessage = "El campo tasa es obligatorio.")]
         [Display(Name = "Tasa")]
-        public int Tasa { get; set; }
+        public decimal Tasa { get; set; }
 
         [Required(ErrorMessage = "El campo tasa máxima es obligatorio.")]
         [Display(Name = "Tasa máxima")]
-        public int TasaMaxima { get; set; }
+        public decimal TasaMaxima { get; set; }
 
         [Required(ErrorMessage = "El campo tipo de aseguradora es obligatorio.")]
         [Display(Name = "Tipo de aseguradora")]
@@ -71,7 +74,7 @@ namespace ProyectoWeb.Models
         [Display(Name = "Unidad de captura")]
         public int UnidadCaptura { get; set; }
         public int Estado { get; set; }
-        public DateTime FechaProceso { get; set; }
-        public DateTime FechaEstado { get; set; }
+        public string FechaProceso { get; set; }
+        public string FechaEstado { get; set; }
     }
 }

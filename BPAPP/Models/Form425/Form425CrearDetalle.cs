@@ -19,7 +19,10 @@ namespace ProyectoWeb.Models
 
         [Required(ErrorMessage = "El campo canal es obligatorio.")]
         [Display(Name = "Canal")]
-        public int Canal { get; set; }
+        public int idCanal { get; set; } 
+        
+        [Display(Name = "Canal")]
+        public string Canal { get; set; }
 
         [Required(ErrorMessage = "El costo fijo es obligatorio.")]
         [Display(Name = "Costo Fijo")]
@@ -61,8 +64,8 @@ namespace ProyectoWeb.Models
         [Display(Name = "Nombre Comercial")]
         public int idNombreComercial { get; set; }
         public int Estado { get; set; }
-        public DateTime FechaProceso { get; set; }
-        public DateTime FechaEstado { get; set; }
+        public string FechaProceso { get; set; }
+        public string FechaEstado { get; set; }
 
         [Required(ErrorMessage = "El campo id código aseguradora es obligatorio.")]
         [Display(Name = "Código Aseguradora")]

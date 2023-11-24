@@ -81,6 +81,35 @@ namespace ProyectoWeb.Controllers
         {
             if (ModelState.IsValid)
             {
+                //Validaciones
+                if (form425.CostoFijo == 0)
+                {
+                    ModelState.AddModelError("CostoFijo", "Agregue un valor diferente de cero.");
+                    LlenadoListasDetalle();
+                    return View(form425);
+                }
+
+                if (form425.CostoFijoMaximo == 0)
+                {
+                    ModelState.AddModelError("CostoFijoMaximo", "Agregue un valor diferente de cero.");
+                    LlenadoListasDetalle();
+                    return View(form425);
+                }
+
+                if (form425.CostoProporcionOperacionServicio == 0)
+                {
+                    ModelState.AddModelError("CostoProporcionOperacionServicio", "Agregue un valor diferente de cero.");
+                    LlenadoListasDetalle();
+                    return View(form425);
+                }
+
+                if (form425.CostoProporcionMaxOperacionServicio == 0)
+                {
+                    ModelState.AddModelError("CostoProporcionMaxOperacionServicio", "Agregue un valor diferente de cero.");
+                    LlenadoListasDetalle();
+                    return View(form425);
+                }
+
                 Formulario425_Detalle encabezado = Mapper.getMapper(form425);
 
                 bool respuesta = DatosFormato425.RegistrarDetalle(encabezado);
@@ -97,6 +126,7 @@ namespace ProyectoWeb.Controllers
                     LlenadoListasDetalle();
                     return View(form425);
                 }
+
             }
             else
             {
@@ -255,9 +285,11 @@ namespace ProyectoWeb.Controllers
 
             if (idOperacionServicio.Count() == 0)
             {
-                ModelState.AddModelError("Descripcion Operacion Servicio", "No se encuentra valores para la lista de tipo de Descripcion operacion servicio");
+                ModelState.AddModelError("idOperacionoServicio", "No se encuentra valores para la lista de tipo de descripcion operacion servicio");
             }
-            ViewBag.DescripcionOperacionServicio = new SelectList(idOperacionServicio, "Dominio", "Descripcion"); if (idCanal.Count() == 0)
+            ViewBag.DescripcionOperacionServicio = new SelectList(idOperacionServicio, "Dominio", "Descripcion");
+            
+            if (idCanal.Count() == 0)
             {
                 ModelState.AddModelError("Canal", "No se encuentra valores para la lista de tipo de canal");
             }
@@ -267,19 +299,19 @@ namespace ProyectoWeb.Controllers
             {
                 ModelState.AddModelError("idTipoAseguradora", "No se encuentra valores para la lista de Tipo aseguradora");
             }
-            ViewBag.idTipoAseguradora = new SelectList(idTipoAseguradora, "Dominio", "Descripcion");
+            ViewBag.TipoAseguradora = new SelectList(idTipoAseguradora, "Dominio", "Descripcion");
 
             if (idCodigoAseguradora.Count() == 0)
             {
                 ModelState.AddModelError("idCodigoAseguradora", "No se encuentra valores para la lista de codigo aseguradora");
             }
-            ViewBag.idCodigoAseguradora = new SelectList(idCodigoAseguradora, "Dominio", "Descripcion");
+            ViewBag.CodigoAseguradora = new SelectList(idCodigoAseguradora, "Dominio", "Descripcion");
 
             if (idObservaciones.Count() == 0)
             {
                 ModelState.AddModelError("IDObservaciones", "No se encuentra valores para la lista de ID Observaciones");
             }
-            ViewBag.IDObservaciones = new SelectList(idObservaciones, "Dominio", "Descripcion");
+            ViewBag.Observaciones = new SelectList(idObservaciones, "Dominio", "Descripcion");
 
         }
 
