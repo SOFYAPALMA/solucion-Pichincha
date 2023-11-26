@@ -38,7 +38,7 @@
                             <div class="form-group">
                                 @Html.LabelFor(model => model.idAperturaDigital, htmlAttributes: new { @class = "control-label" })
                                 <div class="col-md-10">
-                                    @Html.DropDownList("idAperturaDigital", (SelectList)ViewBag.idAperturaDigital, "Seleccione..", new { @class = "form-control" })
+                                    @Html.DropDownList("idAperturaDigital", (SelectList)ViewBag.AperturaDigital, "Seleccione..", new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.idAperturaDigital, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -47,7 +47,7 @@
                             <div class="form-group">
                                 @Html.LabelFor(model => model.NumeroClientes, htmlAttributes: new { @class = "control-label" })
                                 <div class="col-md-10">
-                                    @Html.DropDownList("NumeroClientes", (SelectList)ViewBag.idAperturaDigital, "Seleccione..", new { @class = "form-control" })
+                                    @Html.EditorFor(model => model.NumeroClientes, new { htmlAttributes = new { @class = "form-control" } })
                                     @Html.ValidationMessageFor(model => model.NumeroClientes, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                             <div class="form-group">
                                 @Html.LabelFor(model => model.idFranquicia, htmlAttributes: new { @class = "control-label" })
                                 <div class="col-md-10">
-                                    @Html.DropDownList("idFranquicia", (SelectList)ViewBag.idFranquicia, "Seleccione..", new { @class = "form-control" })
+                                    @Html.DropDownList("idFranquicia", (SelectList)ViewBag.Franquicia, "Seleccione..", new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.idFranquicia, "", new { @class = "text-danger" })
                                 </div>
                             </div>

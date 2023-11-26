@@ -42,12 +42,12 @@ namespace BP.Repositorio
                 AdicionarParametros("Nombre", obj.Nombre);
                 AdicionarParametros("idNombreComercial", obj.idNombreComercial);
                 AdicionarParametros("TipoProductoDeposito", obj.idTipoProductoDeposito);
-                AdicionarParametros("AperturaDigital", obj.AperturaDigital);
+                AdicionarParametros("AperturaDigital", obj.idAperturaDigital);
                 AdicionarParametros("NumeroClientes", obj.NumeroClientes);
                 AdicionarParametros("CuotaManejo", obj.CuotaManejo);
                 AdicionarParametros("ObservacionesCuota", obj.idObservacionesCuota);
-                AdicionarParametros("GrupoPoblacional", obj.GrupoPoblacional);
-                AdicionarParametros("Ingresos", obj.Ingresos);
+                AdicionarParametros("GrupoPoblacional", obj.idGrupoPoblacional);
+                AdicionarParametros("Ingresos", obj.idIngresos);
                 AdicionarParametros("SerGratuito_CtaAHO", obj.idSerGratuito_CtaAHO);
                 AdicionarParametros("SerGratuito_CtaAHO2", obj.idSerGratuito_CtaAHO2);
                 AdicionarParametros("SerGratuito_CtaAHO3", obj.idSerGratuito_CtaAHO3);

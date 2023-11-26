@@ -261,13 +261,13 @@ namespace ProyectoWeb.Controllers
 
             if (tipodeProductoDeposito.Count() == 0)
             {
-                ModelState.AddModelError("Tipo Producto tarjeta credito", "No se encuentra valores para la lista de tipo de producto tarjeta de credito");
+                ModelState.AddModelError("tipodeProductoDeposito", "No se encuentra valores para la lista de tipo de producto tarjeta de credito");
             }
             ViewBag.tipodeProductoDeposito = new SelectList(tipodeProductoDeposito, "Dominio", "Descripcion");
 
             if (NombreComercial.Count() == 0)
             {
-                ModelState.AddModelError("tipo producto nombre comercial", "No se encuentra valores para la lista de tipo de producto nombre comercial");
+                ModelState.AddModelError("NombreComercial", "No se encuentra valores para la lista de tipo de producto nombre comercial");
             }
             ViewBag.NombreComercial = new SelectList(NombreComercial, "Dominio", "Descripcion");
 
@@ -349,7 +349,7 @@ namespace ProyectoWeb.Controllers
             {
                 ModelState.AddModelError("idObservaciones", "No se encuentra valores para la lista de Observaciones");
             }
-            ViewBag.idObservaciones = new SelectList(idObservaciones, "Dominio", "Descripcion");
+            ViewBag.Observaciones = new SelectList(idObservaciones, "Dominio", "Descripcion");
 
         }
 
