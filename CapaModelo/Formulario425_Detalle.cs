@@ -4,9 +4,7 @@ namespace CapaModelo
 {
     public class Formulario425_Detalle
     {
-        public string Detalle { get; set; }
         public int idDetalle { get; set; }
-        public string PropiedadesFormato { get; set; }
         public int idPropiedadesFormato { get; set; }
         public int Subcuenta { get; set; }
         public string OperacionServicio { get; set; }

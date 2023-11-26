@@ -37,7 +37,7 @@ namespace ProyectoWeb.Controllers
 
                 int idusuario = int.Parse(Session["IdUsuario"].ToString());
 
-                Formulario424_EncabezadoCrear encabezado = Mapper.getMapper(form424);
+                Formulario424_Encabezado encabezado = Mapper.getMapper(form424);
                 encabezado.Usuario = idusuario;
                 bool respuesta = DatosFormato424.RegistrarEncabezado(encabezado);
 
@@ -93,7 +93,7 @@ namespace ProyectoWeb.Controllers
 
         public ActionResult Update(int id)
         {
-            Formulario424_EncabezadoConsulta encabezado = DatosFormato424.DetalleEncabezado(id);
+            Formulario424_Encabezado encabezado = DatosFormato424.DetalleEncabezado(id);
             Form424ConsultaEncabezado form424 = Mapper.getMapper(encabezado);
             LlenadoListasEncabezado();
             return View(form424);
@@ -101,7 +101,7 @@ namespace ProyectoWeb.Controllers
 
         public ActionResult UpdateDetalle(int id)
         {
-            Formulario424_DetalleConsulta detalle = DatosFormato424.DetallesDetalles(id);
+            Formulario424_Detalle detalle = DatosFormato424.DetallesDetalles(id);
             Form424ConsultaDetalle form424 = Mapper.getMapper(detalle);
             LlenadoListasDetalle();
             return View(form424);
@@ -150,7 +150,7 @@ namespace ProyectoWeb.Controllers
 
                 int idusuario = int.Parse(Session["IdUsuario"].ToString());
 
-                Formulario424_EncabezadoActualizar upd = Mapper.getMapper(encabezado);
+                Formulario424_Encabezado upd = Mapper.getMapper(encabezado);
                 upd.Usuario = idusuario;
                 bool respuesta = DatosFormato424.ActualizarEncabezado(upd);
 
@@ -176,10 +176,10 @@ namespace ProyectoWeb.Controllers
 
         public ActionResult Details(int id)
         {
-            Formulario424_EncabezadoConsulta encabezado = DatosFormato424.DetalleEncabezado(id);
+            Formulario424_Encabezado encabezado = DatosFormato424.DetalleEncabezado(id);
             Form424ConsultaEncabezado form424 = Mapper.getMapper(encabezado);
 
-            List<Formulario424_DetalleConsulta> encabezados = DatosFormato424.ListaDetalles(id);
+            List<Formulario424_Detalle> encabezados = DatosFormato424.ListaDetalles(id);
             List<Form424ConsultaDetalle> form424Detalles = Mapper.getMapper(encabezados);
 
             ViewBag.ListaDetalles = form424Detalles;
@@ -189,7 +189,7 @@ namespace ProyectoWeb.Controllers
 
         public ActionResult List()
         {
-            List<Formulario424_EncabezadoConsulta> encabezados = DatosFormato424.Lista();
+            List<Formulario424_Encabezado> encabezados = DatosFormato424.Lista();
             List<Form424ConsultaEncabezado> form424 = Mapper.getMapper(encabezados);
 
             return View(form424);
@@ -197,7 +197,7 @@ namespace ProyectoWeb.Controllers
 
         public ActionResult ListDetalles(int id)
         {
-            List<Formulario424_DetalleConsulta> encabezados = DatosFormato424.ListaDetalles(id);
+            List<Formulario424_Detalle> encabezados = DatosFormato424.ListaDetalles(id);
             List<Form424ConsultaDetalle> form424 = Mapper.getMapper(encabezados);
 
             return View(form424);

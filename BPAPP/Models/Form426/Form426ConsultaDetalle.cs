@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ProyectoWeb.Models
 {
@@ -7,7 +6,6 @@ namespace ProyectoWeb.Models
     {
         [Display(Name = "Detalle")]
         public int idDetalle { get; set; }
-        public string PropiedadesFormato { get; set; }
 
         [Display(Name = "Propiedades Formato")]
         public int idPropiedadesFormato { get; set; }

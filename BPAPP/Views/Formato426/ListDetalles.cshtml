@@ -7,9 +7,6 @@
             @Html.DisplayNameFor(model => model.idDetalle)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.idPropiedadesFormato)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Subcuenta)
         </th>
         <th>
@@ -42,9 +39,6 @@
             @Html.DisplayFor(modelItem => item.idDetalle)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PropiedadesFormato)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Subcuenta)
         </td>
         <td>
@@ -69,7 +63,7 @@
             @Html.DisplayFor(modelItem => item.UnidadCaptura)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new {  id=item.idDetalle  })
+            @Html.ActionLink("Editar", "UpdateDetalle", new {  id=item.idDetalle  })
         </td>
     </tr>
 }
