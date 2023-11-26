@@ -160,6 +160,11 @@ namespace BP.Repositorio
             return respuesta;
         }
 
+        public static bool ActualizarDetalle(Formulario425_Detalle upd)
+        {
+            throw new NotImplementedException();
+        }
+
         public static Formulario425_Detalle DetallesDetalles(int id)
         {
             throw new NotImplementedException();

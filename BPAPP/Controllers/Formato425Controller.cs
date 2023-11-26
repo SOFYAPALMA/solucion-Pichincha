@@ -152,21 +152,16 @@ namespace ProyectoWeb.Controllers
         }
 
         [HttpPost]
-        public ActionResult UpdateDetalle(Form424ConsultaDetalle detalle)
+        public ActionResult UpdateDetalle(Form425ConsultaDetalle detalle)
         {
             if (ModelState.IsValid)
             {
-                if (Session["IdUsuario"] == null)
-                    return RedirectToAction("Login");
-
-                int idusuario = int.Parse(Session["IdUsuario"].ToString());
-
-                Formulario424_Detalle upd = Mapper.getMapper(detalle);
-                bool respuesta = DatosFormato424.ActualizarDetalle(upd);
+                Formulario425_Detalle upd = Mapper.getMapper(detalle);
+                bool respuesta = DatosFormato425.ActualizarDetalle(upd);
 
                 if (respuesta)
                 {
-                    TempData["Notificacion"] = DatosFormato424.Mensaje;
+                    TempData["Notificacion"] = DatosFormato425.Mensaje;
 
                     return RedirectToAction("List");
                 }
@@ -352,9 +347,9 @@ namespace ProyectoWeb.Controllers
 
             if (idObservaciones.Count() == 0)
             {
-                ModelState.AddModelError("IDObservaciones", "No se encuentra valores para la lista de ID Observaciones");
+                ModelState.AddModelError("idObservaciones", "No se encuentra valores para la lista de Observaciones");
             }
-            ViewBag.Observaciones = new SelectList(idObservaciones, "Dominio", "Descripcion");
+            ViewBag.idObservaciones = new SelectList(idObservaciones, "Dominio", "Descripcion");
 
         }
 
