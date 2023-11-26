@@ -8,38 +8,37 @@ namespace ProyectoWeb
     public class Mapper
     {
         #region Formulario 424
-        public static Formulario424_EncabezadoCrear getMapper(Form424CrearEncabezado dto)
+        public static Formulario424_Encabezado getMapper(Form424CrearEncabezado dto)
         {
-            var result = new Formulario424_EncabezadoCrear()
+            var result = new Formulario424_Encabezado()
             {
-                Tipo = dto.Tipo,
-                Codigo = dto.Codigo,
+                CodigoRegistro = dto.CodigoRegistro,
+                CuotaManejo = dto.CuotaManejo,
+                idAperturaDigital = dto.idAperturaDigital,
+                idGrupoPoblacional = dto.idGrupoPoblacional,
+                idIngresos = dto.idIngresos,
+                idObservacionesCuota = dto.idObservacionesCuota,
+                idSerGratuito_CtaAHO = dto.idSerGratuito_CtaAHO,
+                idSerGratuito_CtaAHO2 = dto.idSerGratuito_CtaAHO2,
+                idSerGratuito_CtaAHO3 = dto.idSerGratuito_CtaAHO3,
+                idSerGratuito_TCRDebito = dto.idSerGratuito_TCRDebito,
+                idSerGratuito_TCRDebito2 = dto.idSerGratuito_TCRDebito2,
+                idSerGratuito_TCRDebito3 = dto.idSerGratuito_TCRDebito3,
+                idTipoProductoDeposito = dto.idTipoProductoDeposito,
                 Nombre = dto.Nombre,
-                FechaHora = dto.FechaHora,
                 idNombreComercial = dto.idNombreComercial,
-                TipodeProductoDeposito = dto.TipodeProductoDeposito,
-                AperturaDigital = dto.AperturaDigital,
-                NumerodeClientesUnicos = dto.NumerodeClientesUnicos,
-                CuotadeManejo = dto.CuotadeManejo,
-                ObservacionesCuotadeManejo = dto.ObservacionesCuotadeManejo,
-                GrupoPoblacional = dto.GrupoPoblacional,
-                Ingresos = dto.Ingresos,
-                ServicioGratuitoCuentadeAhorros1 = dto.ServicioGratuitoCuentadeAhorros1,
-                ServicioGratuitoCuentadeAhorros2 = dto.ServicioGratuitoCuentadeAhorros2,
-                ServicioGratuitoCuentadeAhorros3 = dto.ServicioGratuitoCuentadeAhorros3,
-                ServicioGratuitoTarjetaDebito1 = dto.ServicioGratuitoTarjetaDebito1,
-                ServicioGratuitoTarjetaDebito2 = dto.ServicioGratuitoTarjetaDebito2,
-                ServicioGratuitoTarjetaDebito3 = dto.ServicioGratuitoTarjetaDebito3
+                NumeroClientes = dto.NumeroClientes,
+                Tipo = dto.Tipo,
+                Usuario = dto.Usuario
             };
-
             return result;
         }
 
-        public static List<Form424ConsultaEncabezado> getMapper(List<Formulario424_EncabezadoConsulta> obj)
+        public static List<Form424ConsultaEncabezado> getMapper(List<Formulario424_Encabezado> obj)
         {
             List<Form424ConsultaEncabezado> result = new List<Form424ConsultaEncabezado>();
 
-            foreach (Formulario424_EncabezadoConsulta consulta in obj)
+            foreach (Formulario424_Encabezado consulta in obj)
             {
                 Form424ConsultaEncabezado encabezado = getMapper(consulta);
                 result.Add(encabezado);
@@ -48,11 +47,10 @@ namespace ProyectoWeb
             return result;
         }
 
-        public static Form424ConsultaEncabezado getMapper(Formulario424_EncabezadoConsulta obj)
+        public static Form424ConsultaEncabezado getMapper(Formulario424_Encabezado obj)
         {
             var result = new Form424ConsultaEncabezado()
             {
-                FechaHora = obj.FechaHora,
                 AperturaDigital = obj.AperturaDigital,
                 Codigo = obj.Codigo,
                 CodigoRegistro = obj.CodigoRegistro,
@@ -94,16 +92,15 @@ namespace ProyectoWeb
             return result;
         }
 
-        public static Formulario424_EncabezadoActualizar getMapper(Form424ConsultaEncabezado dto)
+        public static Formulario424_Encabezado getMapper(Form424ConsultaEncabezado dto)
         {
-            var result = new Formulario424_EncabezadoActualizar()
+            var result = new Formulario424_Encabezado()
             {
                 idPropiedadesFormato = dto.idPropiedadesFormato,
                 Tipo = dto.Tipo,
                 Codigo = dto.Codigo,
                 Nombre = dto.Nombre,
                 Usuario = dto.Usuario,
-                FechaHora = dto.FechaHora,
                 idNombreComercial = dto.idNombreComercial,
                 CodigoRegistro = dto.CodigoRegistro,
                 CuotaManejo = dto.CuotaManejo,
@@ -128,11 +125,11 @@ namespace ProyectoWeb
             return result;
         }
 
-        public static List<Form424ConsultaDetalle> getMapper(List<Formulario424_DetalleConsulta> obj)
+        public static List<Form424ConsultaDetalle> getMapper(List<Formulario424_Detalle> obj)
         {
             List<Form424ConsultaDetalle> result = new List<Form424ConsultaDetalle>();
 
-            foreach (Formulario424_DetalleConsulta consulta in obj)
+            foreach (Formulario424_Detalle consulta in obj)
             {
                 Form424ConsultaDetalle encabezado = getMapper(consulta);
                 result.Add(encabezado);
@@ -141,7 +138,7 @@ namespace ProyectoWeb
             return result;
         }
 
-        public static Form424ConsultaDetalle getMapper(Formulario424_DetalleConsulta obj)
+        public static Form424ConsultaDetalle getMapper(Formulario424_Detalle obj)
         {
             var result = new Form424ConsultaDetalle()
             {
@@ -166,9 +163,9 @@ namespace ProyectoWeb
         {
             var result = new Formulario424_Detalle()
             {
-                Subcuentas = dto.Subcuentas,
+                subCuenta = dto.Subcuentas,
                 idCanal = dto.idCanal,
-                idOperacionoServicio = dto.idOperacionServicio,
+                idOperacionServicio = dto.idOperacionServicio,
                 NumOperServiciosCuotamanejo = dto.NumOperServiciosCuotamanejo,
                 CostoFijo = dto.CostoFijo,
                 CostoProporcionOperacionServicio = dto.CostoProporcionOperacionServicio,
@@ -178,14 +175,15 @@ namespace ProyectoWeb
             };
             return result;
         }
+
         public static Formulario424_Detalle getMapper(Form424ConsultaDetalle dto)
         {
             var result = new Formulario424_Detalle()
             {
                 idDetalle = dto.idDetalle,
-                Subcuentas = dto.Subcuenta,
+                subCuenta = dto.Subcuenta,
                 idCanal = dto.idCanal,
-                idOperacionoServicio = dto.idOperacionServicio,
+                idOperacionServicio = dto.idOperacionServicio,
                 NumOperServiciosCuotamanejo = dto.NumOperServiciosCuotamanejo,
                 CostoFijo = dto.CostoFijo,
                 CostoProporcionOperacionServicio = dto.CostoProporcionOperacionServicio,
@@ -514,6 +512,29 @@ namespace ProyectoWeb
         }
 
         public static Formulario426_Detalle getMapper(Form426CrearDetalle dto)
+        {
+            var result = new Formulario426_Detalle()
+            {
+                idDetalle = dto.idDetalle,
+                idPropiedadesFormato = dto.idPropiedadesFormato,
+                Subcuenta = dto.Subcuenta,
+                idCaracteristicaCredito = dto.idCaracteristicaCredito,
+                Costo = dto.Costo,
+                Tasa = dto.Tasa,
+                idTipoAseguradora = dto.idTipoAseguradora,
+                idCodigoAseguradora = dto.idCodigoAseguradora,
+                idObservaciones = dto.idObservaciones,
+                UnidadCaptura = dto.UnidadCaptura,
+                Estado = dto.Estado,
+                FechaProceso = dto.FechaProceso,
+                FechaEstado = dto.FechaEstado,
+                CodigoRegistro = dto.CodigoRegistro,
+                idDetalleAnterior = dto.idDetalleAnterior
+            };
+            return result;
+        }
+
+        public static Formulario426_Detalle getMapper(Form426ConsultaDetalle dto)
         {
             var result = new Formulario426_Detalle()
             {

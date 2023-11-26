@@ -134,6 +134,76 @@ namespace BP.Repositorio
             return respuesta;
         }
 
+        public static bool ActualizarDetalle(Formulario426_Detalle obj)
+        {
+            Instanciar();
+            bool respuesta = false;
+
+            try
+            {
+                limpiarParametros();
+                AdicionarParametros("@idDetalle", obj.idDetalle);
+                AdicionarParametros("@Subcuenta", obj.Subcuenta);
+                AdicionarParametros("@idCaracteristicaCredito", obj.idCaracteristicaCredito);
+                AdicionarParametros("@Costo", obj.Costo);
+                AdicionarParametros("@Tasa", obj.Tasa);
+                AdicionarParametros("@idTipoAseguradora", obj.idTipoAseguradora);
+                AdicionarParametros("@idCodigoAseguradora", obj.idCodigoAseguradora);
+                AdicionarParametros("@idObservaciones", obj.idObservaciones);
+                AdicionarParametros("@UnidadCaptura", obj.UnidadCaptura);
+
+                AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
+                AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
+
+                ejecutarScalar("bpapp.spActualizaDetalleCreditos");
+
+                respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
+                Mensaje = RecuperarParametrosOut("MensajeSalida");
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), Mensaje, Logs.Tipo.Log);
+            }
+            catch (Exception ex)
+            {
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
+                throw new Exception("Error en ActualizarDetalle", ex);
+            }
+
+            return respuesta;
+        }
+
+        public static Formulario426_Detalle DetallesDetalles(int id)
+        {
+            try
+            {
+                Formulario426_Detalle rpt = new Formulario426_Detalle();
+                limpiarParametros();
+                AdicionarParametros("idDetalle", id);
+                AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
+
+                DataTable dt = ejecutarStoreProcedure("bpapp.spConsultaDetalleCredito").Tables[0];
+
+                if (dt.Rows.Count > 0)
+                {
+                    var dictionary = new Dictionary<string, object>();
+                    foreach (DataColumn column in dt.Columns)
+                    {
+                        dictionary[column.ColumnName] = dt.Rows[0][column];
+                    }
+
+                    string serializedObject = JsonConvert.SerializeObject(dictionary, new DatetimeToStringConverter());
+                    Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), serializedObject, Logs.Tipo.Log);
+
+                    rpt = JsonConvert.DeserializeObject<Formulario426_Detalle>(serializedObject);
+                }
+
+                return rpt;
+            }
+            catch (Exception ex)
+            {
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
+                throw new Exception("Error en ListaDetalles", ex);
+            }
+        }
+
         public static Formulario426_Encabezado Detalles(int FormatoId)
         {
             try

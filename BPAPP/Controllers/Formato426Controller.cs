@@ -131,6 +131,42 @@ namespace ProyectoWeb.Controllers
             }
         }
 
+        public ActionResult UpdateDetalle(int id)
+        {
+            Formulario426_Detalle detalle = DatosFormato426.DetallesDetalles(id);
+            Form426ConsultaDetalle form426 = Mapper.getMapper(detalle);
+            LlenadoListasDetalle();
+            return View(form426);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateDetalle(Form426ConsultaDetalle detalle)
+        {
+            if (ModelState.IsValid)
+            {
+                Formulario426_Detalle upd = Mapper.getMapper(detalle);
+                bool respuesta = DatosFormato426.ActualizarDetalle(upd);
+
+                if (respuesta)
+                {
+                    TempData["Notificacion"] = DatosFormato426.Mensaje;
+
+                    return RedirectToAction("List");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "No se pudo actualizar el detalle, por favor valide los datos.");
+                    LlenadoListasDetalle();
+                    return View(detalle);
+                }
+            }
+            else
+            {
+                LlenadoListasDetalle();
+                return View(detalle);
+            }
+        }
+
         public ActionResult Details(int id)
         {
             Formulario426_Encabezado encabezado = DatosFormato426.Detalles(id);

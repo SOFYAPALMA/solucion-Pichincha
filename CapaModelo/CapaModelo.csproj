@@ -42,21 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Canal.cs" />
     <Compile Include="DominioModel.cs" />
-    <Compile Include="Formato425.cs" />
-    <Compile Include="Formato426.cs" />
     <Compile Include="Formulario425_Detalle.cs" />
-    <Compile Include="Formulario424_DetalleConsulta.cs" />
     <Compile Include="Formulario424_Detalle.cs" />
-    <Compile Include="Formulario424_EncabezadoConsulta.cs" />
-    <Compile Include="Formulario424_EncabezadoActualizar.cs" />
-    <Compile Include="Formulario424_EncabezadoCrear.cs" />
+    <Compile Include="Formulario424_Encabezado.cs" />
     <Compile Include="Formulario425_Encabezado.cs" />
     <Compile Include="Formulario426_Detalle.cs" />
     <Compile Include="Formulario426_Encabezado.cs" />
     <Compile Include="Menu.cs" />
-    <Compile Include="Formato424.cs" />
     <Compile Include="NivelDetalle.cs" />
     <Compile Include="Permisos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

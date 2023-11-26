@@ -2062,6 +2062,7 @@
     <Content Include="Views\Formato426\ListDetalles.cshtml" />
     <Content Include="Views\Formato424\UpdateDetalle.cshtml" />
     <Content Include="Views\Formato425\UpdateDetalle.cshtml" />
+    <Content Include="Views\Formato426\UpdateDetalle.cshtml" />
     <None Include="Web.R.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

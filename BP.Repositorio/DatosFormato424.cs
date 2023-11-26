@@ -29,7 +29,7 @@ namespace BP.Repositorio
         #endregion
         public static string Mensaje { get; private set; }
 
-        public static bool RegistrarEncabezado(Formulario424_EncabezadoCrear obj)
+        public static bool RegistrarEncabezado(Formulario424_Encabezado obj)
         {
             Instanciar();
             bool respuesta = false;
@@ -41,19 +41,19 @@ namespace BP.Repositorio
                 AdicionarParametros("Codigo", obj.Codigo);
                 AdicionarParametros("Nombre", obj.Nombre);
                 AdicionarParametros("idNombreComercial", obj.idNombreComercial);
-                AdicionarParametros("TipoProductoDeposito", obj.TipodeProductoDeposito);
+                AdicionarParametros("TipoProductoDeposito", obj.idTipoProductoDeposito);
                 AdicionarParametros("AperturaDigital", obj.AperturaDigital);
-                AdicionarParametros("NumeroClientes", obj.NumerodeClientesUnicos);
-                AdicionarParametros("CuotaManejo", obj.CuotadeManejo);
-                AdicionarParametros("ObservacionesCuota", obj.ObservacionesCuotadeManejo);
+                AdicionarParametros("NumeroClientes", obj.NumeroClientes);
+                AdicionarParametros("CuotaManejo", obj.CuotaManejo);
+                AdicionarParametros("ObservacionesCuota", obj.idObservacionesCuota);
                 AdicionarParametros("GrupoPoblacional", obj.GrupoPoblacional);
                 AdicionarParametros("Ingresos", obj.Ingresos);
-                AdicionarParametros("SerGratuito_CtaAHO", obj.ServicioGratuitoCuentadeAhorros1);
-                AdicionarParametros("SerGratuito_CtaAHO2", obj.ServicioGratuitoCuentadeAhorros2);
-                AdicionarParametros("SerGratuito_CtaAHO3", obj.ServicioGratuitoCuentadeAhorros3);
-                AdicionarParametros("SerGratuito_TCRDebito", obj.ServicioGratuitoTarjetaDebito1);
-                AdicionarParametros("SerGratuito_TCRDebito2", obj.ServicioGratuitoTarjetaDebito2);
-                AdicionarParametros("SerGratuito_TCRDebito3", obj.ServicioGratuitoTarjetaDebito3);
+                AdicionarParametros("SerGratuito_CtaAHO", obj.idSerGratuito_CtaAHO);
+                AdicionarParametros("SerGratuito_CtaAHO2", obj.idSerGratuito_CtaAHO2);
+                AdicionarParametros("SerGratuito_CtaAHO3", obj.idSerGratuito_CtaAHO3);
+                AdicionarParametros("SerGratuito_TCRDebito", obj.idSerGratuito_TCRDebito);
+                AdicionarParametros("SerGratuito_TCRDebito2", obj.idSerGratuito_TCRDebito2);
+                AdicionarParametros("SerGratuito_TCRDebito3", obj.idSerGratuito_TCRDebito3);
                 AdicionarParametros("Usuario", obj.Usuario);
 
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
@@ -84,8 +84,8 @@ namespace BP.Repositorio
             {
                 limpiarParametros();
                 AdicionarParametros("@idPropiedadesFormato", obj.idPropiedadesFormato);
-                AdicionarParametros("@subCuenta", obj.Subcuentas);
-                AdicionarParametros("@idOperacionServicio", obj.idOperacionoServicio);
+                AdicionarParametros("@subCuenta", obj.subCuenta);
+                AdicionarParametros("@idOperacionServicio", obj.idOperacionServicio);
                 AdicionarParametros("@idCanal", obj.idCanal);
                 AdicionarParametros("@NumOperServiciosCuotamanejo", obj.NumOperServiciosCuotamanejo);
                 AdicionarParametros("@CostoFijo", obj.CostoFijo);
@@ -112,7 +112,7 @@ namespace BP.Repositorio
         }
 
 
-        public static bool ActualizarEncabezado(Formulario424_EncabezadoActualizar obj)
+        public static bool ActualizarEncabezado(Formulario424_Encabezado obj)
         {
             Instanciar();
             bool respuesta = false;
@@ -167,8 +167,8 @@ namespace BP.Repositorio
             {
                 limpiarParametros();
                 AdicionarParametros("@idDetalle", obj.idDetalle);
-                AdicionarParametros("@subCuenta", obj.Subcuentas);
-                AdicionarParametros("@idOperacionServicio", obj.idOperacionoServicio);
+                AdicionarParametros("@subCuenta", obj.subCuenta);
+                AdicionarParametros("@idOperacionServicio", obj.idOperacionServicio);
                 AdicionarParametros("@idCanal", obj.idCanal);
                 AdicionarParametros("@NumOperServiciosCuotamanejo", obj.NumOperServiciosCuotamanejo);
                 AdicionarParametros("@CostoFijo", obj.CostoFijo);
@@ -194,11 +194,11 @@ namespace BP.Repositorio
             return respuesta;
         }
 
-        public static Formulario424_EncabezadoConsulta DetalleEncabezado(int FormatoId)
+        public static Formulario424_Encabezado DetalleEncabezado(int FormatoId)
         {
             try
             {
-                Formulario424_EncabezadoConsulta rpt = new Formulario424_EncabezadoConsulta();
+                Formulario424_Encabezado rpt = new Formulario424_Encabezado();
                 limpiarParametros();
                 AdicionarParametros("idPropiedadesFormato", FormatoId);
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
@@ -216,7 +216,7 @@ namespace BP.Repositorio
                     string serializedObject = JsonConvert.SerializeObject(dictionary, new DatetimeToStringConverter());
                     Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), serializedObject, Logs.Tipo.Log);
 
-                    rpt = JsonConvert.DeserializeObject<Formulario424_EncabezadoConsulta>(serializedObject);
+                    rpt = JsonConvert.DeserializeObject<Formulario424_Encabezado>(serializedObject);
                 }
 
                 return rpt;
@@ -228,11 +228,11 @@ namespace BP.Repositorio
             }
         }
 
-        public static List<Formulario424_EncabezadoConsulta> Lista()
+        public static List<Formulario424_Encabezado> Lista()
         {
             try
             {
-                List<Formulario424_EncabezadoConsulta> rpt = new List<Formulario424_EncabezadoConsulta>();
+                List<Formulario424_Encabezado> rpt = new List<Formulario424_Encabezado>();
                 limpiarParametros();
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
 
@@ -256,7 +256,7 @@ namespace BP.Repositorio
                     string serializedObject = JsonConvert.SerializeObject(list, new DatetimeToStringConverter());
                     Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), serializedObject, Logs.Tipo.Log);
 
-                    rpt = JsonConvert.DeserializeObject<List<Formulario424_EncabezadoConsulta>>(serializedObject);
+                    rpt = JsonConvert.DeserializeObject<List<Formulario424_Encabezado>>(serializedObject);
                 }
 
                 return rpt;
@@ -268,11 +268,11 @@ namespace BP.Repositorio
             }
         }
 
-        public static List<Formulario424_DetalleConsulta> ListaDetalles(int FormatoId)
+        public static List<Formulario424_Detalle> ListaDetalles(int FormatoId)
         {
             try
             {
-                List<Formulario424_DetalleConsulta> rpt = new List<Formulario424_DetalleConsulta>();
+                List<Formulario424_Detalle> rpt = new List<Formulario424_Detalle>();
                 limpiarParametros();
                 AdicionarParametros("idPropiedadesFormato", FormatoId);
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
@@ -297,7 +297,7 @@ namespace BP.Repositorio
                     string serializedObject = JsonConvert.SerializeObject(list, new DatetimeToStringConverter());
                     Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), serializedObject, Logs.Tipo.Log);
 
-                    rpt = JsonConvert.DeserializeObject<List<Formulario424_DetalleConsulta>>(serializedObject);
+                    rpt = JsonConvert.DeserializeObject<List<Formulario424_Detalle>>(serializedObject);
                 }
 
                 return rpt;
@@ -309,11 +309,11 @@ namespace BP.Repositorio
             }
         }
 
-        public static Formulario424_DetalleConsulta DetallesDetalles(int FormatoId)
+        public static Formulario424_Detalle DetallesDetalles(int FormatoId)
         {
             try
             {
-                Formulario424_DetalleConsulta rpt = new Formulario424_DetalleConsulta();
+                Formulario424_Detalle rpt = new Formulario424_Detalle();
                 limpiarParametros();
                 AdicionarParametros("idDetalle", FormatoId);
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
@@ -331,7 +331,7 @@ namespace BP.Repositorio
                     string serializedObject = JsonConvert.SerializeObject(dictionary, new DatetimeToStringConverter());
                     Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), serializedObject, Logs.Tipo.Log);
 
-                    rpt = JsonConvert.DeserializeObject<Formulario424_DetalleConsulta>(serializedObject);
+                    rpt = JsonConvert.DeserializeObject<Formulario424_Detalle>(serializedObject);
                 }
 
                 return rpt;
