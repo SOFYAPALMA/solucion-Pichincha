@@ -160,14 +160,80 @@ namespace BP.Repositorio
             return respuesta;
         }
 
-        public static bool ActualizarDetalle(Formulario425_Detalle upd)
+        public static bool ActualizarDetalle(Formulario425_Detalle obj)
         {
-            throw new NotImplementedException();
+            Instanciar();
+            bool respuesta = false;
+
+            try
+            {
+                limpiarParametros();
+                AdicionarParametros("@idDetalle", obj.idDetalle);
+                AdicionarParametros("@Subcuenta", obj.Subcuenta);
+                AdicionarParametros("@idOperacionServicio", obj.idOperacionServicio);
+                AdicionarParametros("@idCanal", obj.idCanal);
+                AdicionarParametros("@CostoFijo", obj.CostoFijo);
+                AdicionarParametros("@CostoFijoMaximo", obj.CostoFijoMaximo);
+                AdicionarParametros("@CostoProporcionOperacionServicio", obj.CostoProporcionOperacionServicio);
+                AdicionarParametros("@CostoProporcionMaxOperacionServicio", obj.CostoProporcionMaxOperacionServicio);
+                AdicionarParametros("@Tasa", obj.Tasa);
+                AdicionarParametros("@TasaMaxima", obj.TasaMaxima);
+                AdicionarParametros("@idTipoAseguradora", obj.idTipoAseguradora);
+                AdicionarParametros("@idCodigoAseguradora", obj.idCodigoAseguradora);
+                AdicionarParametros("@idObservaciones", obj.idObservaciones);
+                AdicionarParametros("@UnidadCaptura", obj.UnidadCaptura);
+
+
+                AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
+                AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
+
+                ejecutarScalar("bpapp.spActualizaDetalleTarjetaCredito");
+
+                respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
+                Mensaje = RecuperarParametrosOut("MensajeSalida");
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), Mensaje, Logs.Tipo.Log);
+            }
+            catch (Exception ex)
+            {
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
+                throw new Exception("Error en ActualizarDetalle", ex);
+            }
+
+            return respuesta;
         }
 
         public static Formulario425_Detalle DetallesDetalles(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Formulario425_Detalle rpt = new Formulario425_Detalle();
+                limpiarParametros();
+                AdicionarParametros("idDetalle", id);
+                AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
+
+                DataTable dt = ejecutarStoreProcedure("bpapp.spConsultaDetalleTarjetaCredito").Tables[0];
+
+                if (dt.Rows.Count > 0)
+                {
+                    var dictionary = new Dictionary<string, object>();
+                    foreach (DataColumn column in dt.Columns)
+                    {
+                        dictionary[column.ColumnName] = dt.Rows[0][column];
+                    }
+
+                    string serializedObject = JsonConvert.SerializeObject(dictionary, new DatetimeToStringConverter());
+                    Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), serializedObject, Logs.Tipo.Log);
+
+                    rpt = JsonConvert.DeserializeObject<Formulario425_Detalle>(serializedObject);
+                }
+
+                return rpt;
+            }
+            catch (Exception ex)
+            {
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
+                throw new Exception("Error en ListaDetalles", ex);
+            }
         }
 
         public static Formulario425_Encabezado Detalles(int FormatoId)

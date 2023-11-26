@@ -361,6 +361,33 @@ namespace ProyectoWeb
             return result;
         }
 
+        public static Formulario425_Detalle getMapper(Form425ConsultaDetalle dto)
+        {
+            var result = new Formulario425_Detalle()
+            {
+                idDetalle = dto.idDetalle,
+                idPropiedadesFormato = dto.idPropiedadesFormato,
+                Subcuenta = dto.Subcuenta,
+                idOperacionServicio = dto.idOperacionoServicio,
+                Canal = dto.Canal, 
+                idCanal = dto.idCanal,
+                CostoFijo = dto.CostoFijo,
+                CostoFijoMaximo = dto.CostoFijoMaximo,
+                CostoProporcionOperacionServicio = dto.CostoProporcionOperacionServicio,
+                CostoProporcionMaxOperacionServicio = dto.CostoProporcionMaxOperacionServicio,
+                Tasa = dto.Tasa,
+                TasaMaxima = dto.TasaMaxima,
+                idTipoAseguradora = dto.idTipoAseguradora,
+                idCodigoAseguradora = dto.idCodigoAseguradora,
+                idObservaciones = dto.idObservaciones,
+                UnidadCaptura = dto.UnidadCaptura,
+                Estado = dto.Estado,
+                FechaProceso = dto.FechaProceso,
+                FechaEstado = dto.FechaEstado
+            };
+            return result;
+        }     
+        
         public static Formulario425_Detalle getMapper(Form425CrearDetalle dto)
         {
             var result = new Formulario425_Detalle()
