@@ -67,6 +67,22 @@ namespace ProyectoWeb.Controllers
         {
             if (ModelState.IsValid)
             {
+                //Validaciones
+
+                if (form424.CostoFijo == 0)
+                {
+                    ModelState.AddModelError("CostoFijo", "Agregue un valor diferente de cero.");
+                    LlenadoListasDetalle();
+                    return View(form424);
+                }
+
+                if (form424.CostoProporcionOperacionServicio == 0)
+                {
+                    ModelState.AddModelError("CostoProporcionOperacionServicio", "Agregue un valor diferente de cero.");
+                    LlenadoListasDetalle();
+                    return View(form424);
+                }
+
                 Formulario424_Detalle encabezado = Mapper.getMapper(form424);
 
                 bool respuesta = DatosFormato424.RegistrarDetalle(encabezado);
