@@ -41,7 +41,7 @@ namespace ProyectoWeb.Models
         [Required(ErrorMessage = "El campo Observaciones es obligatorio.")]
         [Display(Name = "Observaciones")]
         public int idObservaciones { get; set; }
-        public int UnidadCaptura { get; set; }
+        public int UnidadCaptura { get; set; } = 1;
         public int Estado { get; set; }
         public string FechaProceso { get; set; }
         public string FechaEstado { get; set; }

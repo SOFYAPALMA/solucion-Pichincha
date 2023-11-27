@@ -48,7 +48,7 @@ namespace CapaDatos
             List<Usuario> rptListaUsuario = new List<Usuario>();
             using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
             {
-                SqlCommand cmd = new SqlCommand("usp_ObtenerUsuario", oConexion);
+                SqlCommand cmd = new SqlCommand("bpapp.spObtenerUsuario", oConexion);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 try
@@ -67,8 +67,7 @@ namespace CapaDatos
                             Clave = dr["LoginClave"].ToString(),
                             IdRol = Convert.ToInt32(dr["IdRol"].ToString()),
                             oRol = new Rol() { Descripcion = dr["DescripcionRol"].ToString() },
-                            Activo = Convert.ToBoolean(dr["Activo"]),
-                            DescripcionReferencia = dr["DescripcionReferencia"].ToString()
+                            Activo = Convert.ToBoolean(dr["Activo"])
                         });
                     }
                     dr.Close();
@@ -92,14 +91,12 @@ namespace CapaDatos
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("usp_RegistrarUsuario", oConexion);
+                    SqlCommand cmd = new SqlCommand("bpapp.spRegistrarUsuario", oConexion);
                     cmd.Parameters.AddWithValue("Nombres", oUsuario.Nombres);
                     cmd.Parameters.AddWithValue("Apellidos", oUsuario.Apellidos);
                     cmd.Parameters.AddWithValue("IdRol", oUsuario.IdRol);
                     cmd.Parameters.AddWithValue("Usuario", oUsuario.LoginUsuario);
                     cmd.Parameters.AddWithValue("Clave", oUsuario.Clave);
-                    cmd.Parameters.AddWithValue("DescripcionReferencia", oUsuario.DescripcionReferencia);
-                    cmd.Parameters.AddWithValue("IdReferencia", oUsuario.IdReferencia);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
                     oConexion.Open();
@@ -126,15 +123,13 @@ namespace CapaDatos
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("usp_ModificarUsuario", oConexion);
+                    SqlCommand cmd = new SqlCommand("bpapp.spModificarUsuario", oConexion);
                     cmd.Parameters.AddWithValue("IdUsuario", oUsuario.IdUsuario);
                     cmd.Parameters.AddWithValue("Nombres", oUsuario.Nombres);
                     cmd.Parameters.AddWithValue("Apellidos", oUsuario.Apellidos);
                     cmd.Parameters.AddWithValue("IdRol", oUsuario.IdRol);
                     cmd.Parameters.AddWithValue("Usuario", oUsuario.LoginUsuario);
                     cmd.Parameters.AddWithValue("Clave", oUsuario.Clave);
-                    cmd.Parameters.AddWithValue("DescripcionReferencia", oUsuario.DescripcionReferencia);
-                    cmd.Parameters.AddWithValue("IdReferencia", oUsuario.IdReferencia);
                     cmd.Parameters.AddWithValue("Activo", oUsuario.Activo);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -163,7 +158,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("usp_EliminarUsuario", oConexion);
+                    SqlCommand cmd = new SqlCommand("bpapp.spEliminarUsuario", oConexion);
                     cmd.Parameters.AddWithValue("IdUsuario", IdUsuario);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -211,9 +206,7 @@ namespace CapaDatos
                                               {
                                                   IdUsuario = int.Parse(dato.Element("IdUsuario").Value),
                                                   Nombres = dato.Element("Nombres").Value,
-                                                  Apellidos = dato.Element("Apellidos").Value,
-                                                  DescripcionReferencia = dato.Element("DescripcionReferencia").Value,
-                                                  IdReferencia = int.Parse(dato.Element("IdReferencia").Value)
+                                                  Apellidos = dato.Element("Apellidos").Value
 
                                               }).FirstOrDefault();
                                 rptUsuario.oRol = doc.Element("Usuario").Elements("DetalleRol") == null ? new Rol() : (from dato in doc.Element("Usuario").Elements("DetalleRol")
