@@ -251,7 +251,7 @@ namespace ProyectoWeb.Controllers
         {
 
             List<DominioModel> tipodeProductoDeposito = DatosDominio.Obtener(1);
-            List<DominioModel> NombreComercial = DatosDominio.Obtener(21);
+            List<DominioModel> NombreComercial = DatosDominio.Obtener(22);
             List<DominioModel> AperturaDigital = DatosDominio.Obtener(2);
             List<DominioModel> Franquicia = DatosDominio.Obtener(7);
             List<DominioModel> observacionesCuotadeManejo = DatosDominio.Obtener(5);

@@ -75,7 +75,7 @@ namespace BP.Repositorio
             return respuesta;
         }
 
-        public static bool RegistrarDetalle(Formulario424_Detalle obj)
+        public static bool RegistrarDetalle(Formulario424_Detalle obj)        
         {
             Instanciar();
             bool respuesta = false;

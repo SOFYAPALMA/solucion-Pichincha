@@ -141,3 +141,19 @@
 <div>
     @Html.ActionLink("Volver", "List")
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $('#idObservaciones').change(function () {
+            var value = $("#idObservaciones option:selected").text();
+
+            if (value == '90 - Desactivación') {
+                $('#idOperacionServicio').val("");
+                $('#idOperacionServicio').prop("disabled", true);
+
+                $('#idCanal').val("");
+                $('#idCanal').prop("disabled", true);
+
+            }
+        });
