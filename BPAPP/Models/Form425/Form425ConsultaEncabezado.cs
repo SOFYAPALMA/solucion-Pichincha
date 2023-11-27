@@ -12,7 +12,7 @@ namespace ProyectoWeb.Models
         public int Tipo { get; set; }
 
         [Display(Name = "Codigo")]
-        public int Codigo { get; set; }
+        public string Codigo { get; set; }
 
         [Display(Name = "Codigo")]
         public string Nombre { get; set; }

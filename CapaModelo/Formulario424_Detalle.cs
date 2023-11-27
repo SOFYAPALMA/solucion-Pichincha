@@ -20,6 +20,6 @@
         public string PropiedadesFormato { get; set; }
         public int NumOperServiciosCuotamanejo { get; set; }
         public string subCuenta { get; set; }
-        public string UnidadCaptura { get; set; }
+        public int UnidadCaptura { get; set; } = 1;
     }
 }

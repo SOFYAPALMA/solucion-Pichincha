@@ -19,12 +19,12 @@ namespace ProyectoWeb.Models
 
         [Required(ErrorMessage = "El campo operacion o servicio es obligatorio.")]
         [Display(Name = "Operacion o Servicio")]
-        public int idOperacionServicio { get; set; }      
+        public int idOperacionServicio { get; set; }
         public string OperacionServicio { get; set; }
 
         [Required(ErrorMessage = "El campo canal es obligatorio.")]
         [Display(Name = "Canal")]
-        public int idCanal { get; set; } 
+        public int idCanal { get; set; }
         public string Canal { get; set; }
 
         [Required(ErrorMessage = "El campo número de operaciones o servicios incluidos en cuota de manejo es obligatorio.")]
@@ -44,8 +44,7 @@ namespace ProyectoWeb.Models
         public int idObservaciones { get; set; }
         public string Observaciones { get; set; }
 
-        [Required(ErrorMessage = "El campo unidad captura es obligatorio.")]
-        [Display(Name = "Unidad Captura")]
-        public string UnidadCaptura { get; set; }
+        [Display(Name = "Unidad captura")]
+        public int UnidadCaptura { get; set; } = 1;
     }
 }

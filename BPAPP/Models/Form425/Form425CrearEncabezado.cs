@@ -13,7 +13,7 @@ namespace ProyectoWeb.Models
 
         [Required(ErrorMessage = "El campo código entidad es obligatorio.")]
         [Display(Name = "Codigo")]
-        public int Codigo { get; } = 00057; //Campo fijo por default= 00057
+        public string Codigo { get; } = "00057"; //Campo fijo por default= 00057
 
         /// <summary>
         /// Captura de informacion para almacenamiento y visualizacion en el detalle

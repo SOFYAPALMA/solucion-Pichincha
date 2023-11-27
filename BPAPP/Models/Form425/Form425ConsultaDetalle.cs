@@ -70,9 +70,8 @@ namespace ProyectoWeb.Models
         public int idObservaciones { get; set; }
         public string Observaciones { get; set; }
 
-        [Required(ErrorMessage = "El campo unidad de captura es obligatorio.")]
         [Display(Name = "Unidad de captura")]
-        public int UnidadCaptura { get; set; }
+        public int UnidadCaptura { get; set; } = 1;
         public int Estado { get; set; }
         public string FechaProceso { get; set; }
         public string FechaEstado { get; set; }

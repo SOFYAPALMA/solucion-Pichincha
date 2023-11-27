@@ -6,7 +6,7 @@ namespace CapaModelo
     {
         public int idPropiedadesFormato { get; set; }
         public int Tipo { get; set; }
-        public int Codigo { get; set; }
+        public string Codigo { get; set; }
         public string Nombre { get; set; }
         public string NombreComercial { get; set; }
         public int idNombreComercial { get; set; }
