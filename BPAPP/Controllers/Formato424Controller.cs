@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace ProyectoWeb.Controllers
 {
+    [Authorize]
     public class Formato424Controller : Controller
     {
 
