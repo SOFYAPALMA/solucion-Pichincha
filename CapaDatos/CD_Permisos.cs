@@ -16,7 +16,7 @@ namespace CapaDatos
             List<Permisos> rptListaPermisos = new List<Permisos>();
             using (SqlConnection oConexion = new SqlConnection(Conexion.CN))
             {
-                SqlCommand cmd = new SqlCommand("spObtenerPermisos", oConexion);
+                SqlCommand cmd = new SqlCommand("bpapp.spObtenerPermisos", oConexion);
                 cmd.Parameters.AddWithValue("@IdRol", IdRol);
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -55,7 +55,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("usp_ActualizarPermisos", oConexion);
+                    SqlCommand cmd = new SqlCommand("bpapp.spActualizarPermisos", oConexion);
                     cmd.Parameters.Add("Detalle", SqlDbType.Xml).Value = Detalle;
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
