@@ -8,7 +8,7 @@ namespace ProyectoWeb.Models
         /// Referencia a al tipo entidad
         /// </summary>
         [Display(Name = "Tipo")]
-        public int Tipo { get; } = 001; //Campo fijo por default= 001
+        public string Tipo { get; } = "001"; //Campo fijo por default= 001
 
         [Display(Name = "Codigo")]
         public string CodigoRegistro { get; } = "00057"; //Campo fijo por default= 00057

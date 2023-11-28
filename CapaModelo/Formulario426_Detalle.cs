@@ -17,7 +17,7 @@ namespace CapaModelo
         public int idCodigoAseguradora { get; set; }
         public string Observaciones { get; set; }
         public int idObservaciones { get; set; }
-        public int UnidadCaptura { get; set; }
+        public int UnidadCaptura { get; set; } = 1;
         public int Estado { get; set; }
         public string FechaProceso { get; set; }
         public string FechaEstado { get; set; }

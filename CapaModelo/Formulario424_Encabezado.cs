@@ -39,7 +39,7 @@ namespace CapaModelo
         public string SerGratuito_TCRDebito1 { get; set; }
         public string SerGratuito_TCRDebito2 { get; set; }
         public string SerGratuito_TCRDebito3 { get; set; }
-        public int Tipo { get; set; }
+        public string Tipo { get; set; }
         public string TipoProductoDeposito { get; set; }
         public int Usuario { get; set; }
     }

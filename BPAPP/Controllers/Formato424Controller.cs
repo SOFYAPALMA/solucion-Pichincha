@@ -1,5 +1,4 @@
 ﻿using BP.Repositorio;
-using CapaDatos;
 using CapaModelo;
 using ProyectoWeb.Models;
 using System.Collections.Generic;
@@ -70,7 +69,7 @@ namespace ProyectoWeb.Controllers
             {
                 //Validaciones
 
-                if (form424.CostoFijo == 0)
+              /* if (form424.CostoFijo == 0)
                 {
                     ModelState.AddModelError("CostoFijo", "Agregue un valor diferente de cero.");
                     LlenadoListasDetalle();
@@ -83,6 +82,7 @@ namespace ProyectoWeb.Controllers
                     LlenadoListasDetalle();
                     return View(form424);
                 }
+                */
 
                 Formulario424_Detalle encabezado = Mapper.getMapper(form424);
 

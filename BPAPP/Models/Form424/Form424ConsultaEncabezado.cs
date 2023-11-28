@@ -77,7 +77,7 @@ namespace ProyectoWeb.Models
         public string SerGratuito_TCRDebito3 { get; set; }
 
         [Display(Name = "Tipo Entidad")]
-        public int Tipo { get; set; }
+        public string Tipo { get; set; }
 
         [Display(Name = "Tipo de Producto Deposito")]
         public string TipoProductoDeposito { get; set; }
