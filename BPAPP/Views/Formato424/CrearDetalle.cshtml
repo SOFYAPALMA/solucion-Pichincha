@@ -112,13 +112,35 @@
 
                 $("#NumOperServiciosCuotamanejo").val('0')
                 $('#NumOperServiciosCuotamanejo').prop("disabled", true);
-                $('#CostoFijo').prop("disabled", false);
-                $('#CostoProporcionOperacionServicio').prop("disabled", false);
+
+                $('#CostoFijo').val("0");
+                $('#CostoFijo').prop("disabled", true);
+
+                $('#CostoProporcionOperacionServicio').val("0");
+                $('#CostoProporcionOperacionServicio').prop("disabled", true);
+            }
+            else if (value == '1 - Costo fijo o proporcional  en dólares') {
+                var input = $('#CostoFijo');
+                var is_name = input.val();
+                //console.log(is_name);
+
+                if (is_name > 0) {
+                    input.removeClass("invalid").addClass("valid");
+                    $("#NotificacionesGenerales").after('<span class="text-danger field-validation-error"></span>');
+                    input.after('<span class="text-danger field-validation-error"></span>');
+                }
+                else {
+                    input.removeClass("valid").addClass("invalid");
+                    $("#NotificacionesGenerales").after('<span class="text-danger field-validation-error">El valor del campo costo fijo debe ser mayor a cero.</span>');
+                    input.after('<span class="text-danger field-validation-error">El valor del campo costo fijo debe ser mayor a cero.</span>');
+                }
             }
             else {
+                $('#CostoProporcionOperacionServicio').prop("disabled", false);
                 $('#idOperacionServicio').prop("disabled", false);
                 $('#idCanal').prop("disabled", false);
                 $('#NumOperServiciosCuotamanejo').prop("disabled", false);
+                $('#CostoFijo').prop("disabled", false);
             }
         });
 

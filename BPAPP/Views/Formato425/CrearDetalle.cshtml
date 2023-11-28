@@ -145,15 +145,20 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <script>
-        $('#idObservaciones').change(function () {
-            var value = $("#idObservaciones option:selected").text();
+        $('#CostoProporcionMaxOperacionServicio').change(function () {
+            var value = $("#CostoProporcionMaxOperacionServicio").val();
 
-            if (value == '90 - Desactivación') {
-                $('#idOperacionServicio').val("");
-                $('#idOperacionServicio').prop("disabled", true);
+            if (value > 90) {
+                $('#idOperacionoServicio').val("");
+                $('#idOperacionoServicio').prop("disabled", true);
 
                 $('#idCanal').val("");
                 $('#idCanal').prop("disabled", true);
-
+            }
+            else {
+                $('#idOperacionoServicio').prop("disabled", false);
+                $('#idCanal').prop("disabled", false);
             }
         });
+    </script>
+}
