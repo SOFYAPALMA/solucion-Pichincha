@@ -146,3 +146,90 @@
 <div>
     @Html.ActionLink("Volver", "List")
 </div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $('#idObservaciones').change(function () {
+            var value = $("#idObservaciones option:selected").text();
+
+            if (value == '90 - Desactivación') {
+                $('#idOperacionServicio').val("");
+                $('#idOperacionServicio').prop("disabled", true);
+
+                $('#idCanal').val("");
+                $('#idCanal').prop("disabled", true);
+
+                $('#CostoFijo').val("0");
+                $('#CostoFijo').prop("disabled", true);
+
+                $('#CostoFijoMaximo').val("0");
+                $('#CostoFijoMaximo').prop("disabled", true);
+
+                $('#CostoProporcionOperacionServicio').val("0");
+                $('#CostoProporcionOperacionServicio').prop("disabled", true);
+
+                $('#CostoProporcionMaxOperacionServicio').val("0");
+                $('#CostoProporcionMaxOperacionServicio').prop("disabled", true);
+
+                $('#Tasa').val("0");
+                $('#Tasa').prop("disabled", true);
+
+                $('#TasaMaxima').val("0");
+                $('#TasaMaxima').prop("disabled", true);
+
+                $('#idTipoAseguradora').val("");
+                $('#idTipoAseguradora').prop("disabled", true);
+
+                $('#idCodigoAseguradora').val("");
+                $('#idCodigoAseguradora').prop("disabled", true);
+            }
+            else if (value == '1 - Costo fijo o proporcional  en dólares') {
+                var input = $('#CostoFijo');
+                var is_name = input.val();
+
+                var inputcfm = $('#CostoFijoMaximo');
+                var valcfm = input.val();
+                //console.log(is_name);
+
+                if (is_name > 0) {
+                    input.removeClass("invalid").addClass("valid");
+                    $("#NotificacionesGenerales").after('<span class="text-danger field-validation-error"></span>');
+                    input.after('<span class="text-danger field-validation-error"></span>');
+                }
+                else {
+                    input.removeClass("valid").addClass("invalid");
+                    $("#NotificacionesGenerales").after('<span class="text-danger field-validation-error">El valor del campo costo fijo debe ser mayor a cero.</span>');
+                    input.after('<span class="text-danger field-validation-error">El valor del campo costo fijo debe ser mayor a cero.</span>');
+                }
+
+                if (valcfm > 0) {
+                    inputcfm.removeClass("invalid").addClass("valid");
+                    $("#NotificacionesGenerales").after('<span class="text-danger field-validation-error"></span>');
+                    input.after('<span class="text-danger field-validation-error"></span>');
+                }
+                else {
+                    inputcfm.removeClass("valid").addClass("invalid");
+                    $("#NotificacionesGenerales").after('<span class="text-danger field-validation-error">El valor del campo costo fijo maximo debe ser mayor a cero.</span>');
+                    input.after('<span class="text-danger field-validation-error">El valor del campo costo fijo maximo debe ser mayor a cero.</span>');
+                }
+            }
+            else {
+                $('#idOperacionServicio').prop("disabled", false);
+                $('#idCanal').prop("disabled", false);
+                $('#CostoFijo').prop("disabled", false);
+                $('#CostoFijoMaximo').prop("disabled", false);
+                $('#CostoProporcionOperacionServicio').prop("disabled", false);
+                $('#CostoProporcionMaxOperacionServicio').prop("disabled", false);
+                $('#Tasa').prop("disabled", false);
+                $('#TasaMaxima').prop("disabled", false);
+                $('#idTipoAseguradora').prop("disabled", false);
+                $('#idCodigoAseguradora').prop("disabled", false);
+
+            }
+
+        });
+    </script>
+}
+

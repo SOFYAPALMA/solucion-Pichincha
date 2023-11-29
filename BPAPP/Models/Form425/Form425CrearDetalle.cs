@@ -11,7 +11,7 @@ namespace ProyectoWeb.Models
 
         [Required(ErrorMessage = "El campo subcuenta es obligatorio.")]
         [Display(Name = "Subcuenta")]
-        public int Subcuenta { get; set; }
+        public string Subcuenta { get; set; }
 
         [Required(ErrorMessage = "El campo operación o servicio es obligatorio.")]
         [Display(Name = "Operacion o Servicio")]

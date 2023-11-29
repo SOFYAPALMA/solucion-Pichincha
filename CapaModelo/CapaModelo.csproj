@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aseguradoras.cs" />
     <Compile Include="DominioModel.cs" />
     <Compile Include="Formulario425_Detalle.cs" />
     <Compile Include="Formulario424_Detalle.cs" />

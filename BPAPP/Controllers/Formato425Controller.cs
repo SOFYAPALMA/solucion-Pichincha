@@ -39,7 +39,7 @@ namespace ProyectoWeb.Controllers
                 int idusuario = int.Parse(Session["IdUsuario"].ToString());
 
                 //Validaciones
-                if (form425.CuotaManejoMaxima == 0)
+                /*if (form425.CuotaManejoMaxima == 0)
                 {
                     ModelState.AddModelError("CuotaManejoMaxima", "Agregue un valor diferente de cero.");
                     LlenadoListasEncabezado();
@@ -51,7 +51,7 @@ namespace ProyectoWeb.Controllers
                     ModelState.AddModelError("CuotaManejo", "Agregue un valor diferente de cero.");
                     LlenadoListasEncabezado();
                     return View(form425);
-                }
+                }*/
 
                 Formulario425_Encabezado encabezado = Mapper.getMapper(form425);
                 encabezado.Usuario = idusuario;
@@ -82,7 +82,7 @@ namespace ProyectoWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                //Validaciones
+               /* //Validaciones
                 if (form425.CostoFijo == 0)
                 {
                     ModelState.AddModelError("CostoFijo", "Agregue un valor diferente de cero.");
@@ -109,7 +109,7 @@ namespace ProyectoWeb.Controllers
                     ModelState.AddModelError("CostoProporcionMaxOperacionServicio", "Agregue un valor diferente de cero.");
                     LlenadoListasDetalle();
                     return View(form425);
-                }
+                }*/
 
                 Formulario425_Detalle encabezado = Mapper.getMapper(form425);
 
