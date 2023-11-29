@@ -1,9 +1,9 @@
 ﻿using CapaModelo;
+using Comun;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
 
 namespace BP.Repositorio
 {
@@ -33,15 +33,38 @@ namespace BP.Repositorio
             {
                 Aseguradoras rpt = new Aseguradoras();
                 limpiarParametros();
-                AdicionarParametros("")
+                AdicionarParametros("idtipo", asg);
+                AdicionarParametros("idcodigo", asg);
+                AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
 
 
+                DataTable dt = ejecutarStoreProcedure("bpapp.spDominioAseguradoras").Tables[0];
+
+                if (dt.Rows.Count > 0)
+                {
+                    var dictionary = new Dictionary<string, object>();
+                    foreach (DataColumn column in dt.Columns)
+                    {
+                        dictionary[column.ColumnName] = dt.Rows[0][column];
+                    }
+
+                    string serializedObject = JsonConvert.SerializeObject(dictionary, new DatetimeToStringConverter());
+                    Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), serializedObject, Logs.Tipo.Log);
+
+                    rpt = JsonConvert.DeserializeObject<Aseguradoras>(serializedObject);
+                }
+
+                return rpt;
             }
-
-
+            catch (Exception ex)
+            {
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
+                throw new Exception("Error en ListaDetalles", ex);
+            }
 
         }
 
-
     }
+
 }
+
