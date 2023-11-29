@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BP.Repositorio
 {
-    class DatosAseguradoras
+    public class DatosAseguradoras:ConexionMS
     {
     }
 }

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace CapaModelo
 {
-    class Aseguradoras
+   public class Aseguradoras
     {
+        public int CodigoAseguradora { get; set; }
+        public int TipoAseguradora { get; set; }
     }
 }
