@@ -8,7 +8,7 @@ namespace CapaModelo
 {
    public class Aseguradoras
     {
-        public int CodigoAseguradora { get; set; }
-        public int TipoAseguradora { get; set; }
+        public int Tipo { get; set; }
+        public int Descripcion { get; set; }
     }
 }
