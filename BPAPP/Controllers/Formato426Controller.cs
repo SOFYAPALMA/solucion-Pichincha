@@ -137,6 +137,7 @@ namespace ProyectoWeb.Controllers
             Formulario426_Detalle detalle = DatosFormato426.DetallesDetalles(id);
             Form426ConsultaDetalle form426 = Mapper.getMapper(detalle);
             LlenadoListasDetalle();
+            LlenadoAseguradoras(form426.idTipoAseguradora);
             return View(form426);
         }
 
@@ -225,8 +226,7 @@ namespace ProyectoWeb.Controllers
         private void LlenadoListasDetalle()
         {
             List<DominioModel> idCaracteristicaCredito = DatosDominio.Obtener(1);
-            List<DominioModel> idTipoAseguradora = DatosDominio.Obtener(17);
-            List<DominioModel> idCodigoAseguradora = DatosDominio.Obtener(17);
+            List<Aseguradoras> idTipoAseguradora = DatosAseguradoras.Tipos();
             List<DominioModel> idObservaciones = DatosDominio.Obtener(14);
 
 
@@ -240,13 +240,7 @@ namespace ProyectoWeb.Controllers
             {
                 ModelState.AddModelError("idTipoAseguradora", "No se encuentra valores para la lista de tipo de tipo aseguradora");
             }
-            ViewBag.TipoAseguradora = new SelectList(idTipoAseguradora, "Dominio", "Descripcion");
-
-            if (idCodigoAseguradora.Count() == 0)
-            {
-                ModelState.AddModelError("idCodigoAseguradora", "No se encuentra valores para la lista de codigo aseguradora");
-            }
-            ViewBag.CodigoAseguradora = new SelectList(idCodigoAseguradora, "Dominio", "Descripcion");
+            ViewBag.TipoAseguradora = new SelectList(idTipoAseguradora, "Tipo", "Descripcion");
 
             if (idObservaciones.Count() == 0)
             {
@@ -254,6 +248,20 @@ namespace ProyectoWeb.Controllers
             }
             ViewBag.Observaciones = new SelectList(idObservaciones, "Dominio", "Descripcion");
 
+            ViewBag.CodigoAseguradora = new SelectList(new List<Aseguradoras>(), "Codigo", "Descripcion");
+        }
+
+        [HttpGet]
+        public JsonResult LlenadoAseguradoras(int tipo)
+        {
+            List<Aseguradoras> idCodigoAseguradora = DatosAseguradoras.Lista(tipo);
+
+            if (idCodigoAseguradora.Count() == 0)
+            {
+                ModelState.AddModelError("idCodigoAseguradora", "No se encuentra valores para la lista de codigo aseguradora");
+            }
+            ViewBag.CodigoAseguradora = new SelectList(idCodigoAseguradora, "Codigo", "Descripcion");
+            return Json(new SelectList(idCodigoAseguradora, "Codigo", "Descripcion"), JsonRequestBehavior.AllowGet);
         }
     }
 

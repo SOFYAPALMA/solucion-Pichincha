@@ -82,34 +82,34 @@ namespace ProyectoWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-               /* //Validaciones
-                if (form425.CostoFijo == 0)
-                {
-                    ModelState.AddModelError("CostoFijo", "Agregue un valor diferente de cero.");
-                    LlenadoListasDetalle();
-                    return View(form425);
-                }
+                /* //Validaciones
+                 if (form425.CostoFijo == 0)
+                 {
+                     ModelState.AddModelError("CostoFijo", "Agregue un valor diferente de cero.");
+                     LlenadoListasDetalle();
+                     return View(form425);
+                 }
 
-                if (form425.CostoFijoMaximo == 0)
-                {
-                    ModelState.AddModelError("CostoFijoMaximo", "Agregue un valor diferente de cero.");
-                    LlenadoListasDetalle();
-                    return View(form425);
-                }
+                 if (form425.CostoFijoMaximo == 0)
+                 {
+                     ModelState.AddModelError("CostoFijoMaximo", "Agregue un valor diferente de cero.");
+                     LlenadoListasDetalle();
+                     return View(form425);
+                 }
 
-                if (form425.CostoProporcionOperacionServicio == 0)
-                {
-                    ModelState.AddModelError("CostoProporcionOperacionServicio", "Agregue un valor diferente de cero.");
-                    LlenadoListasDetalle();
-                    return View(form425);
-                }
+                 if (form425.CostoProporcionOperacionServicio == 0)
+                 {
+                     ModelState.AddModelError("CostoProporcionOperacionServicio", "Agregue un valor diferente de cero.");
+                     LlenadoListasDetalle();
+                     return View(form425);
+                 }
 
-                if (form425.CostoProporcionMaxOperacionServicio == 0)
-                {
-                    ModelState.AddModelError("CostoProporcionMaxOperacionServicio", "Agregue un valor diferente de cero.");
-                    LlenadoListasDetalle();
-                    return View(form425);
-                }*/
+                 if (form425.CostoProporcionMaxOperacionServicio == 0)
+                 {
+                     ModelState.AddModelError("CostoProporcionMaxOperacionServicio", "Agregue un valor diferente de cero.");
+                     LlenadoListasDetalle();
+                     return View(form425);
+                 }*/
 
                 Formulario425_Detalle encabezado = Mapper.getMapper(form425);
 
@@ -149,6 +149,7 @@ namespace ProyectoWeb.Controllers
             Formulario425_Detalle detalle = DatosFormato425.DetallesDetalles(id);
             Form425ConsultaDetalle form425 = Mapper.getMapper(detalle);
             LlenadoListasDetalle();
+            LlenadoAseguradoras(form425.idTipoAseguradora);
             return View(form425);
         }
 
@@ -318,8 +319,7 @@ namespace ProyectoWeb.Controllers
         {
             List<DominioModel> idOperacionServicio = DatosDominio.Obtener(10);
             List<DominioModel> idCanal = DatosDominio.Obtener(20);
-            List<DominioModel> idTipoAseguradora = DatosDominio.Obtener(17);
-            List<DominioModel> idCodigoAseguradora = DatosDominio.Obtener(17);
+            List<Aseguradoras> idTipoAseguradora = DatosAseguradoras.Tipos();
             List<DominioModel> idObservaciones = DatosDominio.Obtener(13);
 
             if (idOperacionServicio.Count() == 0)
@@ -338,20 +338,27 @@ namespace ProyectoWeb.Controllers
             {
                 ModelState.AddModelError("idTipoAseguradora", "No se encuentra valores para la lista de Tipo aseguradora");
             }
-            ViewBag.TipoAseguradora = new SelectList(idTipoAseguradora, "Dominio", "Descripcion");
-
-            if (idCodigoAseguradora.Count() == 0)
-            {
-                ModelState.AddModelError("idCodigoAseguradora", "No se encuentra valores para la lista de codigo aseguradora");
-            }
-            ViewBag.CodigoAseguradora = new SelectList(idCodigoAseguradora, "Dominio", "Descripcion");
+            ViewBag.TipoAseguradora = new SelectList(idTipoAseguradora, "Tipo", "Descripcion");
 
             if (idObservaciones.Count() == 0)
             {
                 ModelState.AddModelError("idObservaciones", "No se encuentra valores para la lista de Observaciones");
             }
             ViewBag.Observaciones = new SelectList(idObservaciones, "Dominio", "Descripcion");
+            ViewBag.CodigoAseguradora = new SelectList(new List<Aseguradoras>(), "Codigo", "Descripcion");
+        }
 
+        [HttpGet]
+        public JsonResult LlenadoAseguradoras(int tipo)
+        {
+            List<Aseguradoras> idCodigoAseguradora = DatosAseguradoras.Lista(tipo);
+
+            if (idCodigoAseguradora.Count() == 0)
+            {
+                ModelState.AddModelError("idCodigoAseguradora", "No se encuentra valores para la lista de codigo aseguradora");
+            }
+            ViewBag.CodigoAseguradora = new SelectList(idCodigoAseguradora, "Codigo", "Descripcion");
+            return Json(new SelectList(idCodigoAseguradora, "Codigo", "Descripcion"), JsonRequestBehavior.AllowGet);
         }
 
     }

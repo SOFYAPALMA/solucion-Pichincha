@@ -6,7 +6,7 @@ namespace CapaModelo
     {
         public int idDetalle { get; set; }
         public int idPropiedadesFormato { get; set; }
-        public int Subcuenta { get; set; }
+        public string Subcuenta { get; set; }
         public string CaracteristicaCredito { get; set; }
         public int idCaracteristicaCredito { get; set; }
         public int Costo { get; set; }

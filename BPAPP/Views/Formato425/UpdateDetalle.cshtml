@@ -151,6 +151,24 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <script>
+        $(document).ready(function () {
+            $("#idTipoAseguradora").change(function () {
+                $.get("/Formato425/LlenadoAseguradoras", { tipo: $("#idTipoAseguradora").val() }, function (data) {
+                    console.log("sofi");
+                    // VACIAMOS EL DropDownList
+                    $("#idCodigoAseguradora").empty();
+                    // AÑADIMOS UN NUEVO label CON EL NOMBRE DEL ELEMENTO SELECCIONADO
+                    $("#idCodigoAseguradora").append("<option value> Seleccione..</option>")
+                    // CONSTRUIMOS EL DropDownList A PARTIR DEL RESULTADO Json (data)
+                    console.log(data);
+                    $.each(data, function (index, row) {
+                        console.log(row);
+                        $("#idCodigoAseguradora").append("<option value='" + row.Value + "'>" + row.Text + "</option>")
+                    });
+                });
+            });
+        });
+
         $('#idObservaciones').change(function () {
             var value = $("#idObservaciones option:selected").text();
 

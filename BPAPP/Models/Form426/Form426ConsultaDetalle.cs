@@ -11,7 +11,7 @@ namespace ProyectoWeb.Models
         public int idPropiedadesFormato { get; set; }
 
         [Display(Name = "Subcuenta")]
-        public int Subcuenta { get; set; }
+        public string Subcuenta { get; set; }
 
         [Display(Name = "Caracteristica Credito")]
         public string CaracteristicaCredito { get; set; }
