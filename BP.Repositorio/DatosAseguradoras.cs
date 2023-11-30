@@ -27,14 +27,12 @@ namespace BP.Repositorio
 
         public static string Mensaje { get; private set; }
 
-        public static Aseguradoras DetallesDetalles(int asg)
+        public static List<Aseguradoras> Lista()
         {
             try
             {
-                Aseguradoras rpt = new Aseguradoras();
+                List<Aseguradoras> rpt = new List<Aseguradoras>();
                 limpiarParametros();
-                AdicionarParametros("idtipo", asg);
-                AdicionarParametros("idcodigo", asg);
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
 
 
@@ -42,16 +40,22 @@ namespace BP.Repositorio
 
                 if (dt.Rows.Count > 0)
                 {
-                    var dictionary = new Dictionary<string, object>();
-                    foreach (DataColumn column in dt.Columns)
+                    List<Dictionary<string,object>> list = new List<Dictionary<string, object>>();
+                    foreach (DataRow row in dt.Rows)
                     {
-                        dictionary[column.ColumnName] = dt.Rows[0][column];
+                        var dictionary = new Dictionary<string, object>();
+                        foreach (DataColumn column in dt.Columns)
+                        {
+                            dictionary[column.ColumnName] = row[column];
+                        }
+
+                        list.Add(dictionary);
                     }
 
-                    string serializedObject = JsonConvert.SerializeObject(dictionary, new DatetimeToStringConverter());
+                    string serializedObject = JsonConvert.SerializeObject(list, new DatetimeToStringConverter());
                     Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), serializedObject, Logs.Tipo.Log);
 
-                    rpt = JsonConvert.DeserializeObject<Aseguradoras>(serializedObject);
+                    rpt = JsonConvert.DeserializeObject<List<Aseguradoras>>(serializedObject);
                 }
 
                 return rpt;
