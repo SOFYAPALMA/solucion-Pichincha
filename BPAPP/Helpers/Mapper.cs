@@ -29,6 +29,7 @@ namespace ProyectoWeb
                 idNombreComercial = dto.idNombreComercial,
                 NumeroClientes = dto.NumeroClientes,
                 Tipo = dto.Tipo,
+                Codigo = dto.Codigo,
                 Usuario = dto.Usuario
             };
             return result;

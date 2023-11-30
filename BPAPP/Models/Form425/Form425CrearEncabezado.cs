@@ -9,7 +9,7 @@ namespace ProyectoWeb.Models
        /// </summary>
         [Required(ErrorMessage = "El campo tipo entidad es obligatorio.")]
         [Display(Name = "Tipo")]
-        public int Tipo { get; } = 001; //Campo fijo por default= 001
+        public string Tipo { get; } = "001"; //Campo fijo por default= 001
 
         [Required(ErrorMessage = "El campo código entidad es obligatorio.")]
         [Display(Name = "Codigo")]

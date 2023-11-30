@@ -6,7 +6,7 @@ namespace CapaModelo
     {
         public string FechaHora { get; set; }
         public string AperturaDigital { get; set; }
-        public int Codigo { get; set; }
+        public string Codigo { get; set; }
         public string CodigoRegistro { get; set; }
         public int CuotaManejo { get; set; }
         public int Estado { get; set; }

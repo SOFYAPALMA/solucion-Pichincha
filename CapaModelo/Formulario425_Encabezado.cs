@@ -5,7 +5,7 @@ namespace CapaModelo
     public class Formulario425_Encabezado
     {
         public int idPropiedadesFormato { get; set; }
-        public int Tipo { get; set; }
+        public string Tipo { get; set; }
         public string Codigo { get; set; }
         public string Nombre { get; set; }
         public string NombreComercial { get; set; }

@@ -12,7 +12,7 @@ namespace ProyectoWeb.Models
         public string AperturaDigital { get; set; }
 
         [Display(Name = "Codigo")]
-        public int Codigo { get; set; }
+        public string Codigo { get; set; }
         public string CodigoRegistro { get; set; }
 
         [Display(Name = "Cuota Manejo")]

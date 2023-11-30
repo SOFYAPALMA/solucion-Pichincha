@@ -5,8 +5,8 @@ namespace CapaModelo
     public class Formulario426_Encabezado
     {
 
-        [Required(ErrorMessage = "El campo ID Propiedades Formato es obligatorio.")]
-        [Display(Name = "ID Propiedades")]
+        [Required(ErrorMessage = "El campo propiedades formato es obligatorio.")]
+        [Display(Name = "Propiedades")]
         public int idPropiedadesFormato { get; set; }
         public int idDetalle { get; set; }
         public int Subcuenta { get; set; }
@@ -16,16 +16,16 @@ namespace CapaModelo
         public string idTipoAseguradora { get; set; }
         public string idCodigoAseguradora { get; set; }
         public string idObservaciones { get; set; }
-        public int UnidadCaptura { get; set; }
-        public int Tipo { get; set; }
-        public int Codigo { get; set; }
+        public int UnidadCaptura { get; set; } = 1;
+        public string Tipo { get; set; }
+        public string Codigo { get; set; }
         public string Nombre { get; set; }
 
         [Display(Name = "Codigo Credito")]
         public string CodigoCredito { get; set; }
 
-        [Required(ErrorMessage = "El campo ID Codigo Credito es obligatorio.")]
-        [Display(Name = "ID Codigo Credito")]
+        [Required(ErrorMessage = "El campo código crédito es obligatorio.")]
+        [Display(Name = "Código Crédito")]
         public int idCodigoCredito { get; set; }
         public string AperturaDigital { get; set; }
         public int idAperturaDigital { get; set; }

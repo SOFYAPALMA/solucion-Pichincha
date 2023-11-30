@@ -12,11 +12,11 @@ namespace ProyectoWeb.Models
 
         [Required(ErrorMessage = "El campo tipo es obligatorio.")]
         [Display(Name = "Tipo")]
-        public int Tipo { get; set; }
+        public string Tipo { get; set; }
 
         [Required(ErrorMessage = "El campo código es obligatorio.")]
         [Display(Name = "Código")]
-        public int Codigo { get; set; }
+        public string Codigo { get; set; }
 
         [Display(Name = "Nombre Entidad")]
         [StringLength(50)]

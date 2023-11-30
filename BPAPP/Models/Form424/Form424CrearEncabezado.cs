@@ -11,7 +11,7 @@ namespace ProyectoWeb.Models
         public string Tipo { get; } = "001"; //Campo fijo por default= 001
 
         [Display(Name = "Codigo")]
-        public string CodigoRegistro { get; } = "00057"; //Campo fijo por default= 00057
+        public string Codigo { get; } = "00057"; //Campo fijo por default= 00057
 
         /// <summary>
         /// Captura de informacion para almacenamiento y visualizacion en el detalle
@@ -76,6 +76,7 @@ namespace ProyectoWeb.Models
         [Required(ErrorMessage = "La apertura digital es obligatoria.")]
         [Display(Name = "Apertura digital")]
         public int idAperturaDigital { get; set; }
+        public string CodigoRegistro { get; set; }
 
         public int Usuario { get; set; }
     }

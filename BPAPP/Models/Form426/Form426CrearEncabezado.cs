@@ -12,10 +12,10 @@ namespace ProyectoWeb.Models
         public int idPropiedadesFormato { get; set; }
 
         [Display(Name = "Tipo")]
-        public int Tipo { get; } = 001; //Campo fijo por default= 001
+        public string Tipo { get; } = "001"; //Campo fijo por default= 001
 
         [Display(Name = "Codigo")]
-        public int Codigo { get; } = 00057; //Campo fijo por default= 00057
+        public string Codigo { get; } = "00057"; //Campo fijo por default= 00057
 
         /// <summary>
         /// Captura de informacion para almacenamiento y visualizacion en el detalle
@@ -25,12 +25,12 @@ namespace ProyectoWeb.Models
         [DataType(DataType.Text)]
         public string Nombre { get; set; } = "BCOPICHINCH"; //Campo fijo por default= BCOPICHINCH
 
-        [Required(ErrorMessage = "El campo ID Codigo Credito es obligatorio.")]
-        [Display(Name = "ID Codigo Credito")]
+        [Required(ErrorMessage = "El campo código crédito es obligatorio.")]
+        [Display(Name = "Codigo Credito")]
         public int idCodigoCredito { get; set; }
 
-        [Required(ErrorMessage = "El campo ID AperturaDigital es obligatorio.")]
-        [Display(Name = "ID AperturaDigital")]
+        [Required(ErrorMessage = "El campo apertura digital es obligatorio.")]
+        [Display(Name = "Apertura Digital")]
         public int idAperturaDigital { get; set; }
 
         [Display(Name = "Fecha hora actualizacion")]

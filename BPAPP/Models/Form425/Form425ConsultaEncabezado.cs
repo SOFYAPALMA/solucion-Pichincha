@@ -9,7 +9,7 @@ namespace ProyectoWeb.Models
         public int idPropiedadesFormato { get; set; }
 
         [Display(Name = "Tipo Entidad")]
-        public int Tipo { get; set; }
+        public string Tipo { get; set; }
 
         [Display(Name = "Codigo")]
         public string Codigo { get; set; }
