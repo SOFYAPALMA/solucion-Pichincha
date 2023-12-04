@@ -1,0 +1,53 @@
+﻿@model ProyectoWeb.Models.ConsultaTipoDominioDTO
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Dominios</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idDominio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idDominio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idDominio })
+</p>
+
+<div class="card">
+    <div class="card-header">
+        Detalles
+    </div>
+    <div class="card-body">
+        @Html.Partial("ListDetalles", (List<ProyectoWeb.Models.ConsultaDominioDTO>)@ViewBag.ListaDetalles)
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Volver", "List")
+</div>

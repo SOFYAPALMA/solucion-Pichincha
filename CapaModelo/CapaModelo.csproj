@@ -44,7 +44,7 @@
   <ItemGroup>
     <Compile Include="Aseguradoras.cs" />
     <Compile Include="DominioModel.cs" />
-    <Compile Include="TipoDominio.cs" />
+    <Compile Include="TipoDominioModel.cs" />
     <Compile Include="Formulario425_Detalle.cs" />
     <Compile Include="Formulario424_Detalle.cs" />
     <Compile Include="Formulario424_Encabezado.cs" />

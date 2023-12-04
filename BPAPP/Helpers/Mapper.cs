@@ -7,6 +7,7 @@ namespace ProyectoWeb
 {
     public class Mapper
     {
+
         #region Formulario 424
         public static Formulario424_Encabezado getMapper(Form424CrearEncabezado dto)
         {
@@ -581,6 +582,105 @@ namespace ProyectoWeb
                 FechaEstado = dto.FechaEstado,
                 CodigoRegistro = dto.CodigoRegistro,
                 idDetalleAnterior = dto.idDetalleAnterior
+            };
+            return result;
+        }
+
+        #endregion
+
+        #region Dominios
+
+        public static DominioModel getMapper(ConsultaDominioDTO dto)
+        {
+            var result = new DominioModel()
+            {
+                Dominio = dto.Dominio,
+                idDominioGen = dto.idDominioGen,
+                idDominio = dto.idDominio,
+                Descripcion = dto.Descripcion,
+                idCodigo = dto.idCodigo,
+                Fecha = dto.Fecha,
+                Estado = dto.Estado
+            };
+            return result;
+        }
+
+        public static List<ConsultaDominioDTO> getMapper(List<DominioModel> obj)
+        {
+            List<ConsultaDominioDTO> result = new List<ConsultaDominioDTO>();
+
+            foreach (DominioModel consulta in obj)
+            {
+                ConsultaDominioDTO encabezado = getMapper(consulta);
+                result.Add(encabezado);
+            }
+
+            return result;
+        }
+
+        public static ConsultaDominioDTO getMapper(DominioModel obj)
+        {
+            var result = new ConsultaDominioDTO()
+            {
+                Dominio = obj.Dominio,
+                idDominioGen = obj.idDominioGen,
+                idDominio = obj.idDominio,
+                Descripcion = obj.Descripcion,
+                idCodigo = obj.idCodigo,
+                Fecha = obj.Fecha,
+                Estado = obj.Estado == "0" ? "Inactivo" : "Activo"
+            };
+            return result;
+        }
+
+        public static DominioModel getMapper(CrearDominioDTO dto)
+        {
+            var result = new DominioModel()
+            {
+                Dominio = dto.Dominio,
+                idDominioGen = dto.idDominioGen,
+                idDominio = dto.idDominio,
+                Descripcion = dto.Descripcion,
+                idCodigo = dto.idCodigo,
+                Fecha = dto.Fecha,
+                Estado = dto.Estado
+            };
+            return result;
+        }
+
+        public static List<ConsultaTipoDominioDTO> getMapper(List<TipoDominioModel> obj)
+        {
+            List<ConsultaTipoDominioDTO> result = new List<ConsultaTipoDominioDTO>();
+
+            foreach (TipoDominioModel consulta in obj)
+            {
+                ConsultaTipoDominioDTO encabezado = getMapper(consulta);
+                result.Add(encabezado);
+            }
+
+            return result;
+        }
+
+        public static ConsultaTipoDominioDTO getMapper(TipoDominioModel obj)
+        {
+            var result = new ConsultaTipoDominioDTO()
+            {
+                idDominio = obj.idDominio,
+                Descripcion = obj.Descripcion,
+                Fecha = obj.Fecha,
+                Estado = obj.Estado == "0" ? "Inactivo" : "Activo"
+            };
+            return result;
+        }
+
+        public static TipoDominioModel getMapper(CrearTipoDominioDTO dto)
+        {
+            var result = new TipoDominioModel()
+            {
+                idDominio = dto.idDominio,
+                Descripcion = dto.Descripcion,
+                Fecha = dto.Fecha,
+                Estado = dto.Estado
             };
             return result;
         }

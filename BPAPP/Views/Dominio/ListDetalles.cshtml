@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ProyectoWeb.Models.ConsultaDominioDTO>
+
+<p>
+    @Html.ActionLink("Nuevo", "CrearDetalle")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idDominio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idDominioGen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dominio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idDominioGen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new {  id=item.idDominioGen  }) 
+        </td>
+    </tr>
+}
+
+</table>
+

@@ -139,8 +139,10 @@
     </Compile>
     <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="Helpers\Mapper.cs" />
-    <Compile Include="Models\Dominio\DominioConsultaEncabezado.cs" />
-    <Compile Include="Models\Dominio\DominioCrearEncabezado.cs" />
+    <Compile Include="Models\Dominio\CrearDominioDTO.cs" />
+    <Compile Include="Models\Dominio\ConsultaTipoDominioDTO.cs" />
+    <Compile Include="Models\Dominio\CrearTipoDominioDTO.cs" />
+    <Compile Include="Models\Dominio\ConsultaDominioDTO.cs" />
     <Compile Include="Models\Form424\Form424ConsultaDetalle.cs" />
     <Compile Include="Models\Form424\Form424CrearDetalle.cs" />
     <Compile Include="Models\Form424\Form424ConsultaEncabezado.cs" />
@@ -2069,13 +2071,15 @@
     <Content Include="Views\Formato424\UpdateDetalle.cshtml" />
     <Content Include="Views\Formato425\UpdateDetalle.cshtml" />
     <Content Include="Views\Formato426\UpdateDetalle.cshtml" />
+    <Content Include="Views\Dominio\List.cshtml" />
+    <Content Include="Views\Dominio\Details.cshtml" />
+    <Content Include="Views\Dominio\ListDetalles.cshtml" />
     <None Include="Web.R.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Dominio\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
