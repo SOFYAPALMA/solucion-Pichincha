@@ -123,6 +123,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DominioController.cs" />
     <Compile Include="Controllers\Formato425Controller.cs" />
     <Compile Include="Controllers\Formato426Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -138,6 +139,8 @@
     </Compile>
     <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="Helpers\Mapper.cs" />
+    <Compile Include="Models\Dominio\DominioConsultaEncabezado.cs" />
+    <Compile Include="Models\Dominio\DominioCrearEncabezado.cs" />
     <Compile Include="Models\Form424\Form424ConsultaDetalle.cs" />
     <Compile Include="Models\Form424\Form424CrearDetalle.cs" />
     <Compile Include="Models\Form424\Form424ConsultaEncabezado.cs" />
@@ -2071,6 +2074,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Dominio\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -2125,9 +2129,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53177</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:53177/Home</IISUrl>
-          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://localhost:53177/Home</IISAppRootUrl>
+          <IISUrl>http://localhost:53177/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
