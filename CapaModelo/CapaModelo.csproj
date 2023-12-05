@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aseguradoras.cs" />
+    <Compile Include="CreditosModel.cs" />
+    <Compile Include="ProductoCreditoModel.cs" />
     <Compile Include="DominioModel.cs" />
     <Compile Include="TipoDominioModel.cs" />
     <Compile Include="Formulario425_Detalle.cs" />

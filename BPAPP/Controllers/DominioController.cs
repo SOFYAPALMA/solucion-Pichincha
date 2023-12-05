@@ -26,151 +26,151 @@ namespace ProyectoWeb.Controllers
             return View(dominio);
         }
 
-        [HttpPost]
-        public ActionResult Crear(CrearTipoDominioDTO dominio)
-        {
-            if (ModelState.IsValid)
-            {
-                if (Session["IdUsuario"] == null)
-                    return RedirectToAction("Login");
+        //[HttpPost]
+        //public ActionResult Crear(CrearDominioDTO dominio)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        if (Session["IdUsuario"] == null)
+        //            return RedirectToAction("Login");
 
-                int idusuario = int.Parse(Session["IdUsuario"].ToString());
+        //        int idusuario = int.Parse(Session["IdUsuario"].ToString());
 
-                CrearTipoDominioDTO encabezado = Mapper.getMapper(dominio);
-                encabezado.Usuario = idusuario;
-                bool respuesta = DatosDominio.RegistrarEncabezado(encabezado);
+        //        DominioModel encabezado = Mapper.getMapper(dominio);
+        //        encabezado.Usuario = idusuario;
+        //        bool respuesta = DatosDominio.RegistrarEncabezado(encabezado);
 
-                if (respuesta)
-                {
-                    TempData["Notificacion"] = DatosDominio.Mensaje;
+        //        if (respuesta)
+        //        {
+        //            TempData["Notificacion"] = DatosDominio.Mensaje;
 
-                    return RedirectToAction("List");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "No se pudo crear el encabezado, por favor valide los datos.");
-                    // LlenadoListasEncabezado();
-                    return View(dominio);
-                }
+        //            return RedirectToAction("List");
+        //        }
+        //        else
+        //        {
+        //            ModelState.AddModelError("", "No se pudo crear el encabezado, por favor valide los datos.");
+        //            // LlenadoListasEncabezado();
+        //            return View(dominio);
+        //        }
 
-            }
-            else
-            {
-                LlenadoListasEncabezado();
-                return View(dominio);
-            }
-        }
-        [HttpPost]
-        public ActionResult CrearDetalle(CrearDominioDTO dominio)
-        {
-            if (ModelState.IsValid)
-            {
-                CrearTipoDominioDTO encabezado = Mapper.getMapper(dominio);
+        //    }
+        //    else
+        //    {
+        //        LlenadoListasEncabezado();
+        //        return View(dominio);
+        //    }
+        //}
+        //[HttpPost]
+        //public ActionResult CrearDetalle(CrearDominioDTO dominio)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        CrearTipoDominioDTO encabezado = Mapper.getMapper(dominio);
 
-                bool respuesta = DatosDominio.RegistrarDetalle(encabezado);
+        //        bool respuesta = DatosDominio.RegistrarDetalle(encabezado);
 
-                if (respuesta)
-                {
-                    TempData["Notificacion"] = DatosDominio.Mensaje;
+        //        if (respuesta)
+        //        {
+        //            TempData["Notificacion"] = DatosDominio.Mensaje;
 
-                    return RedirectToAction("Details/" + dominio.idPropiedadesFormato);
-                }
-                else
-                {
-                    ModelState.AddModelError("", "No se pudo crear el detalle, por favor valide los datos.");
-                    //LlenadoListasDetalle();
-                    return View(dominio);
-                }
-            }
-            else
-            {
-                // LlenadoListasDetalle();
-                return View(dominio);
-            }
-        }
+        //            return RedirectToAction("Details/" + dominio.idPropiedadesFormato);
+        //        }
+        //        else
+        //        {
+        //            ModelState.AddModelError("", "No se pudo crear el detalle, por favor valide los datos.");
+        //            //LlenadoListasDetalle();
+        //            return View(dominio);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        // LlenadoListasDetalle();
+        //        return View(dominio);
+        //    }
+        //}
 
-        public ActionResult Update(int id)
-        {
-            CrearTipoDominioDTO encabezado = DatosDominio.DetalleEncabezado(id);
-            ConsultaTipoDominioDTO dominio = Mapper.getMapper(encabezado);
-            LlenadoListasEncabezado();
-            return View(dominio);
-        }
+        //public ActionResult Update(int id)
+        //{
+        //    CrearTipoDominioDTO encabezado = DatosDominio.DetalleEncabezado(id);
+        //    ConsultaTipoDominioDTO dominio = Mapper.getMapper(encabezado);
+        //    LlenadoListasEncabezado();
+        //    return View(dominio);
+        //}
 
-        public ActionResult UpdateDetalle(int id)
-        {
-            CrearTipoDominioDTO detalle = DatosDominio.DetallesDetalles(id);
-            ConsultaTipoDominioDTO form424 = Mapper.getMapper(detalle);
-            LlenadoListasDetalle();
-            return View(dominio);
-        }
+        //public ActionResult UpdateDetalle(int id)
+        //{
+        //    CrearTipoDominioDTO detalle = DatosDominio.DetallesDetalles(id);
+        //    ConsultaTipoDominioDTO form424 = Mapper.getMapper(detalle);
+        //    LlenadoListasDetalle();
+        //    return View(dominio);
+        //}
 
-        [HttpPost]
-        public ActionResult UpdateDetalle(ConsultaTipoDominioDTO detalle)
-        {
-            if (ModelState.IsValid)
-            {
-                if (Session["IdUsuario"] == null)
-                    return RedirectToAction("Login");
+        //[HttpPost]
+        //public ActionResult UpdateDetalle(ConsultaTipoDominioDTO detalle)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        if (Session["IdUsuario"] == null)
+        //            return RedirectToAction("Login");
 
-                int idusuario = int.Parse(Session["IdUsuario"].ToString());
+        //        int idusuario = int.Parse(Session["IdUsuario"].ToString());
 
-                DominioModel upd = Mapper.getMapper(detalle);
-                bool respuesta = DatosDominio.ActualizarDetalle(upd);
+        //        DominioModel upd = Mapper.getMapper(detalle);
+        //        bool respuesta = DatosDominio.ActualizarDetalle(upd);
 
-                if (respuesta)
-                {
-                    TempData["Notificacion"] = DatosDominio.Mensaje;
+        //        if (respuesta)
+        //        {
+        //            TempData["Notificacion"] = DatosDominio.Mensaje;
 
-                    return RedirectToAction("List");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "No se pudo actualizar el detalle, por favor valide los datos.");
-                    LlenadoListasDetalle();
-                    return View(detalle);
-                }
-            }
-            else
-            {
-                LlenadoListasDetalle();
-                return View(detalle);
-            }
-        }
+        //            return RedirectToAction("List");
+        //        }
+        //        else
+        //        {
+        //            ModelState.AddModelError("", "No se pudo actualizar el detalle, por favor valide los datos.");
+        //            LlenadoListasDetalle();
+        //            return View(detalle);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        LlenadoListasDetalle();
+        //        return View(detalle);
+        //    }
+        //}
 
-        [HttpPost]
-        public ActionResult Update(ConsultaTipoDominioDTO encabezado)
-        {
-            if (ModelState.IsValid)
-            {
-                if (Session["IdUsuario"] == null)
-                    return RedirectToAction("Login");
+        //[HttpPost]
+        //public ActionResult Update(ConsultaTipoDominioDTO encabezado)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        if (Session["IdUsuario"] == null)
+        //            return RedirectToAction("Login");
 
-                int idusuario = int.Parse(Session["IdUsuario"].ToString());
+        //        int idusuario = int.Parse(Session["IdUsuario"].ToString());
 
-                DominioModel upd = Mapper.getMapper(encabezado);
-                upd.Usuario = idusuario;
-                bool respuesta = DatosDominio.ActualizarEncabezado(upd);
+        //        DominioModel upd = Mapper.getMapper(encabezado);
+        //        upd.Usuario = idusuario;
+        //        bool respuesta = DatosDominio.ActualizarEncabezado(upd);
 
-                if (respuesta)
-                {
-                    TempData["Notificacion"] = DatosDominio.Mensaje;
+        //        if (respuesta)
+        //        {
+        //            TempData["Notificacion"] = DatosDominio.Mensaje;
 
-                    return RedirectToAction("List");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "No se pudo actualizar el encabezado, por favor valide los datos.");
-                    LlenadoListasEncabezado();
-                    return View(encabezado);
-                }
-            }
-            else
-            {
-                LlenadoListasEncabezado();
-                return View(encabezado);
-            }
-        }
+        //            return RedirectToAction("List");
+        //        }
+        //        else
+        //        {
+        //            ModelState.AddModelError("", "No se pudo actualizar el encabezado, por favor valide los datos.");
+        //            LlenadoListasEncabezado();
+        //            return View(encabezado);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        LlenadoListasEncabezado();
+        //        return View(encabezado);
+        //    }
+        //}
 
         public ActionResult Details(int id)
         {
