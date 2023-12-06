@@ -51,7 +51,10 @@ namespace ProyectoWeb.Models
         [Display(Name = "Codigo Registro")]
         public int CodigoRegistro { get; set; }
         public int? idPropiedadesFormatoAnterior { get; set; }
-   
+
+        public string idProducto { get; set; }
+        public string Descripcion { get; set; }
+
 
     }
 }

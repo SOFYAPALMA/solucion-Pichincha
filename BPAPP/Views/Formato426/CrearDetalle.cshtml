@@ -73,6 +73,24 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="form-group">
+                        @Html.LabelFor(model => model.idProducto, htmlAttributes: new { @class = "control-label" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("idProducto", (SelectList)ViewBag.ProductoCredito, "Seleccione..", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.idProducto, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "control-label" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("Descripcion", (SelectList)ViewBag.Descripcion, "Seleccione..", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
                         @Html.LabelFor(model => model.idObservaciones, htmlAttributes: new { @class = "control-label" })
                         <div class="col-md-10">
                             @Html.DropDownList("idObservaciones", (SelectList)ViewBag.Observaciones, "Seleccione..", new { @class = "form-control" })
@@ -109,6 +127,21 @@
                     // CONSTRUIMOS EL DropDownList A PARTIR DEL RESULTADO Json (data)
                     $.each(data, function (index, row) {
                         $("#idCodigoAseguradora").append("<option value='" + row.Value + "'>" + row.Text + "</option>")
+                    });
+                });
+            });
+        });
+
+        $(document).ready(function () {
+            $("#idcodigo").change(function () {
+                $.get("/Formato426/LlenadoCreditos", { tipo: $("#idcodigo").val() }, function (data) {
+                    // VACIAMOS EL DropDownList
+                    $("#idProducto").empty();
+                    // AÑADIMOS UN NUEVO label CON EL NOMBRE DEL ELEMENTO SELECCIONADO
+                    $("#idProducto").append("<option value> Seleccione..</option>")
+                    // CONSTRUIMOS EL DropDownList A PARTIR DEL RESULTADO Json (data)
+                    $.each(data, function (index, row) {
+                        $("#idProducto").append("<option value='" + row.Value + "'>" + row.Text + "</option>")
                     });
                 });
             });

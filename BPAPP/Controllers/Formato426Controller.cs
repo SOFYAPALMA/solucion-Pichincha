@@ -265,18 +265,18 @@ namespace ProyectoWeb.Controllers
             return Json(new SelectList(idCodigoAseguradora, "Codigo", "Descripcion"), JsonRequestBehavior.AllowGet);
         }
 
-        [HttpGet]
-        public JsonResult LlenadoCreditos(int tipo)
-        {
-            List<CreditosModel> idCodigoCredito = ProductoCreditoModel.Lista(tipo);
+        //[HttpGet]
+        //public JsonResult LlenadoCreditos(int tipo)
+        //{
+        //    List<CreditosModel> idCodigoCredito = ProductoCreditoModel.Lista(tipo);
 
-            if (idCodigoCredito.Count() == 0)
-            {
-                ModelState.AddModelError("idCodigoCredito", "No se encuentra valores para la lista de codigo credito");
-            }
-            ViewBag.CodigoCredito = new SelectList(idCodigoCredito, "Codigo", "Descripcion");
-            return Json(new SelectList(idCodigoCredito, "Codigo", "Descripcion"), JsonRequestBehavior.AllowGet);
-        }
+        //    if (idCodigoCredito.Count() == 0)
+        //    {
+        //        ModelState.AddModelError("idCodigoCredito", "No se encuentra valores para la lista de codigo credito");
+        //    }
+        //    ViewBag.CodigoCredito = new SelectList(idCodigoCredito, "Codigo", "Descripcion");
+        //    return Json(new SelectList(idCodigoCredito, "Codigo", "Descripcion"), JsonRequestBehavior.AllowGet);
+        //}
     }
 
 
