@@ -8,7 +8,7 @@ namespace CapaModelo
 {
     public class ProductoCreditoModel
     {
-        public int idProducto { get; set; }
+        public string idProducto { get; set; }
         public string Descripcion { get; set; }
     }
 }

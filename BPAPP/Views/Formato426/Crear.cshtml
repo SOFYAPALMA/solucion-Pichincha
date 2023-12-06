@@ -34,6 +34,15 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
+                                @Html.LabelFor(model => model.idProducto, htmlAttributes: new { @class = "control-label" })
+                                <div class="col-md-10">
+                                    @Html.DropDownList("idProducto", (SelectList)ViewBag.Productocredito, "Seleccione..", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.idProducto, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
                                 @Html.LabelFor(model => model.idAperturaDigital, htmlAttributes: new { @class = "control-label" })
                                 <div class="col-md-10">
                                     @Html.DropDownList("idAperturaDigital", (SelectList)ViewBag.AperturaDigital, "Seleccione..", new { @class = "form-control" })

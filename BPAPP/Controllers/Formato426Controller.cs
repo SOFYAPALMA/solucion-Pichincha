@@ -203,14 +203,14 @@ namespace ProyectoWeb.Controllers
         /// </summary>
         private void LlenadoListasEncabezado()
         {
-            List<DominioModel> productoCredito = DatosDominio.Obtener(1);//Lista de los 14 tipos de credito
+            List<ProductoCreditoModel> productoCredito = DatosCreditos.Tipos();//Lista de los 14 tipos de credito
             List<DominioModel> idAperturaDigital = DatosDominio.Obtener(2);
 
             if (productoCredito.Count() == 0)
             {
                 ModelState.AddModelError("idCodigoCredito", "No se encuentra valores para la lista de tipo de codigo credito");
             }
-            ViewBag.CodigoCredito = new SelectList(productoCredito, "Dominio", "Descripcion");
+            ViewBag.CodigoCredito = new SelectList(productoCredito, "idCodigo", "Descripcion");
 
             if (idAperturaDigital.Count() == 0)
             {
@@ -268,7 +268,7 @@ namespace ProyectoWeb.Controllers
         [HttpGet]
         public JsonResult LlenadoCreditos(int tipo)
         {
-            List<CreditosModel> idCodigoCredito = DatosCreditos.Lista(tipo);
+            List<CreditosModel> idCodigoCredito = ProductoCreditoModel.Lista(tipo);
 
             if (idCodigoCredito.Count() == 0)
             {
