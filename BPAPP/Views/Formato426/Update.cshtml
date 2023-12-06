@@ -29,6 +29,15 @@
 
                         <div class="col-sm-4">
                             <div class="form-group">
+                                @Html.LabelFor(model => model.idProducto, htmlAttributes: new { @class = "control-label" })
+                                <div class="col-md-10">
+                                    @Html.DropDownList("idProducto", (SelectList)ViewBag.TiposCredito, "Seleccione..", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.idProducto, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
                                 @Html.LabelFor(model => model.idCodigoCredito, htmlAttributes: new { @class = "control-label" })
                                 <div class="col-md-10">
                                     @Html.DropDownList("idCodigoCredito", (SelectList)ViewBag.CodigoCredito, "Seleccione..", new { @class = "form-control" })
@@ -63,3 +72,24 @@
 <div>
     @Html.ActionLink("Volver", "List")
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+
+        $(document).ready(function () {
+            $("#idProducto").change(function () {
+                $.get("/Formato426/LlenadoCreditos", { tipo: $("#idProducto").val() }, function (data) {
+                    // VACIAMOS EL DropDownList
+                    $("#idCodigoCredito").empty();
+                    // AÑADIMOS UN NUEVO label CON EL NOMBRE DEL ELEMENTO SELECCIONADO
+                    $("#idCodigoCredito").append("<option value> Seleccione..</option>")
+                    // CONSTRUIMOS EL DropDownList A PARTIR DEL RESULTADO Json (data)
+                    $.each(data, function (index, row) {
+                        $("#idCodigoCredito").append("<option value='" + row.Value + "'>" + row.Text + "</option>")
+                    });
+                });
+            });
+        });
+    </script>
+}

@@ -10,7 +10,6 @@ namespace ProyectoWeb.Models
         [Display(Name = "Propiedades Formato")]
         public int idPropiedadesFormato { get; set; }
 
-        [Required(ErrorMessage = "El campo  subcuenta es obligatorio.")]
         [Display(Name = "Subcuenta")]
         public string Subcuenta { get; set; }
 
@@ -47,5 +46,6 @@ namespace ProyectoWeb.Models
         public string FechaEstado { get; set; }
         public int CodigoRegistro { get; set; }
         public int? idDetalleAnterior { get; set; }
+
     }
 }
