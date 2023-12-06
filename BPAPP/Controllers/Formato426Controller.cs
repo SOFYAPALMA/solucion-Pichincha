@@ -208,16 +208,16 @@ namespace ProyectoWeb.Controllers
 
             if (productoCredito.Count() == 0)
             {
-                ModelState.AddModelError("idCodigoCredito", "No se encuentra valores para la lista de tipo de codigo credito");
+                ModelState.AddModelError("idProducto", "No se encuentra valores para la lista de tipo de codigo credito");
             }
-            ViewBag.CodigoCredito = new SelectList(productoCredito, "idCodigo", "Descripcion");
+            ViewBag.TiposCredito = new SelectList(productoCredito, "idCodigo", "Descripcion");
 
             if (idAperturaDigital.Count() == 0)
             {
                 ModelState.AddModelError("idAperturaDigital", "No se encuentra valores para la lista de apertura digital");
             }
             ViewBag.AperturaDigital = new SelectList(idAperturaDigital, "Dominio", "Descripcion");
-            ViewBag.CodigoCredito = new SelectList(new List<CreditosModel>(), "Codigo", "Descripcion");
+            ViewBag.CodigoCredito = new SelectList(new List<CreditosModel>(), "idCodigo", "Descripcion");
         }
 
         /// <summary>
@@ -265,18 +265,18 @@ namespace ProyectoWeb.Controllers
             return Json(new SelectList(idCodigoAseguradora, "Codigo", "Descripcion"), JsonRequestBehavior.AllowGet);
         }
 
-        //[HttpGet]
-        //public JsonResult LlenadoCreditos(int tipo)
-        //{
-        //    List<CreditosModel> idCodigoCredito = ProductoCreditoModel.Lista(tipo);
+        [HttpGet]
+        public JsonResult LlenadoCreditos(int tipo)
+        {
+            List<ProductoCreditoModel> idCodigoCredito = DatosCreditos.Lista(tipo);
 
-        //    if (idCodigoCredito.Count() == 0)
-        //    {
-        //        ModelState.AddModelError("idCodigoCredito", "No se encuentra valores para la lista de codigo credito");
-        //    }
-        //    ViewBag.CodigoCredito = new SelectList(idCodigoCredito, "Codigo", "Descripcion");
-        //    return Json(new SelectList(idCodigoCredito, "Codigo", "Descripcion"), JsonRequestBehavior.AllowGet);
-        //}
+            if (idCodigoCredito.Count() == 0)
+            {
+                ModelState.AddModelError("idCodigoCredito", "No se encuentra valores para la lista de codigo credito");
+            }
+            ViewBag.CodigoCredito = new SelectList(idCodigoCredito, "idCodigo", "Descripcion");
+            return Json(new SelectList(idCodigoCredito, "idCodigo", "Descripcion"), JsonRequestBehavior.AllowGet);
+        }
     }
 
 

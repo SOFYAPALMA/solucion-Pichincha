@@ -52,9 +52,9 @@ namespace ProyectoWeb.Models
         public int CodigoRegistro { get; set; }
         public int? idPropiedadesFormatoAnterior { get; set; }
 
-        public string idProducto { get; set; }
-        public string Descripcion { get; set; }
-
+        [Required(ErrorMessage = "El campo producto crédito es obligatorio.")]
+        [Display(Name = "Producto Credito")]
+        public int idProducto { get; set; }
 
     }
 }

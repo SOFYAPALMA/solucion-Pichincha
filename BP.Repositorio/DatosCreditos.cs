@@ -70,6 +70,8 @@ namespace BP.Repositorio
             {
                 List<ProductoCreditoModel> rpt = new List<ProductoCreditoModel>();
                 limpiarParametros();
+                AdicionarParametros("@idProductoCredito", codigo);
+                AdicionarParametros("@tipoDominio", 1);
                
                 DataTable dt = ejecutarStoreProcedure("bpapp.spDominioCreditoProducto").Tables[0];
 

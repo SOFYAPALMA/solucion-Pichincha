@@ -132,21 +132,6 @@
             });
         });
 
-        $(document).ready(function () {
-            $("#idcodigo").change(function () {
-                $.get("/Formato426/LlenadoCreditos", { tipo: $("#idcodigo").val() }, function (data) {
-                    // VACIAMOS EL DropDownList
-                    $("#idProducto").empty();
-                    // AÑADIMOS UN NUEVO label CON EL NOMBRE DEL ELEMENTO SELECCIONADO
-                    $("#idProducto").append("<option value> Seleccione..</option>")
-                    // CONSTRUIMOS EL DropDownList A PARTIR DEL RESULTADO Json (data)
-                    $.each(data, function (index, row) {
-                        $("#idProducto").append("<option value='" + row.Value + "'>" + row.Text + "</option>")
-                    });
-                });
-            });
-        });
-
         $('#idObservaciones').change(function () {
             var value = $("#idObservaciones option:selected").text();
 
