@@ -6,9 +6,9 @@ namespace ProyectoWeb.Models
     {
         public int idPropiedadesFormato { get; set; }
 
-        [Required(ErrorMessage = "El campo subcuentas es obligatorio.")]
+
         [Display(Name = "Sub cuentas")]
-        public string Subcuentas { get; set; }
+        public string Subcuentas { get; set; } = "0";//Campo fijo por default= 0
 
         [Required(ErrorMessage = "El campo operacion o servicio es obligatorio.")]
         [Display(Name = "Operacion o Servicio")]

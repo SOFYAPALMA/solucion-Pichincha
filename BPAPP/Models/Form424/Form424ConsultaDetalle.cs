@@ -13,9 +13,8 @@ namespace ProyectoWeb.Models
         [Display(Name = "Registro")]
         public int idPropiedadesFormato { get; set; }
 
-        [Required(ErrorMessage = "El campo subcuentas es obligatorio.")]
         [Display(Name = "Subcuentas")]
-        public string Subcuenta { get; set; }
+        public string Subcuenta { get; set; } = "0";//Campo fijo por default= 0
 
         [Required(ErrorMessage = "El campo operacion o servicio es obligatorio.")]
         [Display(Name = "Operacion o Servicio")]

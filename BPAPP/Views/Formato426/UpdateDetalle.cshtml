@@ -23,7 +23,7 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.Subcuenta, htmlAttributes: new { @class = "control-label" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.Subcuenta, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.DisplayFor(model => model.Subcuenta, new { htmlAttributes = new { @class = "form-control disabled" } })
                             @Html.ValidationMessageFor(model => model.Subcuenta, "", new { @class = "text-danger" })
                         </div>
                     </div>

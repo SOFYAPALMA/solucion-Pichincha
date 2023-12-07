@@ -42,5 +42,6 @@ namespace CapaModelo
         public string Tipo { get; set; }
         public string TipoProductoDeposito { get; set; }
         public int Usuario { get; set; }
+        public int UnidadCaptura { get; set; } = 1;
     }
 }

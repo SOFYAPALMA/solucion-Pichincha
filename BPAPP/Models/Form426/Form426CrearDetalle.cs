@@ -11,7 +11,7 @@ namespace ProyectoWeb.Models
         public int idPropiedadesFormato { get; set; }
 
         [Display(Name = "Subcuenta")]
-        public string Subcuenta { get; set; }
+        public string Subcuenta { get; set; } = "0";//Campo fijo por default= 0
 
         public string CaracteristicaCredito { get; set; }
 

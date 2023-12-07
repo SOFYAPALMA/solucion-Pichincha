@@ -11,10 +11,11 @@ namespace ProyectoWeb.Models
         public int idPropiedadesFormato { get; set; }
 
         [Display(Name = "Subcuenta")]
-        public string Subcuenta { get; set; }
+        public string Subcuenta { get; set; } = "0";//Campo fijo por default= 0
 
         [Display(Name = "Caracteristica Credito")]
         public string CaracteristicaCredito { get; set; }
+        [Display(Name = "Caracteristica Credito")]
         public int idCaracteristicaCredito { get; set; }
 
         [Display(Name = "Costo")]
@@ -25,14 +26,17 @@ namespace ProyectoWeb.Models
 
         [Display(Name = "Tipo Aseguradora")]
         public string TipoAseguradora { get; set; }
+        [Display(Name = "Tipo Aseguradora")]
         public int idTipoAseguradora { get; set; }
 
         [Display(Name = "Código Aseguradora")]
         public string CodigoAseguradora { get; set; }
+        [Display(Name = "Código Aseguradora")]
         public int idCodigoAseguradora { get; set; }
 
         [Display(Name = "Observaciones")]
         public string Observaciones { get; set; }
+        [Display(Name = "Observaciones")]
         public int idObservaciones { get; set; }
 
         [Display(Name = "Unidad Captura")]

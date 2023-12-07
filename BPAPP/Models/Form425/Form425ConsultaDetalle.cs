@@ -15,9 +15,8 @@ namespace ProyectoWeb.Models
         [Display(Name = "Nombre Comercial")]
         public int idNombreComercial { get; set; }
 
-        [Required(ErrorMessage = "El campo subcuentas es obligatorio.")]
         [Display(Name = "Subcuentas")]
-        public string Subcuenta { get; set; }
+        public string Subcuenta { get; set; } = "0";//Campo fijo por default= 0
 
         [Required(ErrorMessage = "El campo operación o servicio es obligatorio.")]
         [Display(Name = "Operacion o Servicio")]
