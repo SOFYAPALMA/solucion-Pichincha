@@ -43,7 +43,7 @@ namespace BP.Repositorio
                 AdicionarParametros("idCodigoCredito", obj.idCodigoCredito);
                 AdicionarParametros("idAperturaDigital", obj.idAperturaDigital);
                 AdicionarParametros("Usuario", obj.Usuario);
-
+                AdicionarParametros("TipoProductoCredito", obj.Usuario);
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
                 AdicionarParametrosOut("@IdPropiedadesFormato", SqlDbType.Int);
                 AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
