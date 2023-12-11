@@ -20,6 +20,7 @@ namespace CapaModelo
         public string Tipo { get; set; }
         public string Codigo { get; set; }
         public string Nombre { get; set; }
+
         [Required(ErrorMessage = "El campo  tipo producto crédito es obligatorio.")]
         [Display(Name = "Producto Crédito")]
         public int TipoProductoCredito { get; set; }

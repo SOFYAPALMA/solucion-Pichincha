@@ -73,8 +73,8 @@
     <script>
 
         $(document).ready(function () {
-            $("#idProducto").change(function () {
-                $.get("/Formato426/LlenadoCreditos", { tipo: $("#idProducto").val() }, function (data) {
+            $("#TipoProductoCredito").change(function () {
+                $.get("/Formato426/LlenadoCreditos", { tipo: $("#TipoProductoCredito").val() }, function (data) {
                     // VACIAMOS EL DropDownList
                     $("#idCodigoCredito").empty();
                     // AÑADIMOS UN NUEVO label CON EL NOMBRE DEL ELEMENTO SELECCIONADO
