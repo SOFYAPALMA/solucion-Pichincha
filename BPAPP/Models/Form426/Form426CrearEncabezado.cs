@@ -25,8 +25,12 @@ namespace ProyectoWeb.Models
         [DataType(DataType.Text)]
         public string Nombre { get; set; } = "BCOPICHINCH"; //Campo fijo por default= BCOPICHINCH
 
+        [Required(ErrorMessage = "El campo producto crédito es obligatorio.")]
+        [Display(Name = "Producto Crédito")]
+        public int TipoProductoCredito { get; set; }
+
         [Required(ErrorMessage = "El campo código crédito es obligatorio.")]
-        [Display(Name = "Codigo Credito")]
+        [Display(Name = "Código Crédito")]
         public int idCodigoCredito { get; set; }
 
         [Required(ErrorMessage = "El campo apertura digital es obligatorio.")]
@@ -51,10 +55,6 @@ namespace ProyectoWeb.Models
         [Display(Name = "Codigo Registro")]
         public int CodigoRegistro { get; set; }
         public int? idPropiedadesFormatoAnterior { get; set; }
-
-        [Required(ErrorMessage = "El campo producto crédito es obligatorio.")]
-        [Display(Name = "Producto Credito")]
-        public int idProducto { get; set; }
 
     }
 }
