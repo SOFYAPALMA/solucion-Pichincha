@@ -25,13 +25,13 @@ namespace ProyectoWeb.Models
 
         [Required(ErrorMessage = "El campo costo fijo es obligatorio.")]
         [Display(Name = "Costo Fijo")]
-        public int CostoFijo { get; set; }
+        [RegularExpression(@"^\d+(\.\d{1,2})?$")]
+        public decimal CostoFijo { get; set; }
 
-        //[Required(ErrorMessage = "El campo costo proporcional a operación o servicio es obligatorio.")]
-        //[Display(Name = "Costo proporcional a operación o servicio")]
-        [DataType(DataType.Currency)]
-        [Column(TypeName = "decimal(18, 2)")]
-        public int CostoProporcionOperacionServicio { get; set; }
+        [Required(ErrorMessage = "El campo costo proporcional a operación o servicio es obligatorio.")]
+        [Display(Name = "Costo proporcional a operación o servicio")]
+        [RegularExpression(@"^\d+(\.\d{1,2})?$")]
+        public decimal CostoProporcionOperacionServicio { get; set; }
 
         [Required(ErrorMessage = "El campo observaciones es obligatorio.")]
         [Display(Name = "Observaciones")]

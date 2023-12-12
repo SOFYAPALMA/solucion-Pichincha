@@ -25,27 +25,33 @@ namespace ProyectoWeb.Models
 
         [Required(ErrorMessage = "El costo fijo es obligatorio.")]
         [Display(Name = "Costo Fijo")]
-        public int CostoFijo { get; set; }
+        [RegularExpression(@"^\d+(\.\d{1,2})?$")]
+        public decimal CostoFijo { get; set; }
 
         [Required(ErrorMessage = "El campo costo fijo máximo es obligatorio.")]
         [Display(Name = "Costo Fijo Maximo")]
-        public int CostoFijoMaximo { get; set; }
+        [RegularExpression(@"^\d+(\.\d{1,2})?$")]
+        public decimal CostoFijoMaximo { get; set; }
 
         [Required(ErrorMessage = "El campo costo proporcional a operación o servicio es obligatorio.")]
         [Display(Name = "Costo proporcional a op o servicio")]
-        public int CostoProporcionOperacionServicio { get; set; }
+        [RegularExpression(@"^\d+(\.\d{1,2})?$")]
+        public decimal CostoProporcionOperacionServicio { get; set; }
 
         [Required(ErrorMessage = "El campo costo proporcional máximo a operación o servicio es obligatorio.")]
         [Display(Name = "Costo maximo op servicio")]
-        public int CostoProporcionMaxOperacionServicio { get; set; }
+        [RegularExpression(@"^\d+(\.\d{1,2})?$")]
+        public decimal CostoProporcionMaxOperacionServicio { get; set; }
 
         [Required(ErrorMessage = "El campo tasa es obligatorio.")]
         [Display(Name = "Tasa")]
-        public int Tasa { get; set; }
+        [RegularExpression(@"^\d+(\.\d{1,2})?$")]
+        public decimal Tasa { get; set; }
 
         [Required(ErrorMessage = "El campo tasa máxima es obligatorio.")]
         [Display(Name = "Tasa Maxima")]
-        public int TasaMaxima { get; set; }
+        [RegularExpression(@"^\d+(\.\d{1,2})?$")]
+        public decimal TasaMaxima { get; set; }
 
         [Required(ErrorMessage = "El campo tipo de aseguradora es obligatorio.")]
         [Display(Name = "Tipo de aseguradora")]

@@ -21,7 +21,9 @@ namespace ProyectoWeb.Models
 
         public int Costo { get; set; }
 
-        public int Tasa { get; set; }
+        [Required(ErrorMessage = "El campo tasa es obligatorio.")]
+        [RegularExpression(@"^\d+(\.\d{1,2})?$")]
+        public decimal Tasa { get; set; }
 
         [Display(Name = "Tipo Aseguradora")]
         public string TipoAseguradora { get; set; }
