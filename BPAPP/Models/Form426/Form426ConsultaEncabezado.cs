@@ -1,12 +1,9 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ProyectoWeb.Models
 {
     public class Form426ConsultaEncabezado
     {
-        public string PropiedadesFormato { get; set; }
-
         [Display(Name = "Número Registro")]
         public int idPropiedadesFormato { get; set; }
 
@@ -24,7 +21,11 @@ namespace ProyectoWeb.Models
         public string Nombre { get; set; }
 
         [Display(Name = "Producto Crédito")]
-        public int TipoProductoCredito { get; set; }
+        public int TipoProductoCredito { get; set; }   
+        public string DTipoProductoCredito { get; set; }
+
+        [Display(Name = "Código Crédito")]
+        public string CodigoCredito { get; set; }
 
         [Display(Name = "Código Crédito")]
         public int idCodigoCredito { get; set; }
@@ -40,7 +41,6 @@ namespace ProyectoWeb.Models
         public string Fechacorte { get; set; }
         public string FechaEstado { get; set; }
         public int? CodigoRegistro { get; set; }
-        public string PropiedadesFormatoAnterior { get; set; }
         public int? idPropiedadesFormatoAnterior { get; set; }
     }
 }

@@ -436,6 +436,7 @@ namespace ProyectoWeb
                 Fechacorte = dto.Fechacorte.ToString(),
                 FechaEstado = dto.FechaEstado.ToString(),
                 CodigoRegistro = dto.CodigoRegistro,
+                TipoProductoCredito = dto.TipoProductoCredito,
                 idPropiedadesFormatoAnterior = dto.idPropiedadesFormatoAnterior
             };
             return result;
@@ -463,7 +464,9 @@ namespace ProyectoWeb
                 Codigo = obj.Codigo,
                 Nombre = obj.Nombre,
                 TipoProductoCredito = obj.TipoProductoCredito,
+                DTipoProductoCredito = obj.DTipoProductoCredito,
                 idCodigoCredito = obj.idCodigoCredito,
+                CodigoCredito = obj.CodigoCredito,
                 AperturaDigital = obj.AperturaDigital,
                 idAperturaDigital = obj.idAperturaDigital,
                 Fecha_horaActualizacion = obj.Fecha_horaActualizacion,
@@ -486,6 +489,7 @@ namespace ProyectoWeb
                 Codigo = dto.Codigo,
                 Nombre = dto.Nombre,
                 TipoProductoCredito = dto.TipoProductoCredito,
+                DTipoProductoCredito = dto.DTipoProductoCredito,
                 idCodigoCredito = dto.idCodigoCredito,
                 AperturaDigital = dto.AperturaDigital,
                 idAperturaDigital = dto.idAperturaDigital,

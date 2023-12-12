@@ -95,6 +95,7 @@ namespace ProyectoWeb.Controllers
             Formulario426_Encabezado encabezado = DatosFormato426.Detalles(id);
             Form426ConsultaEncabezado form426 = Mapper.getMapper(encabezado);
             LlenadoListasEncabezado();
+            LlenadoCreditos(form426.TipoProductoCredito);
             return View(form426);
         }
 

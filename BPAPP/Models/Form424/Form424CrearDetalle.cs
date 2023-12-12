@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProyectoWeb.Models
 {
@@ -26,8 +27,10 @@ namespace ProyectoWeb.Models
         [Display(Name = "Costo Fijo")]
         public int CostoFijo { get; set; }
 
-        [Required(ErrorMessage = "El campo costo proporcional a operación o servicio es obligatorio.")]
-        [Display(Name = "Costo proporcional a operación o servicio")]
+        //[Required(ErrorMessage = "El campo costo proporcional a operación o servicio es obligatorio.")]
+        //[Display(Name = "Costo proporcional a operación o servicio")]
+        [DataType(DataType.Currency)]
+        [Column(TypeName = "decimal(18, 2)")]
         public int CostoProporcionOperacionServicio { get; set; }
 
         [Required(ErrorMessage = "El campo observaciones es obligatorio.")]
