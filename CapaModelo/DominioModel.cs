@@ -11,5 +11,6 @@ namespace CapaModelo
         public int idCodigo { get; set; }
         public string Fecha { get; set; }
         public string Estado { get; set; }
+        public int Usuario { get; set; }
     }
 }

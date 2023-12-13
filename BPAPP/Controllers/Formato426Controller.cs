@@ -133,6 +133,40 @@ namespace ProyectoWeb.Controllers
             }
         }
 
+        [HttpPost]
+        public ActionResult Delete(string Tiporegistros, int id, int idDetalle)
+        {
+            if (ModelState.IsValid)
+            {
+                if (Session["IdUsuario"] == null)
+                    return RedirectToAction("Login");
+
+                string idusuario = Session["IdUsuario"].ToString();
+
+                Formulario426_Encabezado upd = Mapper.getMapper(encabezado);
+                upd.Usuario = idusuario;
+                bool respuesta = DatosFormato426.EliminarEncabezado(upd);
+
+                if (respuesta)
+                {
+                    TempData["Notificacion"] = DatosFormato426.Mensaje;
+
+                    return RedirectToAction("List");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "No se puede eliminar el encabezado tiene detalle.");
+                   // LlenadoListasEncabezado();
+                    return View(encabezado);
+                }
+            }
+            else
+            {
+                // LlenadoListasEncabezado();
+                return View(encabezado);
+            }
+        }
+
         public ActionResult UpdateDetalle(int id)
         {
             Formulario426_Detalle detalle = DatosFormato426.DetallesDetalles(id);

@@ -13,7 +13,6 @@ namespace ProyectoWeb.Controllers
         {
             CrearTipoDominioDTO dominio = new CrearTipoDominioDTO();
             //LlenadoListasDominio();
-
             return View(dominio);
         }
 
@@ -56,7 +55,7 @@ namespace ProyectoWeb.Controllers
         //    }
         //    else
         //    {
-        //        LlenadoListasEncabezado();
+        //        //LlenadoListasEncabezado();
         //        return View(dominio);
         //    }
         //}
