@@ -25,6 +25,7 @@ namespace ProyectoWeb.Controllers
             if (idUsuario == 0) {
                 FormsAuthentication.SetAuthCookie(usuario, false);
                 ViewBag.Error = "Usuario o contraseña no correcta";
+                //User.Identity
                 return View();
             }
 

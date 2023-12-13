@@ -13,143 +13,80 @@
     @RenderSection("estilos", required: false)
 </head>
 <body>
-    <input type="checkbox" id="checkbox">
-    <header class="header">
-
-        <h2 class="u-name">
-            <img class="img-fluid" img1" src="@Href("~/Resources/Images/Logo-Pichincha.png")" width="150" height="35" />
-            <label for="checkbox">
-                <i id="navbtn" class="fa fa-bars" aria-hidden="true"></i>
-            </label>
-        </h2>  
-        <ul class="nav navbar-nav ml-auto">
-
-            <li class="nav-item">
-                <a href="@Url.Action("Salir", "Home")" class="nav-link">
-                    <span>
-                        <strong> Hola, @User.Identity.Name !</strong>
-                    </span>
-                    <i class="fas fa-arrow-alt-circle-right"> </i>
-                    <span>
-                        <strong> Salir</strong>
-                    </span>
+    <div class='dashboard'>
+        <div class="dashboard-nav">
+            <header>
+                <a href="#!" class="menu-toggle">
+                    <i class="fas fa-bars"></i>
                 </a>
-            </li>
-        </ul>
-    </header>
-    <div class="body">
-        <nav class="side-bar">
-            <ul>
-                <li>
-                    <div class="container-fluid">
-                        <div class="row flex-nowrap">
-                            <div class="col-auto px-sm-2 px-0 bg-dark">
-                                <div class="d-flex flex-column align-items-center align-items-sm-start text-white min-vh-100">
-
-                                    <div class="navbar bg-dark navbar-dark">
-                                        hhhhhhh
-                                        <div class='dashboard'>
-                                            <div class="dashboard-nav">
-                                                <header>
-                                                    <a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a><a href="#"
-                                                                                                                       class="brand-logo">
-                                                        <i class="fas fa-anchor"></i> <span>BRAND</span>
-                                                    </a>
-                                                </header>
-                                                <nav class="dashboard-nav-list">
-                                                    <a href="#" class="dashboard-nav-item">
-                                                        <i class="fas fa-home"></i>
-                                                        Home
-                                                    </a><a href="#" class="dashboard-nav-item active">
-                                                        <i class="fas fa-tachometer-alt"></i> dashboard
-                                                    </a><a href="#" class="dashboard-nav-item"><i class="fas fa-file-upload"></i> Upload </a>
-                                                    <div class='dashboard-nav-dropdown'>
-                                                        <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
-                                                            <i class="fas fa-photo-video"></i> Media
-                                                        </a>
-                                                        <div class='dashboard-nav-dropdown-menu'>
-                                                            <a href="#"
-                                                               class="dashboard-nav-dropdown-item">All</a><a href="#" class="dashboard-nav-dropdown-item">Recent</a><a href="#" class="dashboard-nav-dropdown-item">Images</a><a href="#" class="dashboard-nav-dropdown-item">Video</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class='dashboard-nav-dropdown'>
-                                                        <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
-                                                            <i class="fas fa-users"></i> Users
-                                                        </a>
-                                                        <div class='dashboard-nav-dropdown-menu'>
-                                                            <a href="#"
-                                                               class="dashboard-nav-dropdown-item">All</a><a href="#" class="dashboard-nav-dropdown-item">Subscribed</a><a href="#"
-                                                                                                                                                                           class="dashboard-nav-dropdown-item">Non-subscribed</a><a href="#" class="dashboard-nav-dropdown-item">Banned</a><a href="#" class="dashboard-nav-dropdown-item">New</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class='dashboard-nav-dropdown'>
-                                                        <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
-                                                            <i class="fas fa-money-check-alt"></i> Payments
-                                                        </a>
-                                                        <div class='dashboard-nav-dropdown-menu'>
-                                                            <a href="#"
-                                                               class="dashboard-nav-dropdown-item">All</a><a href="#" class="dashboard-nav-dropdown-item">Recent</a><a href="#" class="dashboard-nav-dropdown-item"> Projections</a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Settings </a><a href="#" class="dashboard-nav-item"><i class="fas fa-user"></i> Profile </a>
-                                                    <div class="nav-item-divider"></div>
-                                                    <a href="#" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
-                                                </nav>
-                                            </div>
-                                            <div class='dashboard-app'>
-                                                <header class='dashboard-toolbar'><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a></header>
-                                                <div class='dashboard-content'>
-                                                    <div class='container'>
-                                                        <div class='card'>
-                                                            <div class='card-header'>
-                                                                <h1>Welcome back Jim</h1>
-                                                            </div>
-                                                            <div class='card-body'>
-                                                                <p>Your account type is: Administrator</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Links -->
-                                        <ul class="nav navbar-nav">
-                                            @Html.ActionLinkAllow()
-                                        </ul>
-
-                                    </div>
-                                    <hr>
-                                </div>
-                            </div>
-                        </div>
+                <a href="#" class="brand-logo">
+                    <img class="img-fluid" img1" src="https://www.bancopichincha.com.co/o/pichincha-theme/images/logo.png" width="150" height="35" />
+                </a>
+            </header>
+            <nav class="dashboard-nav-list">
+                <a href="@Url.Action("Index", "Home")" class="dashboard-nav-item">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <div class='dashboard-nav-dropdown'>
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                        <i class="fas fa-photo-video"></i> Formularios
+                    </a>
+                    <div class='dashboard-nav-dropdown-menu'>
+                        <a href="@Url.Action("List", "Formato424")" class="dashboard-nav-dropdown-item">424 (Depositos)</a>
+                        <a href="@Url.Action("List", "Formato425")" class="dashboard-nav-dropdown-item">425 (Tarjetas de credito)</a>
+                        <a href="@Url.Action("List", "Formato426")" class="dashboard-nav-dropdown-item">426 (Creditos)</a>
                     </div>
-                </li>
-            </ul>
-        </nav>
-        <div class="container-fluid mt-4">
-            @RenderBody()
+                </div>
+                @*<div class='dashboard-nav-dropdown'>
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                        <i class="fas fa-users"></i> Usuarios
+                    </a>
+                    <div class='dashboard-nav-dropdown-menu'>
+                        <a href="#"
+                           class="dashboard-nav-dropdown-item">All</a><a href="#" class="dashboard-nav-dropdown-item">Subscribed</a><a href="#"
+                                                                                                                                       class="dashboard-nav-dropdown-item">Non-subscribed</a><a href="#" class="dashboard-nav-dropdown-item">Banned</a><a href="#" class="dashboard-nav-dropdown-item">New</a>
+                    </div>
+                </div>
+                <a href="#" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Settings </a>*@
+                <div class="nav-item-divider"></div>
+                <a href="@Url.Action("Salir", "Home")" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Salir </a>
+            </nav>
+        </div>
+        <div class='dashboard-app'>
+            <header class='dashboard-toolbar'>
+                <div class="row">
+                    <div class="col-2">
+                        <a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a>
+                    </div>
+                    <div class="col-10 menu-name">
+                        <strong> Hola, @User.Identity.Name !</strong>
+                    </div>
+                </div>
+            </header>
+            <div class='dashboard-content'>
+                <div class="container-fluid mt-4">
+                    <div class="Mensajes">
+                        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                        @if (TempData["Notificacion"] != null && TempData["Notificacion"].ToString() != "Mensaje")
+                        {
+                            <p id="NotificacionesGenerales">@TempData["Notificacion"]</p>
+                        }
+                        else
+                        {
+                            <p id="NotificacionesGenerales"></p>
+                        }
+                    </div>
+                    @RenderBody()
+                </div>
+            </div>
         </div>
     </div>
-    <div class="container-fluid mt-4">
-        <div class="Mensajes">
-            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
-            @if (TempData["Notificacion"] != null && TempData["Notificacion"].ToString() != "Mensaje")
-            {
-                <p id="NotificacionesGenerales">@TempData["Notificacion"]</p>
-            }
-            else
-            {
-                <p id="NotificacionesGenerales"></p>
-            }
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/Content/PluginsJS")
+
     <script type="text/javascript">
 
         const mobileScreen = window.matchMedia("(max-width: 990px )");
@@ -171,40 +108,6 @@
                 }
             });
         });
-
-        $.extend({ MisUrls: { url: {}, urls: function (a) { $.extend($.MisUrls.url, a); } } });
-
-        $.MisUrls.urls({ UrlGetRoles: '@Url.Action("Listar", "Rol")' });
-        $.MisUrls.urls({ UrlGetRol: '@Url.Action("Obtener", "Rol")' });
-        $.MisUrls.urls({ UrlPostRol: '@Url.Action("Guardar", "Rol")' });
-        $.MisUrls.urls({ UrlDeleteRol: '@Url.Action("Eliminar", "Rol")' });
-
-        //ROL PERMISOS
-        $.MisUrls.urls({ UrlGetRolPermisos: '@Url.Action("Obtener", "RolPermiso")' });
-        $.MisUrls.urls({ UrlPostGuardarCambios: '@Url.Action("Guardar", "RolPermiso")' });
-
-        //USUARIO
-        $.MisUrls.urls({ UrlGetUsuarios: '@Url.Action("Listar", "Usuario")' });
-        $.MisUrls.urls({ UrlPostUsuario: '@Url.Action("Guardar", "Usuario")' });
-        $.MisUrls.urls({ UrlGetUsuario: '@Url.Action("Obtener", "Usuario")' });
-        $.MisUrls.urls({ UrlDeleteUsuario: '@Url.Action("Eliminar", "Usuario")' });
-
-        //FORMATO425
-        $.MisUrls.urls({ UrlGetFormato425: '@Url.Action("Listar", "Formato425")' });
-        $.MisUrls.urls({ UrlPostGuardarFormato425: '@Url.Action("Guardar", "Formato425")' });
-        $.MisUrls.urls({ UrlGetEliminarFormato425: '@Url.Action("Eliminar", "Formato425")' });
-        $.MisUrls.urls({ UrlGetConsultaReporteFormato425: '@Url.Action("ConsultaReporte", "Formato425")' });
-
-
-        //FORMATO 426
-        $.MisUrls.urls({ UrlGetFormato426: '@Url.Action("Listar", "Formato426")' });
-        $.MisUrls.urls({ UrlPostGuardarFormato426: '@Url.Action("Guardar", "Formato426")' });
-        $.MisUrls.urls({ UrlGetEliminarFormato426: '@Url.Action("Eliminar", "Formato426")' });
-
-        //Formato424
-        $.MisUrls.urls({ UrlGetFormato424: '@Url.Action("Details", "Formato424")' });
-        $.MisUrls.urls({ UrlPostFormato424: '@Url.Action("Guardar", "Formato424")' });
-        $.MisUrls.urls({ UrlDeleteFormato424: '@Url.Action("Eliminar", "Formato424")' });
 
     </script>
     @RenderSection("scripts", required: false)
