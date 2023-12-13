@@ -34,7 +34,7 @@ namespace ProyectoWeb.Models
 
         [Display(Name = "Codigo Aseguradora")]
         public string CodigoAseguradora { get; set; }
-        
+
         [Display(Name = "Codigo Aseguradora")]
         public int idCodigoAseguradora { get; set; }
         public string Observaciones { get; set; }
