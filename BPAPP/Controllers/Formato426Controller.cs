@@ -134,18 +134,11 @@ namespace ProyectoWeb.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(string Tiporegistros, int id, int idDetalle)
+        public ActionResult DeleteEncabezado(int id)
         {
             if (ModelState.IsValid)
             {
-                if (Session["IdUsuario"] == null)
-                    return RedirectToAction("Login");
-
-                string idusuario = Session["IdUsuario"].ToString();
-
-                Formulario426_Encabezado upd = Mapper.getMapper(encabezado);
-                upd.Usuario = idusuario;
-                bool respuesta = DatosFormato426.EliminarEncabezado(upd);
+                bool respuesta = DatosFormato426.EliminarEncabezado(id);
 
                 if (respuesta)
                 {
@@ -156,14 +149,41 @@ namespace ProyectoWeb.Controllers
                 else
                 {
                     ModelState.AddModelError("", "No se puede eliminar el encabezado tiene detalle.");
-                   // LlenadoListasEncabezado();
-                    return View(encabezado);
+                    LlenadoListasEncabezado();
+                    return View();
                 }
             }
             else
             {
-                // LlenadoListasEncabezado();
-                return View(encabezado);
+                LlenadoListasEncabezado();
+                return View();
+            }
+        }
+
+        [HttpPost]
+        public ActionResult DeleteDetalle(int id, int idDetalle)
+        {
+            if (ModelState.IsValid)
+            {
+                bool respuesta = DatosFormato426.EliminarDetalle(id, idDetalle);
+
+                if (respuesta)
+                {
+                    TempData["Notificacion"] = DatosFormato426.Mensaje;
+
+                    return RedirectToAction("List");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "No se puede eliminar el detalle.");
+                    LlenadoListasEncabezado();
+                    return View();
+                }
+            }
+            else
+            {
+                LlenadoListasEncabezado();
+                return View();
             }
         }
 
@@ -315,5 +335,5 @@ namespace ProyectoWeb.Controllers
     }
 
 
-    
+
 }

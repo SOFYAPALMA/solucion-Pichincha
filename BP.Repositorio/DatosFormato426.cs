@@ -133,7 +133,7 @@ namespace BP.Repositorio
 
             return respuesta;
         }
-        public static bool EliminarEncabezado(string Tiporegistros, int id, int idDetalle)
+        public static bool EliminarEncabezado(int id)
         {
             Instanciar();
             bool respuesta = false;
@@ -142,7 +142,36 @@ namespace BP.Repositorio
             {
                 limpiarParametros();
                 AdicionarParametros("@idPropiedadesFormato", id);
-                AdicionarParametros("@Tiporegistros", Tiporegistros);
+                AdicionarParametros("@Tiporegistros", "E");
+
+                AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
+                AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
+
+                ejecutarScalar("bpapp.spEliminaCreditos");
+
+                respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
+                Mensaje = RecuperarParametrosOut("MensajeSalida");
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), Mensaje, Logs.Tipo.Log);
+            }
+            catch (Exception ex)
+            {
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
+                throw new Exception("No se puede eliminar el encabezado tiene detalle", ex);
+            }
+
+            return respuesta;
+        }
+
+        public static bool EliminarDetalle(int id, int idDetalle)
+        {
+            Instanciar();
+            bool respuesta = false;
+
+            try
+            {
+                limpiarParametros();
+                AdicionarParametros("@idPropiedadesFormato", id);
+                AdicionarParametros("@Tiporegistros", "");
                 AdicionarParametros("@idDetalle", idDetalle);
 
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);

@@ -33,39 +33,41 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.idDetalle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Subcuenta)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CaracteristicaCredito)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Costo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tasa)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TipoAseguradora)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CodigoAseguradora)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Observaciones)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UnidadCaptura)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "UpdateDetalle", new {  id=item.idDetalle  })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idDetalle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subcuenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CaracteristicaCredito)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Costo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tasa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoAseguradora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoAseguradora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observaciones)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnidadCaptura)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "UpdateDetalle", new { id = item.idDetalle })
+            </td>
+
+        </tr>
+    }
 
 </table>
