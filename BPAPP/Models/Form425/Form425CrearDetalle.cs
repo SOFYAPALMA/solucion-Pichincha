@@ -16,64 +16,52 @@ namespace ProyectoWeb.Models
         [Display(Name = "Operacion o Servicio")]
         public int idOperacionoServicio { get; set; }
 
-        [Required(ErrorMessage = "El campo canal es obligatorio.")]
         [Display(Name = "Canal")]
-        public int idCanal { get; set; } 
+        public int? idCanal { get; set; } 
         
         [Display(Name = "Canal")]
         public string Canal { get; set; }
 
-        [Required(ErrorMessage = "El costo fijo es obligatorio.")]
         [Display(Name = "Costo Fijo")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
-        public decimal CostoFijo { get; set; }
+        public decimal? CostoFijo { get; set; }
 
-        [Required(ErrorMessage = "El campo costo fijo máximo es obligatorio.")]
         [Display(Name = "Costo Fijo Maximo")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
-        public decimal CostoFijoMaximo { get; set; }
+        public decimal? CostoFijoMaximo { get; set; }
 
-        [Required(ErrorMessage = "El campo costo proporcional a operación o servicio es obligatorio.")]
         [Display(Name = "Costo proporcional a op o servicio")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
-        public decimal CostoProporcionOperacionServicio { get; set; }
+        public decimal? CostoProporcionOperacionServicio { get; set; }
 
-        [Required(ErrorMessage = "El campo costo proporcional máximo a operación o servicio es obligatorio.")]
         [Display(Name = "Costo maximo op servicio")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
-        public decimal CostoProporcionMaxOperacionServicio { get; set; }
+        public decimal? CostoProporcionMaxOperacionServicio { get; set; }
 
-        [Required(ErrorMessage = "El campo tasa es obligatorio.")]
         [Display(Name = "Tasa")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
-        public decimal Tasa { get; set; }
+        public decimal? Tasa { get; set; }
 
-        [Required(ErrorMessage = "El campo tasa máxima es obligatorio.")]
         [Display(Name = "Tasa Maxima")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
-        public decimal TasaMaxima { get; set; }
+        public decimal? TasaMaxima { get; set; }
 
-        [Required(ErrorMessage = "El campo tipo de aseguradora es obligatorio.")]
         [Display(Name = "Tipo de aseguradora")]
-        public int idTipoAseguradora { get; set; }
+        public int? idTipoAseguradora { get; set; }
 
-        [Required(ErrorMessage = "El campo observaciones es obligatorio.")]
         [Display(Name = "Observaciones")]
-        public int idObservaciones { get; set; }
+        public int? idObservaciones { get; set; }
 
-        [Required(ErrorMessage = "El campo unidad captura es obligatorio.")]
         [Display(Name = "Unidad Captura")]
         public int UnidadCaptura { get; set; }
 
-        [Required(ErrorMessage = "El campo nombre comercial es obligatorio.")]
         [Display(Name = "Nombre Comercial")]
         public int idNombreComercial { get; set; }
         public int Estado { get; set; }
         public string FechaProceso { get; set; }
         public string FechaEstado { get; set; }
 
-        [Required(ErrorMessage = "El campo id código aseguradora es obligatorio.")]
         [Display(Name = "Código Aseguradora")]
-        public int idCodigoAseguradora { get; set; }
+        public int? idCodigoAseguradora { get; set; }
     }
 }

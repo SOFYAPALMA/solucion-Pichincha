@@ -217,7 +217,7 @@ namespace BP.Repositorio
         public static void AdicionarParametros(string nombre, object valor)
         {
             Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), nombre + "='" + valor + "'", Logs.Tipo.Log);
-            if (valor.GetType().Name == "String")
+            //if (valor.GetType().Name == "String")
             {
                 if (valor == "null")
                 {

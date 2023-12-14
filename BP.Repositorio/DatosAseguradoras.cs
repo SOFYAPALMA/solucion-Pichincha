@@ -66,7 +66,7 @@ namespace BP.Repositorio
             }
         }
 
-        public static List<Aseguradoras> Lista(int codigo)
+        public static List<Aseguradoras> Lista(int? codigo)
         {
             try
             {

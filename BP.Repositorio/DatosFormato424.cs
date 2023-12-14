@@ -151,8 +151,8 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
-                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
-                throw new Exception("Error en ActualizarEncabezado", ex);
+                //Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
+                //throw new Exception("Error en ActualizarEncabezado", ex);
             }
 
             return respuesta;

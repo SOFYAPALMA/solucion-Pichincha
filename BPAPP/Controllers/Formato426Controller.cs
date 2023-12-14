@@ -134,6 +134,7 @@ namespace ProyectoWeb.Controllers
         }
 
         [HttpPost]
+        //[ValidateAntiForgeryToken]
         public ActionResult DeleteEncabezado(int id)
         {
             if (ModelState.IsValid)
@@ -143,8 +144,8 @@ namespace ProyectoWeb.Controllers
                 if (respuesta)
                 {
                     TempData["Notificacion"] = DatosFormato426.Mensaje;
-
-                    return RedirectToAction("List");
+                    ModelState.AddModelError("", DatosFormato426.Mensaje);
+                    return RedirectToRoute("List");
                 }
                 else
                 {
@@ -333,7 +334,5 @@ namespace ProyectoWeb.Controllers
             return Json(new SelectList(idCodigoCredito, "idCodigo", "Descripcion"), JsonRequestBehavior.AllowGet);
         }
     }
-
-
 
 }

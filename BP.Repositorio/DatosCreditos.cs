@@ -64,7 +64,7 @@ namespace BP.Repositorio
             }
         }
 
-        public static List<ProductoCreditoModel> Lista(int codigo)
+        public static List<ProductoCreditoModel> Lista(int? codigo)
         {
             try
             {

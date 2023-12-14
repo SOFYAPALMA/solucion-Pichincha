@@ -22,21 +22,24 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.idPropiedadesFormato)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CodigoCredito)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AperturaDigital)
-        </td>
-        <td>
-            @Html.ActionLink("Ver", "Details", new {  id=item.idPropiedadesFormato  })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idPropiedadesFormato)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoCredito)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AperturaDigital)
+            </td>
+            <td>
+                @Html.ActionLink("Ver", "Details", new { id = item.idPropiedadesFormato })
+            </td>
+
+
+        </tr>
+    }
 
 </table>

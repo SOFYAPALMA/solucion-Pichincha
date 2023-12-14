@@ -52,6 +52,7 @@ namespace ProyectoWeb.Controllers
                     ModelState.AddModelError("", "No se pudo crear el encabezado, por favor valide los datos.");
                     LlenadoListasEncabezado();
                     return View(form424);
+
                 }
 
             }

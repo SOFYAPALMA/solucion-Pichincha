@@ -96,50 +96,50 @@
     @Html.ActionLink("Volver", "List")
 </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-    <script>
-        $(document).ready(function () {
-            $("#idTipoAseguradora").change(function () {
-                $.get("/Formato425/LlenadoAseguradoras", { tipo: $("#idTipoAseguradora").val() }, function (data) {
-                    // VACIAMOS EL DropDownList
-                    $("#idCodigoAseguradora").empty();
-                    // AÑADIMOS UN NUEVO label CON EL NOMBRE DEL ELEMENTO SELECCIONADO
-                    $("#idCodigoAseguradora").append("<option value> Seleccione..</option>")
-                    // CONSTRUIMOS EL DropDownList A PARTIR DEL RESULTADO Json (data)
-                    $.each(data, function (index, row) {
-                        $("#idCodigoAseguradora").append("<option value='" + row.Value + "'>" + row.Text + "</option>")
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+            <script>
+                $(document).ready(function () {
+                    $("#idTipoAseguradora").change(function () {
+                        $.get("/Formato425/LlenadoAseguradoras", { tipo: $("#idTipoAseguradora").val() }, function (data) {
+                            // VACIAMOS EL DropDownList
+                            $("#idCodigoAseguradora").empty();
+                            // AÑADIMOS UN NUEVO label CON EL NOMBRE DEL ELEMENTO SELECCIONADO
+                            $("#idCodigoAseguradora").append("<option value> Seleccione..</option>")
+                            // CONSTRUIMOS EL DropDownList A PARTIR DEL RESULTADO Json (data)
+                            $.each(data, function (index, row) {
+                                $("#idCodigoAseguradora").append("<option value='" + row.Value + "'>" + row.Text + "</option>")
+                            });
+                        });
                     });
                 });
-            });
-        });
 
-        $('#idObservaciones').change(function () {
-            var value = $("#idObservaciones option:selected").text();
+                $('#idObservaciones').change(function () {
+                    var value = $("#idObservaciones option:selected").text();
 
-            if (value == '90 - Desactivación') {
-                $('#idCaracteristicaCredito').val("");
-                $('#idCaracteristicaCredito').prop("disabled", true);
+                    if (value == '90 - Desactivación') {
+                        $('#idCaracteristicaCredito').val("");
+                        $('#idCaracteristicaCredito').prop("disabled", true);
 
-                $('#CostoFijo').val("0");
-                $('#CostoFijo').prop("disabled", true);
+                        $('#CostoFijo').val("0");
+                        $('#CostoFijo').prop("disabled", true);
 
-                $('#Tasa').val("0");
-                $('#Tasa').prop("disabled", true);
+                        $('#Tasa').val("0");
+                        $('#Tasa').prop("disabled", true);
 
-                $('#idTipoAseguradora').val("");
-                $('#idTipoAseguradora').prop("disabled", true);
+                        $('#idTipoAseguradora').val("");
+                        $('#idTipoAseguradora').prop("disabled", true);
 
-                $('#idCodigoAseguradora').val("");
-                $('#idCodigoAseguradora').prop("disabled", true);
-            }
-            else {
-                $('#idCaracteristicaCredito').prop("disabled", false);
-                $('#CostoFijo').prop("disabled", false);
-                $('#Tasa').prop("disabled", false);
-                $('#idTipoAseguradora').prop("disabled", false);
-                $('#idCodigoAseguradora').prop("disabled", false);
-            }
-        });
-    </script>
-}
+                        $('#idCodigoAseguradora').val("");
+                        $('#idCodigoAseguradora').prop("disabled", true);
+                    }
+                    else {
+                        $('#idCaracteristicaCredito').prop("disabled", false);
+                        $('#CostoFijo').prop("disabled", false);
+                        $('#Tasa').prop("disabled", false);
+                        $('#idTipoAseguradora').prop("disabled", false);
+                        $('#idCodigoAseguradora').prop("disabled", false);
+                    }
+                });
+            </script>
+        }

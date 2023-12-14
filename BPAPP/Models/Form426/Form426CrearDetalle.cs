@@ -6,7 +6,6 @@ namespace ProyectoWeb.Models
     {
         public int idDetalle { get; set; }
 
-        [Required(ErrorMessage = "El campo  propiedades formato es obligatorio.")]
         [Display(Name = "Propiedades Formato")]
         public int idPropiedadesFormato { get; set; }
 
@@ -15,20 +14,18 @@ namespace ProyectoWeb.Models
 
         public string CaracteristicaCredito { get; set; }
 
-        [Required(ErrorMessage = "El campo caracteristica credito es obligatorio.")]
+        [Required(ErrorMessage = "El campo Caracteristica Credito es obligatorio.")]
         [Display(Name = "Caracteristica Credito")]
         public int idCaracteristicaCredito { get; set; }
 
         public int Costo { get; set; }
 
-        [Required(ErrorMessage = "El campo tasa es obligatorio.")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
         public decimal Tasa { get; set; }
 
         [Display(Name = "Tipo Aseguradora")]
         public string TipoAseguradora { get; set; }
 
-        [Required(ErrorMessage = "El campo tipo aseguradora es obligatorio.")]
         [Display(Name = "Tipo Aseguradora")]
         public int idTipoAseguradora { get; set; }
 
@@ -39,7 +36,6 @@ namespace ProyectoWeb.Models
         public int idCodigoAseguradora { get; set; }
         public string Observaciones { get; set; }
 
-        [Required(ErrorMessage = "El campo Observaciones es obligatorio.")]
         [Display(Name = "Observaciones")]
         public int idObservaciones { get; set; }
         public int UnidadCaptura { get; set; } = 1;

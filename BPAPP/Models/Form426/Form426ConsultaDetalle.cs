@@ -13,6 +13,7 @@ namespace ProyectoWeb.Models
         [Display(Name = "Subcuenta")]
         public string Subcuenta { get; set; } = "0";//Campo fijo por default= 0
 
+        [Required(ErrorMessage = "El campo Caracteristica Credito es obligatorio.")]
         [Display(Name = "Caracteristica Credito")]
         public string CaracteristicaCredito { get; set; }
         [Display(Name = "Caracteristica Credito")]
@@ -21,7 +22,6 @@ namespace ProyectoWeb.Models
         [Display(Name = "Costo")]
         public int Costo { get; set; }
 
-        [Required(ErrorMessage = "El campo tasa es obligatorio.")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
         [Display(Name = "Tasa")]
         public decimal Tasa { get; set; }
