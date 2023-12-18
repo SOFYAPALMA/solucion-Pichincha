@@ -632,7 +632,7 @@ namespace ProyectoWeb
                 Descripcion = obj.Descripcion,
                 idCodigo = obj.idCodigo,
                 Fecha = obj.Fecha,
-                Estado = obj.Estado == "0" ? "Inactivo" : "Activo"
+                Estado = obj.Estado == "1" ? "Inactivo" : "Activo"
             };
             return result;
         }
@@ -672,7 +672,7 @@ namespace ProyectoWeb
                 idDominio = obj.idDominio,
                 Descripcion = obj.Descripcion,
                 Fecha = obj.Fecha,
-                Estado = obj.Estado == "0" ? "Inactivo" : "Activo"
+                Estado = obj.Estado == "1" ? "Inactivo" : "Activo"
             };
             return result;
         }

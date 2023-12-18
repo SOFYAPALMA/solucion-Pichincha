@@ -18,7 +18,7 @@ namespace ProyectoWeb.Controllers
 
         public ActionResult CrearDetalle(int id)
         {
-            CrearTipoDominioDTO dominio = new CrearTipoDominioDTO();
+            DominioModel dominio = new DominioModel();
             dominio.idDominio = id;
             //LlenadoListasDetalle();
 
@@ -35,13 +35,12 @@ namespace ProyectoWeb.Controllers
 
                 int idusuario = int.Parse(Session["IdUsuario"].ToString());
 
-                CrearTipoDominioDTO encabezado = Mapper.getMapper(dominio);
-                encabezado.Usuario = idusuario;
-                bool respuesta = CrearTipoDominioDTO.RegistrarEncabezado(encabezado);
+                TipoDominioModel encabezado = Mapper.getMapper(dominio);
+                bool respuesta = DatosDominio.RegistrarEncabezado(encabezado);
 
                 if (respuesta)
                 {
-                    TempData["Notificacion"] = CrearTipoDominioDTO.Mensaje;
+                    TempData["Notificacion"] = DatosDominio.Mensaje;
 
                     return RedirectToAction("List");
                 }
@@ -59,34 +58,34 @@ namespace ProyectoWeb.Controllers
                 return View(dominio);
             }
         }
-        //[HttpPost]
-        //public ActionResult CrearDetalle(CrearDominioDTO dominio)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        CrearTipoDominioDTO encabezado = Mapper.getMapper(dominio);
+        [HttpPost]
+        public ActionResult CrearDetalle(CrearDominioDTO dominio)
+        {
+            if (ModelState.IsValid)
+            {
+                DominioModel encabezado = Mapper.getMapper(dominio);
 
-        //        bool respuesta = DatosDominio.RegistrarDetalle(encabezado);
+                bool respuesta = DatosDominio.RegistrarDetalle(encabezado);
 
-        //        if (respuesta)
-        //        {
-        //            TempData["Notificacion"] = DatosDominio.Mensaje;
+                if (respuesta)
+                {
+                    TempData["Notificacion"] = DatosDominio.Mensaje;
 
-        //            return RedirectToAction("Details/" + dominio.idPropiedadesFormato);
-        //        }
-        //        else
-        //        {
-        //            ModelState.AddModelError("", "No se pudo crear el detalle, por favor valide los datos.");
-        //            //LlenadoListasDetalle();
-        //            return View(dominio);
-        //        }
-        //    }
-        //    else
-        //    {
-        //        // LlenadoListasDetalle();
-        //        return View(dominio);
-        //    }
-        //}
+                    return RedirectToAction("Details/" + dominio.idDominio);
+                }
+                else
+                {
+                    ModelState.AddModelError("", "No se pudo crear el detalle, por favor valide los datos.");
+                    //LlenadoListasDetalle();
+                    return View(dominio);
+                }
+            }
+            else
+            {
+                // LlenadoListasDetalle();
+                return View(dominio);
+            }
+        }
 
         //public ActionResult Update(int id)
         //{
@@ -171,18 +170,18 @@ namespace ProyectoWeb.Controllers
         //    }
         //}
 
-        //public ActionResult Details(int id)
-        //{
-        //    TipoDominioModel encabezado = DatosDominio.DetalleTipoDominio(id);
-        //    ConsultaTipoDominioDTO td = Mapper.getMapper(encabezado);
+        public ActionResult Details(int id)
+        {
+            TipoDominioModel encabezado = DatosDominio.DetalleTipoDominio(id);
+            ConsultaTipoDominioDTO td = Mapper.getMapper(encabezado);
 
-        //    List<DominioModel> encabezados = DatosDominio.ListaDominios(id);
-        //    List<ConsultaDominioDTO> Detalles = Mapper.getMapper(encabezados);
+            List<DominioModel> encabezados = DatosDominio.ListaDominios(id);
+            List<ConsultaDominioDTO> Detalles = Mapper.getMapper(encabezados);
 
-        //    ViewBag.ListaDetalles = Detalles;
-        //    //LlenadoListasEncabezado();
-        //    return View(td);
-        //}
+            ViewBag.ListaDetalles = Detalles;
+            //LlenadoListasEncabezado();
+            return View(td);
+        }
 
         public ActionResult List()
         {
