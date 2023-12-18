@@ -29,6 +29,35 @@ namespace BP.Repositorio
         #endregion
         public static string Mensaje { get; private set; }
 
+        public static bool RegistrarEncabezado(TipoDominioModel obj)
+        {
+            Instanciar();
+            bool respuesta = false;
+
+            try
+            {
+                limpiarParametros();
+
+                AdicionarParametros("Descripcion", obj.Descripcion);
+
+
+                AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
+                AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
+
+                ejecutarScalar("bpapp.spInsertaTipoDominio");
+
+                respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
+                Mensaje = RecuperarParametrosOut("MensajeSalida");
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), Mensaje, Logs.Tipo.Log);
+            }
+            catch (Exception ex)
+            {
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
+                throw new Exception("Error en RegistrarEncabezado", ex);
+            }
+
+            return respuesta;
+        }
         public static List<DominioModel> Obtener(int TipoDominio)
         {
             try
