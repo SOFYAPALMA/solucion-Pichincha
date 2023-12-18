@@ -13,9 +13,11 @@ namespace ProyectoWeb.Models
         [Display(Name = "Subcuenta")]
         public string Subcuenta { get; set; } = "0";//Campo fijo por default= 0
 
-        [Required(ErrorMessage = "El campo Caracteristica Credito es obligatorio.")]
+
         [Display(Name = "Caracteristica Credito")]
         public string CaracteristicaCredito { get; set; }
+
+        [Required(ErrorMessage = "El campo Caracteristica Credito es obligatorio.")]
         [Display(Name = "Caracteristica Credito")]
         public int idCaracteristicaCredito { get; set; }
 
