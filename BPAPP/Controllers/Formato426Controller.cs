@@ -309,7 +309,7 @@ namespace ProyectoWeb.Controllers
         }
 
         [HttpGet]
-        public JsonResult LlenadoAseguradoras(int tipo)
+        public JsonResult LlenadoAseguradoras(int? tipo)
         {
             List<Aseguradoras> idCodigoAseguradora = DatosAseguradoras.Lista(tipo);
 
@@ -322,7 +322,7 @@ namespace ProyectoWeb.Controllers
         }
 
         [HttpGet]
-        public JsonResult LlenadoCreditos(int tipo)
+        public JsonResult LlenadoCreditos(int? tipo)
         {
             List<ProductoCreditoModel> idCodigoCredito = DatosCreditos.Lista(tipo);
 

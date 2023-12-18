@@ -44,11 +44,11 @@ namespace ProyectoWeb.Models
         public decimal? CostoProporcionMaxOperacionServicio { get; set; }
 
         [Display(Name = "Tasa")]
-        [RegularExpression(@"^\d+(\.\d{1,2})?$")]
+        [RegularExpression(@"^\d+(\.\d{1,4})?$")]
         public decimal? Tasa { get; set; }
 
         [Display(Name = "Tasa máxima")]
-        [RegularExpression(@"^\d+(\.\d{1,2})?$")]
+        [RegularExpression(@"^\d+(\.\d{1,4})?$")]
         public decimal? TasaMaxima { get; set; }
 
         [Display(Name = "Tipo de aseguradora")]

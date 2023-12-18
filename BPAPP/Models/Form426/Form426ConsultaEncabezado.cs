@@ -19,7 +19,7 @@ namespace ProyectoWeb.Models
         public string Nombre { get; set; }
 
         [Display(Name = "Producto Crédito")]
-        public int? TipoProductoCredito { get; set; }   
+        public int TipoProductoCredito { get; set; }   
         public string DTipoProductoCredito { get; set; }
 
         [Display(Name = "Código Crédito")]
@@ -32,7 +32,7 @@ namespace ProyectoWeb.Models
         public string AperturaDigital { get; set; }
 
         [Display(Name = "Apertura Digital")]
-        public int? idAperturaDigital { get; set; }
+        public int idAperturaDigital { get; set; }
         public string Fecha_horaActualizacion { get; set; }
         public string Usuario { get; set; }
         public string Estado { get; set; }

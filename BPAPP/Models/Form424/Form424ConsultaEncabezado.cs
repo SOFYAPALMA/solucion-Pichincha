@@ -16,7 +16,7 @@ namespace ProyectoWeb.Models
         public string CodigoRegistro { get; set; }
 
         [Display(Name = "Cuota Manejo")]
-        public int? CuotaManejo { get; set; }
+        public int CuotaManejo { get; set; }
         public int Estado { get; set; }
         public string Fecha_horaActualizacion { get; set; }
         public string Fechacorte { get; set; }
@@ -24,21 +24,21 @@ namespace ProyectoWeb.Models
 
         [Display(Name = "Grupo Poblacional")]
         public string GrupoPoblacional { get; set; }
-        public int? idAperturaDigital { get; set; }
-        public int? idGrupoPoblacional { get; set; }
-        public int? idIngresos { get; set; }
-        public int? idObservacionesCuota { get; set; }
+        public int idAperturaDigital { get; set; }
+        public int idGrupoPoblacional { get; set; }
+        public int idIngresos { get; set; }
+        public int idObservacionesCuota { get; set; }
 
         [Display(Name = "Registro")]
         public int idPropiedadesFormato { get; set; }
         public int? idPropiedadesFormatoAnterior { get; set; }
-        public int? idSerGratuito_CtaAHO { get; set; }
-        public int? idSerGratuito_CtaAHO2 { get; set; }
-        public int? idSerGratuito_CtaAHO3 { get; set; }
-        public int? idSerGratuito_TCRDebito { get; set; }
-        public int? idSerGratuito_TCRDebito2 { get; set; }
-        public int? idSerGratuito_TCRDebito3 { get; set; }
-        public int? idTipoProductoDeposito { get; set; }
+        public int idSerGratuito_CtaAHO { get; set; }
+        public int idSerGratuito_CtaAHO2 { get; set; }
+        public int idSerGratuito_CtaAHO3 { get; set; }
+        public int idSerGratuito_TCRDebito { get; set; }
+        public int idSerGratuito_TCRDebito2 { get; set; }
+        public int idSerGratuito_TCRDebito3 { get; set; }
+        public int idTipoProductoDeposito { get; set; }
 
         [Display(Name = "Ingresos")]
         public string Ingresos { get; set; }
@@ -47,7 +47,7 @@ namespace ProyectoWeb.Models
         public string Nombre { get; set; }
 
         [Display(Name = "Nombre Comercial")]
-        public int? idNombreComercial { get; set; }    
+        public int idNombreComercial { get; set; }    
         
         [Display(Name = "Nombre Comercial")]
         public string NombreComercial { get; set; }

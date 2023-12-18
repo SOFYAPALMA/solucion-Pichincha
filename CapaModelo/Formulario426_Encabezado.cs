@@ -6,12 +6,12 @@
         public string Tipo { get; set; }
         public string Codigo { get; set; }
         public string Nombre { get; set; }
-        public int? TipoProductoCredito { get; set; } 
+        public int TipoProductoCredito { get; set; } 
         public string DTipoProductoCredito { get; set; }
         public int? idCodigoCredito { get; set; } 
         public string CodigoCredito { get; set; }
         public string AperturaDigital { get; set; }
-        public int? idAperturaDigital { get; set; }
+        public int idAperturaDigital { get; set; }
         public string Fecha_horaActualizacion { get; set; }
         public string Usuario { get; set; }
         public string Estado { get; set; }

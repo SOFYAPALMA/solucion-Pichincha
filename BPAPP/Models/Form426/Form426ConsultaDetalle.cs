@@ -20,26 +20,26 @@ namespace ProyectoWeb.Models
         public int idCaracteristicaCredito { get; set; }
 
         [Display(Name = "Costo")]
-        public int Costo { get; set; }
+        public int? Costo { get; set; }
 
-        [RegularExpression(@"^\d+(\.\d{1,2})?$")]
+        [RegularExpression(@"^\d+(\.\d{1,4})?$")]
         [Display(Name = "Tasa")]
-        public decimal Tasa { get; set; }
+        public decimal? Tasa { get; set; }
 
         [Display(Name = "Tipo Aseguradora")]
         public string TipoAseguradora { get; set; }
         [Display(Name = "Tipo Aseguradora")]
-        public int idTipoAseguradora { get; set; }
+        public int? idTipoAseguradora { get; set; }
 
         [Display(Name = "Código Aseguradora")]
         public string CodigoAseguradora { get; set; }
         [Display(Name = "Código Aseguradora")]
-        public int idCodigoAseguradora { get; set; }
+        public int? idCodigoAseguradora { get; set; }
 
         [Display(Name = "Observaciones")]
         public string Observaciones { get; set; }
         [Display(Name = "Observaciones")]
-        public int idObservaciones { get; set; }
+        public int? idObservaciones { get; set; }
 
         [Display(Name = "Unidad Captura")]
         public int UnidadCaptura { get; set; } = 1;
