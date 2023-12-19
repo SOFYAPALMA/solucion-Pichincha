@@ -234,6 +234,9 @@
             <div class="row">
                 <div class="col-sm-12 float-right">
                     @Html.ActionLink("Editar", "Update/" + Model.idPropiedadesFormato, Model.idPropiedadesFormato, new { @class = "btn btn-primary btn-sm float-right" })
+                    <div>
+                        @Html.ActionLink("Volver", "List")
+                    </div>
                 </div>
             </div>
         </div>
@@ -243,11 +246,7 @@
             @Html.ActionLink("Nuevo Detalle", "CrearDetalle/" + Model.idPropiedadesFormato)
         </div>
     </div>
-    <br>
-    <div>
-        @Html.ActionLink("Volver", "List")
-    </div>
-    </br>
+
     <div class="card">
         <div class="card-header">
             Detalles

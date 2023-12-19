@@ -37,6 +37,7 @@
 </div>
 <p>
     @Html.ActionLink("Editar", "Update", new { id = Model.idDominio })
+    
 </p>
 
 <div class="card">
@@ -47,7 +48,6 @@
         @Html.Partial("ListDetalles", (List<ProyectoWeb.Models.ConsultaDominioDTO>)@ViewBag.ListaDetalles)
     </div>
 </div>
-
 <div>
     @Html.ActionLink("Volver", "List")
 </div>
