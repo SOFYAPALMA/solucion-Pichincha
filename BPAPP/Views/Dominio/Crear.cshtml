@@ -13,26 +13,16 @@
                     SUPERINTENDENCIA FINANCIERA DE COLOMBIA
                 </div>
                 <br>
-                <h3 style="text-align:center;">ENCABEZADO DE LOS DOMINIOS</h3>
+                <h3 style="text-align:center;">CREACION TIPO DOMINIOS</h3>
                 <br>
                 <div class="card-body">
                     @Html.AntiForgeryToken()
 
                     <div class="row">
-
-                        <div class="cool-sm-4">
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.idDominio, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.idDominio, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.idDominio, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </div>
                         <div class="col-sm-4">
                             <div class="form-group">
-                                @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
+                                @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "control-label" })
+                                <div>
                                     @Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control" } })
                                     @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
                                 </div>
@@ -40,26 +30,8 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
-                                @Html.LabelFor(model => model.Fecha, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.Fecha, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Fecha, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.Estado, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.Estado, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.Columna, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
+                                @Html.LabelFor(model => model.Columna, htmlAttributes: new { @class = "control-label" })
+                                <div>
                                     @Html.EditorFor(model => model.Columna, new { htmlAttributes = new { @class = "form-control" } })
                                     @Html.ValidationMessageFor(model => model.Columna, "", new { @class = "text-danger" })
                                 </div>

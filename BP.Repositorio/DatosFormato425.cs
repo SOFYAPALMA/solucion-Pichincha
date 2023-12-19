@@ -88,7 +88,7 @@ namespace BP.Repositorio
                 AdicionarParametros("@CostoFijo", obj.CostoFijo);
                 AdicionarParametros("@CostoFijoMaximo", obj.CostoFijoMaximo);
                 AdicionarParametros("@CostoProporcionOperacionServicio", obj.CostoProporcionOperacionServicio);
-                AdicionarParametros("@CostoProporcionMaxOperacionServicio", obj.CostoProporcionMaxOperacionServicio); 
+                AdicionarParametros("@CostoProporcionMaxOperacionServicio", obj.CostoProporcionMaxOperacionServicio);
                 AdicionarParametros("@Tasa", obj.Tasa);
                 AdicionarParametros("@TasaMaxima", obj.TasaMaxima);
                 AdicionarParametros("@idTipoAseguradora", obj.idTipoAseguradora);
@@ -113,7 +113,6 @@ namespace BP.Repositorio
 
             return respuesta;
         }
-
 
         public static bool ActualizarEncabezado(Formulario425_Encabezado obj)
         {

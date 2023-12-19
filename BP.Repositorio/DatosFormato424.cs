@@ -188,6 +188,7 @@ namespace BP.Repositorio
             catch (Exception ex)
             {
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
+                desconectar();
                 throw new Exception("Error en ActualizarDetalle", ex);
             }
 
