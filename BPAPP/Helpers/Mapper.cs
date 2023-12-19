@@ -615,14 +615,14 @@ namespace ProyectoWeb
 
             foreach (DominioModel consulta in obj)
             {
-                ConsultaDominioDTO encabezado = getMapper(consulta);
+                ConsultaDominioDTO encabezado = getMapper2(consulta);
                 result.Add(encabezado);
             }
 
             return result;
         }
 
-        public static ConsultaDominioDTO getMapper(DominioModel obj)
+        private static ConsultaDominioDTO getMapper2(DominioModel obj)
         {
             var result = new ConsultaDominioDTO()
             {
@@ -688,6 +688,23 @@ namespace ProyectoWeb
             };
             return result;
         }
+
+        public static CrearDominioDTO getMapper(DominioModel dto)
+        {
+            var result = new CrearDominioDTO()
+            {
+                Dominio = dto.Dominio,
+                idDominioGen = dto.idDominioGen,
+                idDominio = dto.idDominio,
+                Descripcion = dto.Descripcion,
+                idCodigo = dto.idCodigo,
+                Fecha = dto.Fecha,
+                Estado = dto.Estado
+            };
+            return result;
+        }
+
+
 
         #endregion
     }

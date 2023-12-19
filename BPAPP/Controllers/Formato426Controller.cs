@@ -139,7 +139,7 @@ namespace ProyectoWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                bool respuesta = DatosFormato426.EliminarEncabezado(id);
+                 bool respuesta = DatosFormato426.EliminarEncabezado(id);
 
                 if (respuesta)
                 {
@@ -282,7 +282,7 @@ namespace ProyectoWeb.Controllers
         /// 
         private void LlenadoListasDetalle()
         {
-            List<DominioModel> idCaracteristicaCredito = DatosDominio.Obtener(1);
+            List<DominioModel> idCaracteristicaCredito = DatosDominio.Obtener(15);
             List<Aseguradoras> idTipoAseguradora = DatosAseguradoras.Tipos();
             List<DominioModel> idObservaciones = DatosDominio.Obtener(14);
 

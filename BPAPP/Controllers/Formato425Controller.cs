@@ -252,7 +252,7 @@ namespace ProyectoWeb.Controllers
         private void LlenadoListasEncabezado()
         {
 
-            List<DominioModel> tipodeProductoDeposito = DatosDominio.Obtener(1);
+            List<DominioModel> tipodeProductoDeposito = DatosDominio.Obtener(12);
             List<DominioModel> NombreComercial = DatosDominio.Obtener(22);
             List<DominioModel> AperturaDigital = DatosDominio.Obtener(2);
             List<DominioModel> Franquicia = DatosDominio.Obtener(7);

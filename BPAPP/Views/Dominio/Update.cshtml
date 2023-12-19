@@ -1,20 +1,19 @@
-﻿@model ProyectoWeb.Models.CrearTipoDominioDTO
+﻿@model ProyectoWeb.Models.ConsultaTipoDominioDTO
 
 @{
-    ViewBag.Title = "Crear Formulario";
+    ViewBag.Title = "Actualizar tipo dominio";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <div class="row mt-4">
     <div class="col-sm-12">
         @using (Html.BeginForm())
         {
             <div class="card">
                 <div class="card-header">
-                    SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+                    TIPOS DE DOMINIO DEPOSITO
                 </div>
-                <br>
-                <h3 style="text-align:center;">CREACION TIPO DOMINIOS</h3>
-                <br>
+
                 <div class="card-body">
                     @Html.AntiForgeryToken()
 
@@ -28,6 +27,17 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Estado, htmlAttributes: new { @class = "control-label" })
+                                <div>
+                                    @Html.EditorFor(model => model.Estado, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
@@ -46,4 +56,3 @@
 <div>
     @Html.ActionLink("Volver", "List")
 </div>
-

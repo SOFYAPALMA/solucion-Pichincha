@@ -18,5 +18,6 @@ namespace ProyectoWeb.Models
         public string Fecha { get; set; }
         [Display(Name = "Estado")]
         public string Estado { get; set; }
+        public int Usuario { get; set; }
     }
 }

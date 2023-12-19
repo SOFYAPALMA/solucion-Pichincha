@@ -98,14 +98,14 @@ namespace ProyectoWeb.Controllers
 
         public ActionResult UpdateDetalle(int id)
         {
-            TipoDominioModel detalle = DatosDominio.DetalleTipoDominio(id);
-            ConsultaDominioDTO dominio = Mapper.getMapper(detalle);
+            DominioModel detalle = DatosDominio.DetalleDominio(id);
+            CrearDominioDTO dominio = Mapper.getMapper(detalle);
             //LlenadoListasDetalle();
             return View(dominio);
         }
 
         [HttpPost]
-        public ActionResult UpdateDetalle(CrearTipoDominioDTO detalle)
+        public ActionResult UpdateDetalle(CrearDominioDTO detalle)
         {
             if (ModelState.IsValid)
             {
@@ -142,13 +142,7 @@ namespace ProyectoWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (Session["IdUsuario"] == null)
-                    return RedirectToAction("Login");
-
-                int idusuario = int.Parse(Session["IdUsuario"].ToString());
-
-                DominioModel upd = Mapper.getMapper(encabezado);
-                upd.Usuario = idusuario;
+                TipoDominioModel upd = Mapper.getMapper(encabezado);
                 bool respuesta = DatosDominio.ActualizarEncabezado(upd);
 
                 if (respuesta)

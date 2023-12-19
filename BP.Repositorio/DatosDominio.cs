@@ -118,6 +118,41 @@ namespace BP.Repositorio
             return respuesta;
         }
 
+        public static DominioModel DetalleDominio(int id)
+        {
+            try
+            {
+                DominioModel rpt = new DominioModel();
+                limpiarParametros();
+                AdicionarParametros("@idDominio", id);
+                AdicionarParametros("@iddominiogen", id);
+                AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
+
+                DataTable dt = ejecutarStoreProcedure("bpapp.spConsultaDominios").Tables[0];
+
+                if (dt.Rows.Count > 0)
+                {
+                    var dictionary = new Dictionary<string, object>();
+                    foreach (DataColumn column in dt.Columns)
+                    {
+                        dictionary[column.ColumnName] = dt.Rows[0][column];
+                    }
+
+                    string serializedObject = JsonConvert.SerializeObject(dictionary, new DatetimeToStringConverter());
+                    Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), serializedObject, Logs.Tipo.Log);
+
+                    rpt = JsonConvert.DeserializeObject<DominioModel>(serializedObject);
+                }
+
+                return rpt;
+            }
+            catch (Exception ex)
+            {
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
+                throw new Exception("Error en Detalles", ex);
+            }
+        }
+
         public static bool ActualizarDetalle(DominioModel obj)
         {
             Instanciar();
@@ -154,7 +189,6 @@ namespace BP.Repositorio
                 TipoDominioModel rpt = new TipoDominioModel();
                 limpiarParametros();
                 AdicionarParametros("@idDominio", FormatoId);
-                AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
 
                 DataTable dt = ejecutarStoreProcedure("bpapp.spConsultaTiposDominios").Tables[0];
 
