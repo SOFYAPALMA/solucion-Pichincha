@@ -38,7 +38,7 @@ namespace ProyectoWeb.Models
         public string Estado { get; set; }
         public string Fechacorte { get; set; }
         public string FechaEstado { get; set; }
-        public int? CodigoRegistro { get; set; }
+        public string CodigoRegistro { get; set; }
         public int? idPropiedadesFormatoAnterior { get; set; }
     }
 }

@@ -34,6 +34,6 @@ namespace CapaModelo
         public int Estado { get; set; }
         public string Fechacorte { get; set; }
         public string FechaEstado { get; set; }
-        public int? CodigoRegistro { get; set; }
+        public string CodigoRegistro { get; set; }
     }
 }

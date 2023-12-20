@@ -8,7 +8,7 @@
         public int Estado { get; set; }
         public string FechaEstado { get; set; }
         public string FechaProceso { get; set; }
-        public int? idCanal { get; set; }
+        public int idCanal { get; set; }
         public string Canal { get; set; }
         public int idDetalle { get; set; }
         public int? idDetalleAnterior { get; set; }

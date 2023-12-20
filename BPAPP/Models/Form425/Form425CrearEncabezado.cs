@@ -84,7 +84,7 @@ namespace ProyectoWeb.Models
         public string FechaEstado { get; set; }
 
         [Display(Name = "Codigo Registro")]
-        public int CodigoRegistro { get; set; }
+        public string CodigoRegistro { get; set; }
 
         [Display(Name = "Fecha hora actualizacion")]
         public string Fecha_horaActualizacion { get; set; }

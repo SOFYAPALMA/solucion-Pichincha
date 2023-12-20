@@ -54,7 +54,7 @@ namespace ProyectoWeb.Models
         public DateTime FechaEstado { get; set; }
 
         [Display(Name = "Codigo Registro")]
-        public int CodigoRegistro { get; set; }
+        public string CodigoRegistro { get; set; }
         public int? idPropiedadesFormatoAnterior { get; set; }
 
     }

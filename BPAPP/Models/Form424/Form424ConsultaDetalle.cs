@@ -20,8 +20,9 @@ namespace ProyectoWeb.Models
         public int idOperacionServicio { get; set; }
         public string OperacionServicio { get; set; }
 
+        [Required(ErrorMessage = "El campo Canal es obligatorio.")]
         [Display(Name = "Canal")]
-        public int? idCanal { get; set; }
+        public int idCanal { get; set; }
         public string Canal { get; set; }
 
         [Display(Name = "Número de operaciones o servicios incluidos en cuota de manejo")]
