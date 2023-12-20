@@ -12,7 +12,7 @@ namespace ProyectoWeb.Models
         public string Fecha { get; set; }
 
         [Display(Name = "Estado")]
-        public string Estado { get; set; }
+        public bool Estado { get; set; }
         public string Columna { get; set; }
     }
 }

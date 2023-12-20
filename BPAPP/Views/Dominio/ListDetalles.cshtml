@@ -1,13 +1,8 @@
 ﻿@model IEnumerable<ProyectoWeb.Models.ConsultaDominioDTO>
 
-<p>
-    @Html.ActionLink("Nuevo", "CrearDetalle")
-</p>
+
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.idDominio)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.idDominioGen)
         </th>
@@ -23,19 +18,19 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Dominio)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.idDominioGen)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Descripcion)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Estado)
+        <td>            
+            <label class="container">
+                @Html.DisplayFor(modelItem => item.Estado)
+                <span class="checkmark"></span>
+            </label>
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new {  id=item.idDominioGen  }) 
+            @Html.ActionLink("Editar", "UpdateDetalle", new {  id=item.idDominioGen  }) 
         </td>
     </tr>
 }

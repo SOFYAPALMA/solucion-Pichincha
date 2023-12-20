@@ -2077,6 +2077,7 @@
     <Content Include="Views\Dominio\Crear.cshtml" />
     <Content Include="Views\Dominio\Update.cshtml" />
     <Content Include="Views\Dominio\UpdateDetalle.cshtml" />
+    <Content Include="Views\Dominio\CrearDetalle.cshtml" />
     <None Include="Web.R.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

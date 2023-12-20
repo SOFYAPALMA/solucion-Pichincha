@@ -37,8 +37,14 @@
 </div>
 <p>
     @Html.ActionLink("Editar", "Update", new { id = Model.idDominio })
-    
+
 </p>
+
+<div class="row">
+    <div class="col-sm-12 float-right">
+        @Html.ActionLink("Nuevo Detalle", "CrearDetalle/" + Model.idDominio)
+    </div>
+</div>
 
 <div class="card">
     <div class="card-header">

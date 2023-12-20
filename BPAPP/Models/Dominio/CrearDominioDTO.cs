@@ -8,6 +8,6 @@
         public string Descripcion { get; set; }
         public int idCodigo { get; set; }
         public string Fecha { get; set; }
-        public string Estado { get; set; }
+        public bool Estado { get; set; }
     }
 }

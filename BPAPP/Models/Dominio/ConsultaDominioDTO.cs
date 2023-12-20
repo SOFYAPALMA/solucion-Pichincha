@@ -16,8 +16,9 @@ namespace ProyectoWeb.Models
         public string Descripcion { get; set; }
         public int idCodigo { get; set; }
         public string Fecha { get; set; }
+
         [Display(Name = "Estado")]
-        public string Estado { get; set; }
+        public bool Estado { get; set; }
         public int Usuario { get; set; }
     }
 }

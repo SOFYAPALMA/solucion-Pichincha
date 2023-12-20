@@ -126,7 +126,6 @@ namespace BP.Repositorio
                 limpiarParametros();
                 AdicionarParametros("@idDominio", id);
                 AdicionarParametros("@iddominiogen", id);
-                AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
 
                 DataTable dt = ejecutarStoreProcedure("bpapp.spConsultaDominios").Tables[0];
 
