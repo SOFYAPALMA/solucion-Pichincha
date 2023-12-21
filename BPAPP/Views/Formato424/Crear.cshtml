@@ -165,3 +165,101 @@
     </div>
 </div>
 
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $('#idTipoProductoDeposito').change(function () {
+            var value = $("#idTipoProductoDeposito option:selected").text();
+
+            if (value == '5 - Cuentas de ahorro (totales)') {
+                $('#idTipoProductoDeposito').val("");
+                $('#idTipoProductoDeposito').prop("disabled", true);
+
+                $('#idAperturaDigital').val("");
+                $('#idAperturaDigital').prop("disabled", true);
+
+                $('#NumeroClientes').val("");
+                $('#NumeroClientes').prop("disabled", true);
+
+                $('#idGrupoPoblacional').val("");
+                $('#idGrupoPoblacional').prop("disabled", true);
+
+                $("#idObservacionesCuota").val('')
+                $('#idObservacionesCuota').prop("disabled", true);
+
+                $('#idIngresos').val("");
+                $('#idIngresos').prop("disabled", true);
+
+                $('#idSerGratuito_CtaAHO').val("");
+                $('#idSerGratuito_CtaAHO').prop("disabled", true);
+
+                $('#idSerGratuito_CtaAHO2').val("");
+                $('#idSerGratuito_CtaAHO2').prop("disabled", true);
+
+                $('#idSerGratuito_CtaAHO3').val("");
+                $('#idSerGratuito_CtaAHO3').prop("disabled", true);
+
+                $('#idSerGratuito_TCRDebito').val("");
+                $('#idSerGratuito_TCRDebito').prop("disabled", true);
+
+                $("#idSerGratuito_TCRDebito2").val("")
+                $('#idSerGratuito_TCRDebito2').prop("disabled", true);
+
+                $('#idSerGratuito_TCRDebito3').val("");
+                $('#idSerGratuito_TCRDebito3').prop("disabled", true);
+
+            }
+            else if (value == '1 - Costo fijo o proporcional  en dólares') {
+                var input = $('#CostoFijo');
+                var is_name = input.val();
+                //console.log(is_name);
+
+                if (is_name > 0) {
+                    input.removeClass("invalid").addClass("valid");
+                    $("#NotificacionesGenerales").after('<span class="text-danger field-validation-error"></span>');
+                    input.after('<span class="text-danger field-validation-error"></span>');
+                }
+                else {
+                    input.removeClass("valid").addClass("invalid");
+                    $("#NotificacionesGenerales").after('<span class="text-danger field-validation-error">El valor del campo costo fijo debe ser mayor a cero.</span>');
+                    input.after('<span class="text-danger field-validation-error">El valor del campo costo fijo debe ser mayor a cero.</span>');
+                }
+            }
+            else {
+                $('#idAperturaDigital').prop("disabled", false);
+                $('#NumeroClientes').prop("disabled", false);
+                $('#idGrupoPoblacional').prop("disabled", false);
+                $('#idObservacionesCuota').prop("disabled", false);
+                $('#idIngresos').prop("disabled", false);
+                $('#idSerGratuito_CtaAHO').prop("disabled", false);
+                $('#idSerGratuito_CtaAHO2').prop("disabled", false);
+                $('#idSerGratuito_CtaAHO3').prop("disabled", false);
+                $('#idSerGratuito_TCRDebito').prop("disabled", false);
+                $('#idSerGratuito_TCRDebito2').prop("disabled", false);
+                $('#idSerGratuito_TCRDebito3').prop("disabled", false);
+                
+            }
+        });
+
+
+        $('#NumOperServiciosCuotamanejo').change(function () {
+            var value = $("#NumOperServiciosCuotamanejo").val();
+            //console.log(value);
+            //console.log($("#NumOperServiciosCuotamanejo"));
+            if (value == '-1') {
+                //console.log(value);
+                $('#CostoFijo').val("0");
+                $('#CostoFijo').prop("disabled", true);
+
+                $('#CostoProporcionOperacionServicio').val("0");
+                $('#CostoProporcionOperacionServicio').prop("disabled", true);
+            }
+            else {
+                $('#CostoFijo').prop("disabled", false);
+                $('#CostoProporcionOperacionServicio').prop("disabled", false);
+            }
+
+
+        });
+    </script>
+}
