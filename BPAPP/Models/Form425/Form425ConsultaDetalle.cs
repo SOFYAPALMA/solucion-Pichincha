@@ -30,7 +30,7 @@ namespace ProyectoWeb.Models
 
         [Display(Name = "Costo Fijo")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
-        public decimal? CostoFijo { get; set; }
+        public decimal CostoFijo { get; set; }
 
         [Display(Name = "Costo fijo máximo")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
@@ -38,7 +38,7 @@ namespace ProyectoWeb.Models
 
         [Display(Name = "Costo proporcion a operación o servicio")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
-        public decimal? CostoProporcionOperacionServicio { get; set; }
+        public decimal CostoProporcionOperacionServicio { get; set; }
 
         [Display(Name = "Costo proporcional max a operación o servicio")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]

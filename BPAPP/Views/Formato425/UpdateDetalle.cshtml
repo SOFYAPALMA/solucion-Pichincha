@@ -172,6 +172,14 @@
 
         $('#idObservaciones').change(function () {
             var value = $("#idObservaciones option:selected").text();
+            var CostoFijo = $("#CostoFijo").val();
+            if (CostoFijo != '') {
+                $('#CostoProporcionOperacionServicio').val("0");
+                $('#CostoProporcionOperacionServicio').prop("disabled", true);
+            }
+            else {
+                $('#CostoProporcionOperacionServicio').prop("disabled", false);
+            }
 
             if (value == '90 - Desactivación') {
                 $('#idOperacionServicio').val("");

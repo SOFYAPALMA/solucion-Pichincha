@@ -256,7 +256,7 @@ namespace ProyectoWeb.Controllers
             List<DominioModel> NombreComercial = DatosDominio.Obtener(22);
             List<DominioModel> AperturaDigital = DatosDominio.Obtener(2);
             List<DominioModel> Franquicia = DatosDominio.Obtener(7);
-            List<DominioModel> observacionesCuotadeManejo = DatosDominio.Obtener(5);
+            List<DominioModel> observacionesCuotadeManejo = DatosDominio.Obtener(13);
             List<DominioModel> grupoPoblacional = DatosDominio.Obtener(3);
             List<DominioModel> idCupo = DatosDominio.Obtener(8);
             List<DominioModel> idServicioGratuito = DatosDominio.Obtener(9);

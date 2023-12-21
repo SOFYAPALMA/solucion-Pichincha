@@ -49,7 +49,7 @@
                                 </div>
                             </div>
                         </div>
-                          <div class="col-sm-4">
+                        <div class="col-sm-4">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.NumeroClientes, htmlAttributes: new { @class = "control-label" })
                                 <div class="col-md-10">
@@ -165,4 +165,66 @@
 
     </div>
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $('#idTipoProductoDeposito').change(function () {
+            var value = $("#idTipoProductoDeposito option:selected").val();
+           /* console.log(value);*/
+            if (value == '6' || value == '7') {
+                $('#idAperturaDigital').val("");
+                $('#idAperturaDigital').prop("disabled", true);
+
+                $('#NumeroClientes').val("");
+                $('#NumeroClientes').prop("disabled", true);
+
+                $('#idGrupoPoblacional').val("");
+                $('#idGrupoPoblacional').prop("disabled", true);
+
+                $("#idObservacionesCuota").val("")
+                $('#idObservacionesCuota').prop("disabled", true);
+
+                $('#idIngresos').val("");
+                $('#idIngresos').prop("disabled", true);
+
+                $('#idSerGratuito_CtaAHO').val("");
+                $('#idSerGratuito_CtaAHO').prop("disabled", true);
+
+                $('#idSerGratuito_CtaAHO2').val("");
+                $('#idSerGratuito_CtaAHO2').prop("disabled", true);
+
+                $('#idSerGratuito_CtaAHO3').val("");
+                $('#idSerGratuito_CtaAHO3').prop("disabled", true);
+
+                $('#idSerGratuito_TCRDebito').val("");
+                $('#idSerGratuito_TCRDebito').prop("disabled", true);
+
+                $("#idSerGratuito_TCRDebito2").val("")
+                $('#idSerGratuito_TCRDebito2').prop("disabled", true);
+
+                $('#idSerGratuito_TCRDebito3').val("");
+                $('#idSerGratuito_TCRDebito3').prop("disabled", true);
+            }
+
+            else {
+                $('#idAperturaDigital').prop("disabled", false);
+                $('#NumeroClientes').prop("disabled", false);
+                $('#idGrupoPoblacional').prop("disabled", false);
+                $('#idObservacionesCuota').prop("disabled", false);
+                $('#idIngresos').prop("disabled", false);
+                $('#idSerGratuito_CtaAHO').prop("disabled", false);
+                $('#idSerGratuito_CtaAHO2').prop("disabled", false);
+                $('#idSerGratuito_CtaAHO3').prop("disabled", false);
+                $('#idSerGratuito_TCRDebito').prop("disabled", false);
+                $('#idSerGratuito_TCRDebito2').prop("disabled", false);
+                $('#idSerGratuito_TCRDebito3').prop("disabled", false);
+
+            }
+        });
+
+
+    </script>
+}
+
 

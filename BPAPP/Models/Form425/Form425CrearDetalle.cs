@@ -16,16 +16,17 @@ namespace ProyectoWeb.Models
         [Display(Name = "Operacion o Servicio")]
         public int idOperacionoServicio { get; set; }
 
+        [Required(ErrorMessage = "El campo Canal es obligatorio.")]
+
         [Display(Name = "Canal")]
         public int idCanal { get; set; }
 
-        [Required(ErrorMessage = "El campo Canal es obligatorio.")]
         [Display(Name = "Canal")]
         public string Canal { get; set; }
 
         [Display(Name = "Costo Fijo")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
-        public decimal? CostoFijo { get; set; }
+        public decimal CostoFijo { get; set; }
 
         [Display(Name = "Costo Fijo Maximo")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
@@ -33,11 +34,11 @@ namespace ProyectoWeb.Models
 
         [Display(Name = "Costo proporcional a op o servicio")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
-        public decimal? CostoProporcionOperacionServicio { get; set; }
+        public decimal CostoProporcionOperacionServicio { get; set; }
 
         [Display(Name = "Costo maximo op servicio")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
-        public decimal? CostoProporcionMaxOperacionServicio { get; set; }
+        public int? CostoProporcionMaxOperacionServicio { get; set; }
 
         [Display(Name = "Tasa")]
         [RegularExpression(@"^\d+(\.\d{1,4})?$")]
