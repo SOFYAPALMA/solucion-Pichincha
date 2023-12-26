@@ -34,11 +34,11 @@ namespace ProyectoWeb.Models
 
         [Display(Name = "Costo fijo máximo")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
-        public decimal? CostoFijoMaximo { get; set; }
+        public decimal CostoFijoMaximo { get; set; }
 
         [Display(Name = "Costo proporcion a operación o servicio")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
-        public decimal CostoProporcionOperacionServicio { get; set; }
+        public decimal? CostoProporcionOperacionServicio { get; set; }
 
         [Display(Name = "Costo proporcional max a operación o servicio")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]

@@ -12,8 +12,8 @@ namespace CapaModelo
         public string Canal { get; set; }
         public int idCanal { get; set; }
         public decimal CostoFijo { get; set; }
-        public decimal? CostoFijoMaximo { get; set; }
-        public decimal CostoProporcionOperacionServicio { get; set; }
+        public decimal CostoFijoMaximo { get; set; }
+        public decimal? CostoProporcionOperacionServicio { get; set; }
         public decimal? CostoProporcionMaxOperacionServicio { get; set; }
         public decimal? Tasa { get; set; }
         public decimal? TasaMaxima { get; set; }

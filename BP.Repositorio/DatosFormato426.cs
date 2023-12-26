@@ -56,6 +56,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en RegistrarEncabezado", ex);
             }
@@ -92,6 +93,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en RegistrarEncabezadoDetalle", ex);
             }
@@ -127,6 +129,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en ActualizarEncabezado", ex);
             }
@@ -155,6 +158,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("No se puede eliminar el encabezado tiene detalle", ex);
             }
@@ -220,6 +224,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en ActualizarDetalle", ex);
             }
@@ -256,6 +261,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en ListaDetalles", ex);
             }
@@ -290,6 +296,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en Detalles", ex);
             }
@@ -330,6 +337,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en Detalles", ex);
             }
@@ -371,6 +379,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en ListaDetalles", ex);
             }

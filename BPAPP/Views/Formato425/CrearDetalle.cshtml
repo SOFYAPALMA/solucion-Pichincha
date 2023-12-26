@@ -249,11 +249,24 @@
             var CostoFijo = $("#CostoFijo").val();
 
             if (CostoFijo != '') {
-                $('#CostoProporcionOperacionServicio').val("0");
-                $('#CostoProporcionOperacionServicio').prop("disabled", true);
+                $('#CostoFijoMaximo').val("0");
+                $('#CostoFijoMaximo').prop("disabled", true);
             }
             else {
-                $('#CostoProporcionOperacionServicio').prop("disabled", false);
+                $('#CostoFijoMaximo').prop("disabled", false);
+            }
+            /*console.log(CostoFijo);*/
+        });
+
+        $('#CostoFijoMaximo').change(function () {
+            var CostoFijo = $("#CostoFijo").val();
+
+            if (CostoFijo != '') {
+                $('#CostoFijo').val("0");
+                $('#CostoFijo').prop("disabled", true);
+            }
+            else {
+                $('#CostoFijo').prop("disabled", false);
             }
             /*console.log(CostoFijo);*/
         });

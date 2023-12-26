@@ -53,6 +53,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 throw new Exception("Se presentaron problemas al conectar en el metodo nuevaConexion Revise los Valores, err " + ex.Message);
             }
         }

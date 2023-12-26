@@ -22,7 +22,7 @@ namespace ProyectoWeb.Models
         public int idCaracteristicaCredito { get; set; }
 
         [Display(Name = "Costo")]
-        public int? Costo { get; set; }
+        public int Costo { get; set; }
 
         [RegularExpression(@"^\d+(\.\d{1,4})?$")]
         [Display(Name = "Tasa")]
@@ -40,8 +40,9 @@ namespace ProyectoWeb.Models
 
         [Display(Name = "Observaciones")]
         public string Observaciones { get; set; }
+
         [Display(Name = "Observaciones")]
-        public int? idObservaciones { get; set; }
+        public int idObservaciones { get; set; }
 
         [Display(Name = "Unidad Captura")]
         public int UnidadCaptura { get; set; } = 1;

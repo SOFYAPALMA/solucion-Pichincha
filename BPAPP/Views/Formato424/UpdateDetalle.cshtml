@@ -161,6 +161,21 @@
                 $('#CostoProporcionOperacionServicio').prop("disabled", false);
             }
 
+        });
+
+            $('#CostoFijo').change(function () {
+                var CostoFijo = $("#CostoFijo").val();
+
+                if (CostoFijo != '') {
+                    $('#CostoProporcionOperacionServicio').val("0");
+                    $('#CostoProporcionOperacionServicio').prop("disabled", true);
+                }
+                else {
+                    $('#CostoProporcionOperacionServicio').prop("disabled", false);
+                }
+                /*console.log(CostoFijo);*/
+            });
+
 
         });
     </script>

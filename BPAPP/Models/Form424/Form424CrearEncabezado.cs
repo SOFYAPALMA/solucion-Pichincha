@@ -37,8 +37,7 @@ namespace ProyectoWeb.Models
         [Display(Name = "Cuota de Manejo")]
         public int CuotaManejo { get; set; } //Campo numérico de registro manual
 
-        [Required(ErrorMessage = "El campo Observaciones cuota de manejo es obligatorio.")]
-        [Display(Name = "Observaciones Cuota de Manejo")]
+              [Display(Name = "Observaciones Cuota de Manejo")]
         public int idObservacionesCuota { get; set; }
 
         [Required(ErrorMessage = "El campo grupo poblacional es obligatorio.")]
