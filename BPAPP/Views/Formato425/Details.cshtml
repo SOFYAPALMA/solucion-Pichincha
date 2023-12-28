@@ -9,11 +9,10 @@
 <div class="">
     <div class="card">
         <div class="card-header">
-            Formulario 425 (Tarjeta de credito)
+            Formulario 425 (Tarjeta de crédito)
         </div>
         <div class="card-body">
             <div class="row">
-
                 <div class="col-sm-4">
                     <div class="form-group">
                         <div>
@@ -193,7 +192,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
         <div class="card-footer">
@@ -206,19 +204,19 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12 float-right">
-            @Html.ActionLink("Nuevo Detalle", "CrearDetalle/" + Model.idPropiedadesFormato)
+        <div class="row">
+            <div class="col-sm-12 float-right">
+                @Html.ActionLink("Nuevo Detalle", "CrearDetalle/" + Model.idPropiedadesFormato)
+            </div>
         </div>
-    </div>
-    <div class="card">
-        <div class="card-header">
-            Detalles
-        </div>
-        <div class="card-body">
-            @Html.Partial("ListDetalles", (List<ProyectoWeb.Models.Form425ConsultaDetalle>)@ViewBag.ListaDetalles)
-            
+        <div class="card">
+            <div class="card-header">
+                Detalles
+            </div>
+            <div class="card-body">
+                @Html.Partial("ListDetalles", (List<ProyectoWeb.Models.Form425ConsultaDetalle>)@ViewBag.ListaDetalles)
+
+            </div>
         </div>
     </div>
 </div>

@@ -181,7 +181,7 @@
                 $('#CostoProporcionOperacionServicio').prop("disabled", false);
             }
 
-            if (value == '90 - Desactivación') {
+            if (value == '90 - Desactivacion') {
                 $('#idOperacionServicio').val("");
                 $('#idOperacionServicio').prop("disabled", true);
 
@@ -212,7 +212,7 @@
                 $('#idCodigoAseguradora').val("");
                 $('#idCodigoAseguradora').prop("disabled", true);
             }
-            else if (value == '1 - Costo fijo o proporcional  en dólares') {
+            else if (value == '1 - Costo fijo o proporcional  en dolares') {
                 var input = $('#CostoFijo');
                 var is_name = input.val();
 
@@ -256,33 +256,34 @@
 
             }
 
-            $('#CostoFijo').change(function () {
-                var CostoFijo = $("#CostoFijo").val();
-
-                if (CostoFijo != '') {
-                    $('#CostoProporcionOperacionServicio').val("0");
-                    $('#CostoProporcionOperacionServicio').prop("disabled", true);
-                }
-                else {
-                    $('#CostoProporcionOperacionServicio').prop("disabled", false);
-                }
-                /*console.log(CostoFijo);*/
-            });
-
-            $('#CostoFijoMaximo').change(function () {
-                var CostoFijo = $("#CostoFijo").val();
-
-                if (CostoFijo != '') {
-                    $('#CostoFijo').val("0");
-                    $('#CostoFijo').prop("disabled", true);
-                }
-                else {
-                    $('#CostoFijo').prop("disabled", false);
-                }
-                /*console.log(CostoFijo);*/
-            });
-
         });
+
+        $('#CostoFijo').change(function () {
+            var CostoFijo = $("#CostoFijo").val();
+
+            if (CostoFijo != '') {
+                $('#CostoFijoMaximo').val("0");
+                $('#CostoFijoMaximo').prop("disabled", true);
+            }
+            else {
+                $('#CostoFijoMaximo').prop("disabled", false);
+            }
+            /*console.log(CostoFijo);*/
+        });
+
+        $('#CostoFijoMaximo').change(function () {
+            var CostoFijomaximo = $("#CostoFijoMaximo").val();
+
+            if (CostoFijomaximo != '') {
+                $('#CostoFijo').val("0");
+                $('#CostoFijo').prop("disabled", true);
+            }
+            else {
+                $('#CostoFijo').prop("disabled", false);
+            }
+            /*console.log(CostoFijo);*/
+        });
+
     </script>
 }
 

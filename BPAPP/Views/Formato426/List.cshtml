@@ -5,41 +5,55 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<p>
-    @Html.ActionLink("Nuevo", "Crear")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.idPropiedadesFormato)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.idCodigoCredito)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.idAperturaDigital)
-        </th>
-        <th></th>
-    </tr>
+<div class="row mt-4">
+    <div class="col-sm-12">
+        @using (Html.BeginForm())
+        {
+            <div class="card">
+                <div class="card-header">
+                    <h4>
+                        Lista de registros formulario 426 (Créditos)
+                    </h4>
+                </div>
+                <p>
+                    @Html.ActionLink("Nuevo", "Crear")
+                </p>
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.idPropiedadesFormato)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.idCodigoCredito)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.idAperturaDigital)
+                        </th>
+                        <th></th>
+                    </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.idPropiedadesFormato)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CodigoCredito)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AperturaDigital)
-            </td>
-            <td>
-                @Html.ActionLink("Ver", "Details", new { id = item.idPropiedadesFormato })
-            </td>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.idPropiedadesFormato)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CodigoCredito)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AperturaDigital)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Ver", "Details", new { id = item.idPropiedadesFormato })
+                            </td>
 
 
-        </tr>
-    }
+                        </tr>
+                    }
 
-</table>
+                </table>
+            </div>
+        }
+    </div>
+</div>

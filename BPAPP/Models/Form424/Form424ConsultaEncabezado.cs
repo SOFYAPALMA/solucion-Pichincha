@@ -18,6 +18,7 @@ namespace ProyectoWeb.Models
         [Display(Name = "Cuota Manejo")]
         public int CuotaManejo { get; set; }
         public int Estado { get; set; }
+        [Display(Name = "Fecha")]
         public string Fecha_horaActualizacion { get; set; }
         public string Fechacorte { get; set; }
         public string FechaEstado { get; set; }
@@ -29,7 +30,7 @@ namespace ProyectoWeb.Models
         public int idIngresos { get; set; }
         public int idObservacionesCuota { get; set; }
 
-        [Display(Name = "Registro")]
+        [Display(Name = "Número Registro")]
         public int idPropiedadesFormato { get; set; }
         public int? idPropiedadesFormatoAnterior { get; set; }
         public int idSerGratuito_CtaAHO { get; set; }

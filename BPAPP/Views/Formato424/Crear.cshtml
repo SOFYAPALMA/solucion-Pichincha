@@ -11,11 +11,8 @@
         {
             <div class="card">
                 <div class="card-header">
-                    SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+                    Crear formulario 424 (Depósitos)
                 </div>
-                <br>
-                <h3 style="text-align:center;">TARIFAS DE LOS PRODUCTOS DE DEPÓSITO</h3>
-                <br>
                 <div class="card-body">
                     @Html.AntiForgeryToken()
 
@@ -161,7 +158,6 @@
                 </div>
             </div>
         }
-
     </div>
 </div>
 
@@ -170,7 +166,7 @@
     <script>
         $('#idTipoProductoDeposito').change(function () {
             var value = $("#idTipoProductoDeposito option:selected").val();
-           /* console.log(value);*/
+            /* console.log(value);*/
             if (value == '6' || value == '7') {
                 $('#idAperturaDigital').val("");
                 $('#idAperturaDigital').prop("disabled", true);
@@ -205,7 +201,7 @@
                 $('#idSerGratuito_TCRDebito3').val("");
                 $('#idSerGratuito_TCRDebito3').prop("disabled", true);
             }
-            
+
             else {
                 $('#idAperturaDigital').prop("disabled", false);
                 $('#NumeroClientes').prop("disabled", false);

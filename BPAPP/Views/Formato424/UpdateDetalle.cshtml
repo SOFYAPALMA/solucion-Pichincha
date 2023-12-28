@@ -103,7 +103,7 @@
         $('#idObservaciones').change(function () {
             var value = $("#idObservaciones option:selected").text();
 
-            if (value == '90 - Desactivación') {
+            if (value == '90 - Desactivacion') {
                 $('#idOperacionServicio').val("");
                 $('#idOperacionServicio').prop("disabled", true);
 
@@ -119,7 +119,7 @@
                 $('#CostoProporcionOperacionServicio').val("0");
                 $('#CostoProporcionOperacionServicio').prop("disabled", true);
             }
-            else if (value == '1 - Costo fijo o proporcional  en dólares') {
+            else if (value == '1 - Costo fijo o proporcional  en dolares') {
                 var input = $('#CostoFijo');
                 var is_name = input.val();
                 //console.log(is_name);
@@ -175,8 +175,19 @@
                 }
                 /*console.log(CostoFijo);*/
             });
+        $('#CostoProporcionOperacionServicio').change(function () {
+            var CostoProporcionOperacionServicio = $("#CostoProporcionOperacionServicio").val();
 
-
+            if (CostoProporcionOperacionServicio != '') {
+                $('#CostoFijo').val("0");
+                $('#CostoFijo').prop("disabled", true);
+            }
+            else {
+                $('#CostoFijo').prop("disabled", false);
+            }
+            /*console.log(CostoFijo);*/
         });
+
+
     </script>
 }
