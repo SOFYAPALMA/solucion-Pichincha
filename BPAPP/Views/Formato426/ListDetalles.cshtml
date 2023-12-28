@@ -3,9 +3,9 @@
 
 <table class="table">
     <tr>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.idDetalle)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Subcuenta)
         </th>
@@ -27,18 +27,18 @@
         <th>
             @Html.DisplayNameFor(model => model.Observaciones)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.UnidadCaptura)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
         <tr>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.idDetalle)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Subcuenta)
             </td>
@@ -60,9 +60,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Observaciones)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.UnidadCaptura)
-            </td>
+            </td>*@
             <td>
                 @Html.ActionLink("Editar", "UpdateDetalle", new { id = item.idDetalle })
             </td>

@@ -14,7 +14,6 @@
                     Actualizar encabezado 424 (Depósitos)
                 </div>
                 <div class="card-body">
-
                     @Html.AntiForgeryToken()
                 
                     <div class="row">
@@ -151,7 +150,7 @@
                         <div class="col-md-offset-2 col-md-12">
                             <input type="submit" value="Guardar" class="btn btn-primary btn-sm float-right" />
                             <div>
-                                @Html.ActionLink("Volver", "List")
+                                @Html.ActionLink("Volver", "Details", new { id = Model.idPropiedadesFormato })
                             </div>
                         </div>
                     </div>
