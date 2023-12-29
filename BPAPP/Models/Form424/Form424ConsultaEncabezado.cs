@@ -16,7 +16,7 @@ namespace ProyectoWeb.Models
         public string CodigoRegistro { get; set; }
 
         [Display(Name = "Cuota Manejo")]
-        public int CuotaManejo { get; set; }
+        public int? CuotaManejo { get; set; }
         public int Estado { get; set; }
         [Display(Name = "Fecha")]
         public string Fecha_horaActualizacion { get; set; }

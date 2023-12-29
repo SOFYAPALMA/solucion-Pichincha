@@ -18,7 +18,7 @@ namespace ProyectoWeb.Models
         [Display(Name = "Caracteristica Credito")]
         public int idCaracteristicaCredito { get; set; }
 
-        public int Costo { get; set; }
+        public int? Costo { get; set; }
 
         [RegularExpression(@"^\d+(\.\d{1,4})?$")]
         public decimal? Tasa { get; set; }

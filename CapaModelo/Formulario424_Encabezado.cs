@@ -8,7 +8,7 @@ namespace CapaModelo
         public string AperturaDigital { get; set; }
         public string Codigo { get; set; }
         public string CodigoRegistro { get; set; }
-        public int CuotaManejo { get; set; }
+        public int? CuotaManejo { get; set; }
         public int Estado { get; set; }
         public string Fecha_horaActualizacion { get; set; }
         public string Fechacorte { get; set; }

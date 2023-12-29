@@ -4,40 +4,54 @@
     ViewBag.Title = "Lista Dominios";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="row mt-4">
+    <div class="col-sm-12">
+        @using (Html.BeginForm())
+        {
+            <div class="card">
+                <div class="card-header">
+                    <h4>
+                        Lista de registros tipo dominio
+                    </h4>
+                </div>
 
-<p>
-    @Html.ActionLink("Nuevo", "Crear")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.idDominio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Estado)
-        </th>
-        <th></th>
-    </tr>
+                <p>
+                    @Html.ActionLink("Nuevo", "Crear")
+                </p>
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.idDominio)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Descripcion)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Estado)
+                        </th>
+                        <th></th>
+                    </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.idDominio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Estado)
-            </td>
-            <td>
-                @Html.ActionLink("Ver", "Details", new { id = item.idDominio })
-            </td>
-        </tr>
-    }
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.idDominio)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Descripcion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Estado)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Ver", "Details", new { id = item.idDominio })
+                            </td>
+                        </tr>
+                    }
 
-</table>
+                </table>
+            </div>
+        }
+    </div>
+</div>

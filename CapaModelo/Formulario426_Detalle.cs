@@ -9,7 +9,7 @@ namespace CapaModelo
         public string Subcuenta { get; set; }
         public string CaracteristicaCredito { get; set; }
         public int idCaracteristicaCredito { get; set; }
-        public int Costo { get; set; }
+        public int? Costo { get; set; }
         public decimal? Tasa { get; set; }
         public string TipoAseguradora { get; set; }
         public int? idTipoAseguradora { get; set; }

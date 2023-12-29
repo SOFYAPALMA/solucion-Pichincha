@@ -25,11 +25,11 @@ namespace ProyectoWeb.Models
         [Required(ErrorMessage = "El campo costo fijo es obligatorio.")]
         [Display(Name = "Costo Fijo")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
-        public decimal CostoFijo { get; set; }
+        public decimal? CostoFijo { get; set; }
 
         [Display(Name = "Costo Fijo Maximo")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
-        public decimal CostoFijoMaximo { get; set; }
+        public decimal? CostoFijoMaximo { get; set; }
 
         [Display(Name = "Costo proporcional a op o servicio")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
