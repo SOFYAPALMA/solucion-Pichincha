@@ -73,7 +73,7 @@ namespace ProyectoWeb.Models
 
         [Required(ErrorMessage = "El campo apertura digital es obligatorio.")]
         [Display(Name = "Apertura digital")]
-        public int idAperturaDigital { get; set; }
+        public int? idAperturaDigital { get; set; }
         public string CodigoRegistro { get; set; }
         public int Usuario { get; set; }
     }

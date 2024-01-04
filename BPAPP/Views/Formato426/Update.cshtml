@@ -15,6 +15,10 @@
             </div>
             <div class="card-body">
                 @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.idPropiedadesFormato)
+                @Html.HiddenFor(model => model.Nombre)
+                @Html.HiddenFor(model => model.Codigo)
+                @Html.HiddenFor(model => model.Tipo)
 
                 <div class="row">
                     <div class="col-sm-4">

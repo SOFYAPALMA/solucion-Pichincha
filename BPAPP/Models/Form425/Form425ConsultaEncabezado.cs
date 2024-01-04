@@ -9,13 +9,13 @@ namespace ProyectoWeb.Models
         public int idPropiedadesFormato { get; set; }
 
         [Display(Name = "Tipo Entidad")]
-        public string Tipo { get; set; }
-
+        public string Tipo { get; set; } = "001"; //Campo fijo por default= 001
+      
         [Display(Name = "Codigo")]
-        public string Codigo { get; set; }
+        public string Codigo { get; set; } = "00057"; //Campo fijo por default= 00057
 
-        [Display(Name = "Codigo")]
-        public string Nombre { get; set; }
+        [Display(Name = "Nombre")]
+        public string Nombre { get; set; } = "BCOPICHINCH"; //Campo fijo por default= BCOPICHINCH
 
         public string AperturaDigital { get; set; }
 

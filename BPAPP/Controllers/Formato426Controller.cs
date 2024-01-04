@@ -68,7 +68,7 @@ namespace ProyectoWeb.Controllers
             {
                 Formulario426_Detalle encabezado = Mapper.getMapper(form426);
 
-                bool respuesta = DatosFormato426.RegistrarEncabezadoDetalle(encabezado);
+                bool respuesta = DatosFormato426.RegistrarDetalle(encabezado);
 
                 if (respuesta)
                 {

@@ -14,7 +14,7 @@ namespace CapaModelo
         public string Fechacorte { get; set; }
         public string FechaEstado { get; set; }
         public string GrupoPoblacional { get; set; }
-        public int idAperturaDigital { get; set; }
+        public int? idAperturaDigital { get; set; }
         public int idGrupoPoblacional { get; set; }
         public int idIngresos { get; set; }
         public int idObservacionesCuota { get; set; }

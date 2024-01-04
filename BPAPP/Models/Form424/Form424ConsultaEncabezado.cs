@@ -12,7 +12,7 @@ namespace ProyectoWeb.Models
         public string AperturaDigital { get; set; }
 
         [Display(Name = "Codigo")]
-        public string Codigo { get; set; }
+        public string Codigo { get; set; } = "00057"; //Campo fijo por default= 00057
         public string CodigoRegistro { get; set; }
 
         [Display(Name = "Cuota Manejo")]
@@ -25,7 +25,7 @@ namespace ProyectoWeb.Models
 
         [Display(Name = "Grupo Poblacional")]
         public string GrupoPoblacional { get; set; }
-        public int idAperturaDigital { get; set; }
+        public int? idAperturaDigital { get; set; }
         public int idGrupoPoblacional { get; set; }
         public int idIngresos { get; set; }
         public int idObservacionesCuota { get; set; }
@@ -45,7 +45,7 @@ namespace ProyectoWeb.Models
         public string Ingresos { get; set; }
 
         [Display(Name = "Nombre Entidad")]
-        public string Nombre { get; set; }
+        public string Nombre { get; set; } = "BCOPICHINCH"; //Campo fijo por default= BCOPICHINCH
 
         [Display(Name = "Nombre Comercial")]
         public int idNombreComercial { get; set; }    
@@ -78,7 +78,7 @@ namespace ProyectoWeb.Models
         public string SerGratuito_TCRDebito3 { get; set; }
 
         [Display(Name = "Tipo Entidad")]
-        public string Tipo { get; set; }
+        public string Tipo { get; set; } = "001"; //Campo fijo por default= 001
 
         [Display(Name = "Tipo de Producto Deposito")]
         public string TipoProductoDeposito { get; set; }

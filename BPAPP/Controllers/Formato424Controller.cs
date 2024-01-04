@@ -164,6 +164,7 @@ namespace ProyectoWeb.Controllers
                 else
                 {
                     ModelState.AddModelError("", "No se pudo actualizar el encabezado, por favor valide los datos.");
+                    TempData["Notificacion"] = DatosFormato424.Mensaje;
                     LlenadoListasEncabezado();
                     return View(encabezado);
                 }

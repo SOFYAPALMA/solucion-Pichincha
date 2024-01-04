@@ -8,15 +8,15 @@ namespace ProyectoWeb.Models
         public int idPropiedadesFormato { get; set; }
 
         [Display(Name = "Tipo")]
-        public string Tipo { get; set; }
+        public string Tipo { get; set; } = "001"; //Campo fijo por default= 001
 
         [Display(Name = "Código")]
-        public string Codigo { get; set; }
+        public string Codigo { get; set; } = "00057"; //Campo fijo por default= 00057
 
         [Display(Name = "Nombre Entidad")]
         [StringLength(50)]
         [DataType(DataType.Text)]
-        public string Nombre { get; set; }
+        public string Nombre { get; set; } = "BCOPICHINCH"; //Campo fijo por default= BCOPICHINCH
 
         [Display(Name = "Producto Crédito")]
         public int TipoProductoCredito { get; set; }   
