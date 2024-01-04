@@ -14,7 +14,7 @@
         public int idAperturaDigital { get; set; }
         public string Fecha_horaActualizacion { get; set; }
         public string Usuario { get; set; }
-        public string Estado { get; set; }
+        public int Estado { get; set; }
         public string Fechacorte { get; set; }
         public string FechaEstado { get; set; }
         public string CodigoRegistro { get; set; }

@@ -27,6 +27,7 @@ namespace CapaModelo
         public int Estado { get; set; }
         public string FechaProceso { get; set; }
         public string FechaEstado { get; set; }
+        public string CodigoRegistro { get; set; }
 
     }
 }

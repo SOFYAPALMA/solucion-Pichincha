@@ -45,7 +45,7 @@ namespace ProyectoWeb.Models
         public string Usuario { get; set; }
 
         [Display(Name = "Estado")]
-        public string Estado { get; set; }
+        public int Estado { get; set; }
 
         [Display(Name = "Fecha corte")]
         public DateTime Fechacorte { get; set; }

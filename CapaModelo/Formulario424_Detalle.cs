@@ -2,7 +2,7 @@
 {
     public class Formulario424_Detalle
     {
-        public int? CodigoRegistro { get; set; }
+        public string CodigoRegistro { get; set; }
         public decimal? CostoFijo { get; set; }
         public decimal? CostoProporcionOperacionServicio { get; set; }
         public int Estado { get; set; }
