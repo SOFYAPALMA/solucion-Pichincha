@@ -62,9 +62,12 @@ namespace ProyectoWeb.Models
         [Display(Name = "Fecha Hora")]
         public string Fecha_horaActualizacion { get; set; }
         public int Usuario { get; set; }
-        public int Estado { get; set; }
+        public string Estado { get; set; }
+        [Display(Name = "Estado")]
+        public string DescripcionEstado { get; set; }
         public string Fechacorte { get; set; }
         public string FechaEstado { get; set; }
+        [Display(Name = "Registro SFC")]
         public string CodigoRegistro { get; set; }
 
         [Display(Name = "Nombre Comercial")]

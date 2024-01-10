@@ -19,7 +19,9 @@ namespace ProyectoWeb.Models
         public string Nombre { get; set; } = "BCOPICHINCH"; //Campo fijo por default= BCOPICHINCH
 
         [Display(Name = "Producto Crédito")]
-        public int TipoProductoCredito { get; set; }   
+        public int TipoProductoCredito { get; set; }
+
+        [Display(Name = "Producto")]
         public string DTipoProductoCredito { get; set; }
 
         [Display(Name = "Código Crédito")]
@@ -35,9 +37,13 @@ namespace ProyectoWeb.Models
         public int idAperturaDigital { get; set; }
         public string Fecha_horaActualizacion { get; set; }
         public string Usuario { get; set; }
-        public int Estado { get; set; }
+        public string Estado { get; set; }
+
+        [Display(Name = "Estado")]
+        public string DescripcionEstado { get; set; }
         public string Fechacorte { get; set; }
         public string FechaEstado { get; set; }
+        [Display(Name = "Registro SFC")]
         public string CodigoRegistro { get; set; }
         public int? idPropiedadesFormatoAnterior { get; set; }
     }

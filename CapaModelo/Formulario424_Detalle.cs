@@ -5,7 +5,8 @@
         public string CodigoRegistro { get; set; }
         public decimal? CostoFijo { get; set; }
         public decimal? CostoProporcionOperacionServicio { get; set; }
-        public int Estado { get; set; }
+        public string Estado { get; set; }
+        public string DescripcionEstado { get; set; }
         public string FechaEstado { get; set; }
         public string FechaProceso { get; set; }
         public int idCanal { get; set; }

@@ -8,11 +8,8 @@
         <th>
             @Html.DisplayNameFor(model => model.idOperacionServicio)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.idCanal)
-        </th>
         @*<th>
-            @Html.DisplayNameFor(model => model.NumOperServiciosCuotamanejo)
+            @Html.DisplayNameFor(model => model.idCanal)
         </th>*@
         <th>
             @Html.DisplayNameFor(model => model.CostoFijo)
@@ -21,7 +18,10 @@
             @Html.DisplayNameFor(model => model.CostoProporcionOperacionServicio)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Observaciones)
+            @Html.DisplayNameFor(model => model.DescripcionEstado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoRegistro)
         </th>
         <th></th>
     </tr>
@@ -34,11 +34,8 @@
         <td>
             @Html.DisplayFor(modelItem => item.OperacionServicio)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Canal)
-        </td>
         @*<td>
-            @Html.DisplayFor(modelItem => item.NumOperServiciosCuotamanejo)
+            @Html.DisplayFor(modelItem => item.Canal)
         </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.CostoFijo)
@@ -47,7 +44,10 @@
             @Html.DisplayFor(modelItem => item.CostoProporcionOperacionServicio)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Observaciones)
+            @Html.DisplayFor(modelItem => item.DescripcionEstado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoRegistro)
         </td>
         <td>
             @Html.ActionLink("Editar", "UpdateDetalle", new {  id=item.idDetalle })

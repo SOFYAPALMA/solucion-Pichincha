@@ -65,8 +65,13 @@ namespace ProyectoWeb.Models
 
         [Display(Name = "Unidad de captura")]
         public int UnidadCaptura { get; set; } = 1;
-        public int Estado { get; set; }
+        public string Estado { get; set; }
+        [Display(Name = "Estado")]
+        public string DescripcionEstado { get; set; }
         public string FechaProceso { get; set; }
         public string FechaEstado { get; set; }
+
+        [Display(Name = "Registro SFC")]
+        public string CodigoRegistro { get; set; }
     }
 }

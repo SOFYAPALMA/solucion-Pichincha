@@ -29,37 +29,49 @@
                         <th>
                             @Html.DisplayNameFor(model => model.TipoProductoDeposito)
                         </th>
-                        <th>
+                        @*<th>
                             @Html.DisplayNameFor(model => model.AperturaDigital)
+                        </th>*@
+                        <th>
+                            @Html.DisplayNameFor(model => model.DescripcionEstado)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CodigoRegistro)
                         </th>
                         @*<th>
-                                @Html.DisplayNameFor(model => model.Usuario)
-                            </th>*@
+            @Html.DisplayNameFor(model => model.Usuario)
+        </th>*@
                         <th></th>
                     </tr>
 
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.idPropiedadesFormato)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.NombreComercial)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.TipoProductoDeposito)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.AperturaDigital)
-                            </td>
-                            @*<td>
-                                    @Html.DisplayFor(modelItem => item.Usuario)
-                                </td>*@
-                            <td>
-                                @Html.ActionLink("Ver", "Details", new { id = item.idPropiedadesFormato })
-                            </td>
-                        </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.idPropiedadesFormato)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreComercial)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TipoProductoDeposito)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.AperturaDigital)
+                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DescripcionEstado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CodigoRegistro)
+                    </td>
+                    @*<td>
+            @Html.DisplayFor(modelItem => item.Usuario)
+        </td>*@
+                    <td>
+                        @Html.ActionLink("Ver", "Details", new { id = item.idPropiedadesFormato })
+                    </td>
+                </tr>
                     }
 
                 </table>

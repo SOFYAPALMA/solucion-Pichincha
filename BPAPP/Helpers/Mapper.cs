@@ -58,6 +58,7 @@ namespace ProyectoWeb
                 CodigoRegistro = obj.CodigoRegistro,
                 CuotaManejo = obj.CuotaManejo,
                 Estado = obj.Estado,
+                DescripcionEstado = obj.DescripcionEstado,
                 Fecha_horaActualizacion = obj.Fecha_horaActualizacion,
                 Fechacorte = obj.Fechacorte,
                 FechaEstado = obj.FechaEstado,
@@ -107,6 +108,7 @@ namespace ProyectoWeb
                 CodigoRegistro = dto.CodigoRegistro,
                 CuotaManejo = dto.CuotaManejo,
                 Estado = dto.Estado,
+                DescripcionEstado = dto.DescripcionEstado,
                 Fecha_horaActualizacion = dto.Fecha_horaActualizacion,
                 Fechacorte = dto.Fechacorte,
                 FechaEstado = dto.FechaEstado,
@@ -155,6 +157,8 @@ namespace ProyectoWeb
                 idObservaciones = obj.idObservaciones,
                 Observaciones = obj.Observaciones,
                 UnidadCaptura = obj.UnidadCaptura,
+                DescripcionEstado = obj.DescripcionEstado,
+                CodigoRegistro = obj.CodigoRegistro,
                 idOperacionServicio = obj.idOperacionServicio,
                 OperacionServicio = obj.OperacionServicio
             };
@@ -222,6 +226,7 @@ namespace ProyectoWeb
                 Fecha_horaActualizacion = dto.Fecha_horaActualizacion,
                 Usuario = dto.Usuario,
                 Estado = dto.Estado,
+                DescripcionEstado = dto.DescripcionEstado,
                 Fechacorte = dto.Fechacorte,
                 FechaEstado = dto.FechaEstado,
                 CodigoRegistro = dto.CodigoRegistro
@@ -273,6 +278,7 @@ namespace ProyectoWeb
                 Fecha_horaActualizacion = obj.Fecha_horaActualizacion,
                 Usuario = obj.Usuario,
                 Estado = obj.Estado,
+                DescripcionEstado = obj.DescripcionEstado,
                 Fechacorte = obj.Fechacorte,
                 FechaEstado = obj.FechaEstado,
                 CodigoRegistro = obj.CodigoRegistro,
@@ -312,6 +318,7 @@ namespace ProyectoWeb
                 Fecha_horaActualizacion = dto.Fecha_horaActualizacion,
                 Usuario = dto.Usuario,
                 Estado = dto.Estado,
+                DescripcionEstado = dto.DescripcionEstado,
                 Fechacorte = dto.Fechacorte,
                 FechaEstado = dto.FechaEstado,
                 CodigoRegistro = dto.CodigoRegistro
@@ -357,6 +364,7 @@ namespace ProyectoWeb
                 Observaciones = obj.Observaciones,
                 UnidadCaptura = obj.UnidadCaptura,
                 Estado = obj.Estado,
+                DescripcionEstado = obj.DescripcionEstado,
                 FechaProceso = obj.FechaProceso,
                 FechaEstado = obj.FechaEstado
             };
@@ -384,6 +392,7 @@ namespace ProyectoWeb
                 idObservaciones = dto.idObservaciones,
                 UnidadCaptura = dto.UnidadCaptura,
                 Estado = dto.Estado,
+                DescripcionEstado = dto.DescripcionEstado,
                 FechaProceso = dto.FechaProceso,
                 FechaEstado = dto.FechaEstado
             };
@@ -411,6 +420,7 @@ namespace ProyectoWeb
                 idObservaciones = dto.idObservaciones,
                 UnidadCaptura = dto.UnidadCaptura,
                 Estado = dto.Estado,
+                DescripcionEstado = dto.DescripcionEstado,
                 FechaProceso = dto.FechaProceso,
                 FechaEstado = dto.FechaEstado
             };
@@ -433,6 +443,7 @@ namespace ProyectoWeb
                 Fecha_horaActualizacion = dto.Fecha_horaActualizacion.ToString(),
                 Usuario = dto.Usuario,
                 Estado = dto.Estado,
+                DescripcionEstado = dto.DescripcionEstado,
                 Fechacorte = dto.Fechacorte.ToString(),
                 FechaEstado = dto.FechaEstado.ToString(),
                 CodigoRegistro = dto.CodigoRegistro,
@@ -472,6 +483,7 @@ namespace ProyectoWeb
                 Fecha_horaActualizacion = obj.Fecha_horaActualizacion,
                 Usuario = obj.Usuario,
                 Estado = obj.Estado,
+                DescripcionEstado = obj.DescripcionEstado,
                 Fechacorte = obj.Fechacorte,
                 FechaEstado = obj.FechaEstado,
                 CodigoRegistro = obj.CodigoRegistro,
@@ -496,6 +508,7 @@ namespace ProyectoWeb
                 Fecha_horaActualizacion = dto.Fecha_horaActualizacion,
                 Usuario = dto.Usuario,
                 Estado = dto.Estado,
+                DescripcionEstado = dto.DescripcionEstado,
                 Fechacorte = dto.Fechacorte,
                 FechaEstado = dto.FechaEstado,
                 CodigoRegistro = dto.CodigoRegistro,
@@ -536,6 +549,7 @@ namespace ProyectoWeb
                 idObservaciones = obj.idObservaciones,
                 UnidadCaptura = obj.UnidadCaptura,
                 Estado = obj.Estado,
+                DescripcionEstado = obj.DescripcionEstado,
                 FechaProceso = obj.FechaProceso,
                 FechaEstado = obj.FechaEstado,
                 CodigoRegistro = obj.CodigoRegistro,
@@ -559,6 +573,7 @@ namespace ProyectoWeb
                 idObservaciones = dto.idObservaciones,
                 UnidadCaptura = dto.UnidadCaptura,
                 Estado = dto.Estado,
+                DescripcionEstado = dto.DescripcionEstado,
                 FechaProceso = dto.FechaProceso,
                 FechaEstado = dto.FechaEstado,
                 CodigoRegistro = dto.CodigoRegistro,
@@ -582,6 +597,7 @@ namespace ProyectoWeb
                 idObservaciones = dto.idObservaciones,
                 UnidadCaptura = dto.UnidadCaptura,
                 Estado = dto.Estado,
+                DescripcionEstado = dto.DescripcionEstado,
                 FechaProceso = dto.FechaProceso,
                 FechaEstado = dto.FechaEstado,
                 CodigoRegistro = dto.CodigoRegistro,

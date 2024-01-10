@@ -25,9 +25,9 @@
                         <th>
                             @Html.DisplayNameFor(model => model.idNombreComercial)
                         </th>
-                        <th>
+                        @*<th>
                             @Html.DisplayNameFor(model => model.idAperturaDigital)
-                        </th>
+                        </th>*@
                         @*<th>
                             @Html.DisplayNameFor(model => model.NumeroClientes)
                         </th>*@
@@ -37,26 +37,26 @@
                         @*<th>
                             @Html.DisplayNameFor(model => model.CuotaManejo)
                         </th>*@
-                        <th>
+                        @*<th>
                             @Html.DisplayNameFor(model => model.idObservacionesCuota)
-                        </th>
+                        </th>*@
                         @*<th>
                             @Html.DisplayNameFor(model => model.CuotaManejoMaxima)
                         </th>*@
                         <th>
                             @Html.DisplayNameFor(model => model.idGrupoPoblacional)
                         </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.idCupo)
-                        </th>
                         @*<th>
-                            @Html.DisplayNameFor(model => model.idServicioGratuito_1)
+                            @Html.DisplayNameFor(model => model.idCupo)
+                        </th>*@
+                        <th>
+                            @Html.DisplayNameFor(model => model.DescripcionEstado)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.idServicioGratuito_2)
+                            @Html.DisplayNameFor(model => model.CodigoRegistro)
                         </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.idServicioGratuito_3)
+                         @*<th>
+                           @Html.DisplayNameFor(model => model.idServicioGratuito_3)
                         </th>*@
                         <th></th>
                     </tr>
@@ -70,9 +70,9 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.NombreComercial)
                     </td>
-                    <td>
+                    @*<td>
                         @Html.DisplayFor(modelItem => item.AperturaDigital)
-                    </td>
+                    </td>*@
                     @*<td>
                         @Html.DisplayFor(modelItem => item.NumeroClientes)
                     </td>*@
@@ -82,25 +82,25 @@
                     @*<td>
                         @Html.DisplayFor(modelItem => item.CuotaManejo)
                     </td>*@
-                    <td>
+                    @*<td>
                         @Html.DisplayFor(modelItem => item.ObservacionesCuota)
-                    </td>
+                    </td>*@
                     @*<td>
                         @Html.DisplayFor(modelItem => item.CuotaManejoMaxima)
                     </td>*@
                     <td>
                         @Html.DisplayFor(modelItem => item.GrupoPoblacional)
                     </td>
-                    <td>
+                    @*<td>
                         @Html.DisplayFor(modelItem => item.Cupo)
+                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DescripcionEstado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CodigoRegistro)
                     </td>
                     @*<td>
-                        @Html.DisplayFor(modelItem => item.ServicioGratuito_1)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ServicioGratuito_2)
-                    </td>
-                    <td>
                         @Html.DisplayFor(modelItem => item.ServicioGratuito_3)
                     </td>*@
                     <td>

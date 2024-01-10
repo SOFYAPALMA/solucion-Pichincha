@@ -18,7 +18,8 @@ namespace CapaModelo
         public string Observaciones { get; set; }
         public int? idObservaciones { get; set; }
         public int UnidadCaptura { get; set; } = 1;
-        public int Estado { get; set; }
+        public string Estado { get; set; }
+        public string DescripcionEstado { get; set; }
         public string FechaProceso { get; set; }
         public string FechaEstado { get; set; }
         public string CodigoRegistro { get; set; }

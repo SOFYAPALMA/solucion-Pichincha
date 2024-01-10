@@ -35,7 +35,7 @@ namespace ProyectoWeb.Models
 
         [Display(Name = "Código Aseguradora")]
         public string CodigoAseguradora { get; set; }
-        [Display(Name = "Código Aseguradora")]
+        //[Display(Name = "Código Aseguradora")]
         public int? idCodigoAseguradora { get; set; }
 
         [Display(Name = "Observaciones")]
@@ -44,11 +44,14 @@ namespace ProyectoWeb.Models
         [Display(Name = "Observaciones")]
         public int? idObservaciones { get; set; }
 
-        [Display(Name = "Unidad Captura")]
+        //[Display(Name = "Unidad Captura")]
         public int UnidadCaptura { get; set; } = 1;
-        public int Estado { get; set; }
+        public string Estado { get; set; }
+        [Display(Name = "Estado")]
+        public string DescripcionEstado { get; set; }
         public string FechaProceso { get; set; }
         public string FechaEstado { get; set; }
+        [Display(Name = "Registro SFC")]
         public string CodigoRegistro { get; set; }
         public int? idDetalleAnterior { get; set; }
 

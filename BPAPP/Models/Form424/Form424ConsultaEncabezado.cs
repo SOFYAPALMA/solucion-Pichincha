@@ -13,11 +13,17 @@ namespace ProyectoWeb.Models
 
         [Display(Name = "Codigo")]
         public string Codigo { get; set; } = "00057"; //Campo fijo por default= 00057
+
+        [Display(Name = "Registro SFC")]
         public string CodigoRegistro { get; set; }
 
         [Display(Name = "Cuota Manejo")]
         public int? CuotaManejo { get; set; }
-        public int Estado { get; set; }
+        public string Estado { get; set; }
+
+        [Display(Name = "Estado")]
+        public string DescripcionEstado { get; set; }
+
         [Display(Name = "Fecha")]
         public string Fecha_horaActualizacion { get; set; }
         public string Fechacorte { get; set; }
@@ -48,8 +54,8 @@ namespace ProyectoWeb.Models
         public string Nombre { get; set; } = "BCOPICHINCH"; //Campo fijo por default= BCOPICHINCH
 
         [Display(Name = "Nombre Comercial")]
-        public int idNombreComercial { get; set; }    
-        
+        public int idNombreComercial { get; set; }
+
         [Display(Name = "Nombre Comercial")]
         public string NombreComercial { get; set; }
 

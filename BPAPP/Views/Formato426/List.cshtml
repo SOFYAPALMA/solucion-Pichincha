@@ -24,10 +24,13 @@
                             @Html.DisplayNameFor(model => model.idPropiedadesFormato)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.idCodigoCredito)
+                            @Html.DisplayNameFor(model => model.DTipoProductoCredito)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.idAperturaDigital)
+                            @Html.DisplayNameFor(model => model.DescripcionEstado)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CodigoRegistro)
                         </th>
                         <th></th>
                     </tr>
@@ -39,10 +42,13 @@
                                 @Html.DisplayFor(modelItem => item.idPropiedadesFormato)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.CodigoCredito)
+                                @Html.DisplayFor(modelItem => item.DTipoProductoCredito)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.AperturaDigital)
+                                @Html.DisplayFor(modelItem => item.DescripcionEstado)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CodigoRegistro)
                             </td>
                             <td>
                                 @Html.ActionLink("Ver", "Details", new { id = item.idPropiedadesFormato })

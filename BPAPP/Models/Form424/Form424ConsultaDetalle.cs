@@ -9,10 +9,10 @@ namespace ProyectoWeb.Models
         [Display(Name = "Nombre Comercial")]
         public int idNombreComercial { get; set; }
 
-        [Display(Name = "Registro")]
+        //[Display(Name = "Registro")]
         public int idPropiedadesFormato { get; set; }
 
-        [Display(Name = "Subcuentas")]
+        [Display(Name = "Subcuenta")]
         public string Subcuenta { get; set; } = "0";//Campo fijo por default= 0
 
         [Required(ErrorMessage = "El campo operacion o servicio es obligatorio.")]
@@ -32,7 +32,6 @@ namespace ProyectoWeb.Models
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
         public decimal? CostoFijo { get; set; }
 
-
         [Display(Name = "Costo proporcional a operación o servicio")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
         public decimal? CostoProporcionOperacionServicio { get; set; }
@@ -43,5 +42,11 @@ namespace ProyectoWeb.Models
 
         [Display(Name = "Unidad captura")]
         public int UnidadCaptura { get; set; } = 1;
+
+        [Display(Name = "Estado")]
+        public string DescripcionEstado { get; set; }
+
+        [Display(Name = "Registro SFC")]
+        public string CodigoRegistro { get; set; }
     }
 }

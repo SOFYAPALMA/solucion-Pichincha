@@ -58,7 +58,8 @@ namespace ProyectoWeb.Models
 
         [Display(Name = "Nombre Comercial")]
         public int idNombreComercial { get; set; }
-        public int Estado { get; set; }
+        public string Estado { get; set; }
+        public string DescripcionEstado { get; set; }
         public string FechaProceso { get; set; }
         public string FechaEstado { get; set; }
 

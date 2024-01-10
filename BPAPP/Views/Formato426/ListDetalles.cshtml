@@ -18,14 +18,14 @@
         <th>
             @Html.DisplayNameFor(model => model.Tasa)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.TipoAseguradora)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.DescripcionEstado)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CodigoAseguradora)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Observaciones)
+            @Html.DisplayNameFor(model => model.CodigoRegistro)
         </th>
         @*<th>
             @Html.DisplayNameFor(model => model.UnidadCaptura)
@@ -51,14 +51,14 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Tasa)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.TipoAseguradora)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.DescripcionEstado)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CodigoAseguradora)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Observaciones)
+                @Html.DisplayFor(modelItem => item.CodigoRegistro)
             </td>
             @*<td>
                 @Html.DisplayFor(modelItem => item.UnidadCaptura)
