@@ -16,20 +16,20 @@
             @Html.DisplayNameFor(model => model.Costo)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Tasa)
-        </th>
-        @*<th>
             @Html.DisplayNameFor(model => model.TipoAseguradora)
-        </th>*@
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idCodigoAseguradora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Observaciones)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.DescripcionEstado)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CodigoRegistro)
         </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.UnidadCaptura)
-        </th>*@
         <th></th>
     </tr>
 
@@ -49,20 +49,20 @@
                 @Html.DisplayFor(modelItem => item.Costo)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Tasa)
-            </td>
-            @*<td>
                 @Html.DisplayFor(modelItem => item.TipoAseguradora)
-            </td>*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoAseguradora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observaciones)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DescripcionEstado)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CodigoRegistro)
             </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.UnidadCaptura)
-            </td>*@
             <td>
                 @Html.ActionLink("Editar", "UpdateDetalle", new { id = item.idDetalle })
             </td>

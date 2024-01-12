@@ -72,8 +72,7 @@ namespace ProyectoWeb.Models
 
         [Display(Name = "Usuario")]
         public int Usuario { get; set; }
-
-        [Required(ErrorMessage = "El campo estado es obligatorio.")]
+     
         [Display(Name = "Estado")]
         public string Estado { get; set; }
         public string DescripcionEstado { get; set; }

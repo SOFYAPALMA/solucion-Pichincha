@@ -71,7 +71,6 @@ namespace ProyectoWeb.Models
         [Display(Name = "Servicio Gratuito Tarjeta Debito3")]
         public int idSerGratuito_TCRDebito3 { get; set; }
 
-        [Required(ErrorMessage = "El campo apertura digital es obligatorio.")]
         [Display(Name = "Apertura digital")]
         public int? idAperturaDigital { get; set; }
         public string CodigoRegistro { get; set; }

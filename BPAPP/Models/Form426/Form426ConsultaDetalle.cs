@@ -33,9 +33,9 @@ namespace ProyectoWeb.Models
         [Display(Name = "Tipo Aseguradora")]
         public int? idTipoAseguradora { get; set; }
 
-        [Display(Name = "Código Aseguradora")]
-        public string CodigoAseguradora { get; set; }
         //[Display(Name = "Código Aseguradora")]
+        public string CodigoAseguradora { get; set; }
+        [Display(Name = "Código Aseguradora")]
         public int? idCodigoAseguradora { get; set; }
 
         [Display(Name = "Observaciones")]

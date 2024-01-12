@@ -125,7 +125,7 @@ namespace ProyectoWeb.Controllers
                 {
                     TempData["Notificacion"] = DatosFormato424.Mensaje;
 
-                    return RedirectToAction("List");
+                    return RedirectToAction("Details");
                 }
                 else
                 {
