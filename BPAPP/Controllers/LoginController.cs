@@ -1,8 +1,7 @@
 ﻿using CapaDatos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using Comun.DA;
+using Comun.DA1;
+using System.Configuration;
 using System.Web.Mvc;
 using System.Web.Security;
 
@@ -34,5 +33,57 @@ namespace ProyectoWeb.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [HttpPost]
+        public ActionResult DA1(string usuario, string contrasenia) {
+
+            ADSettings DAConfig = new ADSettings()
+            {
+                Server = ConfigurationManager.AppSettings["ActiveDirectory:Server"] ?? "",
+                AllowADAuth = bool.Parse(ConfigurationManager.AppSettings["ActiveDirectory:AllowADAuth"] ?? "false"),
+                Domain = ConfigurationManager.AppSettings["ActiveDirectory:Domain"] ?? ""
+            };
+
+            ADManagment aD = new ADManagment(DAConfig);
+
+            bool ret = aD.IsValidUser(usuario, contrasenia);
+
+            if (!ret)
+            {
+                FormsAuthentication.SetAuthCookie(usuario, false);
+                ViewBag.Error = "Usuario o contraseña no correcta";
+                //User.Identity
+                return View();
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
+
+
+        [HttpPost]
+        public ActionResult DA2(string usuario, string contrasenia)
+        {
+
+            ADSettings DAConfig = new ADSettings()
+            {
+                Server = ConfigurationManager.AppSettings["ActiveDirectory:Server"] ?? "",
+                AllowADAuth = bool.Parse(ConfigurationManager.AppSettings["ActiveDirectory:AllowADAuth"] ?? "false"),
+                Domain = ConfigurationManager.AppSettings["ActiveDirectory:Domain"] ?? "",
+                Path = ConfigurationManager.AppSettings["ActiveDirectory:Path"] ?? ""
+            };
+
+            ActiveDirectory aD = new ActiveDirectory(DAConfig);
+
+            bool ret = aD.ValidacionUsuario(usuario, contrasenia);
+
+            if (!ret)
+            {
+                FormsAuthentication.SetAuthCookie(usuario, false);
+                ViewBag.Error = "Usuario o contraseña no correcta";
+                //User.Identity
+                return View();
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

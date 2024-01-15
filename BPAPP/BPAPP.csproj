@@ -2109,6 +2109,10 @@
       <Project>{1d419d2f-85df-4007-87e3-1e096682e487}</Project>
       <Name>CapaModelo</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Comun\Comun.csproj">
+      <Project>{5323A7DC-A728-48BC-AB15-5DD0EE99342B}</Project>
+      <Name>Comun</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
