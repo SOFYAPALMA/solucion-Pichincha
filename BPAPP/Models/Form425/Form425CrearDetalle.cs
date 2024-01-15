@@ -22,7 +22,7 @@ namespace ProyectoWeb.Models
         [Display(Name = "Canal")]
         public string Canal { get; set; }
 
-        [Required(ErrorMessage = "El campo costo fijo es obligatorio.")]
+        //[Required(ErrorMessage = "El campo costo fijo es obligatorio.")]
         [Display(Name = "Costo Fijo")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
         public decimal? CostoFijo { get; set; }

@@ -1,5 +1,4 @@
 ﻿using BP.Repositorio;
-using CapaDatos;
 using CapaModelo;
 using ProyectoWeb.Models;
 using System.Collections.Generic;
