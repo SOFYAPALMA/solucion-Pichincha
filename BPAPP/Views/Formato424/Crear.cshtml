@@ -218,6 +218,64 @@
             }
         });
 
+        $('#CuotaManejo').change(function () {
+            ValidarCuotaManejo();
+        });
+
+        $('#idSerGratuito_CtaAHO').change(function () {
+            ValidarCuotaManejo();
+        });
+
+        $('#idSerGratuito_CtaAHO2').change(function () {
+            ValidarCuotaManejo();
+        });
+
+        $('#idSerGratuito_CtaAHO3').change(function () {
+            ValidarCuotaManejo();
+        });
+
+        function ValidarCuotaManejo() {
+            var value = $("#CuotaManejo").val();
+
+            console.log(value);
+
+            if (value > 0 && value != '') {
+                var value0 = $("#idSerGratuito_CtaAHO option:selected").val();
+                var value1 = $("#idSerGratuito_CtaAHO2 option:selected").val();
+                var value2 = $("#idSerGratuito_CtaAHO3 option:selected").val();
+
+                console.log(value0);
+                console.log(value1);
+                console.log(value2);
+
+                if (value0 == '53' || value0 == '55' || value0 == '56' || value0 == '57') {
+
+                }
+                else {
+                    alert('No permitido 0');
+                }
+
+                if (value1 == '53' || value1 == '55' || value1 == '56' || value1 == '57') {
+
+                }
+                else {
+                    alert('No permitido 1');
+                }
+                if (value2 == '53' || value2 == '55' || value2 == '56' || value2 == '57') {
+
+                }
+                else {
+                    alert('No permitido 1');
+                }
+            }
+            else {
+                $('#idSerGratuito_CtaAHO').val("");
+
+                $('#idSerGratuito_CtaAHO2').val("");
+
+                $('#idSerGratuito_CtaAHO3').val("");
+            }
+        }
 
     </script>
 }

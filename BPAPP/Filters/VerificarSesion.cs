@@ -12,6 +12,7 @@ namespace ProyectoWeb.Filters
         private int? IdUsuario;
 
         public override void OnActionExecuting(ActionExecutingContext filterContext)
+        
         {
             try {
 

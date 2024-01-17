@@ -35,7 +35,7 @@ namespace Comun.DA
 
                 if (_settings.AllowADAuth)
                 {
-                    string? domain = _settings.Domain;
+                    string domain = _settings.Domain;
                     try
                     {
                         string directory = "LDAP://" + server;

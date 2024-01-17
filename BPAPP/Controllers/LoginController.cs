@@ -34,7 +34,7 @@ namespace ProyectoWeb.Controllers
         }
 
         [HttpPost]
-        public ActionResult DA1(string usuario, string contrasenia) {
+        public ActionResult Index2(string usuario, string contrasenia) {
 
             ADSettings DAConfig = new ADSettings()
             {
