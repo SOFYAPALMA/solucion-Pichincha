@@ -143,3 +143,97 @@
 
     </div>
 </div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+
+        $('#CuotaManejo').change(function () {
+            ValidarCuotaManejo();
+        });
+
+        $('#idServicioGratuito_1').change(function () {
+            ValidarCuotaManejo();
+        });
+
+        $('#idServicioGratuito_2').change(function () {
+            ValidarCuotaManejo();
+        });
+
+        $('#idServicioGratuito_3').change(function () {
+            ValidarCuotaManejo();
+        });
+        $('#idObservacionesCuota').change(function () {
+            ValidarCuotaManejo();
+        });
+
+        function ValidarCuotaManejo() {
+            var value = $("#CuotaManejo").val();
+
+            console.log(value);
+
+            if (value > 1 && value != '' || value == 0) {
+                var value0 = $("#idServicioGratuito_1 option:selected").val();
+                var value1 = $("#idServicioGratuito_2 option:selected").val();
+                var value2 = $("#idServicioGratuito_3 option:selected").val();
+                var value2 = $("#idObservacionesCuota option:selected").val();
+
+                //console.log(value0);
+                //console.log(value1);
+                //console.log(value2);
+
+                //1.Reglas:
+
+                //Sí No tiene "Cuota de manejo" Valores válidos para "Observaciones cuota manejo" = 2 "No tiene cuota de manejo"
+
+
+                if (value0 == '1351') {
+
+                }
+                else {
+                    alert('Si NO tiene cuota de manejo puede seleccionar en Observaciones Cuota de Manejo: 2 - No tiene cuota de manejo');
+                }
+
+                //Sí tiene "Cuota de manejo", Valores válidos para Servicios Gratuitos: 2 - Consignación nacional, 4 - Copia de extracto en papel, 5 - Certificación bancaria, 6 - Expedición cheque de gerencia
+
+                if (value0 == '74' || value0 == '75' || value0 == '76' || value0 == '77') {
+
+                }
+                else {
+                    alert('Si TIENE cuota de manejo puede seleccionar en Servicio Gratuito: 11 - Avance en cajero de la misma entidad 12 - Avance en oficina 13 - Consulta de saldo en cajero de la misma entidad 14 - Reposicion por deterioro');
+                }
+
+                if (value1 == '74' || value0 == '75' || value0 == '76' || value0 == '77') {
+
+                }
+
+                if (value2 == '74' || value0 == '75' || value0 == '76' || value0 == '77') {
+
+                }
+
+                //Sí No tiene "Cuota de manejo", Valores válidos para "Servicio Gratuito" 98 - No aplica
+
+                if (value0 == '62') {
+
+                }
+                else {
+                    alert('Si NO tiene cuota de manejo puede seleccionar en Servicio Gratuito: 98 - no aplica.');
+                }
+
+
+            }
+            else {
+                $('#idServicioGratuito_1').val("");
+
+                $('#idServicioGratuito_2').val("");
+
+                $('#idServicioGratuito_3').val("");
+
+                $('#idObservacionesCuota').val("");
+            }
+        }
+
+    </script>
+}
+

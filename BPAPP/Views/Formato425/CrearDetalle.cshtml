@@ -325,6 +325,58 @@
             }
         });
 
+        $('#idCaracteristicaCredito').change(function () {
+            var value = $("#idCaracteristicaCredito option:selected").text();
+
+            if (value == '27 - VTUA porcentual (%)') {
+
+
+                $('#CostoFijo').val("0");
+                $('#CostoFijo').prop("disabled", true);
+
+                //$('#Tasa').val("0");
+                //$('#Tasa').prop("disabled", true);
+
+                $('#idTipoAseguradora').val("");
+                $('#idTipoAseguradora').prop("disabled", true);
+
+                $('#idCodigoAseguradora').val("");
+                $('#idCodigoAseguradora').prop("disabled", true);
+
+                $('#idObservaciones').val("");
+                $('#idObservaciones').prop("disabled", true);
+
+            }
+            else {
+
+                $('#CostoFijo').prop("disabled", false);
+                /* $('#Tasa').prop("disabled", false);*/
+                $('#idTipoAseguradora').prop("disabled", false);
+                $('#idCodigoAseguradora').prop("disabled", false);
+                $('#idObservaciones').prop("disabled", false);
+            }
+        });
+
+        $('#idOperacionoServicio').change(function () {
+            var value = $("#idOperacionoServicio option:selected").val();
+            /* console.log(value);*/
+            if (value == '124') {
+                $('#idTipoAseguradora').val("");
+                $('#idTipoAseguradora').prop("disabled", false);
+
+                $('#idCodigoAseguradora').val("");
+                $('#idCodigoAseguradora').prop("disabled", false);
+
+            }
+
+            else {
+                $('#idTipoAseguradora').prop("disabled", true);
+                $('#idCodigoAseguradora').prop("disabled", true);
+               
+              
+
+            }
+        });
 
     </script>
 }

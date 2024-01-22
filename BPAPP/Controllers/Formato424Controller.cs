@@ -37,6 +37,21 @@ namespace ProyectoWeb.Controllers
 
                 int idusuario = int.Parse(Session["IdUsuario"].ToString());
 
+                //if (form424.CuotaManejo == 0)
+                //{
+                //    ModelState.AddModelError("CuotaManejo", "Agregue un valor diferente de cero.");
+                //    LlenadoListasEncabezado();
+                //    return View(form424);
+                //}
+
+                //if (form424.CuotaManejo == 0)
+                //{
+                //    ModelState.AddModelError("CuotaManejo", "Agregue un valor diferente de cero.");
+                //    LlenadoListasEncabezado();
+                //    return View(form424);
+                //}
+
+
                 Formulario424_Encabezado encabezado = Mapper.getMapper(form424);
                 encabezado.Usuario = idusuario;
                 bool respuesta = DatosFormato424.RegistrarEncabezado(encabezado);

@@ -37,21 +37,6 @@ namespace ProyectoWeb.Controllers
 
                 int idusuario = int.Parse(Session["IdUsuario"].ToString());
 
-                //Validaciones
-                /*if (form425.CuotaManejoMaxima == 0)
-                {
-                    ModelState.AddModelError("CuotaManejoMaxima", "Agregue un valor diferente de cero.");
-                    LlenadoListasEncabezado();
-                    return View(form425);
-                }
-
-                if (form425.CuotaManejo == 0)
-                {
-                    ModelState.AddModelError("CuotaManejo", "Agregue un valor diferente de cero.");
-                    LlenadoListasEncabezado();
-                    return View(form425);
-                }*/
-
                 Formulario425_Encabezado encabezado = Mapper.getMapper(form425);
                 encabezado.Usuario = idusuario;
                 bool respuesta = DatosFormato425.RegistrarEncabezado(encabezado);
@@ -255,7 +240,7 @@ namespace ProyectoWeb.Controllers
             List<DominioModel> NombreComercial = DatosDominio.Obtener(22);
             List<DominioModel> AperturaDigital = DatosDominio.Obtener(2);
             List<DominioModel> Franquicia = DatosDominio.Obtener(7);
-            List<DominioModel> observacionesCuotadeManejo = DatosDominio.Obtener(13);
+            List<DominioModel> observacionesCuotadeManejo = DatosDominio.Obtener(19);
             List<DominioModel> grupoPoblacional = DatosDominio.Obtener(3);
             List<DominioModel> idCupo = DatosDominio.Obtener(8);
             List<DominioModel> idServicioGratuito = DatosDominio.Obtener(9);

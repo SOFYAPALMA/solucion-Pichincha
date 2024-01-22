@@ -233,40 +233,88 @@
         $('#idSerGratuito_CtaAHO3').change(function () {
             ValidarCuotaManejo();
         });
+        $('#idSerGratuito_TCRDebito').change(function () {
+            ValidarCuotaManejo();
+        });
+
+        $('#idSerGratuito_TCRDebito2').change(function () {
+            ValidarCuotaManejo();
+        });
+
+        $('#idSerGratuito_TCRDebito3').change(function () {
+            ValidarCuotaManejo();
+        });
+        $('#idObservacionesCuota').change(function () {
+            ValidarCuotaManejo();
+        });
 
         function ValidarCuotaManejo() {
             var value = $("#CuotaManejo").val();
 
             console.log(value);
 
-            if (value > 0 && value != '') {
+            if (value > 1 && value != '' || value == 0) {
                 var value0 = $("#idSerGratuito_CtaAHO option:selected").val();
                 var value1 = $("#idSerGratuito_CtaAHO2 option:selected").val();
                 var value2 = $("#idSerGratuito_CtaAHO3 option:selected").val();
+                var value0 = $("#idSerGratuito_TCRDebito option:selected").val();
+                var value1 = $("#idSerGratuito_TCRDebito2 option:selected").val();
+                var value2 = $("#idSerGratuito_TCRDebito3 option:selected").val();
+                var value3 = $("#idObservacionesCuota option:selected").val();
 
-                console.log(value0);
-                console.log(value1);
-                console.log(value2);
+                //console.log(value0);
+                //console.log(value1);
+                //console.log(value2);
+
+                //1.Reglas:
+                
+                //Sí No tiene "Cuota de manejo" Valores válidos para "Observaciones cuota manejo" = 2 "No tiene cuota de manejo"
+                
+
+                if (value3 == '62' || value2 == '59' || value2 == '60' || value2 == '61') {
+                }
+                else {
+                    alert('Si NO tiene cuota de manejo puede seleccionar en Observaciones Cuota de Manejo: 2 - No tiene cuota de manejo');
+                }
+
+                //Sí tiene "Cuota de manejo", Valores válidos para Servicio Gratuito Cuenta de Ahorros: 2 - Consignación nacional, 4 - Copia de extracto en papel, 5 - Certificación bancaria, 6 - Expedición cheque de gerencia
 
                 if (value0 == '53' || value0 == '55' || value0 == '56' || value0 == '57') {
 
                 }
                 else {
-                    alert('No permitido 0');
+                    alert('Si TIENE cuota de manejo puede seleccionar en servicios gratuitos cuenta de ahorro: 2 - Consignación nacional 4 - Copia de extracto en papel 5 - Certificación bancaria 6 - Expedición cheque de gerencia');
                 }
 
                 if (value1 == '53' || value1 == '55' || value1 == '56' || value1 == '57') {
 
                 }
-                else {
-                    alert('No permitido 1');
-                }
+
                 if (value2 == '53' || value2 == '55' || value2 == '56' || value2 == '57') {
 
                 }
-                else {
-                    alert('No permitido 1');
+
+                //Sí No tiene "Cuota de manejo", Valores válidos para "Servicio Gratuito Tarjeta Debito" 98 - No aplica
+                //Si TIENE cuota de manejo puede seleccionar en Servicio Gratuito Tarjeta Debito: 8 - Consultas en red propia 9 - Certificación bancaria 10 - Copia de extracto en papel y por internet'
+
+                if (value0 == '62' || value2 == '59' || value2 == '60' || value2 == '61') {
+
                 }
+                else {
+                    alert('Si NO tiene cuota de manejo puede seleccionar en Servicios Gratuito Tarjeta Debito: 98 - no aplica.');
+                }
+
+                if (value1 == '62' || value2 == '59' || value2 == '60' || value2 == '61') {
+
+                }
+                else {
+                    alert('Si TIENE cuota de manejo puede seleccionar en Servicio Gratuito Tarjeta Debito: 8 - Consultas en red propia 9 - Certificación bancaria 10 - Copia de extracto en papel y por internet');
+                }
+                
+                if (value2 == '62' || value2 == '59' || value2 == '60' || value2 == '61') {
+
+                }
+                
             }
             else {
                 $('#idSerGratuito_CtaAHO').val("");
@@ -274,8 +322,17 @@
                 $('#idSerGratuito_CtaAHO2').val("");
 
                 $('#idSerGratuito_CtaAHO3').val("");
+
+                $('#idSerGratuito_TCRDebito').val("");
+
+                $('#idSerGratuito_TCRDebito2').val("");
+
+                $('#idSerGratuito_TCRDebito3').val("");
+
+                $('#idObservacionesCuota').val("");
             }
         }
+
 
     </script>
 }
