@@ -124,6 +124,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DominioController.cs" />
+    <Compile Include="Controllers\ErroresSFCController.cs" />
     <Compile Include="Controllers\Formato425Controller.cs" />
     <Compile Include="Controllers\Formato426Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -143,6 +144,7 @@
     <Compile Include="Models\Dominio\ConsultaTipoDominioDTO.cs" />
     <Compile Include="Models\Dominio\CrearTipoDominioDTO.cs" />
     <Compile Include="Models\Dominio\ConsultaDominioDTO.cs" />
+    <Compile Include="Models\Errores\Errores_SFCDTO.cs" />
     <Compile Include="Models\Form424\Form424ConsultaDetalle.cs" />
     <Compile Include="Models\Form424\Form424CrearDetalle.cs" />
     <Compile Include="Models\Form424\Form424ConsultaEncabezado.cs" />
@@ -2078,6 +2080,7 @@
     <Content Include="Views\Dominio\Update.cshtml" />
     <Content Include="Views\Dominio\UpdateDetalle.cshtml" />
     <Content Include="Views\Dominio\CrearDetalle.cshtml" />
+    <Content Include="Views\ErroresSFC\Index.cshtml" />
     <None Include="Web.R.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

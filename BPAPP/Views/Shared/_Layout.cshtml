@@ -30,7 +30,7 @@
                 </a>
                 <div class='dashboard-nav-dropdown'>
                     <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
-                        <i class="fas fa-photo-video"></i> Formularios
+                        <i class="fas fa-book"></i> Formularios
                     </a>
                     <div class='dashboard-nav-dropdown-menu'>
                         <a href="@Url.Action("List", "Formato424")" class="dashboard-nav-dropdown-item">424 (Depósitos)</a>
@@ -46,9 +46,22 @@
                         <a href="@Url.Action("List", "Dominio")" class="dashboard-nav-dropdown-item">Dominios</a>
                     </div>
                 </div>
-                @*<a href="#" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Settings </a>*@
-                <div class="nav-item-divider"></div>
-                <a href="@Url.Action("Salir", "Home")" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Salir </a>
+                <div class='dashboard-nav-dropdown'>
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+
+                        <i class="fas fa-pen"></i> Envio SFC
+
+                    </a>
+                </div>
+                <div class='dashboard-nav-dropdown'>
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+
+                        <i class="fas fa-list"></i> Certificado
+
+                    </a>
+                    @*<a href="#" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Settings </a>*@
+                    <div class="nav-item-divider"></div>
+                    <a href="@Url.Action("Salir", "Home")" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Salir </a>
             </nav>
         </div>
         <div class='dashboard-app'>

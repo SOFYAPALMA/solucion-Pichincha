@@ -90,7 +90,7 @@
             <div class="row">
                 <div class="col-sm-12 text-lg-right">
                     <input type="hidden" id="ID" name="ID" value="@Model.idPropiedadesFormato" />
-                    <input type="button" class="btn btn-primary btn-sm" onclick="Eliminar()" value="Eliminar" />
+                    <input type="button" class="btn btn-primary btn-sm" onclick="Desactivar()" value="Desactivar" />
                     @Html.ActionLink("Editar", "Update/" + Model.idPropiedadesFormato, Model.idPropiedadesFormato, new { @class = "btn btn-primary btn-sm" })
 
                 </div>
@@ -121,7 +121,7 @@
     @Scripts.Render("~/bundles/jqueryval")
     <script>
 
-        function Eliminar() {
+        function Desactivar() {
             var data = {
                 id: $('#ID').val(),
             };

@@ -88,10 +88,18 @@
         @Html.DisplayFor(modelItem => item.Observaciones)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.DescripcionEstado)
+        @if (item.Estado == "1")
+        {
+            @Html.ActionLink(item.DescripcionEstado, "../ErroresSFC/Index", new { treg = 'U', idPropForm = item.idPropiedadesFormato, idRegDet = item.idDetalle, form = 2 })
+        }
+        else
+        {
+            @Html.DisplayFor(modelItem => item.DescripcionEstado)
+        }
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.CodigoRegistro)
+
     </td>
     <td>
         @Html.ActionLink("Editar", "UpdateDetalle", new { id = item.idDetalle })

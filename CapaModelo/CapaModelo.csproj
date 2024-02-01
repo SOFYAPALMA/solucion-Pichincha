@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Aseguradoras.cs" />
     <Compile Include="CreditosModel.cs" />
+    <Compile Include="Errores_SFCModel.cs" />
     <Compile Include="ProductoCreditoModel.cs" />
     <Compile Include="DominioModel.cs" />
     <Compile Include="TipoDominioModel.cs" />

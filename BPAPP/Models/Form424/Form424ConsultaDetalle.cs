@@ -48,5 +48,6 @@ namespace ProyectoWeb.Models
 
         [Display(Name = "Registro SFC")]
         public string CodigoRegistro { get; set; }
+        public string Estado { get; set; }
     }
 }

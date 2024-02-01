@@ -231,11 +231,14 @@
         </div>
         <div class="card-footer">
             <div class="row">
-                <div class="col-sm-12 float-right">
+                <div class="col-sm-12 text-lg-right">
+                    <input type="hidden" id="ID" name="ID" value="@Model.idPropiedadesFormato" />
+                    <input type="button" class="btn btn-primary btn-sm" onclick="Desactivar()" value="Desactivar" />
                     @Html.ActionLink("Editar", "Update/" + Model.idPropiedadesFormato, Model.idPropiedadesFormato, new { @class = "btn btn-primary btn-sm float-right" })
-                    <div>
-                        @Html.ActionLink("Volver", "List")
-                    </div>
+
+                </div>
+                <div>
+                    @Html.ActionLink("Volver", "List")
                 </div>
             </div>
         </div>
@@ -254,3 +257,27 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+
+        function Desactivar() {
+            var data = {
+                id: $('#ID').val(),
+            };
+            $.ajax({
+                url: "/Formato424/DeleteEncabezado/" + $('#ID').val(),
+                type: "POST",
+                dataType: "json",
+                data: JSON.stringify(data),
+                success: function (mydata) {
+
+                }
+            });
+
+            return false;
+        }
+
+    </script>
+}

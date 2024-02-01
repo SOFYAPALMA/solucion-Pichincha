@@ -174,9 +174,11 @@ namespace BP.Repositorio
             try
             {
                 limpiarParametros();
+
                 AdicionarParametros("@idPropiedadesFormato", id);
-                AdicionarParametros("@Tiporegistros", "");
                 AdicionarParametros("@idDetalle", idDetalle);
+                AdicionarParametros("@idObservaciones", idDetalle);
+                AdicionarParametros("@idCaracteristicaCredito", idDetalle);
 
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
                 AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
@@ -195,6 +197,7 @@ namespace BP.Repositorio
 
             return respuesta;
         }
+
         public static bool ActualizarDetalle(Formulario426_Detalle obj)
         {
             Instanciar();

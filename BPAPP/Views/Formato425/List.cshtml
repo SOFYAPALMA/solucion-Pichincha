@@ -25,39 +25,21 @@
                         <th>
                             @Html.DisplayNameFor(model => model.idNombreComercial)
                         </th>
-                        @*<th>
-                            @Html.DisplayNameFor(model => model.idAperturaDigital)
-                        </th>*@
-                        @*<th>
-                            @Html.DisplayNameFor(model => model.NumeroClientes)
-                        </th>*@
-                        @*<th>
-                            @Html.DisplayNameFor(model => model.idFranquicia)
-                        </th>*@
-                        @*<th>
-                            @Html.DisplayNameFor(model => model.CuotaManejo)
-                        </th>*@
-                        @*<th>
-                            @Html.DisplayNameFor(model => model.idObservacionesCuota)
-                        </th>*@
-                        @*<th>
-                            @Html.DisplayNameFor(model => model.CuotaManejoMaxima)
-                        </th>*@
                         <th>
                             @Html.DisplayNameFor(model => model.idGrupoPoblacional)
                         </th>
                         @*<th>
-                            @Html.DisplayNameFor(model => model.idCupo)
-                        </th>*@
+                                @Html.DisplayNameFor(model => model.idCupo)
+                            </th>*@
                         <th>
                             @Html.DisplayNameFor(model => model.DescripcionEstado)
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.CodigoRegistro)
                         </th>
-                         @*<th>
-                           @Html.DisplayNameFor(model => model.idServicioGratuito_3)
-                        </th>*@
+                        @*<th>
+                               @Html.DisplayNameFor(model => model.idServicioGratuito_3)
+                            </th>*@
                         <th></th>
                     </tr>
 
@@ -70,39 +52,27 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.NombreComercial)
                     </td>
-                    @*<td>
-                        @Html.DisplayFor(modelItem => item.AperturaDigital)
-                    </td>*@
-                    @*<td>
-                        @Html.DisplayFor(modelItem => item.NumeroClientes)
-                    </td>*@
-                    @*<td>
-                        @Html.DisplayFor(modelItem => item.Franquicia)
-                    </td>*@
-                    @*<td>
-                        @Html.DisplayFor(modelItem => item.CuotaManejo)
-                    </td>*@
-                    @*<td>
-                        @Html.DisplayFor(modelItem => item.ObservacionesCuota)
-                    </td>*@
-                    @*<td>
-                        @Html.DisplayFor(modelItem => item.CuotaManejoMaxima)
-                    </td>*@
+
                     <td>
                         @Html.DisplayFor(modelItem => item.GrupoPoblacional)
                     </td>
-                    @*<td>
-                        @Html.DisplayFor(modelItem => item.Cupo)
-                    </td>*@
+
                     <td>
-                        @Html.DisplayFor(modelItem => item.DescripcionEstado)
+                        @if (item.Estado == "1")
+                        {
+                            @Html.ActionLink(item.DescripcionEstado, "Error", "../ErroresSFC/Index", new { treg = 'E', idPropForm = item.idPropiedadesFormato, idRegDet = 0, form = 2 })
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(modelItem => item.DescripcionEstado)
+                        }
+
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.CodigoRegistro)
+
                     </td>
-                    @*<td>
-                        @Html.DisplayFor(modelItem => item.ServicioGratuito_3)
-                    </td>*@
+
                     <td>
                         @Html.ActionLink("Ver", "Details", new { id = item.idPropiedadesFormato })
                     </td>

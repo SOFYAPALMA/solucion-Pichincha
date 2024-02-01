@@ -44,14 +44,6 @@ namespace ProyectoWeb.Controllers
                 //    return View(form424);
                 //}
 
-                //if (form424.CuotaManejo == 0)
-                //{
-                //    ModelState.AddModelError("CuotaManejo", "Agregue un valor diferente de cero.");
-                //    LlenadoListasEncabezado();
-                //    return View(form424);
-                //}
-
-
                 Formulario424_Encabezado encabezado = Mapper.getMapper(form424);
                 encabezado.Usuario = idusuario;
                 bool respuesta = DatosFormato424.RegistrarEncabezado(encabezado);
@@ -67,9 +59,7 @@ namespace ProyectoWeb.Controllers
                     ModelState.AddModelError("", "No se pudo crear el encabezado, por favor valide los datos.");
                     LlenadoListasEncabezado();
                     return View(form424);
-
                 }
-
             }
             else
             {
@@ -188,6 +178,61 @@ namespace ProyectoWeb.Controllers
             {
                 LlenadoListasEncabezado();
                 return View(encabezado);
+            }
+        }
+
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public ActionResult DeleteEncabezado(int id)
+        {
+            if (ModelState.IsValid)
+            {
+                bool respuesta = DatosFormato424.EliminarEncabezado(id);
+
+                if (respuesta)
+                {
+                    TempData["Notificacion"] = DatosFormato424.Mensaje;
+                    ModelState.AddModelError("", DatosFormato424.Mensaje);
+                    return RedirectToRoute("List");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "No se puede eliminar el encabezado tiene detalle.");
+                    LlenadoListasEncabezado();
+                    return View();
+                }
+            }
+            else
+            {
+                LlenadoListasEncabezado();
+                return View();
+            }
+        }
+
+        [HttpPost]
+        public ActionResult DeleteDetalle(int id, int idDetalle)
+        {
+            if (ModelState.IsValid)
+            {
+                bool respuesta = DatosFormato424.EliminarDetalle(id, idDetalle);
+
+                if (respuesta)
+                {
+                    TempData["Notificacion"] = DatosFormato424.Mensaje;
+
+                    return RedirectToAction("List");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "No se puede eliminar el detalle.");
+                    LlenadoListasEncabezado();
+                    return View();
+                }
+            }
+            else
+            {
+                LlenadoListasEncabezado();
+                return View();
             }
         }
 

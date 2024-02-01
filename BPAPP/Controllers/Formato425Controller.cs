@@ -73,26 +73,6 @@ namespace ProyectoWeb.Controllers
                      LlenadoListasDetalle();
                      return View(form425);
                  }
-
-                 if (form425.CostoFijoMaximo == 0)
-                 {
-                     ModelState.AddModelError("CostoFijoMaximo", "Agregue un valor diferente de cero.");
-                     LlenadoListasDetalle();
-                     return View(form425);
-                 }
-
-                 if (form425.CostoProporcionOperacionServicio == 0)
-                 {
-                     ModelState.AddModelError("CostoProporcionOperacionServicio", "Agregue un valor diferente de cero.");
-                     LlenadoListasDetalle();
-                     return View(form425);
-                 }
-
-                 if (form425.CostoProporcionMaxOperacionServicio == 0)
-                 {
-                     ModelState.AddModelError("CostoProporcionMaxOperacionServicio", "Agregue un valor diferente de cero.");
-                     LlenadoListasDetalle();
-                     return View(form425);
                  }*/
 
                 Formulario425_Detalle encabezado = Mapper.getMapper(form425);
@@ -111,7 +91,6 @@ namespace ProyectoWeb.Controllers
                     LlenadoListasDetalle();
                     return View(form425);
                 }
-
             }
             else
             {
@@ -197,8 +176,61 @@ namespace ProyectoWeb.Controllers
                 LlenadoListasEncabezado();
                 return View(encabezado);
             }
+        }
 
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public ActionResult DeleteEncabezado(int id)
+        {
+            if (ModelState.IsValid)
+            {
+                bool respuesta = DatosFormato425.EliminarEncabezado(id);
 
+                if (respuesta)
+                {
+                    TempData["Notificacion"] = DatosFormato425.Mensaje;
+                    ModelState.AddModelError("", DatosFormato425.Mensaje);
+                    return RedirectToRoute("List");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "No se puede eliminar el encabezado tiene detalle.");
+                    LlenadoListasEncabezado();
+                    return View();
+                }
+            }
+            else
+            {
+                LlenadoListasEncabezado();
+                return View();
+            }
+        }
+
+        [HttpPost]
+        public ActionResult DeleteDetalle(int id, int idDetalle)
+        {
+            if (ModelState.IsValid)
+            {
+                bool respuesta = DatosFormato425.EliminarDetalle(id, idDetalle);
+
+                if (respuesta)
+                {
+                    TempData["Notificacion"] = DatosFormato425.Mensaje;
+
+                    return RedirectToAction("List");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "No se puede eliminar el detalle.");
+                    LlenadoListasEncabezado();
+                    return View();
+                }
+            }
+            else
+            {
+                LlenadoListasEncabezado();
+                return View();
+            }
         }
 
         public ActionResult Details(int id)

@@ -37,25 +37,34 @@
 
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.idPropiedadesFormato)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.DTipoProductoCredito)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.DescripcionEstado)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.CodigoRegistro)
-                            </td>
-                            <td>
-                                @Html.ActionLink("Ver", "Details", new { id = item.idPropiedadesFormato })
-                            </td>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.idPropiedadesFormato)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DTipoProductoCredito)
+                    </td>
+                    <td>
+                        @if (item.Estado == "1")
+                        {
+                            @Html.ActionLink(item.DescripcionEstado, "Error", "../ErroresSFC/Index", new { treg = 'E', idPropForm = item.idPropiedadesFormato, idRegDet = 0, form = 3 })
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(modelItem => item.DescripcionEstado)
+                        }
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CodigoRegistro)
+
+                    </td>
+                    <td>
+                        @Html.ActionLink("Ver", "Details", new { id = item.idPropiedadesFormato })
+                    </td>
 
 
-                        </tr>
+                </tr>
                     }
 
                 </table>

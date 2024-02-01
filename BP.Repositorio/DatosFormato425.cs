@@ -162,6 +162,68 @@ namespace BP.Repositorio
             return respuesta;
         }
 
+        public static bool EliminarEncabezado(int id)
+        {
+            Instanciar();
+            bool respuesta = false;
+
+            try
+            {
+                limpiarParametros();
+                AdicionarParametros("@idPropiedadesFormato", id);
+                AdicionarParametros("@Tiporegistros", "E");
+
+                AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
+                AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
+
+                ejecutarScalar("bpapp.spEliminaTarjetaCredito");
+
+                respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
+                Mensaje = RecuperarParametrosOut("MensajeSalida");
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), Mensaje, Logs.Tipo.Log);
+            }
+            catch (Exception ex)
+            {
+                desconectar();
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
+                throw new Exception("No se puede eliminar el encabezado tiene detalle", ex);
+            }
+
+            return respuesta;
+        }
+
+        public static bool EliminarDetalle(int id, int idDetalle)
+        {
+            Instanciar();
+            bool respuesta = false;
+
+            try
+            {
+                limpiarParametros();
+
+                AdicionarParametros("@idPropiedadesFormato", id);
+                AdicionarParametros("@idDetalle", idDetalle);
+                AdicionarParametros("@idObservaciones", idDetalle);
+                AdicionarParametros("@idCaracteristicaCredito", idDetalle);
+
+                AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
+                AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
+
+                ejecutarScalar("bpapp.spEliminaTarjetaCredito");
+
+                respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
+                Mensaje = RecuperarParametrosOut("MensajeSalida");
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), Mensaje, Logs.Tipo.Log);
+            }
+            catch (Exception ex)
+            {
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
+                throw new Exception("No se puede eliminar el encabezado tiene detalle", ex);
+            }
+
+            return respuesta;
+        }
+
         public static bool ActualizarDetalle(Formulario425_Detalle obj)
         {
             Instanciar();

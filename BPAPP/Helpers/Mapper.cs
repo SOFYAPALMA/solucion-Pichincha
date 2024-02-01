@@ -112,7 +112,7 @@ namespace ProyectoWeb
                 Fecha_horaActualizacion = dto.Fecha_horaActualizacion,
                 Fechacorte = dto.Fechacorte,
                 FechaEstado = dto.FechaEstado,
-                idAperturaDigital = dto.idAperturaDigital,
+                idAperturaDigital = dto.idAperturaDigital ?? 0,
                 idGrupoPoblacional = dto.idGrupoPoblacional,
                 idIngresos = dto.idIngresos,
                 idObservacionesCuota = dto.idObservacionesCuota,
@@ -126,6 +126,7 @@ namespace ProyectoWeb
                 idTipoProductoDeposito = dto.idTipoProductoDeposito,
                 NumeroClientes = dto.NumeroClientes
             };
+
             return result;
         }
 
@@ -160,7 +161,8 @@ namespace ProyectoWeb
                 DescripcionEstado = obj.DescripcionEstado,
                 CodigoRegistro = obj.CodigoRegistro,
                 idOperacionServicio = obj.idOperacionServicio,
-                OperacionServicio = obj.OperacionServicio
+                OperacionServicio = obj.OperacionServicio,
+                Estado = obj.Estado
             };
             return result;
         }
@@ -379,7 +381,7 @@ namespace ProyectoWeb
                 idPropiedadesFormato = dto.idPropiedadesFormato,
                 Subcuenta = dto.Subcuenta,
                 idOperacionServicio = dto.idOperacionoServicio,
-                Canal = dto.Canal, 
+                Canal = dto.Canal,
                 idCanal = dto.idCanal,
                 CostoFijo = dto.CostoFijo,
                 CostoFijoMaximo = dto.CostoFijoMaximo,
@@ -397,8 +399,8 @@ namespace ProyectoWeb
                 FechaEstado = dto.FechaEstado
             };
             return result;
-        }     
-        
+        }
+
         public static Formulario425_Detalle getMapper(Form425CrearDetalle dto)
         {
             var result = new Formulario425_Detalle()
@@ -407,7 +409,7 @@ namespace ProyectoWeb
                 idPropiedadesFormato = dto.idPropiedadesFormato,
                 Subcuenta = dto.Subcuenta,
                 idOperacionServicio = dto.idOperacionoServicio,
-                Canal = dto.Canal, 
+                Canal = dto.Canal,
                 idCanal = dto.idCanal,
                 CostoFijo = dto.CostoFijo,
                 CostoFijoMaximo = dto.CostoFijoMaximo,
@@ -680,7 +682,6 @@ namespace ProyectoWeb
 
             return result;
         }
-
         public static ConsultaTipoDominioDTO getMapper(TipoDominioModel obj)
         {
             var result = new ConsultaTipoDominioDTO()
@@ -692,7 +693,6 @@ namespace ProyectoWeb
             };
             return result;
         }
-
         public static TipoDominioModel getMapper(CrearTipoDominioDTO dto)
         {
             var result = new TipoDominioModel()
@@ -720,8 +720,36 @@ namespace ProyectoWeb
             return result;
         }
 
+        #endregion
+
+        #region Errores
+
+        public static List<Errores_SFCDTO> getMapper(List<Errores_SFCModel> obj)
+        {
+            List<Errores_SFCDTO> result = new List<Errores_SFCDTO>();
+
+            foreach (Errores_SFCModel consulta in obj)
+            {
+                Errores_SFCDTO encabezado = getMapper(consulta);
+                result.Add(encabezado);
+            }
+
+            return result;
+        }
+
+        public static Errores_SFCDTO getMapper(Errores_SFCModel obj)
+        {
+            var result = new Errores_SFCDTO()
+            {
+                CodigoSalida = obj.CodigoSalida,
+                Descripcion = obj.Descripcion
+
+            };
+            return result;
+        }
 
 
         #endregion
+
     }
 }

@@ -35,39 +35,47 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.idDetalle)
-            </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.Subcuenta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CaracteristicaCredito)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Costo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TipoAseguradora)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CodigoAseguradora)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Observaciones)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DescripcionEstado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CodigoRegistro)
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "UpdateDetalle", new { id = item.idDetalle })
-            </td>
+<tr>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.idDetalle)
+        </td>*@
+    <td>
+        @Html.DisplayFor(modelItem => item.Subcuenta)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CaracteristicaCredito)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Costo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TipoAseguradora)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CodigoAseguradora)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Observaciones)
+    </td>
+    <td>
+        @if (item.Estado == "1")
+        {
+            @Html.ActionLink(item.DescripcionEstado, "../ErroresSFC/Index", new { treg = 'U', idPropForm = item.idPropiedadesFormato, idRegDet = item.idDetalle, form = 3 })
+        }
+        else
+        {
+            @Html.DisplayFor(modelItem => item.DescripcionEstado)
+        }
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CodigoRegistro)
 
-        </tr>
+    </td>
+    <td>
+        @Html.ActionLink("Editar", "UpdateDetalle", new { id = item.idDetalle })
+    </td>
+
+</tr>
     }
 
 </table>

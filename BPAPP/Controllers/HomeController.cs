@@ -34,7 +34,7 @@ namespace ProyectoWeb.Controllers
             Session["IdUsuario"] = null;
             return RedirectToAction("Index", "Login");
         }
-
+      
 
 
     }
