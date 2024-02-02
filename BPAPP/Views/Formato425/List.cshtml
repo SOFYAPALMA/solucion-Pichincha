@@ -60,7 +60,7 @@
                     <td>
                         @if (item.Estado == "1")
                         {
-                            @Html.ActionLink(item.DescripcionEstado, "Error", "../ErroresSFC/Index", new { treg = 'E', idPropForm = item.idPropiedadesFormato, idRegDet = 0, form = 2 })
+                            @Html.ActionLink(item.DescripcionEstado, "../ErroresSFC/Index", new { treg = 'E', idPropForm = item.idPropiedadesFormato, idRegDet = 0, form = 2 })
                         }
                         else
                         {

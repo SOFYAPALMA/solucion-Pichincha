@@ -71,7 +71,9 @@
 
             </td>
             <td>
+
                 @Html.ActionLink("Editar", "UpdateDetalle", new { id = item.idDetalle })
+                @Html.ActionLink("Desactivar", "DeleteDetalle", new { id = item.idDetalle })
             </td>
         </tr>
     }

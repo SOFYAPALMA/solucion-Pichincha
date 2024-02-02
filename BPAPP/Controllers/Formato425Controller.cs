@@ -178,40 +178,40 @@ namespace ProyectoWeb.Controllers
             }
         }
 
+        //[HttpPost]
+        ////[ValidateAntiForgeryToken]
+        //public ActionResult DeleteEncabezado(int id)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        bool respuesta = DatosFormato425.EliminarEncabezado(id);
+
+        //        if (respuesta)
+        //        {
+        //            TempData["Notificacion"] = DatosFormato425.Mensaje;
+        //            ModelState.AddModelError("", DatosFormato425.Mensaje);
+        //            return RedirectToRoute("List");
+        //        }
+        //        else
+        //        {
+        //            ModelState.AddModelError("", "No se puede eliminar el encabezado tiene detalle.");
+        //            LlenadoListasEncabezado();
+        //            return View();
+        //        }
+        //    }
+        //    else
+        //    {
+        //        LlenadoListasEncabezado();
+        //        return View();
+        //    }
+        //}
+
         [HttpPost]
-        //[ValidateAntiForgeryToken]
-        public ActionResult DeleteEncabezado(int id)
+        public ActionResult DeleteDetalle(Formulario425_Detalle obj)
         {
             if (ModelState.IsValid)
             {
-                bool respuesta = DatosFormato425.EliminarEncabezado(id);
-
-                if (respuesta)
-                {
-                    TempData["Notificacion"] = DatosFormato425.Mensaje;
-                    ModelState.AddModelError("", DatosFormato425.Mensaje);
-                    return RedirectToRoute("List");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "No se puede eliminar el encabezado tiene detalle.");
-                    LlenadoListasEncabezado();
-                    return View();
-                }
-            }
-            else
-            {
-                LlenadoListasEncabezado();
-                return View();
-            }
-        }
-
-        [HttpPost]
-        public ActionResult DeleteDetalle(int id, int idDetalle)
-        {
-            if (ModelState.IsValid)
-            {
-                bool respuesta = DatosFormato425.EliminarDetalle(id, idDetalle);
+                bool respuesta = DatosFormato425.EliminarDetalle(obj);
 
                 if (respuesta)
                 {
