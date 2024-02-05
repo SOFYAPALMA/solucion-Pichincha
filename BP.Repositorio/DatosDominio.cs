@@ -209,6 +209,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en Detalles", ex);
             }
@@ -217,6 +218,8 @@ namespace BP.Repositorio
         {
             try
             {
+                limpiarParametros();
+
                 List<DominioModel> rpt = new List<DominioModel>();
 
                 DataTable dt = EjecutarSql("SELECT * FROM BPAPP.fntraevaloresdominio(" + TipoDominio + ")", "tbl").Tables[0];
@@ -288,6 +291,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en ListaDominios", ex);
             }
@@ -364,6 +368,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en Lista", ex);
             }

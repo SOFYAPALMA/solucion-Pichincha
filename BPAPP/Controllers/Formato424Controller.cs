@@ -27,6 +27,7 @@ namespace ProyectoWeb.Controllers
             return View(form424);
         }
 
+
         [HttpPost]
         public ActionResult Crear(Form424CrearEncabezado form424)
         {
@@ -211,28 +212,20 @@ namespace ProyectoWeb.Controllers
 
         public ActionResult DeleteDetalle(int id)
         {
-            if (ModelState.IsValid)
+            Formulario424_Detalle _Detalle = DatosFormato424.DetallesDetalles(id);
+            bool respuesta = DatosFormato424.EliminarDetalle(_Detalle);
+
+            if (respuesta)
             {
-                Formulario424_Detalle _Detalle = DatosFormato424.DetallesDetalles(id);
-                bool respuesta = DatosFormato424.EliminarDetalle(_Detalle);
+                TempData["Notificacion"] = DatosFormato424.Mensaje;
 
-                if (respuesta)
-                {
-                    TempData["Notificacion"] = DatosFormato424.Mensaje;
-
-                    return RedirectToAction("List");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "No se puede eliminar el detalle.");
-                    LlenadoListasEncabezado();
-                    return View();
-                }
+                return RedirectToAction("List");
             }
             else
             {
+                ModelState.AddModelError("", "No se puede eliminar el detalle.");
                 LlenadoListasEncabezado();
-                return View();
+                return RedirectToAction("Details/" + _Detalle.idPropiedadesFormato);
             }
         }
 
