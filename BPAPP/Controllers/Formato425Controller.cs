@@ -206,30 +206,23 @@ namespace ProyectoWeb.Controllers
         //    }
         //}
 
-        [HttpPost]
-        public ActionResult DeleteDetalle(Formulario425_Detalle obj)
+        public ActionResult DeleteDetalle(int obj)
         {
-            if (ModelState.IsValid)
+
+            Formulario425_Detalle _Detalle = DatosFormato425.DetallesDetalles(obj);
+            bool respuesta = DatosFormato425.EliminarDetalle(_Detalle);
+
+            if (respuesta)
             {
-                bool respuesta = DatosFormato425.EliminarDetalle(obj);
+                TempData["Notificacion"] = DatosFormato425.Mensaje;
 
-                if (respuesta)
-                {
-                    TempData["Notificacion"] = DatosFormato425.Mensaje;
-
-                    return RedirectToAction("List");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "No se puede eliminar el detalle.");
-                    LlenadoListasEncabezado();
-                    return View();
-                }
+                return RedirectToAction("List");
             }
             else
             {
+                ModelState.AddModelError("", "No se puede eliminar el detalle.");
                 LlenadoListasEncabezado();
-                return View();
+                return RedirectToAction("Details/" + _Detalle.idPropiedadesFormato);
             }
         }
 
