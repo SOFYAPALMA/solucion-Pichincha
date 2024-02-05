@@ -203,8 +203,21 @@ namespace BP.Repositorio
 
                 
                 AdicionarParametros("@idDetalle", obj.idDetalle);
+                AdicionarParametros("@Subcuenta", obj.idObservaciones);
+                AdicionarParametros("@idOperacionServicio", obj.idOperacionServicio);
+                AdicionarParametros("@idCanal", obj.idCanal);
+                AdicionarParametros("@CostoFijo", obj.CostoFijo);
+                AdicionarParametros("@CostoFijoMaximo", obj.CostoFijoMaximo);
+                AdicionarParametros("@CostoProporcionOperacionServicio", obj.CostoProporcionOperacionServicio);
+                AdicionarParametros("@CostoProporcionMaxOperacionServicio", obj.CostoProporcionMaxOperacionServicio);
+                AdicionarParametros("@idOperacionServicio", obj.idOperacionServicio);
+                AdicionarParametros("@idTipoAseguradora", obj.idTipoAseguradora);
+                AdicionarParametros("@idCodigoAseguradora", obj.idCodigoAseguradora);
+                AdicionarParametros("@CostoFijo", obj.CostoFijo);
+                AdicionarParametros("@Tasa", obj.Tasa);
+                AdicionarParametros("@TasaMaxima", obj.TasaMaxima);
                 AdicionarParametros("@idObservaciones", obj.idObservaciones);
-               
+
 
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
                 AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);

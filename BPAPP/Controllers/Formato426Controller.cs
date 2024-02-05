@@ -161,10 +161,9 @@ namespace ProyectoWeb.Controllers
         //    }
         //}
 
-        [HttpPost]
-        public ActionResult DeleteDetalle(int obj)
+        public ActionResult DeleteDetalle(int id)
         {
-            Formulario426_Detalle _Detalle = DatosFormato426.DetallesDetalles(obj);
+            Formulario426_Detalle _Detalle = DatosFormato426.DetallesDetalles(id);
             bool respuesta = DatosFormato426.EliminarDetalle(_Detalle);
 
             if (respuesta)

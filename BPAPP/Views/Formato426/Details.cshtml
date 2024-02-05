@@ -90,7 +90,7 @@
             <div class="row">
                 <div class="col-sm-12 text-lg-right">
                     <input type="hidden" id="ID" name="ID" value="@Model.idPropiedadesFormato" />
-                    <input type="button" class="btn btn-primary btn-sm" onclick="Desactivar()" value="Desactivar" />
+                    @*<input type="button" class="btn btn-primary btn-sm" onclick="Desactivar()" value="Desactivar" />*@
                     @Html.ActionLink("Editar", "Update/" + Model.idPropiedadesFormato, Model.idPropiedadesFormato, new { @class = "btn btn-primary btn-sm" })
 
                 </div>
@@ -117,7 +117,7 @@
 </div>
 
 
-@section Scripts {
+@*@section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <script>
 
@@ -140,4 +140,4 @@
 
 
     </script>
-}
+}*@

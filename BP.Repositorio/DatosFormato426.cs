@@ -176,13 +176,17 @@ namespace BP.Repositorio
                 limpiarParametros();
 
                 AdicionarParametros("@idDetalle", obj.idDetalle);
+                AdicionarParametros("@Subcuenta", obj.idObservaciones);
+                AdicionarParametros("@Costo", obj.idCaracteristicaCredito);
+                AdicionarParametros("@idTipoAseguradora", obj.idObservaciones);
+                AdicionarParametros("@idCodigoAseguradora", obj.idCaracteristicaCredito);
                 AdicionarParametros("@idObservaciones", obj.idObservaciones);
-                AdicionarParametros("@idCaracteristicaCredito", obj.idCaracteristicaCredito);
+               
 
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
                 AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
 
-                ejecutarScalar("bpapp.spEliminaCreditos");
+                ejecutarScalar("bpapp.spDesactivaDetalleCreditos");
 
                 respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
                 Mensaje = RecuperarParametrosOut("MensajeSalida");
