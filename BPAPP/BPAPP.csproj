@@ -1859,6 +1859,7 @@
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\ComunJs.js" />
     <Content Include="Scripts\Controllers\Formato426.js" />
     <Content Include="Scripts\Controllers\Formato425.js" />
     <Content Include="Scripts\Controllers\Formato424.js" />

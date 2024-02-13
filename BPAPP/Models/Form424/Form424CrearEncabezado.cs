@@ -33,7 +33,6 @@ namespace ProyectoWeb.Models
         [Display(Name = "Número de clientes únicos")]
         public int NumeroClientes { get; set; } //Campo numérico de registro manual, de acuerdo al cálculo de Clientes Únicos del MIS 
 
-        [Required(ErrorMessage = "El campo cuota de manejo es obligatorio.")]
         [Display(Name = "Cuota de Manejo")]
         public int? CuotaManejo { get; set; } //Campo numérico de registro manual
 

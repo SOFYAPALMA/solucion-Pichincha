@@ -125,8 +125,8 @@
                 $('#idCaracteristicaCredito').val("");
                 $('#idCaracteristicaCredito').prop("disabled", true);
 
-                $('#CostoFijo').val("0");
-                $('#CostoFijo').prop("disabled", true);
+                $('#Costo').val("0");
+                $('#Costo').prop("disabled", true);
 
                 $('#Tasa').val("0");
                 $('#Tasa').prop("disabled", true);
@@ -140,7 +140,7 @@
             }
             else {
                 $('#idCaracteristicaCredito').prop("disabled", false);
-                $('#CostoFijo').prop("disabled", false);
+                $('#Costo').prop("disabled", false);
                 $('#Tasa').prop("disabled", false);
                 $('#idTipoAseguradora').prop("disabled", false);
                 $('#idCodigoAseguradora').prop("disabled", false);
@@ -151,10 +151,9 @@
             var value = $("#idCaracteristicaCredito option:selected").text();
 
             if (value == '27 - VTUA porcentual (%)') {
-                            
 
-                $('#CostoFijo').val("0");
-                $('#CostoFijo').prop("disabled", true);
+                $('#Costo').val("0");
+                $('#Costo').prop("disabled", true);
 
                 //$('#Tasa').val("0");
                 //$('#Tasa').prop("disabled", true);
@@ -170,11 +169,11 @@
 
             }
             else {
-               
-                $('#CostoFijo').prop("disabled", false);
-               /* $('#Tasa').prop("disabled", false);*/
+
+                $('#Costo').prop("disabled", false);
+                /* $('#Tasa').prop("disabled", false);*/
                 $('#idTipoAseguradora').prop("disabled", false);
-                $('#idCodigoAseguradora').prop("disabled", false); 
+                $('#idCodigoAseguradora').prop("disabled", false);
                 $('#idObservaciones').prop("disabled", false);
             }
         });
@@ -191,7 +190,7 @@
             //}
             //else esta regla se cambia de acuerdo a nuevo correo
 
-                if (value == '28 - Tasa de interes EA') {
+            if (value == '28 - Tasa de interes EA') {
                 /* console.log('28');*/
                 $('#idObservaciones').val("");
                 $('#idObservaciones').prop("disabled", false);
@@ -210,7 +209,39 @@
             }
         });
 
+        $('#Costo').change(function () {
+            var Costo = $("#Costo").val();
 
+            if (Costo != '') {
+                $('#Tasa').val("0");
+                $('#Tasa').prop("disabled", true);
+
+            }
+            else {
+
+                $('#Tasa').prop("disabled", false);
+                $('#TasaMaxima').prop("disabled", false);
+
+            }
+            /*console.log(CostoFijo);*/
+        });
+
+        $('#Tasa').change(function () {
+            var Tasa = $("#Tasa").val();
+
+            if (Tasa != '') {
+                $('#Costo').val("0");
+                $('#Costo').prop("disabled", true);
+
+            }
+            else {
+
+                $('#Tasa').prop("disabled", false);
+                $('#Costo').prop("disabled", false);
+
+            }
+            /*console.log(CostoFijo);*/
+        });
 
     </script>
 }

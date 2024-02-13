@@ -257,32 +257,189 @@
             }
 
         });
-
         $('#CostoFijo').change(function () {
             var CostoFijo = $("#CostoFijo").val();
 
             if (CostoFijo != '') {
-                $('#CostoFijoMaximo').val("0");
-                $('#CostoFijoMaximo').prop("disabled", true);
+                $('#CostoProporcionOperacionServicio').val("0");
+                $('#CostoProporcionOperacionServicio').prop("disabled", true);
+
+                $('#CostoProporcionMaxOperacionServicio').val("0");
+                $('#CostoProporcionMaxOperacionServicio').prop("disabled", true);
+
+                $('#Tasa').val("0");
+                $('#Tasa').prop("disabled", true);
+
+                $('#TasaMaxima').val("0");
+                $('#TasaMaxima').prop("disabled", true);
             }
             else {
-                $('#CostoFijoMaximo').prop("disabled", false);
+                $('#CostoProporcionOperacionServicio').prop("disabled", false);
+                $('#CostoProporcionMaxOperacionServicio').prop("disabled", false);
+                $('#Tasa').prop("disabled", false);
+                $('#TasaMaxima').prop("disabled", false);
             }
             /*console.log(CostoFijo);*/
         });
 
-        $('#CostoFijoMaximo').change(function () {
-            var CostoFijomaximo = $("#CostoFijoMaximo").val();
+        $('#CostoProporcionOperacionServicio').change(function () {
+            var CostoProporcionOperacionServicio = $("#CostoProporcionOperacionServicio").val();
 
-            if (CostoFijomaximo != '') {
+            if (CostoProporcionOperacionServicio != '') {
                 $('#CostoFijo').val("0");
                 $('#CostoFijo').prop("disabled", true);
+
+                $('#CostoFijoMaximo').val("0");
+                $('#CostoFijoMaximo').prop("disabled", true);
+
+                $('#Tasa').val("0");
+                $('#Tasa').prop("disabled", true);
+
+                $('#TasaMaxima').val("0");
+                $('#TasaMaxima').prop("disabled", true);
             }
             else {
                 $('#CostoFijo').prop("disabled", false);
+                $('#CostoFijoMaximo').prop("disabled", false);
+                $('#Tasa').prop("disabled", false);
+                $('#TasaMaxima').prop("disabled", false);
+
             }
             /*console.log(CostoFijo);*/
         });
+
+        $('#Tasa').change(function () {
+            var Tasa = $("#Tasa").val();
+
+            if (Tasa != '') {
+                $('#CostoFijo').val("0");
+                $('#CostoFijo').prop("disabled", true);
+
+                $('#CostoFijoMaximo').val("0");
+                $('#CostoFijoMaximo').prop("disabled", true);
+
+                $('#CostoProporcionOperacionServicio').val("0");
+                $('#CostoProporcionOperacionServicio').prop("disabled", true);
+
+                $('#CostoProporcionMaxOperacionServicio').val("0");
+                $('#CostoProporcionMaxOperacionServicio').prop("disabled", true);
+            }
+            else {
+                $('#CostoFijo').prop("disabled", false);
+                $('#CostoFijoMaximo').prop("disabled", false);
+                $('#CostoProporcionOperacionServicio').prop("disabled", false);
+                $('#CostoProporcionMaxOperacionServicio').prop("disabled", false);
+
+            }
+            /*console.log(CostoFijo);*/
+        });
+
+        $('#idOperacionoServicio').change(function () {
+            var value = $("#idOperacionoServicio option:selected").text();
+
+            console.log('{' + value + '}');
+
+            if (value == '23 - Avance realizado fuera de Colombia') {
+                /*  console.log('27');*/
+                $('#idCanal').val("");
+                $('#idCanal').prop("disabled", true);
+            }
+            else if (value == '24 - Compra de cartera') {
+                /* console.log('28');*/
+                $('#idCanal').val("");
+                $('#idCanal').prop("disabled", true);
+            }
+            else if (value == '25 - Comision por transacciones internacionales') {
+                /*   console.log('37');*/
+                $('#idCanal').val("");
+                $('#idCanal').prop("disabled", true);
+            }
+            else if (value == '26 - Spread TRM por consumos en el exterior (%)') {
+                /*   console.log('37');*/
+                $('#idCanal').val("");
+                $('#idCanal').prop("disabled", true);
+            }
+            else if (value == '27 - VTUA porcentual (%)') {
+                /*   console.log('37');*/
+                $('#idCanal').val("");
+                $('#idCanal').prop("disabled", true);
+            }
+            else if (value == '28 - Tasa de interes EA') {
+                /*   console.log('37');*/
+                $('#idCanal').val("");
+                $('#idCanal').prop("disabled", true);
+            }
+            else if (value == '32 - Seguro de vida deudores') {
+                /*   console.log('37');*/
+                $('#idCanal').val("");
+                $('#idCanal').prop("disabled", true);
+            }
+            else if (value == '37 - Cobro prejuridico ') {
+                /*   console.log('37');*/
+                $('#idCanal').val("");
+                $('#idCanal').prop("disabled", true);
+            }
+            else if (value == '38 - Cobro juridico ') {
+                $('#idCanal').val("");
+                $('#idCanal').prop("disabled", true);
+            }
+            else {
+                $('#idCanal').prop("disabled", false);
+            }
+        });
+
+        $('#idCaracteristicaCredito').change(function () {
+            var value = $("#idCaracteristicaCredito option:selected").text();
+
+            if (value == '27 - VTUA porcentual (%)') {
+
+
+                $('#CostoFijo').val("0");
+                $('#CostoFijo').prop("disabled", true);
+
+                //$('#Tasa').val("0");
+                //$('#Tasa').prop("disabled", true);
+
+                $('#idTipoAseguradora').val("");
+                $('#idTipoAseguradora').prop("disabled", true);
+
+                $('#idCodigoAseguradora').val("");
+                $('#idCodigoAseguradora').prop("disabled", true);
+
+                $('#idObservaciones').val("");
+                $('#idObservaciones').prop("disabled", true);
+
+            }
+            else {
+
+                $('#CostoFijo').prop("disabled", false);
+                /* $('#Tasa').prop("disabled", false);*/
+                $('#idTipoAseguradora').prop("disabled", false);
+                $('#idCodigoAseguradora').prop("disabled", false);
+                $('#idObservaciones').prop("disabled", false);
+            }
+        });
+
+        $('#idOperacionoServicio').change(function () {
+            var value = $("#idOperacionoServicio option:selected").val();
+            /* console.log(value); dominio habilitado para seguros == 124*/
+            if (value == '124') {
+                $('#idTipoAseguradora').val("");
+                $('#idTipoAseguradora').prop("disabled", false);
+
+                $('#idCodigoAseguradora').val("");
+                $('#idCodigoAseguradora').prop("disabled", false);
+
+            }
+
+            else {
+                $('#idTipoAseguradora').prop("disabled", true);
+                $('#idCodigoAseguradora').prop("disabled", true);
+
+            }
+        });
+
+
 
     </script>
 }

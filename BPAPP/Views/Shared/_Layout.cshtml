@@ -53,15 +53,10 @@
 
                     </a>
                 </div>
-                @*<div class='dashboard-nav-dropdown'>
-                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
 
-                        <i class="fas fa-list"></i> Certificado
-
-                    </a>*@
-                    @*<a href="#" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Settings </a>*@
-                    <div class="nav-item-divider"></div>
-                    <a href="@Url.Action("Salir", "Home")" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Salir </a>
+                @*<a href="#" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Settings </a>*@
+                <div class="nav-item-divider"></div>
+                <a href="@Url.Action("Salir", "Home")" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Salir </a>
             </nav>
         </div>
         <div class='dashboard-app'>
@@ -122,5 +117,6 @@
 
     </script>
     @RenderSection("scripts", required: false)
+    <script src="~/Scripts/ComunJs.js"></script>
 </body>
 </html>

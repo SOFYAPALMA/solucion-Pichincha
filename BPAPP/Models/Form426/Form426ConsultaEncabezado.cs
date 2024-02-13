@@ -6,7 +6,7 @@ namespace ProyectoWeb.Models
     {
         [Display(Name = "Número Registro")]
         public int idPropiedadesFormato { get; set; }
-
+   
         [Display(Name = "Tipo")]
         public string Tipo { get; set; } = "001"; //Campo fijo por default= 001
 

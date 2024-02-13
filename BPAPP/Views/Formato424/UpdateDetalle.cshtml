@@ -106,7 +106,18 @@
     @Scripts.Render("~/bundles/jqueryval")
     <script>
         $('#idObservaciones').change(function () {
-            var value = $("#idObservaciones option:selected").text();
+            validacionObs();
+        });
+
+        $(document).ready(function () {
+            validacionObs();
+            validacionNumOp();
+            validacionCostoF();
+            validacionCostoP();
+        });
+
+        function validacionObs() {
+            var value = $("#idObservaciones option:selected").val();
 
             if (value == '90 - Desactivacion') {
                 $('#idOperacionServicio').val("");
@@ -149,48 +160,57 @@
             }
         });
 
-        $('#NumOperServiciosCuotamanejo').change(function () {
-            var value = $("#NumOperServiciosCuotamanejo").val();
-            //console.log(value);
-            //console.log($("#NumOperServiciosCuotamanejo"));
-            if (value == '-1') {
-                //console.log(value);
-                $('#CostoFijo').val("0");
-                $('#CostoFijo').prop("disabled", true);
 
-                $('#CostoProporcionOperacionServicio').val("0");
-                $('#CostoProporcionOperacionServicio').prop("disabled", true);
-            }
-            else {
-                $('#CostoFijo').prop("disabled", false);
-                $('#CostoProporcionOperacionServicio').prop("disabled", false);
+        $('#NumOperServiciosCuotamanejo').change(function () {
+            function validacionNumOp() {
+                var value = $("#NumOperServiciosCuotamanejo").val();
+                //console.log(value);
+                //console.log($("#NumOperServiciosCuotamanejo"));
+                if (value == '-1') {
+                    //console.log(value);
+                    $('#CostoFijo').val("0");
+                    $('#CostoFijo').prop("disabled", true);
+
+                    $('#CostoProporcionOperacionServicio').val("0");
+                    $('#CostoProporcionOperacionServicio').prop("disabled", true);
+                }
+                else {
+                    $('#CostoFijo').prop("disabled", false);
+                    $('#CostoProporcionOperacionServicio').prop("disabled", false);
+                }
             }
 
         });
 
         $('#CostoFijo').change(function () {
-            var CostoFijo = $("#CostoFijo").val();
+            function validacionCostoF() {
+                var CostoFijo = $("#CostoFijo").val();
 
-            if (CostoFijo != '') {
-                $('#CostoProporcionOperacionServicio').val("0");
-                $('#CostoProporcionOperacionServicio').prop("disabled", true);
+                if (CostoFijo != '') {
+                    $('#CostoProporcionOperacionServicio').val("0");
+                    $('#CostoProporcionOperacionServicio').prop("disabled", true);
+                }
+                else {
+                    $('#CostoProporcionOperacionServicio').prop("disabled", false);
+                }
+                /*console.log(CostoFijo);*/
             }
-            else {
-                $('#CostoProporcionOperacionServicio').prop("disabled", false);
-            }
-            /*console.log(CostoFijo);*/
         });
-        $('#CostoProporcionOperacionServicio').change(function () {
-            var CostoProporcionOperacionServicio = $("#CostoProporcionOperacionServicio").val();
 
-            if (CostoProporcionOperacionServicio != '') {
-                $('#CostoFijo').val("0");
-                $('#CostoFijo').prop("disabled", true);
+
+        $('#CostoProporcionOperacionServicio').change(function () {
+            function validacionCostoP() {
+                var CostoProporcionOperacionServicio = $("#CostoProporcionOperacionServicio").val();
+
+                if (CostoProporcionOperacionServicio != '') {
+                    $('#CostoFijo').val("0");
+                    $('#CostoFijo').prop("disabled", true);
+                }
+                else {
+                    $('#CostoFijo').prop("disabled", false);
+                }
+                /*console.log(CostoFijo);*/
             }
-            else {
-                $('#CostoFijo').prop("disabled", false);
-            }
-            /*console.log(CostoFijo);*/
         });
 
 

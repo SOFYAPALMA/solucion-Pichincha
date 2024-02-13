@@ -16,6 +16,9 @@
             @Html.DisplayNameFor(model => model.Costo)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Tasa)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.TipoAseguradora)
         </th>
         <th>
@@ -49,6 +52,9 @@
         @Html.DisplayFor(modelItem => item.Costo)
     </td>
     <td>
+        @Html.DisplayFor(modelItem => item.Tasa)
+    </td>
+    <td>
         @Html.DisplayFor(modelItem => item.TipoAseguradora)
     </td>
     <td>
@@ -61,6 +67,7 @@
         @if (item.Estado == "1")
         {
             @Html.ActionLink(item.DescripcionEstado, "../ErroresSFC/Index", new { treg = 'U', idPropForm = item.idPropiedadesFormato, idRegDet = item.idDetalle, form = 3 })
+          
         }
         else
         {

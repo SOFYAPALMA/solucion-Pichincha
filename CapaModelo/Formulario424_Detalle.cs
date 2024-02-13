@@ -21,6 +21,6 @@
         public string FechaEstado { get; set; }
         public string FechaProceso { get; set; }
         public int? idDetalleAnterior { get; set; }
-        public int UnidadCaptura { get; set; } = 1;
+        public int? UnidadCaptura { get; set; } = 1;
     }
 }

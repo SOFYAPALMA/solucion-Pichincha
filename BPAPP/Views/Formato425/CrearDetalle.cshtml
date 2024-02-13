@@ -167,7 +167,16 @@
         });
 
         $('#idObservaciones').change(function () {
+
             var value = $("#idObservaciones option:selected").text();
+            var CostoFijo = $("#CostoFijo").val();
+            if (CostoFijo != '') {
+                $('#CostoProporcionOperacionServicio').val("0");
+                $('#CostoProporcionOperacionServicio').prop("disabled", true);
+            }
+            else {
+                $('#CostoProporcionOperacionServicio').prop("disabled", false);
+            }
 
             if (value == '90 - Desactivacion') {
                 $('#idOperacionServicio').val("");
@@ -249,24 +258,75 @@
             var CostoFijo = $("#CostoFijo").val();
 
             if (CostoFijo != '') {
-                $('#CostoFijoMaximo').val("0");
-                $('#CostoFijoMaximo').prop("disabled", true);
+                $('#CostoProporcionOperacionServicio').val("0");
+                $('#CostoProporcionOperacionServicio').prop("disabled", true);
+
+                $('#CostoProporcionMaxOperacionServicio').val("0");
+                $('#CostoProporcionMaxOperacionServicio').prop("disabled", true);
+
+                $('#Tasa').val("0");
+                $('#Tasa').prop("disabled", true);
+
+                $('#TasaMaxima').val("0");
+                $('#TasaMaxima').prop("disabled", true);
             }
             else {
-                $('#CostoFijoMaximo').prop("disabled", false);
+                $('#CostoProporcionOperacionServicio').prop("disabled", false);
+                $('#CostoProporcionMaxOperacionServicio').prop("disabled", false);
+                $('#Tasa').prop("disabled", false);
+                $('#TasaMaxima').prop("disabled", false);
             }
             /*console.log(CostoFijo);*/
         });
 
-        $('#CostoFijoMaximo').change(function () {
-            var CostoFijomaximo = $("#CostoFijoMaximo").val();
+        $('#CostoProporcionOperacionServicio').change(function () {
+            var CostoProporcionOperacionServicio = $("#CostoProporcionOperacionServicio").val();
 
-            if (CostoFijomaximo != '') {
+            if (CostoProporcionOperacionServicio != '') {
                 $('#CostoFijo').val("0");
                 $('#CostoFijo').prop("disabled", true);
+
+                $('#CostoFijoMaximo').val("0");
+                $('#CostoFijoMaximo').prop("disabled", true);
+
+                $('#Tasa').val("0");
+                $('#Tasa').prop("disabled", true);
+
+                $('#TasaMaxima').val("0");
+                $('#TasaMaxima').prop("disabled", true);
             }
             else {
                 $('#CostoFijo').prop("disabled", false);
+                $('#CostoFijoMaximo').prop("disabled", false);
+                $('#Tasa').prop("disabled", false);
+                $('#TasaMaxima').prop("disabled", false);
+                
+            }
+            /*console.log(CostoFijo);*/
+        });
+
+        $('#Tasa').change(function () {
+            var Tasa = $("#Tasa").val();
+
+            if (Tasa != '') {
+                $('#CostoFijo').val("0");
+                $('#CostoFijo').prop("disabled", true);
+
+                $('#CostoFijoMaximo').val("0");
+                $('#CostoFijoMaximo').prop("disabled", true);
+
+                $('#CostoProporcionOperacionServicio').val("0");
+                $('#CostoProporcionOperacionServicio').prop("disabled", true);
+
+                $('#CostoProporcionMaxOperacionServicio').val("0");
+                $('#CostoProporcionMaxOperacionServicio').prop("disabled", true);
+            }
+            else {
+                $('#CostoFijo').prop("disabled", false);
+                $('#CostoFijoMaximo').prop("disabled", false);
+                $('#CostoProporcionOperacionServicio').prop("disabled", false);
+                $('#CostoProporcionMaxOperacionServicio').prop("disabled", false);
+
             }
             /*console.log(CostoFijo);*/
         });
@@ -359,7 +419,7 @@
 
         $('#idOperacionoServicio').change(function () {
             var value = $("#idOperacionoServicio option:selected").val();
-            /* console.log(value);*/
+            /* console.log(value); dominio habilitado para seguros == 124*/
             if (value == '124') {
                 $('#idTipoAseguradora').val("");
                 $('#idTipoAseguradora').prop("disabled", false);

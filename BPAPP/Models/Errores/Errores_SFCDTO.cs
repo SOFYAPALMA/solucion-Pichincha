@@ -10,6 +10,7 @@ namespace CapaModelo
     {
         public string Tiporegistros { get; set; }
         public string idPropiedadesFormato { get; set; }
+        public string idDetalle { get; set; }
         public string idRegistrosDetalle { get; set; }
         public string CodigoRegistro { get; set; }
         public string Formato { get; set; }

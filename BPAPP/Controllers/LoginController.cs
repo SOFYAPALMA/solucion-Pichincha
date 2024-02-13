@@ -17,7 +17,7 @@ namespace ProyectoWeb.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(string usuario, string contrasenia) {
+        public ActionResult Index1(string usuario, string contrasenia) {
 
             int idUsuario = CD_Usuario.LoginUsuario(usuario, contrasenia);
 
@@ -34,7 +34,7 @@ namespace ProyectoWeb.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index2(string usuario, string contrasenia) {
+        public ActionResult Index(string usuario, string contrasenia) {
 
             ADSettings DAConfig = new ADSettings()
             {
@@ -60,7 +60,7 @@ namespace ProyectoWeb.Controllers
 
 
         [HttpPost]
-        public ActionResult DA3(string usuario, string contrasenia)
+        public ActionResult Index2(string usuario, string contrasenia)
         {
 
             ADSettings DAConfig = new ADSettings()

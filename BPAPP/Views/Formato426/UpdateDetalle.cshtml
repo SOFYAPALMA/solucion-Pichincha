@@ -89,14 +89,15 @@
                     <div class="row">
                         <div class="col-md-offset-2 col-md-12">
                             <input type="submit" value="Guardar" class="btn btn-primary btn-sm float-right" />
+                            <div>
+                                @Html.ActionLink("Volver", "Details", new { id = Model.idPropiedadesFormato })
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         }
-        <div>
-            @Html.ActionLink("Volver", "Details", new { id = Model.idPropiedadesFormato })
-        </div>
+
     </div>
 </div>
 
@@ -129,8 +130,8 @@
                 $('#idCaracteristicaCredito').val("");
                 $('#idCaracteristicaCredito').prop("disabled", true);
 
-                $('#CostoFijo').val("0");
-                $('#CostoFijo').prop("disabled", true);
+                $('#Costo').val("0");
+                $('#Costo').prop("disabled", true);
 
                 $('#Tasa').val("0");
                 $('#Tasa').prop("disabled", true);
@@ -143,29 +144,63 @@
             }
             else {
                 $('#idCaracteristicaCredito').prop("disabled", false);
-                $('#CostoFijo').prop("disabled", false);
+                $('#Costo').prop("disabled", false);
                 $('#Tasa').prop("disabled", false);
                 $('#idTipoAseguradora').prop("disabled", false);
                 $('#idCodigoAseguradora').prop("disabled", false);
             }
         });
+
+        $('#idCaracteristicaCredito').change(function () {
+            var value = $("#idCaracteristicaCredito option:selected").text();
+
+            if (value == '27 - VTUA porcentual (%)') {
+
+                $('#Costo').val("0");
+                $('#Costo').prop("disabled", true);
+
+                //$('#Tasa').val("0");
+                //$('#Tasa').prop("disabled", true);
+
+                $('#idTipoAseguradora').val("");
+                $('#idTipoAseguradora').prop("disabled", true);
+
+                $('#idCodigoAseguradora').val("");
+                $('#idCodigoAseguradora').prop("disabled", true);
+
+                $('#idObservaciones').val("");
+                $('#idObservaciones').prop("disabled", true);
+
+            }
+            else {
+
+                $('#Costo').prop("disabled", false);
+                /* $('#Tasa').prop("disabled", false);*/
+                $('#idTipoAseguradora').prop("disabled", false);
+                $('#idCodigoAseguradora').prop("disabled", false);
+                $('#idObservaciones').prop("disabled", false);
+            }
+        });
+
         $('#idCaracteristicaCredito').change(function () {
             var value = $("#idCaracteristicaCredito option:selected").text();
 
             /* console.log('{' + value + '}');*/
 
-            if (value == '27 - VTUA porcentual (%)') {
-                /*  console.log('27');*/
-                $('#idObservaciones').val("");
-                $('#idObservaciones').prop("disabled", false);
-            }
-            else if (value == '28 - Tasa de interes EA') {
+            //if (value == '27 - VTUA porcentual (%)') {
+            //    /*  console.log('27');*/
+            //    $('#idObservaciones').val("");
+            //    $('#idObservaciones').prop("disabled", false);
+            //}
+            //else esta regla se cambia de acuerdo a nuevo correo
+
+            if (value == '28 - Tasa de interes EA') {
                 /* console.log('28');*/
                 $('#idObservaciones').val("");
                 $('#idObservaciones').prop("disabled", false);
             }
             else if (value == '37 - Cobro prejuridico ') {
-                console.log('37');
+                /*   console.log('37');*/
                 $('#idObservaciones').val("");
                 $('#idObservaciones').prop("disabled", false);
             }
@@ -176,6 +211,40 @@
             else {
                 $('#idObservaciones').prop("disabled", true);
             }
+        });
+
+        $('#Costo').change(function () {
+            var Costo = $("#Costo").val();
+
+            if (Costo != '') {
+                $('#Tasa').val("0");
+                $('#Tasa').prop("disabled", true);
+
+            }
+            else {
+
+                $('#Tasa').prop("disabled", false);
+                $('#TasaMaxima').prop("disabled", false);
+
+            }
+            /*console.log(CostoFijo);*/
+        });
+
+        $('#Tasa').change(function () {
+            var Tasa = $("#Tasa").val();
+
+            if (Tasa != '') {
+                $('#Costo').val("0");
+                $('#Costo').prop("disabled", true);
+
+            }
+            else {
+
+                $('#Tasa').prop("disabled", false);
+                $('#Costo').prop("disabled", false);
+
+            }
+            /*console.log(CostoFijo);*/
         });
 
 
