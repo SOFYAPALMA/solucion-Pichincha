@@ -91,6 +91,11 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-offset-2 col-md-12">
+                            <input type="submit" value="Desactivar" class="btn btn-primary btn-sm float-right" />                            
+                        </div>
+                    </div>
                 </div>
             </div>
         }
@@ -105,11 +110,11 @@
             var value = $("#idObservaciones option:selected").text();
 
             if (value == '90 - Desactivacion') {
-                $('#idOperacionServicio').val("");
-                $('#idOperacionServicio').prop("disabled", true);
+                //$('#idOperacionServicio').val("");
+                //$('#idOperacionServicio').prop("disabled", true);
 
-                $('#idCanal').val("");
-                $('#idCanal').prop("disabled", true);
+                //$('#idCanal').val("");
+                //$('#idCanal').prop("disabled", true);
 
                 $("#NumOperServiciosCuotamanejo").val('0')
                 $('#NumOperServiciosCuotamanejo').prop("disabled", true);
@@ -137,8 +142,8 @@
                 }
             }
             else {
-                $('#CostoProporcionOperacionServicio').prop("disabled", false);
-                $('#idOperacionServicio').prop("disabled", false);
+                //$('#CostoProporcionOperacionServicio').prop("disabled", false);
+                //$('#idOperacionServicio').prop("disabled", false);
                 $('#idCanal').prop("disabled", false);
                 $('#NumOperServiciosCuotamanejo').prop("disabled", false);
                 $('#CostoFijo').prop("disabled", false);

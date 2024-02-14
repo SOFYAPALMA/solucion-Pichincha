@@ -79,8 +79,8 @@
 
     </td>
     <td>
-        @Html.ActionLink("Editar", "UpdateDetalle", new { id = item.idDetalle })
-        @Html.ActionLink("Desactivar", "DeleteDetalle", new { id = item.idDetalle })
+        @Html.ActionLink("Editar", "UpdateDetalle", new { id = item.idDetalle, opc = 1 })
+        @*@Html.ActionLink("Desactivar", "UpdateDetalle", new { id = item.idDetalle, opc = 2  })*@
     </td>
 
 </tr>

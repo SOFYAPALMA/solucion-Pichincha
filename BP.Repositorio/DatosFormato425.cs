@@ -217,6 +217,7 @@ namespace BP.Repositorio
                 AdicionarParametros("@Tasa", obj.Tasa);
                 AdicionarParametros("@TasaMaxima", obj.TasaMaxima);
                 AdicionarParametros("@idObservaciones", obj.idObservaciones);
+                AdicionarParametros("@UnidadCaptura", obj.UnidadCaptura);
 
 
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);

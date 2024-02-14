@@ -177,10 +177,13 @@ namespace BP.Repositorio
 
                 AdicionarParametros("@idDetalle", obj.idDetalle);
                 AdicionarParametros("@Subcuenta", obj.idObservaciones);
-                AdicionarParametros("@Costo", obj.idCaracteristicaCredito);
+                AdicionarParametros("@idCaracteristicaCredito", obj.idCaracteristicaCredito);
+                AdicionarParametros("@Costo", obj.idObservaciones);
+                AdicionarParametros("@Tasa", obj.idCaracteristicaCredito);
                 AdicionarParametros("@idTipoAseguradora", obj.idObservaciones);
                 AdicionarParametros("@idCodigoAseguradora", obj.idCaracteristicaCredito);
                 AdicionarParametros("@idObservaciones", obj.idObservaciones);
+                AdicionarParametros("@UnidadCaptura", obj.idCaracteristicaCredito);
                
 
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);

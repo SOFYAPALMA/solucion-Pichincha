@@ -106,8 +106,9 @@ namespace ProyectoWeb.Controllers
             return View(form424);
         }
 
-        public ActionResult UpdateDetalle(int id)
+        public ActionResult UpdateDetalle(int id, int opc)
         {
+            ViewBag.Opcion = opc;
             Formulario424_Detalle detalle = DatosFormato424.DetallesDetalles(id);
             Form424ConsultaDetalle form424 = Mapper.getMapper(detalle);
             LlenadoListasDetalle();
