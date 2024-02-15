@@ -18,7 +18,7 @@ namespace ProyectoWeb.Models
 
         [Required(ErrorMessage = "El campo operacion o servicio es obligatorio.")]
         [Display(Name = "Operacion o Servicio")]
-        public int? idOperacionoServicio { get; set; }
+        public int idOperacionoServicio { get; set; }
         public string OperacionoServicio { get; set; }
 
         [Display(Name = "Canal")]

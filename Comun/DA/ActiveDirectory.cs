@@ -22,7 +22,7 @@ namespace Comun.DA1
         /// <param name="clave">Clave del usuario</param>
         /// <param name="usuario">Nombre del usuario</param>
         /// <returns>un booleano</returns>
-        public bool ValidacionUsuario(string clave, string usuario)
+        public bool ValidacionUsuario(string usuario, string clave)
         {
             bool aceptaClave = true;
             Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), "Ingreso a ValidacionUsuario: Usuario: " + usuario, Logs.Tipo.Log);

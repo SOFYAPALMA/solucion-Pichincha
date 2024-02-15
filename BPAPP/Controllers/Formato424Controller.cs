@@ -24,6 +24,7 @@ namespace ProyectoWeb.Controllers
             form424.idPropiedadesFormato = id;
             LlenadoListasDetalle();
 
+
             return View(form424);
         }
 
@@ -106,9 +107,8 @@ namespace ProyectoWeb.Controllers
             return View(form424);
         }
 
-        public ActionResult UpdateDetalle(int id, int opc)
+        public ActionResult UpdateDetalle(int id)
         {
-            ViewBag.Opcion = opc;
             Formulario424_Detalle detalle = DatosFormato424.DetallesDetalles(id);
             Form424ConsultaDetalle form424 = Mapper.getMapper(detalle);
             LlenadoListasDetalle();

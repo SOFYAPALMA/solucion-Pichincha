@@ -52,6 +52,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -123,6 +125,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Connected Services\ServiceReferenceTarifas\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\consumoWSController.cs" />
     <Compile Include="Controllers\DominioController.cs" />
     <Compile Include="Controllers\ErroresSFCController.cs" />
     <Compile Include="Controllers\Formato425Controller.cs" />
@@ -161,6 +169,24 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceTarifas\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReferenceTarifas\configuration.svcinfo" />
+    <Content Include="Connected Services\ServiceReferenceTarifas\ProyectoWeb.ServiceReferenceTarifas.ResponseHeaderOut.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReferenceTarifas\ProyectoWeb.ServiceReferenceTarifas.Respuesta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReferenceTarifas\ProyectoWeb.ServiceReferenceTarifas.sincronizarTarifasSFCResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReferenceTarifas\ProyectoWeb.ServiceReferenceTarifas.Tarifa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServiceReferenceTarifas\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -1941,6 +1967,7 @@
     <Content Include="Content\Plugins\fontawesome-free-5.15.2\webfonts\fa-solid-900.woff" />
     <Content Include="Content\Plugins\fontawesome-free-5.15.2\webfonts\fa-solid-900.woff2" />
     <Content Include="Content\Plugins\datatables\images\Sorting icons.psd" />
+    <None Include="Connected Services\ServiceReferenceTarifas\SincronizarTarifasSFC.wsdl" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -2082,6 +2109,7 @@
     <Content Include="Views\Dominio\UpdateDetalle.cshtml" />
     <Content Include="Views\Dominio\CrearDetalle.cshtml" />
     <Content Include="Views\ErroresSFC\Index.cshtml" />
+    <Content Include="Views\consumoWS\Consumo.cshtml" />
     <None Include="Web.R.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2120,6 +2148,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReferenceTarifas\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

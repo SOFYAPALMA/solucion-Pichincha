@@ -45,7 +45,7 @@ namespace ProyectoWeb.Models
         public int? idObservaciones { get; set; }
 
         //[Display(Name = "Unidad Captura")]
-        public int UnidadCaptura { get; set; } = 1;
+        public int? UnidadCaptura { get; set; } = 1;
         public string Estado { get; set; }
         [Display(Name = "Estado")]
         public string DescripcionEstado { get; set; }
