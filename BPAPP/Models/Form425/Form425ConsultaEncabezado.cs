@@ -61,7 +61,7 @@ namespace ProyectoWeb.Models
 
         [Display(Name = "Fecha Hora")]
         public string Fecha_horaActualizacion { get; set; }
-        public int Usuario { get; set; }
+        public string Usuario { get; set; }
         public string Estado { get; set; }
         [Display(Name = "Estado")]
         public string DescripcionEstado { get; set; }

@@ -88,7 +88,7 @@ namespace ProyectoWeb.Models
 
         [Display(Name = "Tipo de Producto Deposito")]
         public string TipoProductoDeposito { get; set; }
-        public int Usuario { get; set; }
+        public int? Usuario { get; set; }
 
     }
 }

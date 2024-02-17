@@ -9,11 +9,9 @@ namespace ProyectoWeb.Models
         [Display(Name = "Sub cuentas")]
         public string Subcuentas { get; set; } = "0";//Campo fijo por default= 0
 
-        [Required(ErrorMessage = "El campo operacion o servicio es obligatorio.")]
         [Display(Name = "Operacion o Servicio")]
         public int idOperacionServicio { get; set; }
-
-        [Required(ErrorMessage = "El campo Canal es obligatorio.")]
+                
         [Display(Name = "Canal")]
         public int idCanal { get; set; }
 

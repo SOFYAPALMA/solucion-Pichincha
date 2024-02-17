@@ -73,6 +73,6 @@ namespace ProyectoWeb.Models
         [Display(Name = "Apertura digital")]
         public int? idAperturaDigital { get; set; }
         public string CodigoRegistro { get; set; }
-        public int Usuario { get; set; }
+        public int? Usuario { get; set; }
     }
 }

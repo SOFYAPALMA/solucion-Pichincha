@@ -130,20 +130,15 @@
             <div class="card-footer">
                 <div class="row">
                     <div class="col-md-offset-2 col-md-12">
-                        <input type="submit" value="Guardar" class="btn btn-primary btn-sm float-right" />
+                        <input type="submit" id="btnGuardar" style="visibility:visible;" value="Guardar" class="btn btn-primary btn-sm float-right" />
+                        <input type="submit" id="btnDesactivar" style="visibility:hidden;" value="Desactivar" class="btn btn-primary btn-sm float-right" />
                         <div>
                             @Html.ActionLink("Volver", "List")
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card-footer">
-                <div class="row">
-                    <div class="col-md-offset-2 col-md-12">
-                        <input type="submit" value="Desactivar" class="btn btn-primary btn-sm float-right" />
-                    </div>
-                </div>
-            </div>
+            
         </div>
         }
     </div>
@@ -186,11 +181,11 @@
             }
 
             if (value == '90 - Desactivacion') {
-                $('#idOperacionServicio').val("");
-                $('#idOperacionServicio').prop("disabled", true);
+                //$('#idOperacionServicio').val("");
+                //$('#idOperacionServicio').prop("disabled", true);
 
-                $('#idCanal').val("");
-                $('#idCanal').prop("disabled", true);
+                //$('#idCanal').val("");
+                //$('#idCanal').prop("disabled", true);
 
                 $('#CostoFijo').val("0");
                 $('#CostoFijo').prop("disabled", true);
@@ -215,6 +210,10 @@
 
                 $('#idCodigoAseguradora').val("");
                 $('#idCodigoAseguradora').prop("disabled", true);
+
+                $('#btnGuardar').css("visibility", 'hidden');
+                $('#btnDesactivar').css("visibility", 'visible');
+
             }
             else if (value == '1 - Costo fijo o proporcional  en dolares') {
                 var input = $('#CostoFijo');
@@ -247,8 +246,8 @@
                 }
             }
             else {
-                $('#idOperacionServicio').prop("disabled", false);
-                $('#idCanal').prop("disabled", false);
+                //$('#idOperacionServicio').prop("disabled", false);
+                //$('#idCanal').prop("disabled", false);
                 $('#CostoFijo').prop("disabled", false);
                 $('#CostoFijoMaximo').prop("disabled", false);
                 $('#CostoProporcionOperacionServicio').prop("disabled", false);
@@ -257,6 +256,9 @@
                 $('#TasaMaxima').prop("disabled", false);
                 $('#idTipoAseguradora').prop("disabled", false);
                 $('#idCodigoAseguradora').prop("disabled", false);
+
+                $('#btnGuardar').css("visibility", 'visible');
+                $('#btnDesactivar').css("visibility", 'hidden');
 
             }
         });

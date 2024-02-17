@@ -15,12 +15,10 @@ namespace ProyectoWeb.Models
         [Display(Name = "Subcuenta")]
         public string Subcuenta { get; set; } = "0";//Campo fijo por default= 0
 
-        [Required(ErrorMessage = "El campo operacion o servicio es obligatorio.")]
         [Display(Name = "Operacion o Servicio")]
         public int idOperacionServicio { get; set; }
         public string OperacionServicio { get; set; }
 
-        [Required(ErrorMessage = "El campo Canal es obligatorio.")]
         [Display(Name = "Canal")]
         public int idCanal { get; set; }
         public string Canal { get; set; }

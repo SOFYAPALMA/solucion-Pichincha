@@ -85,17 +85,11 @@
             <div class="card-footer">
                 <div class="row">
                     <div class="col-md-offset-2 col-md-12">
-                        <input type="submit" value="Guardar" class="btn btn-primary btn-sm float-right" />
+                        <input type="submit" id="btnGuardar" style="visibility:visible;" value="Guardar" class="btn btn-primary btn-sm float-right" />
+                        <input type="submit" id="btnDesactivar" style="visibility:hidden;" value="Desactivar" class="btn btn-primary btn-sm float-right" />
                         <div>
                             @Html.ActionLink("Volver", "List")
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-footer">
-                <div class="row">
-                    <div class="col-md-offset-2 col-md-12">
-                        <input type="submit" value="Desactivar" class="btn btn-primary btn-sm float-right" />
                     </div>
                 </div>
             </div>
@@ -126,6 +120,9 @@
 
                 $('#CostoProporcionOperacionServicio').val("0");
                 $('#CostoProporcionOperacionServicio').prop("disabled", true);
+
+                $('#btnGuardar').css("visibility", 'hidden');
+                $('#btnDesactivar').css("visibility", 'visible');
             }
             else if (value == '1 - Costo fijo o proporcional  en dolares') {
                 var input = $('#CostoFijo');
@@ -149,6 +146,9 @@
                 $('#idCanal').prop("disabled", false);
                 $('#NumOperServiciosCuotamanejo').prop("disabled", false);
                 $('#CostoFijo').prop("disabled", false);
+
+                $('#btnGuardar').css("visibility", 'visible');
+                $('#btnDesactivar').css("visibility", 'hidden');
             }
         });
 

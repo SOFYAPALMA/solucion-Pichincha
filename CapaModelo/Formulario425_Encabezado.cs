@@ -30,7 +30,7 @@ namespace CapaModelo
         public string ServicioGratuito_3 { get; set; }
         public int idServicioGratuito_3 { get; set; }
         public string Fecha_horaActualizacion { get; set; }
-        public int Usuario { get; set; }
+        public string Usuario { get; set; }
         public string Estado { get; set; }
         public string DescripcionEstado { get; set; }
         public string Fechacorte { get; set; }
