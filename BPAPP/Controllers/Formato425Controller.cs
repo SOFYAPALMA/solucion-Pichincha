@@ -76,9 +76,18 @@ namespace ProyectoWeb.Controllers
                  }*/
 
                 Formulario425_Detalle encabezado = Mapper.getMapper(form425);
+                //validar el campo Observaciones si viene desactivo llamar el otro procedimiento spDesactivaDetalleTarjetadeCredito
+                bool respuesta = false;
+                if (form425.idObservaciones == 135)
+                {
+                    respuesta = DatosFormato425.EliminarDetalle(encabezado);
+                }
 
-                bool respuesta = DatosFormato425.RegistrarDetalle(encabezado);
-
+                else
+                {
+                    respuesta = DatosFormato425.RegistrarDetalle(encabezado);
+                }
+                
                 if (respuesta)
                 {
                     TempData["Notificacion"] = DatosFormato425.Mensaje;

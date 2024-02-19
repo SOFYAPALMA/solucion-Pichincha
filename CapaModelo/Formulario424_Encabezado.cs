@@ -27,10 +27,10 @@ namespace CapaModelo
         public int idSerGratuito_TCRDebito { get; set; }
         public int idSerGratuito_TCRDebito2 { get; set; }
         public int idSerGratuito_TCRDebito3 { get; set; }
-        public int idTipoProductoDeposito { get; set; }
+        public int? idTipoProductoDeposito { get; set; }
         public string Ingresos { get; set; }
         public string Nombre { get; set; }
-        public int idNombreComercial { get; set; } 
+        public int? idNombreComercial { get; set; } 
         public string NombreComercial { get; set; }
         public int NumeroClientes { get; set; }
         public string ObservacionesCuota { get; set; }

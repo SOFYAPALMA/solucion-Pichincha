@@ -16,11 +16,11 @@ namespace ProyectoWeb.Models
         public string Subcuenta { get; set; } = "0";//Campo fijo por default= 0
 
         [Display(Name = "Operacion o Servicio")]
-        public int idOperacionServicio { get; set; }
+        public int? idOperacionServicio { get; set; }
         public string OperacionServicio { get; set; }
 
         [Display(Name = "Canal")]
-        public int idCanal { get; set; }
+        public int? idCanal { get; set; }
         public string Canal { get; set; }
 
         [Display(Name = "Número de operaciones o servicios incluidos en cuota de manejo")]

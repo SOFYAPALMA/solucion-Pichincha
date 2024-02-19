@@ -6,9 +6,9 @@
         public string PropiedadesFormato { get; set; }
         public int idDetalle { get; set; }
         public string subCuenta { get; set; }
-        public int idOperacionServicio { get; set; }
+        public int? idOperacionServicio { get; set; }
         public string OperacionServicio { get; set; }
-        public int idCanal { get; set; }
+        public int? idCanal { get; set; }
         public string Canal { get; set; }
         public int? NumOperServiciosCuotamanejo { get; set; }
         public decimal? CostoFijo { get; set; }

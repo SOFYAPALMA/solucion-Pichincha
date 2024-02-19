@@ -67,8 +67,17 @@ namespace ProyectoWeb.Controllers
             if (ModelState.IsValid)
             {
                 Formulario426_Detalle encabezado = Mapper.getMapper(form426);
+                //validar el campo Observaciones si viene desactivo llamar el otro procedimiento spDesactivaDetalleCredito
+                bool respuesta = false;
+                if (form426.idObservaciones == 148)
+                {
+                    respuesta = DatosFormato426.EliminarDetalle(encabezado);
+                }
+                else
+                {
+                    respuesta = DatosFormato426.RegistrarDetalle(encabezado);
+                }
 
-                bool respuesta = DatosFormato426.RegistrarDetalle(encabezado);
 
                 if (respuesta)
                 {

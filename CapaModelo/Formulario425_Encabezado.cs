@@ -24,13 +24,13 @@ namespace CapaModelo
         public string Cupo { get; set; }
         public int idCupo { get; set; }
         public string ServicioGratuito_1 { get; set; }
-        public int idServicioGratuito_1 { get; set; }
+        public int? idServicioGratuito_1 { get; set; }
         public string ServicioGratuito_2 { get; set; }
-        public int idServicioGratuito_2 { get; set; }
+        public int? idServicioGratuito_2 { get; set; }
         public string ServicioGratuito_3 { get; set; }
-        public int idServicioGratuito_3 { get; set; }
+        public int? idServicioGratuito_3 { get; set; }
         public string Fecha_horaActualizacion { get; set; }
-        public string Usuario { get; set; }
+        public int Usuario { get; set; }
         public string Estado { get; set; }
         public string DescripcionEstado { get; set; }
         public string Fechacorte { get; set; }

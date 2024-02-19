@@ -45,7 +45,7 @@ namespace ProyectoWeb.Models
         public int idSerGratuito_TCRDebito { get; set; }
         public int idSerGratuito_TCRDebito2 { get; set; }
         public int idSerGratuito_TCRDebito3 { get; set; }
-        public int idTipoProductoDeposito { get; set; }
+        public int? idTipoProductoDeposito { get; set; }
 
         [Display(Name = "Ingresos")]
         public string Ingresos { get; set; }
@@ -54,7 +54,7 @@ namespace ProyectoWeb.Models
         public string Nombre { get; set; } = "BCOPICHINCH"; //Campo fijo por default= BCOPICHINCH
 
         [Display(Name = "Nombre Comercial")]
-        public int idNombreComercial { get; set; }
+        public int? idNombreComercial { get; set; }
 
         [Display(Name = "Nombre Comercial")]
         public string NombreComercial { get; set; }

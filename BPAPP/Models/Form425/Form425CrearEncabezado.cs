@@ -71,7 +71,7 @@ namespace ProyectoWeb.Models
         public int idServicioGratuito_3 { get; set; }
 
         [Display(Name = "Usuario")]
-        public string Usuario { get; set; }
+        public int Usuario { get; set; }
      
         [Display(Name = "Estado")]
         public string Estado { get; set; }

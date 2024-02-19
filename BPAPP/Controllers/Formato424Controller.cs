@@ -77,15 +77,16 @@ namespace ProyectoWeb.Controllers
             {
                 Formulario424_Detalle encabezado = Mapper.getMapper(form424);
                 //validar el campo Observaciones si viene desactivo llamar el otro procedimiento spDesactivaDetalleDeposito
+                bool respuesta = false;
+                if (form424.idObservaciones == 108)
+                {
+                    respuesta = DatosFormato424.EliminarDetalle(encabezado);
+                }
+                else
+                {
+                    respuesta = DatosFormato424.RegistrarDetalle(encabezado);
+                }
 
-                //if (Formulario424_Detalle.Observaciones == 90)
-                //    {
-                //        ModelState.AddModelError("Desactivacion");
-                //        LlenadoListasEncabezado();
-                //        return View(form424);
-                //    }
-
-                    bool respuesta = DatosFormato424.RegistrarDetalle(encabezado);
 
                 if (respuesta)
                 {

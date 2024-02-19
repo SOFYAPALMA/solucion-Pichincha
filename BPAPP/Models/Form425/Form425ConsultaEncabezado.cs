@@ -49,19 +49,19 @@ namespace ProyectoWeb.Models
         public string ServicioGratuito_1 { get; set; }
 
         [Display(Name = "Servicio gratuito 1")]
-        public int idServicioGratuito_1 { get; set; }
+        public int? idServicioGratuito_1 { get; set; }
         public string ServicioGratuito_2 { get; set; }
 
         [Display(Name = "Servicio gratuito 2")]
-        public int idServicioGratuito_2 { get; set; }
+        public int? idServicioGratuito_2 { get; set; }
         public string ServicioGratuito_3 { get; set; }
 
         [Display(Name = "Servicio gratuito 3")]
-        public int idServicioGratuito_3 { get; set; }
+        public int? idServicioGratuito_3 { get; set; }
 
         [Display(Name = "Fecha Hora")]
         public string Fecha_horaActualizacion { get; set; }
-        public string Usuario { get; set; }
+        public int Usuario { get; set; }
         public string Estado { get; set; }
         [Display(Name = "Estado")]
         public string DescripcionEstado { get; set; }
