@@ -19,7 +19,7 @@ namespace ProyectoWeb.Controllers
 
 
             requestHeader.systemId = "Tarifas";
-            requestHeader.messageId = "${=java.util.UUID.randomUUID()}";
+            requestHeader.messageId = "${=java.util.UUID.randomUUID()}";//insertar un # aleatorio, random o nuevo ID para identificar la transaccion
             requestHeader.invokerDateTime = System.DateTime.Parse(System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
 
             ServiceReferenceTarifas.SecurityCredential security = new ServiceReferenceTarifas.SecurityCredential();

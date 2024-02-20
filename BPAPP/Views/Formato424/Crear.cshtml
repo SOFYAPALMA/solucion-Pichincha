@@ -150,7 +150,7 @@
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-md-offset-2 col-md-12">
-                            <input type="submit" value="Guardar" onclick="ValidarCuotaManejo()" class="btn btn-primary btn-sm float-right" />
+                            <input type="submit" value="Guardar" onclick="return ValidarCuotaManejo()" class="btn btn-primary btn-sm float-right" />
                             <div>
                                 @Html.ActionLink("Volver", "List")
                             </div>
@@ -249,6 +249,9 @@
             ValidarCuotaManejo();
         });
 
+        $('#idTipoProductoDeposito').change(function () {
+            ValidarCuotaManejo();
+        });
 
         function ValidarCuotaManejo() {
             var retorno = true;
@@ -267,16 +270,16 @@
             var Tdebito3 = $("#idSerGratuito_TCRDebito3 option:selected").val();
 
 
-            if (ObsCuota == '41') {//Sí NO tiene "Cuota de manejo" 
+            if (ObsCuota == '41') {//Sí NO tiene "Cuota de manejo"
                 $('#CuotaManejo').val("");
                 $('#CuotaManejo').prop("disabled", true);
 
                 var isValidSG = true;
                 var isValidTB = true;
 
-                 //Sí No tiene "Cuota de manejo", Valores válidos para "Servicio Gratuito Cuenta de Ahorroso" 98 - No aplica
-                 //Sí No tiene "Cuota de manejo", Valores válidos para Servicio Gratuito Tarjeta Debito" 98 - No aplica
-                
+                //Sí No tiene "Cuota de manejo", Valores válidos para "Servicio Gratuito Cuenta de Ahorroso" 98 - No aplica
+                //Sí No tiene "Cuota de manejo", Valores válidos para Servicio Gratuito Tarjeta Debito" 98 - No aplica
+
 
                 if ((Tdebito1 == '62' && Tdebito2 == '62' && Tdebito3 == '62')) {
                     LimpiarMensajeGeneral();
@@ -285,7 +288,7 @@
                 else {
                     isValidTB = false;
                 }
-                
+
                 if (SerG1 == '62' && SerG2 == '62' && SerG3 == '62') {
                     LimpiarMensajeGeneral();
                     retorno = true;
@@ -305,37 +308,42 @@
                 }
             }
             else {   //Si TIENE cuota de manejo
-                $("#CuotaManejo").prop("disabled", false); 
+                $("#CuotaManejo").prop("disabled", false);
                 if (value < 1) {
                     retorno = false;
                     MensajeGeneral('Agregue un valor a la cuota de manejo');
                 }
-
                 else {
-                    if (true) {
-                        value == '6' || value == '7'
+                    var tipoProdDep = $("#idTipoProductoDeposito option:selected").val();
+
+                    if (tipoProdDep != '6' && tipoProdDep != '7') {
+                        console.log('aqui 1');
                         //Sí tiene "Cuota de manejo", Valores válidos para Servicio Gratuito Cuenta de Ahorros: 2 - Consignación nacional, 4 - Copia de extracto en papel, 5 - Certificación bancaria, 6 - Expedición cheque de gerencia
                         if ((SerG1 == '53' || SerG1 == '55' || SerG1 == '56' || SerG1 == '57') && (SerG2 == '53' || SerG2 == '55' || SerG2 == '56' || SerG2 == '57') && (SerG3 == '53' || SerG3 == '55' || SerG3 == '56' || SerG3 == '57')) {
+                            console.log('aqui 2');
                             LimpiarMensajeGeneral();
                             retorno = true;
                         }
                         else {
+                            console.log('aqui 3');
                             retorno = false;
                             MensajeGeneral('Si TIENE cuota de manejo puede seleccionar en servicios gratuitos cuenta de ahorro: <br/>2 - Consignación nacional <br/>4 - Copia de extracto en papel <br/>5 - Certificación bancaria <br/>6 - Expedición cheque de gerencia');
                         }
 
                         //Si TIENE cuota de manejo puede seleccionar en Servicio Gratuito Tarjeta Debito: 8 - Consultas en red propia 9 - Certificación bancaria 10 - Copia de extracto en papel y por internet'
                         if ((Tdebito1 == '59' || Tdebito1 == '60' || Tdebito1 == '61') && (Tdebito2 == '59' || Tdebito2 == '60' || Tdebito2 == '61') && (Tdebito3 == '59' || Tdebito3 == '60' || Tdebito3 == '61')) {
-                            retorno = true;
+                            console.log('aqui 4');
+                            retorno = true && retorno;
                         }
                         else {
+                            console.log('aqui 5');
                             retorno = false;
                             MensajeGeneral('Si TIENE cuota de manejo puede seleccionar en Servicios Gratuito Tarjeta Debito: <br/>8 - Consultas en red propia <br/>9 - Certificación bancaria <br/>10 - Copia de extracto en papel y por internet');
                         }
                     }
                 }
             }
-
+            console.log(retorno);
             return retorno;
         }
 

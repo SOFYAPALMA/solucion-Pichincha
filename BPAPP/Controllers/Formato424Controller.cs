@@ -33,18 +33,19 @@ namespace ProyectoWeb.Controllers
         public ActionResult Crear(Form424CrearEncabezado form424)
         {
             if (ModelState.IsValid)
-            {
+                {
                 if (Session["IdUsuario"] == null)
                     return RedirectToAction("Login");
 
                 int idusuario = int.Parse(Session["IdUsuario"].ToString());
 
-                //if (form424.CuotaManejo == 0)
+                //if (form424.CuotaManejo >= 1)
                 //{
                 //    ModelState.AddModelError("CuotaManejo", "Agregue un valor diferente de cero.");
                 //    LlenadoListasEncabezado();
                 //    return View(form424);
                 //}
+
 
                 Formulario424_Encabezado encabezado = Mapper.getMapper(form424);
                 encabezado.Usuario = idusuario;
