@@ -147,23 +147,21 @@
 </div>
 
 
-
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <script>
         $(document).ready(function () {
             $("#idTipoAseguradora").change(function () {
                 $.get("/Formato425/LlenadoAseguradoras", { tipo: $("#idTipoAseguradora").val() }, function (data) {
-                    console.log("sofi");
+                    //console.log("sofi");
                     // VACIAMOS EL DropDownList
                     $("#idCodigoAseguradora").empty();
                     // AÑADIMOS UN NUEVO label CON EL NOMBRE DEL ELEMENTO SELECCIONADO
                     $("#idCodigoAseguradora").append("<option value> Seleccione..</option>")
                     // CONSTRUIMOS EL DropDownList A PARTIR DEL RESULTADO Json (data)
-                    console.log(data);
+                    //console.log(data);
                     $.each(data, function (index, row) {
-                        console.log(row);
+                        //console.log(row);
                         $("#idCodigoAseguradora").append("<option value='" + row.Value + "'>" + row.Text + "</option>")
                     });
                 });
@@ -171,6 +169,7 @@
         });
 
         $('#idObservaciones').change(function () {
+
             var value = $("#idObservaciones option:selected").text();
             var CostoFijo = $("#CostoFijo").val();
             if (CostoFijo != '') {
@@ -182,11 +181,11 @@
             }
 
             if (value == '90 - Desactivacion') {
-                $('#idOperacionServicio').val("");
-                $('#idOperacionServicio').prop("disabled", true);
+                //$('#idOperacionServicio').val("");
+                //$('#idOperacionServicio').prop("disabled", true);
 
-                $('#idCanal').val("");
-                $('#idCanal').prop("disabled", true);
+                //$('#idCanal').val("");
+                //$('#idCanal').prop("disabled", true);
 
                 $('#CostoFijo').val("0");
                 $('#CostoFijo').prop("disabled", true);
@@ -211,6 +210,10 @@
 
                 $('#idCodigoAseguradora').val("");
                 $('#idCodigoAseguradora').prop("disabled", true);
+
+                $('#btnGuardar').css("visibility", 'hidden');
+                $('#btnDesactivar').css("visibility", 'visible');
+
             }
             else if (value == '1 - Costo fijo o proporcional  en dolares') {
                 var input = $('#CostoFijo');
@@ -243,8 +246,8 @@
                 }
             }
             else {
-                $('#idOperacionServicio').prop("disabled", false);
-                $('#idCanal').prop("disabled", false);
+                //$('#idOperacionServicio').prop("disabled", false);
+                //$('#idCanal').prop("disabled", false);
                 $('#CostoFijo').prop("disabled", false);
                 $('#CostoFijoMaximo').prop("disabled", false);
                 $('#CostoProporcionOperacionServicio').prop("disabled", false);
@@ -254,9 +257,12 @@
                 $('#idTipoAseguradora').prop("disabled", false);
                 $('#idCodigoAseguradora').prop("disabled", false);
 
-            }
+                $('#btnGuardar').css("visibility", 'visible');
+                $('#btnDesactivar').css("visibility", 'hidden');
 
+            }
         });
+
         $('#CostoFijo').change(function () {
             var CostoFijo = $("#CostoFijo").val();
 
@@ -439,8 +445,5 @@
             }
         });
 
-
-
     </script>
 }
-
