@@ -66,6 +66,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en RegistrarEncabezado", ex);
             }
@@ -88,7 +89,7 @@ namespace BP.Repositorio
                 AdicionarParametros("@CostoFijo", obj.CostoFijo);
                 AdicionarParametros("@CostoFijoMaximo", obj.CostoFijoMaximo);
                 AdicionarParametros("@CostoProporcionOperacionServicio", obj.CostoProporcionOperacionServicio);
-                AdicionarParametros("@CostoProporcionMaxOperacionServicio", obj.CostoProporcionMaxOperacionServicio); 
+                AdicionarParametros("@CostoProporcionMaxOperacionServicio", obj.CostoProporcionMaxOperacionServicio);
                 AdicionarParametros("@Tasa", obj.Tasa);
                 AdicionarParametros("@TasaMaxima", obj.TasaMaxima);
                 AdicionarParametros("@idTipoAseguradora", obj.idTipoAseguradora);
@@ -107,13 +108,13 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en RegistrarDetalle", ex);
             }
 
             return respuesta;
         }
-
 
         public static bool ActualizarEncabezado(Formulario425_Encabezado obj)
         {
@@ -153,8 +154,84 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en ActualizarEncabezado", ex);
+            }
+
+            return respuesta;
+        }
+
+        //public static bool EliminarEncabezado(int id)
+        //{
+        //    Instanciar();
+        //    bool respuesta = false;
+
+        //    try
+        //    {
+        //        limpiarParametros();
+        //        AdicionarParametros("@idPropiedadesFormato", id);
+        //        AdicionarParametros("@Tiporegistros", "E");
+
+        //        AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
+        //        AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
+
+        //        ejecutarScalar("bpapp.spEliminaTarjetaCredito");
+
+        //        respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
+        //        Mensaje = RecuperarParametrosOut("MensajeSalida");
+        //        Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), Mensaje, Logs.Tipo.Log);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        desconectar();
+        //        Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
+        //        throw new Exception("No se puede eliminar el encabezado tiene detalle", ex);
+        //    }
+
+        //    return respuesta;
+        //}
+
+        public static bool EliminarDetalle(Formulario425_Detalle obj)
+        {
+            Instanciar();
+            bool respuesta = false;
+
+            try
+            {
+                limpiarParametros();
+
+                
+                AdicionarParametros("@idDetalle", obj.idDetalle);
+                AdicionarParametros("@Subcuenta", obj.idObservaciones);
+                AdicionarParametros("@idOperacionServicio", obj.idOperacionServicio);
+                AdicionarParametros("@idCanal", obj.idCanal);
+                AdicionarParametros("@CostoFijo", obj.CostoFijo);
+                AdicionarParametros("@CostoFijoMaximo", obj.CostoFijoMaximo);
+                AdicionarParametros("@CostoProporcionOperacionServicio", obj.CostoProporcionOperacionServicio);
+                AdicionarParametros("@CostoProporcionMaxOperacionServicio", obj.CostoProporcionMaxOperacionServicio);
+                AdicionarParametros("@idOperacionServicio", obj.idOperacionServicio);
+                AdicionarParametros("@idTipoAseguradora", obj.idTipoAseguradora);
+                AdicionarParametros("@idCodigoAseguradora", obj.idCodigoAseguradora);
+                AdicionarParametros("@CostoFijo", obj.CostoFijo);
+                AdicionarParametros("@Tasa", obj.Tasa);
+                AdicionarParametros("@TasaMaxima", obj.TasaMaxima);
+                AdicionarParametros("@idObservaciones", obj.idObservaciones);
+
+
+                AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
+                AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
+
+                ejecutarScalar("bpapp.spDesactivaDetalleTarjetaCredito");
+
+                respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
+                Mensaje = RecuperarParametrosOut("MensajeSalida");
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), Mensaje, Logs.Tipo.Log);
+            }
+            catch (Exception ex)
+            {
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
+                throw new Exception("Termina Sin errores pero no realiza la acción, dado que el estado del registro no Corresponde!, esta Inactivo, o esta en Edición Detalle", ex);
             }
 
             return respuesta;
@@ -195,6 +272,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en ActualizarDetalle", ex);
             }
@@ -231,6 +309,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en ListaDetalles", ex);
             }
@@ -265,6 +344,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en Detalles", ex);
             }
@@ -305,6 +385,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en Detalles", ex);
             }
@@ -346,6 +427,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en ListaDetalles", ex);
             }

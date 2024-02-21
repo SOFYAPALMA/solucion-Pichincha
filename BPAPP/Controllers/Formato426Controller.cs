@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace ProyectoWeb.Controllers
 {
+    [Authorize]
     public class Formato426Controller : Controller
     {
         public ActionResult Crear()
@@ -67,7 +68,7 @@ namespace ProyectoWeb.Controllers
             {
                 Formulario426_Detalle encabezado = Mapper.getMapper(form426);
 
-                bool respuesta = DatosFormato426.RegistrarEncabezadoDetalle(encabezado);
+                bool respuesta = DatosFormato426.RegistrarDetalle(encabezado);
 
                 if (respuesta)
                 {
@@ -94,6 +95,7 @@ namespace ProyectoWeb.Controllers
             Formulario426_Encabezado encabezado = DatosFormato426.Detalles(id);
             Form426ConsultaEncabezado form426 = Mapper.getMapper(encabezado);
             LlenadoListasEncabezado();
+            LlenadoCreditos(form426.TipoProductoCredito);
             return View(form426);
         }
 
@@ -131,11 +133,59 @@ namespace ProyectoWeb.Controllers
             }
         }
 
+        //[HttpPost]
+        ////[ValidateAntiForgeryToken]
+        //public ActionResult DeleteEncabezado(int id)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //         bool respuesta = DatosFormato426.EliminarEncabezado(id);
+
+        //        if (respuesta)
+        //        {
+        //            TempData["Notificacion"] = DatosFormato426.Mensaje;
+        //            ModelState.AddModelError("", DatosFormato426.Mensaje);
+        //            return RedirectToRoute("List");
+        //        }
+        //        else
+        //        {
+        //            ModelState.AddModelError("", "No se puede eliminar el encabezado tiene detalle.");
+        //            LlenadoListasEncabezado();
+        //            return View();
+        //        }
+        //    }
+        //    else
+        //    {
+        //        LlenadoListasEncabezado();
+        //        return View();
+        //    }
+        //}
+
+        public ActionResult DeleteDetalle(int id)
+        {
+            Formulario426_Detalle _Detalle = DatosFormato426.DetallesDetalles(id);
+            bool respuesta = DatosFormato426.EliminarDetalle(_Detalle);
+
+            if (respuesta)
+            {
+                TempData["Notificacion"] = DatosFormato426.Mensaje;
+
+                return RedirectToAction("List");
+            }
+            else
+            {
+                ModelState.AddModelError("", "No se puede eliminar el detalle.");
+                LlenadoListasEncabezado();
+                return RedirectToAction("Details/" + _Detalle.idPropiedadesFormato);
+            }
+        }
+
         public ActionResult UpdateDetalle(int id)
         {
             Formulario426_Detalle detalle = DatosFormato426.DetallesDetalles(id);
             Form426ConsultaDetalle form426 = Mapper.getMapper(detalle);
             LlenadoListasDetalle();
+            LlenadoAseguradoras(form426.idTipoAseguradora);
             return View(form426);
         }
 
@@ -201,20 +251,21 @@ namespace ProyectoWeb.Controllers
         /// </summary>
         private void LlenadoListasEncabezado()
         {
-            List<DominioModel> idCodigoCredito = DatosDominio.Obtener(1);
+            List<ProductoCreditoModel> productoCredito = DatosCreditos.Tipos();//Lista de los 14 tipos de credito
             List<DominioModel> idAperturaDigital = DatosDominio.Obtener(2);
 
-            if (idCodigoCredito.Count() == 0)
+            if (productoCredito.Count() == 0)
             {
-                ModelState.AddModelError("idCodigoCredito", "No se encuentra valores para la lista de tipo de codigo credito");
+                ModelState.AddModelError("idProducto", "No se encuentra valores para la lista de tipo de codigo credito");
             }
-            ViewBag.CodigoCredito = new SelectList(idCodigoCredito, "Dominio", "Descripcion");
+            ViewBag.TiposCredito = new SelectList(productoCredito, "idCodigo", "Descripcion");
 
             if (idAperturaDigital.Count() == 0)
             {
                 ModelState.AddModelError("idAperturaDigital", "No se encuentra valores para la lista de apertura digital");
             }
             ViewBag.AperturaDigital = new SelectList(idAperturaDigital, "Dominio", "Descripcion");
+            ViewBag.CodigoCredito = new SelectList(new List<CreditosModel>(), "idCodigo", "Descripcion");
         }
 
         /// <summary>
@@ -223,9 +274,8 @@ namespace ProyectoWeb.Controllers
         /// 
         private void LlenadoListasDetalle()
         {
-            List<DominioModel> idCaracteristicaCredito = DatosDominio.Obtener(1);
-            List<DominioModel> idTipoAseguradora = DatosDominio.Obtener(17);
-            List<DominioModel> idCodigoAseguradora = DatosDominio.Obtener(17);
+            List<DominioModel> idCaracteristicaCredito = DatosDominio.Obtener(15);
+            List<Aseguradoras> idTipoAseguradora = DatosAseguradoras.Tipos();
             List<DominioModel> idObservaciones = DatosDominio.Obtener(14);
 
 
@@ -237,15 +287,9 @@ namespace ProyectoWeb.Controllers
 
             if (idTipoAseguradora.Count() == 0)
             {
-                ModelState.AddModelError("idTipoAseguradora", "No se encuentra valores para la lista de tipo de tipo aseguradora");
+                ModelState.AddModelError("idTipoAseguradora", "No se encuentra valores para la lista de tipo aseguradora");
             }
-            ViewBag.TipoAseguradora = new SelectList(idTipoAseguradora, "Dominio", "Descripcion");
-
-            if (idCodigoAseguradora.Count() == 0)
-            {
-                ModelState.AddModelError("idCodigoAseguradora", "No se encuentra valores para la lista de codigo aseguradora");
-            }
-            ViewBag.CodigoAseguradora = new SelectList(idCodigoAseguradora, "Dominio", "Descripcion");
+            ViewBag.TipoAseguradora = new SelectList(idTipoAseguradora, "Tipo", "Descripcion");
 
             if (idObservaciones.Count() == 0)
             {
@@ -253,6 +297,33 @@ namespace ProyectoWeb.Controllers
             }
             ViewBag.Observaciones = new SelectList(idObservaciones, "Dominio", "Descripcion");
 
+            ViewBag.CodigoAseguradora = new SelectList(new List<Aseguradoras>(), "Codigo", "Descripcion");
+        }
+
+        [HttpGet]
+        public JsonResult LlenadoAseguradoras(int? tipo)
+        {
+            List<Aseguradoras> idCodigoAseguradora = DatosAseguradoras.Lista(tipo);
+
+            if (idCodigoAseguradora.Count() == 0)
+            {
+                ModelState.AddModelError("idCodigoAseguradora", "No se encuentra valores para la lista de codigo aseguradora");
+            }
+            ViewBag.CodigoAseguradora = new SelectList(idCodigoAseguradora, "Codigo", "Descripcion");
+            return Json(new SelectList(idCodigoAseguradora, "Codigo", "Descripcion"), JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public JsonResult LlenadoCreditos(int? tipo)
+        {
+            List<ProductoCreditoModel> idCodigoCredito = DatosCreditos.Lista(tipo);
+
+            if (idCodigoCredito.Count() == 0)
+            {
+                ModelState.AddModelError("idCodigoCredito", "No se encuentra valores para la lista de codigo credito");
+            }
+            ViewBag.CodigoCredito = new SelectList(idCodigoCredito, "idCodigo", "Descripcion");
+            return Json(new SelectList(idCodigoCredito, "idCodigo", "Descripcion"), JsonRequestBehavior.AllowGet);
         }
     }
 

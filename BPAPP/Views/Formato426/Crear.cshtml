@@ -1,7 +1,7 @@
 ﻿@model ProyectoWeb.Models.Form426CrearEncabezado
 
 @{
-    ViewBag.Title = "Crear formulario";
+    ViewBag.Title = "Crear Formulario";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -11,22 +11,25 @@
         {
             <div class="card">
                 <div class="card-header">
-                    SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+                    Crear Formulario 426 (Crédito)
                 </div>
-                <br>
-                <h3 style="text-align:center;">TARIFAS DE LOS PRODUCTOS DE DEPÓSITO</h3>
-                <h4 style="text-align:center;">FORMATO 426</h4>
-                <h5 style="text-align:center;">CIRCULAR EXTERNA 006 DE 2023</h5>
-                <br>
                 <div class="card-body">
                     @Html.AntiForgeryToken()
 
                     <div class="row">
-
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TipoProductoCredito, htmlAttributes: new { @class = "control-label" })
+                                <div>
+                                    @Html.DropDownList("TipoProductoCredito", (SelectList)ViewBag.TiposCredito, "Seleccione..", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.TipoProductoCredito, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-sm-4">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.idCodigoCredito, htmlAttributes: new { @class = "control-label" })
-                                <div class="col-md-10">
+                                <div>
                                     @Html.DropDownList("idCodigoCredito", (SelectList)ViewBag.CodigoCredito, "Seleccione..", new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.idCodigoCredito, "", new { @class = "text-danger" })
                                 </div>
@@ -35,7 +38,7 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.idAperturaDigital, htmlAttributes: new { @class = "control-label" })
-                                <div class="col-md-10">
+                                <div>
                                     @Html.DropDownList("idAperturaDigital", (SelectList)ViewBag.AperturaDigital, "Seleccione..", new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.idAperturaDigital, "", new { @class = "text-danger" })
                                 </div>
@@ -48,6 +51,9 @@
                     <div class="row">
                         <div class="col-md-offset-2 col-md-12">
                             <input type="submit" value="Guardar" class="btn btn-primary btn-sm float-right" />
+                            <div>
+                                @Html.ActionLink("Volver", "List")
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -55,6 +61,25 @@
         }
     </div>
 </div>
-<div>
-    @Html.ActionLink("Volver", "List")
-</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+
+        $(document).ready(function () {
+            $("#TipoProductoCredito").change(function () {
+                $.get("/Formato426/LlenadoCreditos", { tipo: $("#TipoProductoCredito").val() }, function (data) {
+                    // VACIAMOS EL DropDownList
+                    $("#idCodigoCredito").empty();
+                    // AÑADIMOS UN NUEVO label CON EL NOMBRE DEL ELEMENTO SELECCIONADO
+                    $("#idCodigoCredito").append("<option value> Seleccione..</option>")
+                    // CONSTRUIMOS EL DropDownList A PARTIR DEL RESULTADO Json (data)
+                    $.each(data, function (index, row) {
+                        $("#idCodigoCredito").append("<option value='" + row.Value + "'>" + row.Text + "</option>")
+                    });
+                });
+            });
+        });
+    </script>
+}

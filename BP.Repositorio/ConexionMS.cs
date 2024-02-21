@@ -53,6 +53,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 throw new Exception("Se presentaron problemas al conectar en el metodo nuevaConexion Revise los Valores, err " + ex.Message);
             }
         }
@@ -217,7 +218,7 @@ namespace BP.Repositorio
         public static void AdicionarParametros(string nombre, object valor)
         {
             Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), nombre + "='" + valor + "'", Logs.Tipo.Log);
-            if (valor.GetType().Name == "String")
+            //if (valor.GetType().Name == "String")
             {
                 if (valor == "null")
                 {

@@ -11,18 +11,10 @@
         {
             <div class="card">
                 <div class="card-header">
-                    SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+                    Crear formulario 424 (Depósitos)
                 </div>
-                <br>
-                <h3 style="text-align:center;">TARIFAS DE LOS PRODUCTOS DE DEPÓSITO</h3>
-                <h4 style="text-align:center;">FORMATO 424</h4>
-                <h5 style="text-align:center;">CIRCULAR EXTERNA 006 DE 2023</h5>
-                <br>
                 <div class="card-body">
-
-
                     @Html.AntiForgeryToken()
-
 
                     <div class="row">
                         <div class="col-sm-4">
@@ -63,10 +55,29 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
+                                @Html.LabelFor(model => model.CuotaManejo, htmlAttributes: new { @class = "control-label" })
+                                <div>
+                                    @Html.EditorFor(model => model.CuotaManejo, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.CuotaManejo, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.NumeroClientes, htmlAttributes: new { @class = "control-label" })
+                                <div>
+                                    @Html.EditorFor(model => model.NumeroClientes, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.NumeroClientes, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
                                 @Html.LabelFor(model => model.idObservacionesCuota, htmlAttributes: new { @class = "control-label" })
                                 <div>
                                     @Html.DropDownList("idObservacionesCuota", (SelectList)ViewBag.ObservacionesCuotadeManejo, "Seleccione..", new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.idObservacionesCuota, "", new { @class = "text-danger" })
+
                                 </div>
                             </div>
                         </div>
@@ -139,15 +150,195 @@
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-md-offset-2 col-md-12">
-                            <input type="submit" value="Guardar" class="btn btn-primary btn-sm float-right" />
+                            <input type="submit" value="Guardar" onclick="ValidarCuotaManejo()" class="btn btn-primary btn-sm float-right" />
+                            <div>
+                                @Html.ActionLink("Volver", "List")
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         }
-
     </div>
 </div>
-<div>
-    @Html.ActionLink("Volver", "List")
-</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $('#idTipoProductoDeposito').change(function () {
+            var value = $("#idTipoProductoDeposito option:selected").val();
+            /* console.log(value);*/
+            if (value == '6' || value == '7') {
+                $('#idAperturaDigital').val("");
+                $('#idAperturaDigital').prop("disabled", true);
+
+                $('#NumeroClientes').val("");
+                $('#NumeroClientes').prop("disabled", true);
+
+                $('#idGrupoPoblacional').val("");
+                $('#idGrupoPoblacional').prop("disabled", true);
+
+                $("#idObservacionesCuota").val("")
+                $('#idObservacionesCuota').prop("disabled", true);
+
+                $('#idIngresos').val("");
+                $('#idIngresos').prop("disabled", true);
+
+                $('#idSerGratuito_CtaAHO').val("");
+                $('#idSerGratuito_CtaAHO').prop("disabled", true);
+
+                $('#idSerGratuito_CtaAHO2').val("");
+                $('#idSerGratuito_CtaAHO2').prop("disabled", true);
+
+                $('#idSerGratuito_CtaAHO3').val("");
+                $('#idSerGratuito_CtaAHO3').prop("disabled", true);
+
+                $('#idSerGratuito_TCRDebito').val("");
+                $('#idSerGratuito_TCRDebito').prop("disabled", true);
+
+                $("#idSerGratuito_TCRDebito2").val("")
+                $('#idSerGratuito_TCRDebito2').prop("disabled", true);
+
+                $('#idSerGratuito_TCRDebito3').val("");
+                $('#idSerGratuito_TCRDebito3').prop("disabled", true);
+            }
+
+            else {
+                $('#idAperturaDigital').prop("disabled", false);
+                $('#NumeroClientes').prop("disabled", false);
+                $('#idGrupoPoblacional').prop("disabled", false);
+                $('#idObservacionesCuota').prop("disabled", false);
+                $('#idIngresos').prop("disabled", false);
+                $('#idSerGratuito_CtaAHO').prop("disabled", false);
+                $('#idSerGratuito_CtaAHO2').prop("disabled", false);
+                $('#idSerGratuito_CtaAHO3').prop("disabled", false);
+                $('#idSerGratuito_TCRDebito').prop("disabled", false);
+                $('#idSerGratuito_TCRDebito2').prop("disabled", false);
+                $('#idSerGratuito_TCRDebito3').prop("disabled", false);
+
+            }
+        });
+
+        $('#CuotaManejo').change(function () {
+            ValidarCuotaManejo();
+        });
+        $('#idObservacionesCuota').change(function () {
+            ValidarCuotaManejo();
+        });
+
+        $('#idSerGratuito_CtaAHO').change(function () {
+            ValidarCuotaManejo();
+        });
+
+        $('#idSerGratuito_CtaAHO2').change(function () {
+            ValidarCuotaManejo();
+        });
+
+        $('#idSerGratuito_CtaAHO3').change(function () {
+            ValidarCuotaManejo();
+        });
+        $('#idSerGratuito_TCRDebito').change(function () {
+            ValidarCuotaManejo();
+        });
+
+        $('#idSerGratuito_TCRDebito2').change(function () {
+            ValidarCuotaManejo();
+        });
+
+        $('#idSerGratuito_TCRDebito3').change(function () {
+            ValidarCuotaManejo();
+        });
+
+
+        function ValidarCuotaManejo() {
+            var retorno = true;
+            LimpiarMensajeGeneral();
+            var value = $("#CuotaManejo").val();
+            var ObsCuota = $("#idObservacionesCuota option:selected").val();
+
+            console.log(value);
+            console.log(ObsCuota);
+
+            var SerG1 = $("#idSerGratuito_CtaAHO option:selected").val();
+            var SerG2 = $("#idSerGratuito_CtaAHO2 option:selected").val();
+            var SerG3 = $("#idSerGratuito_CtaAHO3 option:selected").val();
+            var Tdebito1 = $("#idSerGratuito_TCRDebito option:selected").val();
+            var Tdebito2 = $("#idSerGratuito_TCRDebito2 option:selected").val();
+            var Tdebito3 = $("#idSerGratuito_TCRDebito3 option:selected").val();
+
+
+            if (ObsCuota == '41') {//Sí NO tiene "Cuota de manejo" 
+                $('#CuotaManejo').val("");
+                $('#CuotaManejo').prop("disabled", true);
+
+                var isValidSG = true;
+                var isValidTB = true;
+
+                 //Sí No tiene "Cuota de manejo", Valores válidos para "Servicio Gratuito Cuenta de Ahorroso" 98 - No aplica
+                 //Sí No tiene "Cuota de manejo", Valores válidos para Servicio Gratuito Tarjeta Debito" 98 - No aplica
+                
+
+                if ((Tdebito1 == '62' && Tdebito2 == '62' && Tdebito3 == '62')) {
+                    LimpiarMensajeGeneral();
+                    retorno = true;
+                }
+                else {
+                    isValidTB = false;
+                }
+                
+                if (SerG1 == '62' && SerG2 == '62' && SerG3 == '62') {
+                    LimpiarMensajeGeneral();
+                    retorno = true;
+                }
+                else {
+                    isValidSG = false;
+                }
+
+                if (!isValidTB) {
+                    retorno = false;
+                    MensajeGeneral('Si NO TIENE cuota de manejo puede seleccionar en Servicio Gratuito Tarjeta Debito: <br/>98- No aplica');
+                }
+
+                if (!isValidSG) {
+                    retorno = false;
+                    MensajeGeneral('Si NO TIENE cuota de manejo puede seleccionar en Servicios Gratuitos Cuenta de Ahorro: <br/>98- No aplica');
+                }
+            }
+            else {   //Si TIENE cuota de manejo
+                $("#CuotaManejo").prop("disabled", false); 
+                if (value < 1) {
+                    retorno = false;
+                    MensajeGeneral('Agregue un valor a la cuota de manejo');
+                }
+
+                else {
+                    if (true) {
+                        value == '6' || value == '7'
+                        //Sí tiene "Cuota de manejo", Valores válidos para Servicio Gratuito Cuenta de Ahorros: 2 - Consignación nacional, 4 - Copia de extracto en papel, 5 - Certificación bancaria, 6 - Expedición cheque de gerencia
+                        if ((SerG1 == '53' || SerG1 == '55' || SerG1 == '56' || SerG1 == '57') && (SerG2 == '53' || SerG2 == '55' || SerG2 == '56' || SerG2 == '57') && (SerG3 == '53' || SerG3 == '55' || SerG3 == '56' || SerG3 == '57')) {
+                            LimpiarMensajeGeneral();
+                            retorno = true;
+                        }
+                        else {
+                            retorno = false;
+                            MensajeGeneral('Si TIENE cuota de manejo puede seleccionar en servicios gratuitos cuenta de ahorro: <br/>2 - Consignación nacional <br/>4 - Copia de extracto en papel <br/>5 - Certificación bancaria <br/>6 - Expedición cheque de gerencia');
+                        }
+
+                        //Si TIENE cuota de manejo puede seleccionar en Servicio Gratuito Tarjeta Debito: 8 - Consultas en red propia 9 - Certificación bancaria 10 - Copia de extracto en papel y por internet'
+                        if ((Tdebito1 == '59' || Tdebito1 == '60' || Tdebito1 == '61') && (Tdebito2 == '59' || Tdebito2 == '60' || Tdebito2 == '61') && (Tdebito3 == '59' || Tdebito3 == '60' || Tdebito3 == '61')) {
+                            retorno = true;
+                        }
+                        else {
+                            retorno = false;
+                            MensajeGeneral('Si TIENE cuota de manejo puede seleccionar en Servicios Gratuito Tarjeta Debito: <br/>8 - Consultas en red propia <br/>9 - Certificación bancaria <br/>10 - Copia de extracto en papel y por internet');
+                        }
+                    }
+                }
+            }
+
+            return retorno;
+        }
+
+
+    </script>
+}

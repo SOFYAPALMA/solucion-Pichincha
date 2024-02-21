@@ -7,6 +7,7 @@ namespace ProyectoWeb
 {
     public class Mapper
     {
+
         #region Formulario 424
         public static Formulario424_Encabezado getMapper(Form424CrearEncabezado dto)
         {
@@ -29,6 +30,7 @@ namespace ProyectoWeb
                 idNombreComercial = dto.idNombreComercial,
                 NumeroClientes = dto.NumeroClientes,
                 Tipo = dto.Tipo,
+                Codigo = dto.Codigo,
                 Usuario = dto.Usuario
             };
             return result;
@@ -56,6 +58,7 @@ namespace ProyectoWeb
                 CodigoRegistro = obj.CodigoRegistro,
                 CuotaManejo = obj.CuotaManejo,
                 Estado = obj.Estado,
+                DescripcionEstado = obj.DescripcionEstado,
                 Fecha_horaActualizacion = obj.Fecha_horaActualizacion,
                 Fechacorte = obj.Fechacorte,
                 FechaEstado = obj.FechaEstado,
@@ -105,10 +108,11 @@ namespace ProyectoWeb
                 CodigoRegistro = dto.CodigoRegistro,
                 CuotaManejo = dto.CuotaManejo,
                 Estado = dto.Estado,
+                DescripcionEstado = dto.DescripcionEstado,
                 Fecha_horaActualizacion = dto.Fecha_horaActualizacion,
                 Fechacorte = dto.Fechacorte,
                 FechaEstado = dto.FechaEstado,
-                idAperturaDigital = dto.idAperturaDigital,
+                idAperturaDigital = dto.idAperturaDigital ?? 0,
                 idGrupoPoblacional = dto.idGrupoPoblacional,
                 idIngresos = dto.idIngresos,
                 idObservacionesCuota = dto.idObservacionesCuota,
@@ -122,6 +126,7 @@ namespace ProyectoWeb
                 idTipoProductoDeposito = dto.idTipoProductoDeposito,
                 NumeroClientes = dto.NumeroClientes
             };
+
             return result;
         }
 
@@ -153,8 +158,11 @@ namespace ProyectoWeb
                 idObservaciones = obj.idObservaciones,
                 Observaciones = obj.Observaciones,
                 UnidadCaptura = obj.UnidadCaptura,
+                DescripcionEstado = obj.DescripcionEstado,
+                CodigoRegistro = obj.CodigoRegistro,
                 idOperacionServicio = obj.idOperacionServicio,
-                OperacionServicio = obj.OperacionServicio
+                OperacionServicio = obj.OperacionServicio,
+                Estado = obj.Estado
             };
             return result;
         }
@@ -220,6 +228,7 @@ namespace ProyectoWeb
                 Fecha_horaActualizacion = dto.Fecha_horaActualizacion,
                 Usuario = dto.Usuario,
                 Estado = dto.Estado,
+                DescripcionEstado = dto.DescripcionEstado,
                 Fechacorte = dto.Fechacorte,
                 FechaEstado = dto.FechaEstado,
                 CodigoRegistro = dto.CodigoRegistro
@@ -271,6 +280,7 @@ namespace ProyectoWeb
                 Fecha_horaActualizacion = obj.Fecha_horaActualizacion,
                 Usuario = obj.Usuario,
                 Estado = obj.Estado,
+                DescripcionEstado = obj.DescripcionEstado,
                 Fechacorte = obj.Fechacorte,
                 FechaEstado = obj.FechaEstado,
                 CodigoRegistro = obj.CodigoRegistro,
@@ -310,6 +320,7 @@ namespace ProyectoWeb
                 Fecha_horaActualizacion = dto.Fecha_horaActualizacion,
                 Usuario = dto.Usuario,
                 Estado = dto.Estado,
+                DescripcionEstado = dto.DescripcionEstado,
                 Fechacorte = dto.Fechacorte,
                 FechaEstado = dto.FechaEstado,
                 CodigoRegistro = dto.CodigoRegistro
@@ -355,6 +366,7 @@ namespace ProyectoWeb
                 Observaciones = obj.Observaciones,
                 UnidadCaptura = obj.UnidadCaptura,
                 Estado = obj.Estado,
+                DescripcionEstado = obj.DescripcionEstado,
                 FechaProceso = obj.FechaProceso,
                 FechaEstado = obj.FechaEstado
             };
@@ -369,7 +381,7 @@ namespace ProyectoWeb
                 idPropiedadesFormato = dto.idPropiedadesFormato,
                 Subcuenta = dto.Subcuenta,
                 idOperacionServicio = dto.idOperacionoServicio,
-                Canal = dto.Canal, 
+                Canal = dto.Canal,
                 idCanal = dto.idCanal,
                 CostoFijo = dto.CostoFijo,
                 CostoFijoMaximo = dto.CostoFijoMaximo,
@@ -382,12 +394,13 @@ namespace ProyectoWeb
                 idObservaciones = dto.idObservaciones,
                 UnidadCaptura = dto.UnidadCaptura,
                 Estado = dto.Estado,
+                DescripcionEstado = dto.DescripcionEstado,
                 FechaProceso = dto.FechaProceso,
                 FechaEstado = dto.FechaEstado
             };
             return result;
-        }     
-        
+        }
+
         public static Formulario425_Detalle getMapper(Form425CrearDetalle dto)
         {
             var result = new Formulario425_Detalle()
@@ -396,7 +409,7 @@ namespace ProyectoWeb
                 idPropiedadesFormato = dto.idPropiedadesFormato,
                 Subcuenta = dto.Subcuenta,
                 idOperacionServicio = dto.idOperacionoServicio,
-                Canal = dto.Canal, 
+                Canal = dto.Canal,
                 idCanal = dto.idCanal,
                 CostoFijo = dto.CostoFijo,
                 CostoFijoMaximo = dto.CostoFijoMaximo,
@@ -409,6 +422,7 @@ namespace ProyectoWeb
                 idObservaciones = dto.idObservaciones,
                 UnidadCaptura = dto.UnidadCaptura,
                 Estado = dto.Estado,
+                DescripcionEstado = dto.DescripcionEstado,
                 FechaProceso = dto.FechaProceso,
                 FechaEstado = dto.FechaEstado
             };
@@ -431,9 +445,11 @@ namespace ProyectoWeb
                 Fecha_horaActualizacion = dto.Fecha_horaActualizacion.ToString(),
                 Usuario = dto.Usuario,
                 Estado = dto.Estado,
+                DescripcionEstado = dto.DescripcionEstado,
                 Fechacorte = dto.Fechacorte.ToString(),
                 FechaEstado = dto.FechaEstado.ToString(),
                 CodigoRegistro = dto.CodigoRegistro,
+                TipoProductoCredito = dto.TipoProductoCredito,
                 idPropiedadesFormatoAnterior = dto.idPropiedadesFormatoAnterior
             };
             return result;
@@ -460,13 +476,16 @@ namespace ProyectoWeb
                 Tipo = obj.Tipo,
                 Codigo = obj.Codigo,
                 Nombre = obj.Nombre,
-                CodigoCredito = obj.CodigoCredito,
+                TipoProductoCredito = obj.TipoProductoCredito,
+                DTipoProductoCredito = obj.DTipoProductoCredito,
                 idCodigoCredito = obj.idCodigoCredito,
+                CodigoCredito = obj.CodigoCredito,
                 AperturaDigital = obj.AperturaDigital,
                 idAperturaDigital = obj.idAperturaDigital,
                 Fecha_horaActualizacion = obj.Fecha_horaActualizacion,
                 Usuario = obj.Usuario,
                 Estado = obj.Estado,
+                DescripcionEstado = obj.DescripcionEstado,
                 Fechacorte = obj.Fechacorte,
                 FechaEstado = obj.FechaEstado,
                 CodigoRegistro = obj.CodigoRegistro,
@@ -483,13 +502,15 @@ namespace ProyectoWeb
                 Tipo = dto.Tipo,
                 Codigo = dto.Codigo,
                 Nombre = dto.Nombre,
-                CodigoCredito = dto.CodigoCredito,
+                TipoProductoCredito = dto.TipoProductoCredito,
+                DTipoProductoCredito = dto.DTipoProductoCredito,
                 idCodigoCredito = dto.idCodigoCredito,
                 AperturaDigital = dto.AperturaDigital,
                 idAperturaDigital = dto.idAperturaDigital,
                 Fecha_horaActualizacion = dto.Fecha_horaActualizacion,
                 Usuario = dto.Usuario,
                 Estado = dto.Estado,
+                DescripcionEstado = dto.DescripcionEstado,
                 Fechacorte = dto.Fechacorte,
                 FechaEstado = dto.FechaEstado,
                 CodigoRegistro = dto.CodigoRegistro,
@@ -530,6 +551,7 @@ namespace ProyectoWeb
                 idObservaciones = obj.idObservaciones,
                 UnidadCaptura = obj.UnidadCaptura,
                 Estado = obj.Estado,
+                DescripcionEstado = obj.DescripcionEstado,
                 FechaProceso = obj.FechaProceso,
                 FechaEstado = obj.FechaEstado,
                 CodigoRegistro = obj.CodigoRegistro,
@@ -553,6 +575,7 @@ namespace ProyectoWeb
                 idObservaciones = dto.idObservaciones,
                 UnidadCaptura = dto.UnidadCaptura,
                 Estado = dto.Estado,
+                DescripcionEstado = dto.DescripcionEstado,
                 FechaProceso = dto.FechaProceso,
                 FechaEstado = dto.FechaEstado,
                 CodigoRegistro = dto.CodigoRegistro,
@@ -576,6 +599,7 @@ namespace ProyectoWeb
                 idObservaciones = dto.idObservaciones,
                 UnidadCaptura = dto.UnidadCaptura,
                 Estado = dto.Estado,
+                DescripcionEstado = dto.DescripcionEstado,
                 FechaProceso = dto.FechaProceso,
                 FechaEstado = dto.FechaEstado,
                 CodigoRegistro = dto.CodigoRegistro,
@@ -585,5 +609,147 @@ namespace ProyectoWeb
         }
 
         #endregion
+
+        #region Dominios
+
+        public static DominioModel getMapper(ConsultaDominioDTO dto)
+        {
+            var result = new DominioModel()
+            {
+                Dominio = dto.Dominio,
+                idDominioGen = dto.idDominioGen,
+                idDominio = dto.idDominio,
+                Descripcion = dto.Descripcion,
+                idCodigo = dto.idCodigo,
+                Fecha = dto.Fecha,
+                Estado = dto.Estado
+            };
+            return result;
+        }
+
+        public static List<ConsultaDominioDTO> getMapper(List<DominioModel> obj)
+        {
+            List<ConsultaDominioDTO> result = new List<ConsultaDominioDTO>();
+
+            foreach (DominioModel consulta in obj)
+            {
+                ConsultaDominioDTO encabezado = getMapper2(consulta);
+                result.Add(encabezado);
+            }
+
+            return result;
+        }
+
+        private static ConsultaDominioDTO getMapper2(DominioModel obj)
+        {
+            var result = new ConsultaDominioDTO()
+            {
+                Dominio = obj.Dominio,
+                idDominioGen = obj.idDominioGen,
+                idDominio = obj.idDominio,
+                Descripcion = obj.Descripcion,
+                idCodigo = obj.idCodigo,
+                Fecha = obj.Fecha,
+                Estado = obj.Estado// == "1" ? "Inactivo" : "Activo"
+            };
+            return result;
+        }
+
+        public static DominioModel getMapper(CrearDominioDTO dto)
+        {
+            var result = new DominioModel()
+            {
+                Dominio = dto.Dominio,
+                idDominioGen = dto.idDominioGen,
+                idDominio = dto.idDominio,
+                Descripcion = dto.Descripcion,
+                idCodigo = dto.idCodigo,
+                Fecha = dto.Fecha,
+                Estado = dto.Estado
+            };
+            return result;
+        }
+
+        public static List<ConsultaTipoDominioDTO> getMapper(List<TipoDominioModel> obj)
+        {
+            List<ConsultaTipoDominioDTO> result = new List<ConsultaTipoDominioDTO>();
+
+            foreach (TipoDominioModel consulta in obj)
+            {
+                ConsultaTipoDominioDTO encabezado = getMapper(consulta);
+                result.Add(encabezado);
+            }
+
+            return result;
+        }
+        public static ConsultaTipoDominioDTO getMapper(TipoDominioModel obj)
+        {
+            var result = new ConsultaTipoDominioDTO()
+            {
+                idDominio = obj.idDominio,
+                Descripcion = obj.Descripcion,
+                Fecha = obj.Fecha,
+                Estado = obj.Estado // == "1" ? "Inactivo" : "Activo"
+            };
+            return result;
+        }
+        public static TipoDominioModel getMapper(CrearTipoDominioDTO dto)
+        {
+            var result = new TipoDominioModel()
+            {
+                idDominio = dto.idDominio,
+                Descripcion = dto.Descripcion,
+                Fecha = dto.Fecha,
+                Estado = dto.Estado
+            };
+            return result;
+        }
+
+        public static CrearDominioDTO getMapper(DominioModel dto)
+        {
+            var result = new CrearDominioDTO()
+            {
+                Dominio = dto.Dominio,
+                idDominioGen = dto.idDominioGen,
+                idDominio = dto.idDominio,
+                Descripcion = dto.Descripcion,
+                idCodigo = dto.idCodigo,
+                Fecha = dto.Fecha,
+                Estado = dto.Estado
+            };
+            return result;
+        }
+
+        #endregion
+
+        #region Errores
+
+        public static List<Errores_SFCDTO> getMapper(List<Errores_SFCModel> obj)
+        {
+            List<Errores_SFCDTO> result = new List<Errores_SFCDTO>();
+
+            foreach (Errores_SFCModel consulta in obj)
+            {
+                Errores_SFCDTO encabezado = getMapper(consulta);
+                result.Add(encabezado);
+            }
+
+            return result;
+        }
+
+        public static Errores_SFCDTO getMapper(Errores_SFCModel obj)
+        {
+            var result = new Errores_SFCDTO()
+            {
+                CodigoSalida = obj.CodigoSalida,
+                Descripcion = obj.Descripcion
+
+            };
+            return result;
+        }
+
+
+        #endregion
+
     }
 }

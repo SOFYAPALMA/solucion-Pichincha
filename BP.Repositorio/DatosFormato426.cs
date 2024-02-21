@@ -43,7 +43,7 @@ namespace BP.Repositorio
                 AdicionarParametros("idCodigoCredito", obj.idCodigoCredito);
                 AdicionarParametros("idAperturaDigital", obj.idAperturaDigital);
                 AdicionarParametros("Usuario", obj.Usuario);
-
+                AdicionarParametros("TipoProductoCredito", obj.TipoProductoCredito);
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
                 AdicionarParametrosOut("@IdPropiedadesFormato", SqlDbType.Int);
                 AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
@@ -56,6 +56,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en RegistrarEncabezado", ex);
             }
@@ -63,7 +64,7 @@ namespace BP.Repositorio
             return respuesta;
         }
 
-        public static bool RegistrarEncabezadoDetalle(Formulario426_Detalle obj)
+        public static bool RegistrarDetalle(Formulario426_Detalle obj)
         {
             Instanciar();
             bool respuesta = false;
@@ -92,6 +93,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en RegistrarEncabezadoDetalle", ex);
             }
@@ -99,8 +101,7 @@ namespace BP.Repositorio
             return respuesta;
         }
 
-
-        public static bool ActualizarEncabezado(Formulario426_Encabezado obj) 
+        public static bool ActualizarEncabezado(Formulario426_Encabezado obj)
         {
             Instanciar();
             bool respuesta = false;
@@ -112,6 +113,7 @@ namespace BP.Repositorio
                 AdicionarParametros("@Tipo", obj.Tipo);
                 AdicionarParametros("@Codigo", obj.Codigo);
                 AdicionarParametros("@Nombre", obj.Nombre);
+                AdicionarParametros("@TipoProductoCredito", obj.TipoProductoCredito);
                 AdicionarParametros("@idCodigoCredito", obj.idCodigoCredito);
                 AdicionarParametros("@idAperturaDigital", obj.idAperturaDigital);
                 AdicionarParametros("@Usuario", obj.Usuario);
@@ -127,8 +129,76 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en ActualizarEncabezado", ex);
+            }
+
+            return respuesta;
+        }
+        //public static bool EliminarEncabezado(int id)
+        //{
+        //    Instanciar();
+        //    bool respuesta = false;
+
+        //    try
+        //    {
+        //        limpiarParametros();
+        //        AdicionarParametros("@idPropiedadesFormato", id);
+        //        AdicionarParametros("@Tiporegistros", "E");
+
+        //        AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
+        //        AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
+
+        //        ejecutarScalar("bpapp.spEliminaCreditos");
+
+        //        respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
+        //        Mensaje = RecuperarParametrosOut("MensajeSalida");
+        //        Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), Mensaje, Logs.Tipo.Log);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        desconectar();
+        //        Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
+        //        throw new Exception("No se puede eliminar el encabezado tiene detalle", ex);
+        //    }
+
+        //    return respuesta;
+        //}
+
+        public static bool EliminarDetalle(Formulario426_Detalle obj)
+        {
+            Instanciar();
+            bool respuesta = false;
+
+            try
+            {
+                limpiarParametros();
+
+                AdicionarParametros("@idDetalle", obj.idDetalle);
+                AdicionarParametros("@Subcuenta", obj.Subcuenta);
+                AdicionarParametros("@idCaracteristicaCredito", obj.idCaracteristicaCredito);
+                AdicionarParametros("@Costo", obj.Costo);
+                AdicionarParametros("@Tasa", obj.Tasa);
+                AdicionarParametros("@idTipoAseguradora", obj.idTipoAseguradora);
+                AdicionarParametros("@idCodigoAseguradora", obj.idCodigoAseguradora);
+                AdicionarParametros("@idObservaciones", obj.idObservaciones);
+                AdicionarParametros("@UnidadCaptura", obj.UnidadCaptura);
+
+
+                AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
+                AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
+
+                ejecutarScalar("bpapp.spDesactivaDetalleCreditos");
+
+                respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
+                Mensaje = RecuperarParametrosOut("MensajeSalida");
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), Mensaje, Logs.Tipo.Log);
+            }
+            catch (Exception ex)
+            {
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
+                throw new Exception("Termina Sin errores pero no realiza la acción, dado que el estado del registro no Corresponde!, esta Inactivo, o esta en Edición Detalle", ex);
             }
 
             return respuesta;
@@ -163,6 +233,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en ActualizarDetalle", ex);
             }
@@ -199,6 +270,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en ListaDetalles", ex);
             }
@@ -233,6 +305,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en Detalles", ex);
             }
@@ -273,6 +346,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en Detalles", ex);
             }
@@ -314,6 +388,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en ListaDetalles", ex);
             }

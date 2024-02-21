@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace ProyectoWeb.Controllers
 {
+    [Authorize]
     public class RolController : Controller
     {
         // GET: Rol

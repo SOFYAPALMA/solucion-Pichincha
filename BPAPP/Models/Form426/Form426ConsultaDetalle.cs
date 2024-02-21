@@ -11,36 +11,48 @@ namespace ProyectoWeb.Models
         public int idPropiedadesFormato { get; set; }
 
         [Display(Name = "Subcuenta")]
-        public int Subcuenta { get; set; }
+        public string Subcuenta { get; set; } = "0";//Campo fijo por default= 0
+
 
         [Display(Name = "Caracteristica Credito")]
         public string CaracteristicaCredito { get; set; }
+
+        [Required(ErrorMessage = "El campo Caracteristica Credito es obligatorio.")]
+        [Display(Name = "Caracteristica Credito")]
         public int idCaracteristicaCredito { get; set; }
 
         [Display(Name = "Costo")]
-        public int Costo { get; set; }
+        public int? Costo { get; set; }
 
+        [RegularExpression(@"^\d+(\.\d{1,4})?$")]
         [Display(Name = "Tasa")]
-        public decimal Tasa { get; set; }
+        public decimal? Tasa { get; set; }
 
         [Display(Name = "Tipo Aseguradora")]
         public string TipoAseguradora { get; set; }
-        public int idTipoAseguradora { get; set; }
+        [Display(Name = "Tipo Aseguradora")]
+        public int? idTipoAseguradora { get; set; }
 
-        [Display(Name = "Código Aseguradora")]
+        //[Display(Name = "Código Aseguradora")]
         public string CodigoAseguradora { get; set; }
-        public int idCodigoAseguradora { get; set; }
+        [Display(Name = "Código Aseguradora")]
+        public int? idCodigoAseguradora { get; set; }
 
         [Display(Name = "Observaciones")]
         public string Observaciones { get; set; }
-        public int idObservaciones { get; set; }
 
-        [Display(Name = "Unidad Captura")]
-        public int UnidadCaptura { get; set; }
-        public int Estado { get; set; }
+        [Display(Name = "Observaciones")]
+        public int? idObservaciones { get; set; }
+
+        //[Display(Name = "Unidad Captura")]
+        public int? UnidadCaptura { get; set; } = 1;
+        public string Estado { get; set; }
+        [Display(Name = "Estado")]
+        public string DescripcionEstado { get; set; }
         public string FechaProceso { get; set; }
         public string FechaEstado { get; set; }
-        public int? CodigoRegistro { get; set; }
+        [Display(Name = "Registro SFC")]
+        public string CodigoRegistro { get; set; }
         public int? idDetalleAnterior { get; set; }
 
     }

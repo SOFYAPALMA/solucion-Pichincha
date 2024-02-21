@@ -1,0 +1,59 @@
+﻿@model ProyectoWeb.Models.CrearDominioDTO
+
+@{
+    ViewBag.Title = "Actualizar Detalle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row mt-4">
+    <div class="col-sm-12">
+        @using (Html.BeginForm())
+        {
+            <div class="card">
+                <div class="card-header">
+                    <h6>Actualizar detalle dominios depósitos)</h6>
+                </div>
+                <div class="card-body">
+                    @Html.AntiForgeryToken()
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "control-label" })
+                                <div>
+                                    @Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Estado, htmlAttributes: new { @class = "control-label" })
+                                <div>
+                                    <label class="container">
+                                        @Html.CheckBoxFor(model => model.Estado)
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-md-offset-2 col-md-12">
+                            <input type="submit" value="Guardar" class="btn btn-primary btn-sm float-right" />
+                            <div>
+                                @Html.ActionLink("Volver", "List")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
+
+

@@ -4,140 +4,447 @@
     ViewBag.Title = "Crear Detalle";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="row mt-4">
+    <div class="col-sm-12">
+        @using (Html.BeginForm())
+        {
+        <div class="card">
+            <div class="card-header">
+                Crear detalle 425 (Tarjeta de crédito)
+            </div>
+            <div class="card-body">
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.idPropiedadesFormato)
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    @Html.HiddenFor(model => model.idPropiedadesFormato)
-
-    <div class="card">
-        <div class="card-header">
-            <h2>Crear Detalle</h2>
-        </div>
-        <div class="card-body">
-            <div class="row">
-
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Subcuenta, htmlAttributes: new { @class = "control-label" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Subcuenta, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Subcuenta, "", new { @class = "text-danger" })
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Subcuenta, htmlAttributes: new { @class = "control-label" })
+                            <div>
+                                @Html.DisplayFor(model => model.Subcuenta, new { htmlAttributes = new { @class = "form-control disabled" } })
+                                @Html.ValidationMessageFor(model => model.Subcuenta, "", new { @class = "text-danger" })
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.idOperacionoServicio, htmlAttributes: new { @class = "control-label" })
-                        <div class="col-md-10">
-                            @Html.DropDownList("idOperacionoServicio", (SelectList)ViewBag.DescripcionOperacionServicio, "Seleccione..", new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.idOperacionoServicio, "", new { @class = "text-danger" })
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.idOperacionoServicio, htmlAttributes: new { @class = "control-label" })
+                            <div>
+                                @Html.DropDownList("idOperacionoServicio", (SelectList)ViewBag.DescripcionOperacionServicio, "Seleccione..", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.idOperacionoServicio, "", new { @class = "text-danger" })
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.idCanal, htmlAttributes: new { @class = "control-label" })
-                        <div class="col-md-10">
-                            @Html.DropDownList("idCanal", (SelectList)ViewBag.Canal, "Seleccione..", new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.idCanal, "", new { @class = "text-danger" })
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.idCanal, htmlAttributes: new { @class = "control-label" })
+                            <div>
+                                @Html.DropDownList("idCanal", (SelectList)ViewBag.Canal, "Seleccione..", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.idCanal, "", new { @class = "text-danger" })
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.CostoFijo, htmlAttributes: new { @class = "control-label" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.CostoFijo, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.CostoFijo, "", new { @class = "text-danger" })
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CostoFijo, htmlAttributes: new { @class = "control-label" })
+                            <div>
+                                @Html.EditorFor(model => model.CostoFijo, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.CostoFijo, "", new { @class = "text-danger" })
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.CostoFijoMaximo, htmlAttributes: new { @class = "control-label" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.CostoFijoMaximo, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.CostoFijoMaximo, "", new { @class = "text-danger" })
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CostoFijoMaximo, htmlAttributes: new { @class = "control-label" })
+                            <div>
+                                @Html.EditorFor(model => model.CostoFijoMaximo, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.CostoFijoMaximo, "", new { @class = "text-danger" })
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.CostoProporcionOperacionServicio, htmlAttributes: new { @class = "control-label" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.CostoProporcionOperacionServicio, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.CostoProporcionOperacionServicio, "", new { @class = "text-danger" })
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CostoProporcionOperacionServicio, htmlAttributes: new { @class = "control-label" })
+                            <div>
+                                @Html.EditorFor(model => model.CostoProporcionOperacionServicio, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.CostoProporcionOperacionServicio, "", new { @class = "text-danger" })
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.CostoProporcionMaxOperacionServicio, htmlAttributes: new { @class = "control-label" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.CostoProporcionMaxOperacionServicio, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.CostoProporcionMaxOperacionServicio, "", new { @class = "text-danger" })
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CostoProporcionMaxOperacionServicio, htmlAttributes: new { @class = "control-label" })
+                            <div>
+                                @Html.EditorFor(model => model.CostoProporcionMaxOperacionServicio, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.CostoProporcionMaxOperacionServicio, "", new { @class = "text-danger" })
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Tasa, htmlAttributes: new { @class = "control-label" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Tasa, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Tasa, "", new { @class = "text-danger" })
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Tasa, htmlAttributes: new { @class = "control-label" })
+                            <div>
+                                @Html.EditorFor(model => model.Tasa, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Tasa, "", new { @class = "text-danger" })
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.TasaMaxima, htmlAttributes: new { @class = "control-label" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.TasaMaxima, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.TasaMaxima, "", new { @class = "text-danger" })
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.TasaMaxima, htmlAttributes: new { @class = "control-label" })
+                            <div>
+                                @Html.EditorFor(model => model.TasaMaxima, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.TasaMaxima, "", new { @class = "text-danger" })
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.idTipoAseguradora, htmlAttributes: new { @class = "control-label" })
-                        <div class="col-md-10">
-                            @Html.DropDownList("idTipoAseguradora", (SelectList)ViewBag.TipoAseguradora, "Seleccione..", new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.idTipoAseguradora, "", new { @class = "text-danger" })
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.idTipoAseguradora, htmlAttributes: new { @class = "control-label" })
+                            <div>
+                                @Html.DropDownList("idTipoAseguradora", (SelectList)ViewBag.TipoAseguradora, "Seleccione..", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.idTipoAseguradora, "", new { @class = "text-danger" })
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.idCodigoAseguradora, htmlAttributes: new { @class = "control-label" })
-                        <div class="col-md-10">
-                            @Html.DropDownList("idCodigoAseguradora", (SelectList)ViewBag.CodigoAseguradora, "Seleccione..", new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.idCodigoAseguradora, "", new { @class = "text-danger" })
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.idCodigoAseguradora, htmlAttributes: new { @class = "control-label" })
+                            <div>
+                                @Html.DropDownList("idCodigoAseguradora", (SelectList)ViewBag.CodigoAseguradora, "Seleccione..", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.idCodigoAseguradora, "", new { @class = "text-danger" })
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.idObservaciones, htmlAttributes: new { @class = "control-label" })
-                        <div class="col-md-10">
-                            @Html.DropDownList("idObservaciones", (SelectList)ViewBag.Observaciones, "Seleccione..", new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.idObservaciones, "", new { @class = "text-danger" })
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.idObservaciones, htmlAttributes: new { @class = "control-label" })
+                            <div>
+                                @Html.DropDownList("idObservaciones", (SelectList)ViewBag.Observaciones, "Seleccione..", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.idObservaciones, "", new { @class = "text-danger" })
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="card-footer">
-            <div class="row">
-                <div class="col-md-offset-2 col-md-12">
-                    <input type="submit" value="Guardar" class="btn btn-primary btn-sm float-right" />
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-12">
+                        <input type="submit" id="btnGuardar" style="visibility:visible;" value="Guardar" class="btn btn-primary btn-sm float-right" />
+                        <input type="submit" id="btnDesactivar" style="visibility:hidden;" value="Desactivar" class="btn btn-primary btn-sm float-right" />
+                        <div>
+                            @Html.ActionLink("Volver", "List")
+                        </div>
+                    </div>
                 </div>
             </div>
+            
         </div>
+        }
     </div>
+</div>
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            $("#idTipoAseguradora").change(function () {
+                $.get("/Formato425/LlenadoAseguradoras", { tipo: $("#idTipoAseguradora").val() }, function (data) {
+                    //console.log("sofi");
+                    // VACIAMOS EL DropDownList
+                    $("#idCodigoAseguradora").empty();
+                    // AÑADIMOS UN NUEVO label CON EL NOMBRE DEL ELEMENTO SELECCIONADO
+                    $("#idCodigoAseguradora").append("<option value> Seleccione..</option>")
+                    // CONSTRUIMOS EL DropDownList A PARTIR DEL RESULTADO Json (data)
+                    //console.log(data);
+                    $.each(data, function (index, row) {
+                        //console.log(row);
+                        $("#idCodigoAseguradora").append("<option value='" + row.Value + "'>" + row.Text + "</option>")
+                    });
+                });
+            });
+        });
+
+        $('#idObservaciones').change(function () {
+
+            var value = $("#idObservaciones option:selected").text();
+            var CostoFijo = $("#CostoFijo").val();
+            if (CostoFijo != '') {
+                $('#CostoProporcionOperacionServicio').val("0");
+                $('#CostoProporcionOperacionServicio').prop("disabled", true);
+            }
+            else {
+                $('#CostoProporcionOperacionServicio').prop("disabled", false);
+            }
+
+            if (value == '90 - Desactivacion') {
+                //$('#idOperacionServicio').val("");
+                //$('#idOperacionServicio').prop("disabled", true);
+
+                //$('#idCanal').val("");
+                //$('#idCanal').prop("disabled", true);
+
+                $('#CostoFijo').val("0");
+                $('#CostoFijo').prop("disabled", true);
+
+                $('#CostoFijoMaximo').val("0");
+                $('#CostoFijoMaximo').prop("disabled", true);
+
+                $('#CostoProporcionOperacionServicio').val("0");
+                $('#CostoProporcionOperacionServicio').prop("disabled", true);
+
+                $('#CostoProporcionMaxOperacionServicio').val("0");
+                $('#CostoProporcionMaxOperacionServicio').prop("disabled", true);
+
+                $('#Tasa').val("0");
+                $('#Tasa').prop("disabled", true);
+
+                $('#TasaMaxima').val("0");
+                $('#TasaMaxima').prop("disabled", true);
+
+                $('#idTipoAseguradora').val("");
+                $('#idTipoAseguradora').prop("disabled", true);
+
+                $('#idCodigoAseguradora').val("");
+                $('#idCodigoAseguradora').prop("disabled", true);
+
+                $('#btnGuardar').css("visibility", 'hidden');
+                $('#btnDesactivar').css("visibility", 'visible');
+
+            }
+            else if (value == '1 - Costo fijo o proporcional  en dolares') {
+                var input = $('#CostoFijo');
+                var is_name = input.val();
+
+                var inputcfm = $('#CostoFijoMaximo');
+                var valcfm = input.val();
+                //console.log(is_name);
+
+                if (is_name > 0) {
+                    input.removeClass("invalid").addClass("valid");
+                    $("#NotificacionesGenerales").after('<span class="text-danger field-validation-error"></span>');
+                    input.after('<span class="text-danger field-validation-error"></span>');
+                }
+                else {
+                    input.removeClass("valid").addClass("invalid");
+                    $("#NotificacionesGenerales").after('<span class="text-danger field-validation-error">El valor del campo costo fijo debe ser mayor a cero.</span>');
+                    input.after('<span class="text-danger field-validation-error">El valor del campo costo fijo debe ser mayor a cero.</span>');
+                }
+
+                if (valcfm > 0) {
+                    inputcfm.removeClass("invalid").addClass("valid");
+                    $("#NotificacionesGenerales").after('<span class="text-danger field-validation-error"></span>');
+                    input.after('<span class="text-danger field-validation-error"></span>');
+                }
+                else {
+                    inputcfm.removeClass("valid").addClass("invalid");
+                    $("#NotificacionesGenerales").after('<span class="text-danger field-validation-error">El valor del campo costo fijo maximo debe ser mayor a cero.</span>');
+                    input.after('<span class="text-danger field-validation-error">El valor del campo costo fijo maximo debe ser mayor a cero.</span>');
+                }
+            }
+            else {
+                //$('#idOperacionServicio').prop("disabled", false);
+                //$('#idCanal').prop("disabled", false);
+                $('#CostoFijo').prop("disabled", false);
+                $('#CostoFijoMaximo').prop("disabled", false);
+                $('#CostoProporcionOperacionServicio').prop("disabled", false);
+                $('#CostoProporcionMaxOperacionServicio').prop("disabled", false);
+                $('#Tasa').prop("disabled", false);
+                $('#TasaMaxima').prop("disabled", false);
+                $('#idTipoAseguradora').prop("disabled", false);
+                $('#idCodigoAseguradora').prop("disabled", false);
+
+                $('#btnGuardar').css("visibility", 'visible');
+                $('#btnDesactivar').css("visibility", 'hidden');
+
+            }
+        });
+
+        $('#CostoFijo').change(function () {
+            var CostoFijo = $("#CostoFijo").val();
+
+            if (CostoFijo != '') {
+                $('#CostoProporcionOperacionServicio').val("0");
+                $('#CostoProporcionOperacionServicio').prop("disabled", true);
+
+                $('#CostoProporcionMaxOperacionServicio').val("0");
+                $('#CostoProporcionMaxOperacionServicio').prop("disabled", true);
+
+                $('#Tasa').val("0");
+                $('#Tasa').prop("disabled", true);
+
+                $('#TasaMaxima').val("0");
+                $('#TasaMaxima').prop("disabled", true);
+            }
+            else {
+                $('#CostoProporcionOperacionServicio').prop("disabled", false);
+                $('#CostoProporcionMaxOperacionServicio').prop("disabled", false);
+                $('#Tasa').prop("disabled", false);
+                $('#TasaMaxima').prop("disabled", false);
+            }
+            /*console.log(CostoFijo);*/
+        });
+
+        $('#CostoProporcionOperacionServicio').change(function () {
+            var CostoProporcionOperacionServicio = $("#CostoProporcionOperacionServicio").val();
+
+            if (CostoProporcionOperacionServicio != '') {
+                $('#CostoFijo').val("0");
+                $('#CostoFijo').prop("disabled", true);
+
+                $('#CostoFijoMaximo').val("0");
+                $('#CostoFijoMaximo').prop("disabled", true);
+
+                $('#Tasa').val("0");
+                $('#Tasa').prop("disabled", true);
+
+                $('#TasaMaxima').val("0");
+                $('#TasaMaxima').prop("disabled", true);
+            }
+            else {
+                $('#CostoFijo').prop("disabled", false);
+                $('#CostoFijoMaximo').prop("disabled", false);
+                $('#Tasa').prop("disabled", false);
+                $('#TasaMaxima').prop("disabled", false);
+                
+            }
+            /*console.log(CostoFijo);*/
+        });
+
+        $('#Tasa').change(function () {
+            var Tasa = $("#Tasa").val();
+
+            if (Tasa != '') {
+                $('#CostoFijo').val("0");
+                $('#CostoFijo').prop("disabled", true);
+
+                $('#CostoFijoMaximo').val("0");
+                $('#CostoFijoMaximo').prop("disabled", true);
+
+                $('#CostoProporcionOperacionServicio').val("0");
+                $('#CostoProporcionOperacionServicio').prop("disabled", true);
+
+                $('#CostoProporcionMaxOperacionServicio').val("0");
+                $('#CostoProporcionMaxOperacionServicio').prop("disabled", true);
+            }
+            else {
+                $('#CostoFijo').prop("disabled", false);
+                $('#CostoFijoMaximo').prop("disabled", false);
+                $('#CostoProporcionOperacionServicio').prop("disabled", false);
+                $('#CostoProporcionMaxOperacionServicio').prop("disabled", false);
+
+            }
+            /*console.log(CostoFijo);*/
+        });
+
+        $('#idOperacionoServicio').change(function () {
+            var value = $("#idOperacionoServicio option:selected").text();
+
+            console.log('{' + value + '}');
+
+            if (value == '23 - Avance realizado fuera de Colombia') {
+                /*  console.log('27');*/
+                $('#idCanal').val("");
+                $('#idCanal').prop("disabled", true);
+            }
+            else if (value == '24 - Compra de cartera') {
+                /* console.log('28');*/
+                $('#idCanal').val("");
+                $('#idCanal').prop("disabled", true);
+            }
+            else if (value == '25 - Comision por transacciones internacionales') {
+                /*   console.log('37');*/
+                $('#idCanal').val("");
+                $('#idCanal').prop("disabled", true);
+            }
+            else if (value == '26 - Spread TRM por consumos en el exterior (%)') {
+                /*   console.log('37');*/
+                $('#idCanal').val("");
+                $('#idCanal').prop("disabled", true);
+            }
+            else if (value == '27 - VTUA porcentual (%)') {
+                /*   console.log('37');*/
+                $('#idCanal').val("");
+                $('#idCanal').prop("disabled", true);
+            }
+            else if (value == '28 - Tasa de interes EA') {
+                /*   console.log('37');*/
+                $('#idCanal').val("");
+                $('#idCanal').prop("disabled", true);
+            }
+            else if (value == '32 - Seguro de vida deudores') {
+                /*   console.log('37');*/
+                $('#idCanal').val("");
+                $('#idCanal').prop("disabled", true);
+            }
+            else if (value == '37 - Cobro prejuridico ') {
+                /*   console.log('37');*/
+                $('#idCanal').val("");
+                $('#idCanal').prop("disabled", true);
+            }
+            else if (value == '38 - Cobro juridico ') {
+                $('#idCanal').val("");
+                $('#idCanal').prop("disabled", true);
+            }
+            else {
+                $('#idCanal').prop("disabled", false);
+            }
+        });
+
+        $('#idCaracteristicaCredito').change(function () {
+            var value = $("#idCaracteristicaCredito option:selected").text();
+
+            if (value == '27 - VTUA porcentual (%)') {
+
+
+                $('#CostoFijo').val("0");
+                $('#CostoFijo').prop("disabled", true);
+
+                //$('#Tasa').val("0");
+                //$('#Tasa').prop("disabled", true);
+
+                $('#idTipoAseguradora').val("");
+                $('#idTipoAseguradora').prop("disabled", true);
+
+                $('#idCodigoAseguradora').val("");
+                $('#idCodigoAseguradora').prop("disabled", true);
+
+                $('#idObservaciones').val("");
+                $('#idObservaciones').prop("disabled", true);
+
+            }
+            else {
+
+                $('#CostoFijo').prop("disabled", false);
+                /* $('#Tasa').prop("disabled", false);*/
+                $('#idTipoAseguradora').prop("disabled", false);
+                $('#idCodigoAseguradora').prop("disabled", false);
+                $('#idObservaciones').prop("disabled", false);
+            }
+        });
+
+        $('#idOperacionoServicio').change(function () {
+            var value = $("#idOperacionoServicio option:selected").val();
+            /* console.log(value); dominio habilitado para seguros == 124*/
+            if (value == '124') {
+                $('#idTipoAseguradora').val("");
+                $('#idTipoAseguradora').prop("disabled", false);
+
+                $('#idCodigoAseguradora').val("");
+                $('#idCodigoAseguradora').prop("disabled", false);
+
+            }
+
+            else {
+                $('#idTipoAseguradora').prop("disabled", true);
+                $('#idCodigoAseguradora').prop("disabled", true);
+
+            }
+        });
+
+    </script>
 }
 
-<div>
-    @Html.ActionLink("Volver", "List")
-</div>

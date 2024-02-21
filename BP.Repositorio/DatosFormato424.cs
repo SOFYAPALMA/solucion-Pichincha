@@ -68,6 +68,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en RegistrarEncabezado", ex);
             }
@@ -104,6 +105,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en RegistrarEncabezadoDetalle", ex);
             }
@@ -151,13 +153,79 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en ActualizarEncabezado", ex);
             }
 
             return respuesta;
         }
+        //public static bool EliminarEncabezado(int id)
+        //{
+        //    Instanciar();
+        //    bool respuesta = false;
 
+        //    try
+        //    {
+        //        limpiarParametros();
+        //        AdicionarParametros("@idPropiedadesFormato", id);
+        //        AdicionarParametros("@Tiporegistros", "E");
+
+        //        AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
+        //        AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
+
+        //        ejecutarScalar("bpapp.spEliminaDepositos");
+
+        //        respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
+        //        Mensaje = RecuperarParametrosOut("MensajeSalida");
+        //        Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), Mensaje, Logs.Tipo.Log);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        desconectar();
+        //        Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
+        //        throw new Exception("No se puede eliminar el encabezado tiene detalle", ex);
+        //    }
+
+        //    return respuesta;
+        //}
+
+        public static bool EliminarDetalle(Formulario424_Detalle obj)
+        {
+            Instanciar();
+            bool respuesta = false;
+
+            try
+            {
+                limpiarParametros();
+
+                AdicionarParametros("@idDetalle", obj.idDetalle);
+                AdicionarParametros("@subCuenta", obj.subCuenta);
+                AdicionarParametros("@idOperacionServicio", obj.idOperacionServicio);
+                AdicionarParametros("@idCanal", obj.idCanal);
+                AdicionarParametros("@NumOperServiciosCuotamanejo", obj.NumOperServiciosCuotamanejo);
+                AdicionarParametros("@CostoFijo", obj.CostoFijo);
+                AdicionarParametros("@CostoProporcionOperacionServicio", obj.CostoProporcionOperacionServicio);
+                AdicionarParametros("@idObservaciones", obj.idObservaciones);
+
+
+                AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);
+                AdicionarParametrosOut("MensajeSalida", SqlDbType.VarChar, 256);
+
+                ejecutarScalar("bpapp.spDesactivaDetalleDeposito");
+
+                respuesta = RecuperarParametrosOut("IndicadorTermina") == "1" ? true : false;
+                Mensaje = RecuperarParametrosOut("MensajeSalida");
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), Mensaje, Logs.Tipo.Log);
+            }
+            catch (Exception ex)
+            {
+                Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
+                throw new Exception("Termina Sin errores pero no realiza la acción, dado que el estado del registro no Corresponde!, esta Inactivo, o esta en Edición Detalle", ex);
+            }
+
+            return respuesta;
+        }
         public static bool ActualizarDetalle(Formulario424_Detalle obj)
         {
             Instanciar();
@@ -187,12 +255,15 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
+                desconectar();
                 throw new Exception("Error en ActualizarDetalle", ex);
             }
 
             return respuesta;
         }
+
 
         public static Formulario424_Encabezado DetalleEncabezado(int FormatoId)
         {
@@ -223,6 +294,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en Detalles", ex);
             }
@@ -263,6 +335,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en Detalles", ex);
             }
@@ -277,7 +350,7 @@ namespace BP.Repositorio
                 AdicionarParametros("idPropiedadesFormato", FormatoId);
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Bit);
 
-                DataTable dt = ejecutarStoreProcedure("bpapp.spConsultaDetalleDeposito").Tables[0];
+                DataTable dt = ejecutarStoreProcedure("bpapp.spConsultaDetalleDeposito")?.Tables[0] ?? new DataTable();
 
                 if (dt.Rows.Count > 0)
                 {
@@ -304,6 +377,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en ListaDetalles", ex);
             }
@@ -338,6 +412,7 @@ namespace BP.Repositorio
             }
             catch (Exception ex)
             {
+                desconectar();
                 Logs.EscribirLog(System.Reflection.MethodBase.GetCurrentMethod(), ex);
                 throw new Exception("Error en ListaDetalles", ex);
             }

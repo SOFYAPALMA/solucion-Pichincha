@@ -11,13 +11,8 @@
         {
             <div class="card">
                 <div class="card-header">
-                    SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+                    Actualizar encabezado 424 (Depósitos)
                 </div>
-                <br>
-                <h3 style="text-align:center;">TARIFAS DE LOS PRODUCTOS DE DEPÓSITO</h3>
-                <h4 style="text-align:center;">FORMATO 424</h4>
-                <h5 style="text-align:center;">CIRCULAR EXTERNA 006 DE 2023</h5>
-
                 <div class="card-body">
                     @Html.AntiForgeryToken()
                     @Html.HiddenFor(model => model.idPropiedadesFormato)
@@ -55,10 +50,28 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
+                                @Html.LabelFor(model => model.NumeroClientes, htmlAttributes: new { @class = "control-label" })
+                                <div>
+                                    @Html.EditorFor(model => model.NumeroClientes, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.NumeroClientes, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
                                 @Html.LabelFor(model => model.GrupoPoblacional, htmlAttributes: new { @class = "control-label" })
                                 <div>
                                     @Html.DropDownList("idGrupoPoblacional", (SelectList)ViewBag.GrupoPoblacional, "Seleccione..", new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.GrupoPoblacional, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.CuotaManejo, htmlAttributes: new { @class = "control-label" })
+                                <div>
+                                    @Html.EditorFor(model => model.CuotaManejo, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.CuotaManejo, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </div>
@@ -136,11 +149,13 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-md-offset-2 col-md-12">
                             <input type="submit" value="Guardar" class="btn btn-primary btn-sm float-right" />
+                            <div>
+                                @Html.ActionLink("Volver", "Details", new { id = Model.idPropiedadesFormato })
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -149,6 +164,73 @@
 
     </div>
 </div>
-<div>
-    @Html.ActionLink("Volver", "List")
-</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $('#idTipoProductoDeposito').change(function () {
+            validacion();
+
+        });
+
+        $(document).ready(function () {
+            validacion();
+        });
+
+        function validacion() {
+            var value = $("#idTipoProductoDeposito option:selected").val();
+            /* console.log(value);*/
+            if (value == '6' || value == '7') {
+                $('#idAperturaDigital').val("");
+                $('#idAperturaDigital').prop("disabled", true);
+
+                $('#NumeroClientes').val("");
+                $('#NumeroClientes').prop("disabled", true);
+
+                $('#idGrupoPoblacional').val("");
+                $('#idGrupoPoblacional').prop("disabled", true);
+
+                $("#idObservacionesCuota").val("")
+                $('#idObservacionesCuota').prop("disabled", true);
+
+                $('#idIngresos').val("");
+                $('#idIngresos').prop("disabled", true);
+
+                $('#idSerGratuito_CtaAHO').val("");
+                $('#idSerGratuito_CtaAHO').prop("disabled", true);
+
+                $('#idSerGratuito_CtaAHO2').val("");
+                $('#idSerGratuito_CtaAHO2').prop("disabled", true);
+
+                $('#idSerGratuito_CtaAHO3').val("");
+                $('#idSerGratuito_CtaAHO3').prop("disabled", true);
+
+                $('#idSerGratuito_TCRDebito').val("");
+                $('#idSerGratuito_TCRDebito').prop("disabled", true);
+
+                $("#idSerGratuito_TCRDebito2").val("")
+                $('#idSerGratuito_TCRDebito2').prop("disabled", true);
+
+                $('#idSerGratuito_TCRDebito3').val("");
+                $('#idSerGratuito_TCRDebito3').prop("disabled", true);
+            }
+
+            else {
+                $('#idAperturaDigital').prop("disabled", false);
+                $('#NumeroClientes').prop("disabled", false);
+                $('#idGrupoPoblacional').prop("disabled", false);
+                $('#idObservacionesCuota').prop("disabled", false);
+                $('#idIngresos').prop("disabled", false);
+                $('#idSerGratuito_CtaAHO').prop("disabled", false);
+                $('#idSerGratuito_CtaAHO2').prop("disabled", false);
+                $('#idSerGratuito_CtaAHO3').prop("disabled", false);
+                $('#idSerGratuito_TCRDebito').prop("disabled", false);
+                $('#idSerGratuito_TCRDebito2').prop("disabled", false);
+                $('#idSerGratuito_TCRDebito3').prop("disabled", false);
+
+            }
+        }
+    </script>
+}
+
+

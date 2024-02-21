@@ -4,93 +4,83 @@
     ViewBag.Title = "Lista de formulario";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="row mt-4">
+    <div class="col-sm-12">
+        @using (Html.BeginForm())
+        {
+            <div class="card">
+                <div class="card-header">
+                    <h4>
+                        Lista de registros formulario 425 (Tarjeta de crédito)
+                    </h4>
+                </div>
+                <p>
+                    @Html.ActionLink("Nuevo", "Crear")
+                </p>
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.idPropiedadesFormato)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.idNombreComercial)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.idGrupoPoblacional)
+                        </th>
+                        @*<th>
+                                @Html.DisplayNameFor(model => model.idCupo)
+                            </th>*@
+                        <th>
+                            @Html.DisplayNameFor(model => model.DescripcionEstado)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CodigoRegistro)
+                        </th>
+                        @*<th>
+                               @Html.DisplayNameFor(model => model.idServicioGratuito_3)
+                            </th>*@
+                        <th></th>
+                    </tr>
 
-<p>
-    @Html.ActionLink("Nuevo", "Crear")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.idNombreComercial)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.idAperturaDigital)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NumeroClientes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.idFranquicia)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CuotaManejo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.idObservacionesCuota)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CuotaManejoMaxima)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.idGrupoPoblacional)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.idCupo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.idServicioGratuito_1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.idServicioGratuito_2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.idServicioGratuito_3)
-        </th>
-        <th></th>
-    </tr>
+                    @foreach (var item in Model)
+                    {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.idPropiedadesFormato)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreComercial)
+                    </td>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NombreComercial)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AperturaDigital)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumeroClientes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Franquicia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CuotaManejo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ObservacionesCuota)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CuotaManejoMaxima)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GrupoPoblacional)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cupo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ServicioGratuito_1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ServicioGratuito_2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ServicioGratuito_3)
-        </td>
-        <td>
-            @Html.ActionLink("Ver", "Details", new {  id=item.idPropiedadesFormato  }) 
-        </td>
-    </tr>
-}
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GrupoPoblacional)
+                    </td>
 
-</table>
+                    <td>
+                        @if (item.Estado == "1")
+                        {
+                            @Html.ActionLink(item.DescripcionEstado, "../ErroresSFC/Index", new { treg = 'E', idPropForm = item.idPropiedadesFormato, idRegDet = 0, form = 2 })
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(modelItem => item.DescripcionEstado)
+                        }
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CodigoRegistro)
+
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Ver", "Details", new { id = item.idPropiedadesFormato })
+                    </td>
+                </tr>
+                    }
+
+                </table>
+            </div>
+        }
+    </div>
+</div>

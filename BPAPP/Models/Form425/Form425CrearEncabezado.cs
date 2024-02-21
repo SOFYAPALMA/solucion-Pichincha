@@ -7,18 +7,16 @@ namespace ProyectoWeb.Models
     {  /// <summary>
        /// Referencia a al tipo entidad
        /// </summary>
-        [Required(ErrorMessage = "El campo tipo entidad es obligatorio.")]
-        [Display(Name = "Tipo")]
-        public int Tipo { get; } = 001; //Campo fijo por default= 001
 
-        [Required(ErrorMessage = "El campo código entidad es obligatorio.")]
+        [Display(Name = "Tipo")]
+        public string Tipo { get; } = "001"; //Campo fijo por default= 001
+
         [Display(Name = "Codigo")]
-        public int Codigo { get; } = 00057; //Campo fijo por default= 00057
+        public string Codigo { get; } = "00057"; //Campo fijo por default= 00057
 
         /// <summary>
         /// Captura de informacion para almacenamiento y visualizacion en el detalle
         /// </summary>
-        [Required(ErrorMessage = "El campo nombre o sigla de la entidad es obligatorio.")]
         [Display(Name = "Nombre Entidad")]
         [StringLength(50)]
         [DataType(DataType.Text)]
@@ -72,13 +70,12 @@ namespace ProyectoWeb.Models
         [Display(Name = "Servicio Gratuito 3")]
         public int idServicioGratuito_3 { get; set; }
 
-        [Required(ErrorMessage = "El campo usuario es obligatorio.")]
         [Display(Name = "Usuario")]
-        public int Usuario { get; set; }
-
-        [Required(ErrorMessage = "El campo estado es obligatorio.")]
+        public string Usuario { get; set; }
+     
         [Display(Name = "Estado")]
-        public int Estado { get; set; }
+        public string Estado { get; set; }
+        public string DescripcionEstado { get; set; }
 
         [Display(Name = "Fecha corte")]
         public string Fechacorte { get; set; }
@@ -86,9 +83,8 @@ namespace ProyectoWeb.Models
         [Display(Name = "Fecha Estado")]
         public string FechaEstado { get; set; }
 
-        [Required(ErrorMessage = "El campo código registro es obligatorio.")]
         [Display(Name = "Codigo Registro")]
-        public int CodigoRegistro { get; set; }
+        public string CodigoRegistro { get; set; }
 
         [Display(Name = "Fecha hora actualizacion")]
         public string Fecha_horaActualizacion { get; set; }

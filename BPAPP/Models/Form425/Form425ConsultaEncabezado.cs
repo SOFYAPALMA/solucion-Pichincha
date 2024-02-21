@@ -5,17 +5,17 @@ namespace ProyectoWeb.Models
 {
     public class Form425ConsultaEncabezado
     {
-        [Display(Name = "Registro")]
+        [Display(Name = "Número Registro")]
         public int idPropiedadesFormato { get; set; }
 
         [Display(Name = "Tipo Entidad")]
-        public int Tipo { get; set; }
-
+        public string Tipo { get; set; } = "001"; //Campo fijo por default= 001
+      
         [Display(Name = "Codigo")]
-        public int Codigo { get; set; }
+        public string Codigo { get; set; } = "00057"; //Campo fijo por default= 00057
 
-        [Display(Name = "Codigo")]
-        public string Nombre { get; set; }
+        [Display(Name = "Nombre")]
+        public string Nombre { get; set; } = "BCOPICHINCH"; //Campo fijo por default= BCOPICHINCH
 
         public string AperturaDigital { get; set; }
 
@@ -61,11 +61,14 @@ namespace ProyectoWeb.Models
 
         [Display(Name = "Fecha Hora")]
         public string Fecha_horaActualizacion { get; set; }
-        public int Usuario { get; set; }
-        public int Estado { get; set; }
+        public string Usuario { get; set; }
+        public string Estado { get; set; }
+        [Display(Name = "Estado")]
+        public string DescripcionEstado { get; set; }
         public string Fechacorte { get; set; }
         public string FechaEstado { get; set; }
-        public int? CodigoRegistro { get; set; }
+        [Display(Name = "Registro SFC")]
+        public string CodigoRegistro { get; set; }
 
         [Display(Name = "Nombre Comercial")]
         public int idNombreComercial { get; set; }    

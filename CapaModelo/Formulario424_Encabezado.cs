@@ -6,15 +6,16 @@ namespace CapaModelo
     {
         public string FechaHora { get; set; }
         public string AperturaDigital { get; set; }
-        public int Codigo { get; set; }
+        public string Codigo { get; set; }
         public string CodigoRegistro { get; set; }
-        public int CuotaManejo { get; set; }
-        public int Estado { get; set; }
+        public int? CuotaManejo { get; set; }
+        public string Estado { get; set; }
+        public string DescripcionEstado { get; set; }
         public string Fecha_horaActualizacion { get; set; }
         public string Fechacorte { get; set; }
         public string FechaEstado { get; set; }
         public string GrupoPoblacional { get; set; }
-        public int idAperturaDigital { get; set; }
+        public int? idAperturaDigital { get; set; }
         public int idGrupoPoblacional { get; set; }
         public int idIngresos { get; set; }
         public int idObservacionesCuota { get; set; }
@@ -39,8 +40,9 @@ namespace CapaModelo
         public string SerGratuito_TCRDebito1 { get; set; }
         public string SerGratuito_TCRDebito2 { get; set; }
         public string SerGratuito_TCRDebito3 { get; set; }
-        public int Tipo { get; set; }
+        public string Tipo { get; set; }
         public string TipoProductoDeposito { get; set; }
-        public int Usuario { get; set; }
+        public int? Usuario { get; set; }
+        public int UnidadCaptura { get; set; } = 1;
     }
 }

@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace ProyectoWeb.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -26,13 +28,13 @@ namespace ProyectoWeb.Controllers
 
             return View();
         }
-
         public ActionResult Salir()
         {
+            FormsAuthentication.SignOut();
             Session["IdUsuario"] = null;
             return RedirectToAction("Index", "Login");
         }
-
+      
 
 
     }

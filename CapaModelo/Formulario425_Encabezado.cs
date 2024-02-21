@@ -5,8 +5,8 @@ namespace CapaModelo
     public class Formulario425_Encabezado
     {
         public int idPropiedadesFormato { get; set; }
-        public int Tipo { get; set; }
-        public int Codigo { get; set; }
+        public string Tipo { get; set; }
+        public string Codigo { get; set; }
         public string Nombre { get; set; }
         public string NombreComercial { get; set; }
         public int idNombreComercial { get; set; }
@@ -30,10 +30,11 @@ namespace CapaModelo
         public string ServicioGratuito_3 { get; set; }
         public int idServicioGratuito_3 { get; set; }
         public string Fecha_horaActualizacion { get; set; }
-        public int Usuario { get; set; }
-        public int Estado { get; set; }
+        public string Usuario { get; set; }
+        public string Estado { get; set; }
+        public string DescripcionEstado { get; set; }
         public string Fechacorte { get; set; }
         public string FechaEstado { get; set; }
-        public int? CodigoRegistro { get; set; }
+        public string CodigoRegistro { get; set; }
     }
 }

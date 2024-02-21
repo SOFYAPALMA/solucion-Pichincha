@@ -47,7 +47,10 @@
   <ItemGroup>
     <Compile Include="ConexionMS.cs" />
     <Compile Include="DatetimeToStringConverter.cs" />
+    <Compile Include="DatosAseguradoras.cs" />
+    <Compile Include="DatosCreditos.cs" />
     <Compile Include="DatosDominio.cs" />
+    <Compile Include="DatosErroresSFC.cs" />
     <Compile Include="DatosFormato425.cs" />
     <Compile Include="DatosFormato424.cs" />
     <Compile Include="DatosFormato426.cs" />

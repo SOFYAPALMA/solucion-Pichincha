@@ -1,0 +1,75 @@
+﻿@model ProyectoWeb.Models.ConsultaTipoDominioDTO
+
+@{
+    ViewBag.Title = "Detalle tipo dominio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="">
+    <div class="card">
+        <div class="card-header">
+            Formulario tipo dominio
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.idDominio)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.idDominio)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.Descripcion)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.Descripcion)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div>
+                            @Html.DisplayNameFor(model => model.Estado)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.Estado)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-sm-12 float-right">
+                        @Html.ActionLink("Editar", "Update/" + Model.idDominio, Model.idDominio, new { @class = "btn btn-primary btn-sm float-right" })
+                        <div>
+                            @Html.ActionLink("Volver", "List")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 float-right">
+                @Html.ActionLink("Nuevo Detalle", "CrearDetalle/" + Model.idDominio)
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                Detalles
+            </div>
+            <div class="card-body">
+                @Html.Partial("ListDetalles", (List<ProyectoWeb.Models.ConsultaDominioDTO>)@ViewBag.ListaDetalles)
+            </div>
+        </div>
+    </div>
+</div>

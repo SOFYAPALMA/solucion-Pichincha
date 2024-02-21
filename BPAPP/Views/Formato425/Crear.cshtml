@@ -11,24 +11,16 @@
         {
             <div class="card">
                 <div class="card-header">
-                    SUPERINTENDENCIA FINANCIERA DE COLOMBIA
+                    Crear Formulario 425 (Tarjetas de crédito)
                 </div>
-                <br>
-                <h3 style="text-align:center;">TARIFAS DE LOS PRODUCTOS DE DEPÓSITO</h3>
-                <h4 style="text-align:center;">FORMATO 425</h4>
-                <h5 style="text-align:center;">CIRCULAR EXTERNA 006 DE 2023</h5>
-                <br>
                 <div class="card-body">
-
-
                     @Html.AntiForgeryToken()
 
                     <div class="row">
-
                         <div class="col-sm-4">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.idNombreComercial, htmlAttributes: new { @class = "control-label" })
-                                <div class="col-md-10">
+                                <div>
                                     @Html.DropDownList("idNombreComercial", (SelectList)ViewBag.NombreComercial, "Seleccione..", new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.idNombreComercial, "", new { @class = "text-danger" })
                                 </div>
@@ -37,7 +29,7 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.idAperturaDigital, htmlAttributes: new { @class = "control-label" })
-                                <div class="col-md-10">
+                                <div>
                                     @Html.DropDownList("idAperturaDigital", (SelectList)ViewBag.AperturaDigital, "Seleccione..", new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.idAperturaDigital, "", new { @class = "text-danger" })
                                 </div>
@@ -46,7 +38,7 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.NumeroClientes, htmlAttributes: new { @class = "control-label" })
-                                <div class="col-md-10">
+                                <div>
                                     @Html.EditorFor(model => model.NumeroClientes, new { htmlAttributes = new { @class = "form-control" } })
                                     @Html.ValidationMessageFor(model => model.NumeroClientes, "", new { @class = "text-danger" })
                                 </div>
@@ -55,7 +47,7 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.idFranquicia, htmlAttributes: new { @class = "control-label" })
-                                <div class="col-md-10">
+                                <div>
                                     @Html.DropDownList("idFranquicia", (SelectList)ViewBag.Franquicia, "Seleccione..", new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.idFranquicia, "", new { @class = "text-danger" })
                                 </div>
@@ -64,7 +56,7 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.CuotaManejo, htmlAttributes: new { @class = "control-label" })
-                                <div class="col-md-10">
+                                <div>
                                     @Html.EditorFor(model => model.CuotaManejo, new { htmlAttributes = new { @class = "form-control" } })
                                     @Html.ValidationMessageFor(model => model.CuotaManejo, "", new { @class = "text-danger" })
                                 </div>
@@ -73,7 +65,7 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.idObservacionesCuota, htmlAttributes: new { @class = "control-label" })
-                                <div class="col-md-10">
+                                <div>
                                     @Html.DropDownList("idObservacionesCuota", (SelectList)ViewBag.ObservacionesCuotadeManejo, "Seleccione..", new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.idObservacionesCuota, "", new { @class = "text-danger" })
                                 </div>
@@ -82,7 +74,7 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.CuotaManejoMaxima, htmlAttributes: new { @class = "control-label" })
-                                <div class="col-md-10">
+                                <div>
                                     @Html.EditorFor(model => model.CuotaManejoMaxima, new { htmlAttributes = new { @class = "form-control" } })
                                     @Html.ValidationMessageFor(model => model.CuotaManejoMaxima, "", new { @class = "text-danger" })
                                 </div>
@@ -91,7 +83,7 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.idGrupoPoblacional, htmlAttributes: new { @class = "control-label" })
-                                <div class="col-md-10">
+                                <div>
                                     @Html.DropDownList("idGrupoPoblacional", (SelectList)ViewBag.GrupoPoblacional, "Seleccione..", new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.idGrupoPoblacional, "", new { @class = "text-danger" })
                                 </div>
@@ -100,7 +92,7 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.idCupo, htmlAttributes: new { @class = "control-label" })
-                                <div class="col-md-10">
+                                <div>
                                     @Html.DropDownList("idCupo", (SelectList)ViewBag.Cupo, "Seleccione..", new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.idCupo, "", new { @class = "text-danger" })
                                 </div>
@@ -109,7 +101,7 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.idServicioGratuito_1, htmlAttributes: new { @class = "control-label" })
-                                <div class="col-md-10">
+                                <div>
                                     @Html.DropDownList("idServicioGratuito_1", (SelectList)ViewBag.ServicioGratuito, "Seleccione..", new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.idServicioGratuito_1, "", new { @class = "text-danger" })
                                 </div>
@@ -118,7 +110,7 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.idServicioGratuito_2, htmlAttributes: new { @class = "control-label" })
-                                <div class="col-md-10">
+                                <div>
                                     @Html.DropDownList("idServicioGratuito_2", (SelectList)ViewBag.ServicioGratuito, "Seleccione..", new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.idServicioGratuito_2, "", new { @class = "text-danger" })
                                 </div>
@@ -127,7 +119,7 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 @Html.LabelFor(model => model.idServicioGratuito_3, htmlAttributes: new { @class = "control-label" })
-                                <div class="col-md-10">
+                                <div>
                                     @Html.DropDownList("idServicioGratuito_3", (SelectList)ViewBag.ServicioGratuito, "Seleccione..", new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.idServicioGratuito_3, "", new { @class = "text-danger" })
                                 </div>
@@ -135,19 +127,107 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-md-offset-2 col-md-12">
                             <input type="submit" value="Guardar" class="btn btn-primary btn-sm float-right" />
+                            <div>
+                                @Html.ActionLink("Volver", "List")
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         }
 
     </div>
 </div>
-<div>
-    @Html.ActionLink("Volver", "List")
-</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+
+        $('#CuotaManejo').change(function () {
+            ValidarCuotaManejo();
+        });
+
+        $('#idServicioGratuito_1').change(function () {
+            ValidarCuotaManejo();
+        });
+
+        $('#idServicioGratuito_2').change(function () {
+            ValidarCuotaManejo();
+        });
+
+        $('#idServicioGratuito_3').change(function () {
+            ValidarCuotaManejo();
+        });
+        $('#idObservacionesCuota').change(function () {
+            ValidarCuotaManejo();
+        });
+
+        function ValidarCuotaManejo() {
+            var retorno = true;
+            LimpiarMensajeGeneral();
+            var value = $("#CuotaManejo").val();
+            var ObCuota = $("#idObservacionesCuota option:selected").val();
+
+            console.log(value);
+            console.log(ObCuota);
+
+            var Sg1 = $("#idServicioGratuito_1 option:selected").val();
+            var Sg2 = $("#idServicioGratuito_2 option:selected").val();
+            var Sg3 = $("#idServicioGratuito_3 option:selected").val();
+
+
+            if (ObCuota == '1351') {// Sí NO tienCuota de manejo"
+                $('#CuotaManejo').val("");
+                $('#CuotaManejo').prop("disabled", true);
+
+                var isValidsg = true;
+
+                //Sí No tiene "Cuota de manejo", Valores válidos para "Servicio Gratuito " 98 - No aplica
+
+                if ((Sg1 == '78' && Sg2 == '78' && Sg3 == '78')) {
+                    LimpiarMensajeGeneral();
+                    retorno = true;
+                }
+                else {
+                    isValidsg = false;
+                }
+
+                if (!isValidsg) {
+                    retorno = false;
+                    MensajeGeneral('Si NO TIENE cuota de manejo puede seleccionar en Servicio Gratuito: <br/>98- No aplica');
+                }
+            }
+
+            else {//Si TIENE cuota de manejo
+                $("#CuotaManejo").prop("disabled", false);
+                if (value < 1) {
+                    retorno = false;
+                    MensajeGeneral('Agregue un valor a la cuota de manejo');
+                }
+                else {
+                    if (true) {
+                        //Si TIENE cuota de manejo puede seleccionar en Servicio Gratuito: 11 - Avance en cajero de la misma entidad 12 - Avance en oficina 13 - Consulta de saldo en cajero de la misma entidad 14 - Reposicion por deterior'
+                        if ((Sg1 == '74' || Sg1 == '75' || Sg1 == '76' || Sg1 == '77') && (Sg2 == '74' || Sg2 == '75' || Sg2 == '76' || Sg2 == '77') && (Sg3 == '74' || Sg3 == '75' || Sg3 == '76' || Sg3 == '77')) {
+                            retorno = true;
+                        }
+                        else {
+                            retorno = false;
+                            MensajeGeneral('Si TIENE cuota de manejo puede seleccionar en Servicio Gratuito: <br/>11 - Avance en cajero de la misma entidad <br/>12 - Avance en oficina <br/>13 - Consulta de saldo en cajero de la misma entidad <br/>14 - Reposicion por deterioro');
+                        }
+                    }
+                }
+
+            }
+
+            return retorno;
+
+        }
+
+    </script>
+}

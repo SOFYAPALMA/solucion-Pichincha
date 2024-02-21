@@ -1,5 +1,4 @@
 ﻿using BP.Repositorio;
-using CapaDatos;
 using CapaModelo;
 using ProyectoWeb.Models;
 using System.Collections.Generic;
@@ -8,6 +7,7 @@ using System.Web.Mvc;
 
 namespace ProyectoWeb.Controllers
 {
+    [Authorize]
     public class Formato424Controller : Controller
     {
 
@@ -24,8 +24,10 @@ namespace ProyectoWeb.Controllers
             form424.idPropiedadesFormato = id;
             LlenadoListasDetalle();
 
+
             return View(form424);
         }
+
 
         [HttpPost]
         public ActionResult Crear(Form424CrearEncabezado form424)
@@ -36,6 +38,13 @@ namespace ProyectoWeb.Controllers
                     return RedirectToAction("Login");
 
                 int idusuario = int.Parse(Session["IdUsuario"].ToString());
+
+                //if (form424.CuotaManejo == 0)
+                //{
+                //    ModelState.AddModelError("CuotaManejo", "Agregue un valor diferente de cero.");
+                //    LlenadoListasEncabezado();
+                //    return View(form424);
+                //}
 
                 Formulario424_Encabezado encabezado = Mapper.getMapper(form424);
                 encabezado.Usuario = idusuario;
@@ -53,7 +62,6 @@ namespace ProyectoWeb.Controllers
                     LlenadoListasEncabezado();
                     return View(form424);
                 }
-
             }
             else
             {
@@ -68,8 +76,16 @@ namespace ProyectoWeb.Controllers
             if (ModelState.IsValid)
             {
                 Formulario424_Detalle encabezado = Mapper.getMapper(form424);
+                //validar el campo Observaciones si viene desactivo llamar el otro procedimiento spDesactivaDetalleDeposito
 
-                bool respuesta = DatosFormato424.RegistrarDetalle(encabezado);
+                //if (Formulario424_Detalle.Observaciones == 90)
+                //    {
+                //        ModelState.AddModelError("Desactivacion");
+                //        LlenadoListasEncabezado();
+                //        return View(form424);
+                //    }
+
+                    bool respuesta = DatosFormato424.RegistrarDetalle(encabezado);
 
                 if (respuesta)
                 {
@@ -163,6 +179,7 @@ namespace ProyectoWeb.Controllers
                 else
                 {
                     ModelState.AddModelError("", "No se pudo actualizar el encabezado, por favor valide los datos.");
+                    TempData["Notificacion"] = DatosFormato424.Mensaje;
                     LlenadoListasEncabezado();
                     return View(encabezado);
                 }
@@ -171,6 +188,53 @@ namespace ProyectoWeb.Controllers
             {
                 LlenadoListasEncabezado();
                 return View(encabezado);
+            }
+        }
+
+        //[HttpPost]
+        ////[ValidateAntiForgeryToken]
+        //public ActionResult DeleteEncabezado(int obj)
+        //{
+        //    //if (ModelState.IsValid)
+        //    //{
+        //    //    bool respuesta = DatosFormato424.EliminarEncabezado(obj);
+
+        //    //    if (respuesta)
+        //    //    {
+        //    //        TempData["Notificacion"] = DatosFormato424.Mensaje;
+        //    //        ModelState.AddModelError("", DatosFormato424.Mensaje);
+        //    //        return RedirectToRoute("List");
+        //    //    }
+        //    //    else
+        //    //    {
+        //    //        ModelState.AddModelError("", "No se puede eliminar el encabezado tiene detalle.");
+        //    //        LlenadoListasEncabezado();
+        //    //        return View();
+        //    //    }
+        //    //}
+        //    //else
+        //    //{
+        //    //    LlenadoListasEncabezado();
+        //    //    return View();
+        //    //}
+        //}
+
+        public ActionResult DeleteDetalle(int id)
+        {
+            Formulario424_Detalle _Detalle = DatosFormato424.DetallesDetalles(id);
+            bool respuesta = DatosFormato424.EliminarDetalle(_Detalle);
+
+            if (respuesta)
+            {
+                TempData["Notificacion"] = DatosFormato424.Mensaje;
+
+                return RedirectToAction("List");
+            }
+            else
+            {
+                ModelState.AddModelError("", "No se puede eliminar el detalle.");
+                LlenadoListasEncabezado();
+                return RedirectToAction("Details/" + _Detalle.idPropiedadesFormato);
             }
         }
 

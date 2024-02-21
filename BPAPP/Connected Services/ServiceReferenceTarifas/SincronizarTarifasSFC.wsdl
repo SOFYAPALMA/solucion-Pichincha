@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd1="http://www.pichincha.com.co/tarifas" xmlns:xsd2="http://pragma.co/ents/common/BaseMessageFormat/V1" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd3="http://pragma.co/ents/common/BaseExtensions/V1.0" xmlns:tns="http://www.pichincha.com.co/tarifas" name="SincronizarTarifasSFC" targetNamespace="http://www.pichincha.com.co/tarifas" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.pichincha.com.co/tarifas" />
+    <xsd:schema>
+      <xsd:import namespace="http://pragma.co/ents/common/BaseMessageFormat/V1" />
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:Q1="http://www.pichincha.com.co/general" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.pichincha.com.co/tarifas">
+      <xsd:complexType name="sincronizarTarifasSFC">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="canal" type="Q1:InformacionCanal" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="codigoProducto" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="tarifa" type="Q1:Tarifa" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="respuestaSincronizarTarifasSFC">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="respuesta" type="Q1:Respuesta" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="tarifa" type="Q1:Tarifa" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="sincronizarTarifasSFC" type="tns:sincronizarTarifasSFC" />
+      <xsd:element name="respuestaSincronizarTarifasSFC" type="tns:respuestaSincronizarTarifasSFC" />
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gen="http://www.pichincha.com.co/general" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.pichincha.com.co/general">
+      <xsd:complexType name="InformacionCanal">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="canal">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:minLength value="1" />
+                <xsd:maxLength value="5" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element minOccurs="0" maxOccurs="1" name="segmento">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="4" />
+                <xsd:minLength value="0" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Respuesta">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="codigo" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="mensaje" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Tarifa">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="tipoEntidad" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="entidadCod" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="fechaReporte" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="aperturaDigital" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="tasa" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="tipoEntidadAseguradora" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="entidadCodAseguradora" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="observaciones" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="nombreComercial" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="numClientesUnicos" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="cuotaManejo" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="grupoPoblacional" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="obsCuotaManejo" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="operacionServicio" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="canal" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="costoFijo" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="costoPropOperServ" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="codigoCredito" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="caracteristicaCredito" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="costo" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="franquicia" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="cuotaManejoMaxima" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="cupo" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="servicioGratuito1" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="servicioGratuito2" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="servicioGratuito3" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="costoFijoMaximo" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="costoPropMaxOperServ" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="tasaMaxima" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="tipoProducto" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ingresos" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="cuentaAhorros1" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="cuentaAhorros2" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="cuentaAhorros3" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="tarjetaDebito1" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="tarjetaDebito2" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="tarjetaDebito3" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="numOperServCuotaManejo" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="codigoRegistroCabSFC" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="codigoRegistroUcSFC" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://pragma.co/ents/common/BaseExtensions/V1.0" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://pragma.co/ents/common/BaseExtensions/V1.0">
+      <xsd:annotation>
+        <xsd:documentation>V.1.0
+Fecha creación	[ 2020-02-27 ]
+Fecha caducidad	[ AAAA-MM-DD ]
+Autor(es) 		[ Banco Pichincha]</xsd:documentation>
+      </xsd:annotation>
+      <xsd:complexType name="ExceptionList">
+        <xsd:sequence>
+          <xsd:element name="exception" type="tns:BaseException" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Classifications">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="unbounded" name="classification" type="xsd:anyURI" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="MessageContext">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="unbounded" name="property" type="tns:Property" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RouteData">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" name="CallBackTo" type="tns:EndPoint" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BaseException">
+        <xsd:sequence>
+          <xsd:element name="code" type="xsd:string" />
+          <xsd:element name="description" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SystemException">
+        <xsd:sequence>
+          <xsd:element name="faultcode" type="xsd:QName" />
+          <xsd:element name="faultstring" type="xsd:string" />
+          <xsd:element minOccurs="0" name="faultactor" type="xsd:anyURI" />
+          <xsd:element minOccurs="0" name="detail" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RoutingStack">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="routeTo" type="tns:RouteData" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LoggingData">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" name="sourceSystemId" type="xsd:string" />
+          <xsd:element minOccurs="1" default="ESB" name="destinationSystemId" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ResponseStatus">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" default="SUCCESS" name="statusCode">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="SUCCESS" />
+                <xsd:enumeration value="PROVIDEREXCEPTION" />
+                <xsd:enumeration value="TECHNICALEXCEPTION" />
+                <xsd:enumeration value="BUSINESSEXCEPTION" />
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RequestBody">
+        <xsd:sequence>
+          <xsd:element name="request" type="xsd:anyType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="EndPoint">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" name="address" type="xsd:anyURI" />
+          <xsd:element minOccurs="0" name="correlationId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="messageId" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SecurityCredential">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" name="userName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="userToken" type="xsd:anyType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ResponseBody">
+        <xsd:sequence>
+          <xsd:element name="response" type="xsd:anyType" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="exceptionList" type="tns:ExceptionList" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Destination">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="namespace" type="xsd:anyURI" />
+          <xsd:element minOccurs="0" name="operation" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Property">
+        <xsd:sequence>
+          <xsd:element name="key" type="xsd:string" />
+          <xsd:element name="value" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:bons1="http://pragma.co/ents/common/BaseExtensions/V1.0" xmlns:tns="http://pragma.co/ents/common/BaseMessageFormat/V1" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://pragma.co/ents/common/BaseMessageFormat/V1">
+      <xsd:import namespace="http://pragma.co/ents/common/BaseExtensions/V1.0" />
+      <xsd:complexType name="ResponseHeaderIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:Header">
+            <xsd:sequence>
+              <xsd:element minOccurs="1" maxOccurs="1" name="responseStatus" type="bons1:ResponseStatus" />
+              <xsd:element minOccurs="1" maxOccurs="1" name="destination" type="bons1:Destination" />
+              <xsd:element minOccurs="0" name="messageContext" type="bons1:MessageContext" />
+              <xsd:element minOccurs="1" maxOccurs="1" name="routingStack" type="bons1:RoutingStack" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="requestHeaderOut" type="tns:RequestHeaderOut" />
+      <xsd:element name="responseHeaderIn" type="tns:ResponseHeaderIn" />
+      <xsd:complexType name="RequestHeaderOut">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:Header">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="securityCredential" type="bons1:SecurityCredential" />
+              <xsd:element minOccurs="0" name="destination" type="bons1:Destination" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="classification" type="bons1:Classifications" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="responseHeaderOut" type="tns:ResponseHeaderOut" />
+      <xsd:element name="exceptionList" type="bons1:ExceptionList" />
+      <xsd:complexType name="Header" abstract="true">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" name="systemId" type="xsd:string" />
+          <xsd:element minOccurs="1" name="messageId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="invokerDateTime" type="xsd:dateTime" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="requestHeaderIn" type="tns:RequestHeaderIn" />
+      <xsd:complexType name="ResponseHeaderOut">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:Header">
+            <xsd:sequence>
+              <xsd:element minOccurs="1" maxOccurs="1" name="responseStatus" type="bons1:ResponseStatus" />
+              <xsd:element minOccurs="1" maxOccurs="1" name="destination" type="bons1:Destination" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="RequestHeaderIn">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:Header">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" maxOccurs="1" name="securityCredential" type="bons1:SecurityCredential" />
+              <xsd:element minOccurs="0" name="destination" type="bons1:Destination" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="classification" type="bons1:Classifications" />
+              <xsd:element minOccurs="0" name="messageContext" type="bons1:MessageContext" />
+              <xsd:element minOccurs="1" maxOccurs="1" name="routingStack" type="bons1:RoutingStack" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="componentNameLogging" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="sincronizarTarifasSFCRequest">
+    <wsdl:part name="parameters" element="tns:sincronizarTarifasSFC" />
+  </wsdl:message>
+  <wsdl:message name="requestHeaderMsg">
+    <wsdl:part name="requestHeader" element="xsd2:requestHeaderOut" />
+  </wsdl:message>
+  <wsdl:message name="responseHeaderMsg">
+    <wsdl:part name="responseHeader" element="xsd2:responseHeaderOut" />
+  </wsdl:message>
+  <wsdl:message name="sincronizarTarifasSFCResponse">
+    <wsdl:part name="parameters" element="tns:respuestaSincronizarTarifasSFC" />
+  </wsdl:message>
+  <wsdl:portType name="SincronizarTarifasSFC">
+    <wsdl:operation name="sincronizarTarifasSFC">
+      <wsdl:input message="tns:sincronizarTarifasSFCRequest" />
+      <wsdl:output message="tns:sincronizarTarifasSFCResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TARIFASSOAP" type="tns:SincronizarTarifasSFC">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="sincronizarTarifasSFC">
+      <soap:operation soapAction="http://www.pichincha.com.co/tarifas" />
+      <wsdl:input>
+        <soap:header message="tns:requestHeaderMsg" part="requestHeader" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="tns:responseHeaderMsg" part="responseHeader" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TARIFASSOAP12" type="tns:SincronizarTarifasSFC">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="sincronizarTarifasSFC">
+      <soap12:operation soapAction="http://www.pichincha.com.co/tarifas" />
+      <wsdl:input>
+        <soap12:header message="tns:requestHeaderMsg" part="requestHeader" use="literal" />
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:header message="tns:responseHeaderMsg" part="responseHeader" use="literal" />
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SincronizarTarifasSFC">
+    <wsdl:port name="TARIFASSOAPC" binding="tns:TARIFASSOAP">
+      <soap:address location="http://DESKTOP-SATFOOA:8088/esb/channelAdapter/omnicanalidad/v1" />
+    </wsdl:port>
+    <wsdl:port name="TARIFASSOAPB" binding="tns:TARIFASSOAP">
+      <soap:address location="http://DESKTOP-SATFOOA:8088/esb/channelAdapter/omnicanalidad/v1" />
+    </wsdl:port>
+    <wsdl:port name="TARIFASSOAPA" binding="tns:TARIFASSOAP">
+      <soap:address location="http://DESKTOP-SATFOOA:8088/esb/channelAdapter/omnicanalidad/v1" />
+    </wsdl:port>
+    <wsdl:port name="TARIFASSOAP12A" binding="tns:TARIFASSOAP12">
+      <soap12:address location="http://10.160.92.150:7800/esb/channelAdapter/omnicanalidad/v1" />
+    </wsdl:port>
+    <wsdl:port name="TARIFASSOAP12B" binding="tns:TARIFASSOAP12">
+      <soap12:address location="https://10.160.79.16:7845/esb/channelAdapter/omnicanalidad/v2" />
+    </wsdl:port>
+    <wsdl:port name="TARIFASSOAP12C" binding="tns:TARIFASSOAP12">
+      <soap12:address location="https://apidevint.pichincha.local:8443/TARIFAS/Xml" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

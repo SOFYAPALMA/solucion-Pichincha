@@ -48,9 +48,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.SqlServer.ConnectionDlg.AadAuthenticationProvider, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -122,6 +125,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Connected Services\ServiceReferenceTarifas\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\consumoWSController.cs" />
+    <Compile Include="Controllers\DominioController.cs" />
+    <Compile Include="Controllers\ErroresSFCController.cs" />
     <Compile Include="Controllers\Formato425Controller.cs" />
     <Compile Include="Controllers\Formato426Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -130,12 +141,18 @@
     <Compile Include="Controllers\RolController.cs" />
     <Compile Include="Controllers\RolPermisoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Controllers\AuthorizeAttribute.cs" />
     <Compile Include="Filters\VerificarSesion.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="Helpers\Mapper.cs" />
+    <Compile Include="Models\Dominio\CrearDominioDTO.cs" />
+    <Compile Include="Models\Dominio\ConsultaTipoDominioDTO.cs" />
+    <Compile Include="Models\Dominio\CrearTipoDominioDTO.cs" />
+    <Compile Include="Models\Dominio\ConsultaDominioDTO.cs" />
+    <Compile Include="Models\Errores\Errores_SFCDTO.cs" />
     <Compile Include="Models\Form424\Form424ConsultaDetalle.cs" />
     <Compile Include="Models\Form424\Form424CrearDetalle.cs" />
     <Compile Include="Models\Form424\Form424ConsultaEncabezado.cs" />
@@ -152,6 +169,24 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceTarifas\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReferenceTarifas\configuration.svcinfo" />
+    <Content Include="Connected Services\ServiceReferenceTarifas\ProyectoWeb.ServiceReferenceTarifas.ResponseHeaderOut.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReferenceTarifas\ProyectoWeb.ServiceReferenceTarifas.Respuesta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReferenceTarifas\ProyectoWeb.ServiceReferenceTarifas.sincronizarTarifasSFCResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReferenceTarifas\ProyectoWeb.ServiceReferenceTarifas.Tarifa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServiceReferenceTarifas\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -1840,6 +1875,7 @@
     <Content Include="Content\Plugins\jquery-ui-1.12.1\jquery-ui.min.js" />
     <Content Include="Content\Plugins\sweetalert2\css\sweetalert.css" />
     <Content Include="Content\Plugins\sweetalert2\js\sweetalert.js" />
+    <Content Include="Content\sidebar.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -1849,6 +1885,7 @@
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\ComunJs.js" />
     <Content Include="Scripts\Controllers\Formato426.js" />
     <Content Include="Scripts\Controllers\Formato425.js" />
     <Content Include="Scripts\Controllers\Formato424.js" />
@@ -1930,6 +1967,7 @@
     <Content Include="Content\Plugins\fontawesome-free-5.15.2\webfonts\fa-solid-900.woff" />
     <Content Include="Content\Plugins\fontawesome-free-5.15.2\webfonts\fa-solid-900.woff2" />
     <Content Include="Content\Plugins\datatables\images\Sorting icons.psd" />
+    <None Include="Connected Services\ServiceReferenceTarifas\SincronizarTarifasSFC.wsdl" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -2063,6 +2101,15 @@
     <Content Include="Views\Formato424\UpdateDetalle.cshtml" />
     <Content Include="Views\Formato425\UpdateDetalle.cshtml" />
     <Content Include="Views\Formato426\UpdateDetalle.cshtml" />
+    <Content Include="Views\Dominio\List.cshtml" />
+    <Content Include="Views\Dominio\Details.cshtml" />
+    <Content Include="Views\Dominio\ListDetalles.cshtml" />
+    <Content Include="Views\Dominio\Crear.cshtml" />
+    <Content Include="Views\Dominio\Update.cshtml" />
+    <Content Include="Views\Dominio\UpdateDetalle.cshtml" />
+    <Content Include="Views\Dominio\CrearDetalle.cshtml" />
+    <Content Include="Views\ErroresSFC\Index.cshtml" />
+    <Content Include="Views\consumoWS\Consumo.cshtml" />
     <None Include="Web.R.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2094,6 +2141,16 @@
       <Project>{1d419d2f-85df-4007-87e3-1e096682e487}</Project>
       <Name>CapaModelo</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Comun\Comun.csproj">
+      <Project>{5323A7DC-A728-48BC-AB15-5DD0EE99342B}</Project>
+      <Name>Comun</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReferenceTarifas\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
