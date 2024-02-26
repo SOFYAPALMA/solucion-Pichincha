@@ -127,8 +127,8 @@
             var value = $("#idObservaciones option:selected").text();
 
             if (value == '90 - Desactivacion') {
-                $('#idCaracteristicaCredito').val("");
-                $('#idCaracteristicaCredito').prop("disabled", true);
+                //$('#idCaracteristicaCredito').val("");
+                //$('#idCaracteristicaCredito').prop("disabled", true);
 
                 $('#Costo').val("0");
                 $('#Costo').prop("disabled", true);
@@ -143,7 +143,7 @@
                 $('#idCodigoAseguradora').prop("disabled", true);
             }
             else {
-                $('#idCaracteristicaCredito').prop("disabled", false);
+                /*$('#idCaracteristicaCredito').prop("disabled", false);*/
                 $('#Costo').prop("disabled", false);
                 $('#Tasa').prop("disabled", false);
                 $('#idTipoAseguradora').prop("disabled", false);

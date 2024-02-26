@@ -260,7 +260,7 @@ namespace ProyectoWeb.Controllers
         /// </summary>
         private void LlenadoListasEncabezado()
         {
-            List<ProductoCreditoModel> productoCredito = DatosCreditos.Tipos();//Lista de los 14 tipos de credito
+            List<ProductoCreditoModel> productoCredito = DatosCreditos.Tipos();//Lista de los 17 tipos de credito
             List<DominioModel> idAperturaDigital = DatosDominio.Obtener(2);
 
             if (productoCredito.Count() == 0)

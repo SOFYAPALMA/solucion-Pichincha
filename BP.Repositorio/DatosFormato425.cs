@@ -201,9 +201,9 @@ namespace BP.Repositorio
             {
                 limpiarParametros();
 
-                
+
                 AdicionarParametros("@idDetalle", obj.idDetalle);
-                AdicionarParametros("@Subcuenta", obj.idObservaciones);
+                AdicionarParametros("@Subcuenta", obj.Subcuenta);
                 AdicionarParametros("@idOperacionServicio", obj.idOperacionServicio);
                 AdicionarParametros("@idCanal", obj.idCanal);
                 AdicionarParametros("@CostoFijo", obj.CostoFijo);
@@ -213,10 +213,10 @@ namespace BP.Repositorio
                 AdicionarParametros("@idOperacionServicio", obj.idOperacionServicio);
                 AdicionarParametros("@idTipoAseguradora", obj.idTipoAseguradora);
                 AdicionarParametros("@idCodigoAseguradora", obj.idCodigoAseguradora);
-                AdicionarParametros("@CostoFijo", obj.CostoFijo);
                 AdicionarParametros("@Tasa", obj.Tasa);
                 AdicionarParametros("@TasaMaxima", obj.TasaMaxima);
                 AdicionarParametros("@idObservaciones", obj.idObservaciones);
+                AdicionarParametros("@UnidadCaptura", obj.UnidadCaptura);
 
 
                 AdicionarParametrosOut("IndicadorTermina", SqlDbType.Int);

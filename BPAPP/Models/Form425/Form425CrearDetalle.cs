@@ -12,7 +12,7 @@ namespace ProyectoWeb.Models
         [Display(Name = "Subcuenta")]
         public string Subcuenta { get; set; } = "0";//Campo fijo por default= 0
 
-        [Required(ErrorMessage = "El campo operación o servicio es obligatorio.")]
+        //[Required(ErrorMessage = "El campo operación o servicio es obligatorio.")]
         [Display(Name = "Operacion o Servicio")]
         public int? idOperacionoServicio { get; set; }
 
@@ -37,7 +37,7 @@ namespace ProyectoWeb.Models
 
         [Display(Name = "Costo maximo op servicio")]
         [RegularExpression(@"^\d+(\.\d{1,2})?$")]
-        public int? CostoProporcionMaxOperacionServicio { get; set; }
+        public decimal? CostoProporcionMaxOperacionServicio { get; set; }
 
         [Display(Name = "Tasa")]
         [RegularExpression(@"^\d+(\.\d{1,4})?$")]
